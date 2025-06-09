@@ -7,6 +7,9 @@
 #include "ergonaut_one.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 /* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
+#include <dt-bindings/zmk/bt.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &adc {
 	status = "okay";
@@ -17,7 +20,7 @@
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		x-ch {
-			io-channels = <&adc 2>; // <--- see ain-map.png for nRF52840
+			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
@@ -28,7 +31,7 @@
 			input-code = <INPUT_REL_X>;
 		};
 		y-ch {
-			io-channels = <&adc 3>; // <--- see ain-map.png for nRF52840
+			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
