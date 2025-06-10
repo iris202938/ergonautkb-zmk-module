@@ -2,7 +2,7 @@ file_format: '1'
 id: ergonaut_one
 name: Ergonaut One
 type: shield
-url: https://github.com/ergonautkb/one
+url: https://github.com/Reinmuth66/ergonautkb-zmk-module
 requires: [seeeduino_xiao_ble]
 features:
   - keys
