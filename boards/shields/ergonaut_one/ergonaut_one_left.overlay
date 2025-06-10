@@ -23,9 +23,9 @@
 			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <60>;
 			scale-multiplier = <1>;
-			scale-divisor = <500>;
+			scale-divisor = <1000>;
 			#invert;
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_X>;
@@ -34,9 +34,9 @@
 			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1300>;
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <60>;
 			scale-multiplier = <1>;
-			scale-divisor = <500>;
+			scale-divisor = <1000>;
 			#invert;
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>;
@@ -53,7 +53,8 @@
 	        status = "okay";
 	        compatible = "zmk,input-listener";
 	        device = <&anin0>;
-	        input-processors = <&zip_xy_to_scroll_mapper>;
+	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>
+				 , <&zip_xy_to_scroll_mapper>;
         };
 
 };
