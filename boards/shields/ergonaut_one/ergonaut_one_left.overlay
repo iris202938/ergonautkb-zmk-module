@@ -62,8 +62,9 @@
 	        #size-cells = <0>;
 	
 	        joystick_split: joystick_split@0 {
-	            compatible = "zmk,input-split";
-	            reg = <0>;
+			compatible = "zmk,input-split";
+			reg = <0>;
+			status = "okay";
         	};
 	};
 	
