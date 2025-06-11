@@ -16,7 +16,7 @@
 };
 
 / {
-	anin1: analog_input_1 {
+	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		y-ch {
@@ -57,11 +57,32 @@
 				 /*, <&zip_xy_to_scroll_mapper>*/;
         };
 
-};
+	// Central側のアナログ入力デバイスのエイリアス
+	pd0: central_analog_stick {
+		compatible = "zmk,virtual-input"; // 仮想デバイスとして定義
+	// 実際のアナログ入力デバイスはanin0だが、エイリアスとしてpd0を使用
+	};
+	// Peripheralからリレーされてくる入力のための仮想デバイス
+	pd1: peripheral_relayed_analog_stick {
+		compatible = "zmk,virtual-input";
+	};
+	// Central側での入力リレー設定 (Peripheralからの入力マッピング)
+	input_relay_config_central_analog {
+		compatible = "zmk,split-peripheral-input-relay";
+		relay-channel = <102>; // Peripheralと一致させるチャネルID
+		device = <&pd1>; // リレーされた入力をマッピングする仮想デバイス
+	};
+	// Central側のアナログスティック用リスナー
+	central_analog_listener {
+		compatible = "zmk,input-listener";
+		device = <&pd0>;
+	};
+	// Peripheralからリレーされたアナログスティック用リスナー
+	peripheral_analog_listener {
+		compatible = "zmk,input-listener";
+		device = <&pd1>;
+	};
 
-
-&joystick_listener {
-	status = "okay";
 };
 
 &kscan0 {
