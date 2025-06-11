@@ -70,7 +70,6 @@
 		compatible = "zmk,input-listener";
 		status = "disabled";
 		device = <&joystick_split>;
-		};
 	};
 };
 
