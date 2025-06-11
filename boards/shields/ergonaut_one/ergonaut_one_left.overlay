@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/zmk/mouse.h>
 
 &adc {
 	status = "okay";
@@ -50,7 +49,6 @@
 		};
 	};
 
-	/*
 	analog_input_listener {
 	        status = "okay";
 	        compatible = "zmk,input-listener";
@@ -58,49 +56,6 @@
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
 				 , <&zip_xy_to_scroll_mapper>;
         };
-	*/
-
-	// Central側のアナログ入力デバイスのエイリアス
-	pd0: central_analog_stick {
-		compatible = "zmk,virtual-input"; // 仮想デバイスとして定義
-	// 実際のアナログ入力デバイスはanin0だが、エイリアスとしてpd0を使用
-	};
-	// Peripheralからリレーされてくる入力のための仮想デバイス
-	pd1: peripheral_relayed_analog_stick {
-		compatible = "zmk,virtual-input";
-	};
-	// Central側での入力リレー設定 (Peripheralからの入力マッピング)
-	input_relay_config_central_analog {
-		compatible = "zmk,split-peripheral-input-relay";
-		relay-channel = <102>; // Peripheralと一致させるチャネルID
-		device = <&pd1>; // リレーされた入力をマッピングする仮想デバイス
-	};
-	// Central側のアナログスティック用リスナー
-	central_analog_listener {
-		compatible = "zmk,input-listener";
-		device = <&pd0>;
-		bindings = <
-			// INPUT_REL_XイベントをマウスX軸移動にマッピング
-			&mmv HID_USAGE_GD_X
-			// INPUT_REL_YイベントをマウスY軸移動にマッピング
-			&mmv HID_USAGE_GD_Y
-			>;
-		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-				 /*, <&zip_xy_to_scroll_mapper>*/;
-	};
-	// Peripheralからリレーされたアナログスティック用リスナー
-	peripheral_analog_listener {
-		compatible = "zmk,input-listener";
-		device = <&pd1>;
-		bindings = <
-			// INPUT_REL_XイベントをマウスX軸移動にマッピング
-			&mmv HID_USAGE_GD_X
-			// INPUT_REL_YイベントをマウスY軸移動にマッピング
-			&mmv HID_USAGE_GD_Y
-			>;
-		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-				 , <&zip_xy_to_scroll_mapper>;
-	};
 
 };
 
