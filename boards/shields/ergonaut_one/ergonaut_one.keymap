@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEF 0
 #define LWR 1
@@ -25,8 +26,51 @@
         };
     };
 
+    // Central側のアナログスティックのX/Y軸をマウス移動にマッピング
+    // pd0はCentral側の物理アナログスティックに対応
+    rel_x_pd0: central_analog_x {
+        compatible = "zmk,behavior-mouse-move";
+        label = "Central Analog X";
+        #binding-cells = <0>;
+        axis = <HID_USAGE_GD_X>;
+        sensitivity = <1>; // 感度調整
+    };
+    rel_y_pd0: central_analog_y {
+        compatible = "zmk,behavior-mouse-move";
+        label = "Central Analog Y";
+        #binding-cells = <0>;
+        axis = <HID_USAGE_GD_Y>;
+        sensitivity = <1>; // 感度調整
+    };
+    // Peripheral側のアナログスティックのX/Y軸をマウス移動にマッピング
+    // pd1はPeripheralからリレーされたアナログスティックに対応
+    rel_x_pd1: peripheral_analog_x {
+        compatible = "zmk,behavior-mouse-move";
+        label = "Peripheral Analog X";
+        #binding-cells = <0>;
+        axis = <HID_USAGE_GD_X>;
+        sensitivity = <1>; // 感度調整
+    };
+    rel_y_pd1: peripheral_analog_y {
+        compatible = "zmk,behavior-mouse-move";
+        label = "Peripheral Analog Y";
+        #binding-cells = <0>;
+        axis = <HID_USAGE_GD_Y>;
+        sensitivity = <1>; // 感度調整
+    };
+
     keymap {
         compatible = "zmk,keymap";
+
+        // アナログスティック用のレイヤー (例: マウスモード)
+        analog_stick_layer {
+            bindings = <
+                // Central側のアナログスティック (pd0)
+                &rel_x_pd0 &rel_y_pd0
+                // Peripheral側のアナログスティック (pd1)
+                &rel_x_pd1 &rel_y_pd1
+            >;
+        };
 
         default_layer {
             display-name = "MAIN";
