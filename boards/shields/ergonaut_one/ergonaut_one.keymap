@@ -26,37 +26,40 @@
         };
     };
 
-    // Central側のアナログスティックのX/Y軸をマウス移動にマッピング
-    // pd0はCentral側の物理アナログスティックに対応
-    rel_x_pd0: central_analog_x {
-        compatible = "zmk,behavior-mouse-move";
-        label = "Central Analog X";
-        #binding-cells = <0>;
-        axis = <HID_USAGE_GD_X>;
-        sensitivity = <1>; // 感度調整
-    };
-    rel_y_pd0: central_analog_y {
-        compatible = "zmk,behavior-mouse-move";
-        label = "Central Analog Y";
-        #binding-cells = <0>;
-        axis = <HID_USAGE_GD_Y>;
-        sensitivity = <1>; // 感度調整
-    };
-    // Peripheral側のアナログスティックのX/Y軸をマウス移動にマッピング
-    // pd1はPeripheralからリレーされたアナログスティックに対応
-    rel_x_pd1: peripheral_analog_x {
-        compatible = "zmk,behavior-mouse-move";
-        label = "Peripheral Analog X";
-        #binding-cells = <0>;
-        axis = <HID_USAGE_GD_X>;
-        sensitivity = <1>; // 感度調整
-    };
-    rel_y_pd1: peripheral_analog_y {
-        compatible = "zmk,behavior-mouse-move";
-        label = "Peripheral Analog Y";
-        #binding-cells = <0>;
-        axis = <HID_USAGE_GD_Y>;
-        sensitivity = <1>; // 感度調整
+    behaviors {
+
+        // Central側のアナログスティックのX/Y軸をマウス移動にマッピング
+        // pd0はCentral側の物理アナログスティックに対応
+        rel_x_pd0: central_analog_x {
+            compatible = "zmk,behavior-mouse-move";
+            label = "Central Analog X";
+            #binding-cells = <0>;
+            axis = <HID_USAGE_GD_X>;
+            sensitivity = <1>; // 感度調整
+        };
+        rel_y_pd0: central_analog_y {
+            compatible = "zmk,behavior-mouse-move";
+            label = "Central Analog Y";
+            #binding-cells = <0>;
+            axis = <HID_USAGE_GD_Y>;
+            sensitivity = <1>; // 感度調整
+        };
+        // Peripheral側のアナログスティックのX/Y軸をマウス移動にマッピング
+        // pd1はPeripheralからリレーされたアナログスティックに対応
+        rel_x_pd1: peripheral_analog_x {
+            compatible = "zmk,behavior-mouse-move";
+            label = "Peripheral Analog X";
+            #binding-cells = <0>;
+            axis = <HID_USAGE_GD_X>;
+            sensitivity = <1>; // 感度調整
+        };
+        rel_y_pd1: peripheral_analog_y {
+            compatible = "zmk,behavior-mouse-move";
+            label = "Peripheral Analog Y";
+            #binding-cells = <0>;
+            axis = <HID_USAGE_GD_Y>;
+            sensitivity = <1>; // 感度調整
+        };
     };
 
     keymap {
