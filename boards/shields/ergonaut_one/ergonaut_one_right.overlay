@@ -74,7 +74,7 @@
 };
 
 &joystick_split {
-	device = <&ain0>;
+	device = <&anin0>;
 };
 
 &default_transform {
