@@ -75,6 +75,12 @@
 
 };
 
+&joystick_listener {
+	status = "okay";
+	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+			 , <&zip_xy_to_scroll_mapper>;
+};
+
 &kscan0 {
     col-gpios
         = <&gpio0 9 GPIO_ACTIVE_HIGH>
