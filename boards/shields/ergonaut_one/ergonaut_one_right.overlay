@@ -73,6 +73,10 @@
 	};
 };
 
+&anin0 {
+	status = "okay";
+};
+
 &joystick_split {
 	device = <&anin0>;
 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
