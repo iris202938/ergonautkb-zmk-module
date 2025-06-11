@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Reinmuth66
       url-base: https://github.com/Reinmuth66/
-    - name: badjeff
-      url-base: https://github.com/badjeff/
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,9 +14,6 @@ manifest:
       revision: main
     - name: zmk-analog-input-driver
       remote: Reinmuth66
-      revision: main
-    - name: zmk-split-peripheral-input-relay
-      remote: badjeff
       revision: main
   self:
     path: config
