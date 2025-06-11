@@ -54,7 +54,7 @@
 	        compatible = "zmk,input-listener";
 	        device = <&anin0>;
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-				 , <&zip_xy_to_scroll_mapper>;
+				 /*, <&zip_xy_to_scroll_mapper>*/;
         };
 
 };
