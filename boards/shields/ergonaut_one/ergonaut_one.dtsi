@@ -61,22 +61,6 @@
 			, <&xiao_d  7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
 	};
-
-	split_inputs {
-		#address-cells = <1>;
-		#size-cells = <0>;
-		
-		joystick_split: joystick_split@0 {
-		    compatible = "zmk,input-split";
-		    reg = <0>;
-		};
-	};
-	
-	joystick_listener: joystick_listener {
-		compatible = "zmk,input-listener";
-		status = "disabled";
-		device = <&joystick_split>;
-	};
 	
 };
 
