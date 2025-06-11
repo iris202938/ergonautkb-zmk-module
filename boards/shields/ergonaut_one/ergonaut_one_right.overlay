@@ -63,7 +63,6 @@
 		joystick_split: joystick_split@0 {
 			compatible = "zmk,input-split";
 			reg = <0>;
-			status = "okay";
 		};
 	};
 	
@@ -76,6 +75,8 @@
 
 &joystick_split {
 	device = <&anin0>;
+	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+			 , <&zip_xy_to_scroll_mapper>;
 };
 
 &default_transform {
