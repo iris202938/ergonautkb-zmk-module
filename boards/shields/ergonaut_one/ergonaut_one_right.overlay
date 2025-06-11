@@ -55,12 +55,17 @@
 				 , <&zip_xy_to_scroll_mapper>;
 	};
 	*/
-};
+	pd0: peripheral_analog_stick {
+		compatible = "zmk,virtual-input"; // 仮想デバイスとして定義
+		// 実際のアナログ入力デバイスはanin0だが、エイリアスとしてpd0を使用
+	};
+		// Peripheral側からCentralへの入力リレー設定
+	input_relay_config_peripheral_analog {
+		compatible = "zmk,split-peripheral-input-relay";
+		device = <&anin0>; // リレーする実際のアナログ入力デバイス
+		relay-channel = <102>; // CentralとPeripheralで一致させるチャネルID
+	};
 
-&joystick_split {
-	device = <&anin0>;
-	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-			 , <&zip_xy_to_scroll_mapper>;
 };
 
 &default_transform {
