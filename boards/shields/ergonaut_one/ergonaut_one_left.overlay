@@ -55,8 +55,8 @@
 	        compatible = "zmk,input-listener";
 	        device = <&anin0>;
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-				 , <&zip_keybind_keys>
-				 /*, <&zip_xy_to_scroll_mapper>*/;
+				 /*, <&zip_keybind_keys>
+				 , <&zip_xy_to_scroll_mapper>*/;
 		/*
 		key-input {
 			layers = <1>;
@@ -66,7 +66,7 @@
 		*/
         };
 
-	zip_keybind_keys: zip_keybind_keys {
+	/*zip_keybind_keys: zip_keybind_keys {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		track_remainders;
@@ -81,7 +81,7 @@
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
-    	};
+    	};*/
 
 };
 
