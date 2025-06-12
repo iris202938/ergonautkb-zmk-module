@@ -58,13 +58,15 @@
 				 /*, <&zip_xy_to_scroll_mapper>*/;
 		key-input {
 			layers = <1>;
-			input-processors = <&zip_keybind_keys>;
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+				l	 , <&zip_keybind_keys>;
 		};
         };
 
 	zip_keybind_keys: zip_keybind_keys {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
+		track_remainders;
 	        bindings = <&kp RIGHT>,
 	                  <&kp LEFT>,
 	                  <&kp UP>,
