@@ -46,7 +46,8 @@
 
 		};
 	};
-	
+
+	/*
 	analog_input_listener {
 		status = "okay";
 		compatible = "zmk,input-listener";
@@ -54,7 +55,13 @@
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
 				 , <&zip_xy_to_scroll_mapper>;
 	};
+	*/
 	
+};
+
+&glidepoint_split {
+    device = <&glidepoint>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 };
 
 &default_transform {
