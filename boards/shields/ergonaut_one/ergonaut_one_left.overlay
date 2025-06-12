@@ -85,6 +85,10 @@
 
 };
 
+&joystick_listener {
+    status = "okay";
+};
+
 &kscan0 {
     col-gpios
         = <&gpio0 9 GPIO_ACTIVE_HIGH>
