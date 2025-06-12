@@ -59,7 +59,7 @@
 		key-input {
 			layers = <1>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-				l	 , <&zip_keybind_keys>;
+					 , <&zip_keybind_keys>;
 		};
         };
 
