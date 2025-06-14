@@ -65,7 +65,7 @@
 		*/
         };
 
-	/*zip_keybind_keys: zip_keybind_keys {
+	zip_keybind_keys: zip_keybind_keys {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		track_remainders;
@@ -80,13 +80,13 @@
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
-    	};*/
+    	};
 
 };
 
 &joystick_listener {
 	status = "okay";
-	// input-processors = <&zip_keybind_keys>;
+	input-processors = <&zip_keybind_keys>;
 };
 
 &kscan0 {
