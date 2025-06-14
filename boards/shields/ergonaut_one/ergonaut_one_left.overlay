@@ -84,7 +84,8 @@
 };
 
 &joystick_listener {
-    status = "okay";
+	status = "okay";
+	input-processors = <&zip_keybind_keys>;
 };
 
 &kscan0 {
