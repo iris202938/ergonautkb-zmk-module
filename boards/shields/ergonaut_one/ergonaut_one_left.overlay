@@ -105,12 +105,10 @@
 	status = "okay";
 
 	layer0 {
-		layers = <0>;
 		input-processors = <&zip_keybind_keys0>;
 	};
 
 	layer1 {
-		layers = <1>;
 		input-processors = <&zip_keybind_keys1>;
 	};
 };
