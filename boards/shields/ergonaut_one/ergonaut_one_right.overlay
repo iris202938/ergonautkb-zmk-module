@@ -28,7 +28,7 @@
 			#invert;
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_X>;
-			report-on-change-only;
+			#report-on-change-only;
 		};
 		x-ch {
 			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
@@ -44,7 +44,7 @@
 			/* enable report mdoe for gamepad axix or knob */
 			/* to only call input_report on quantquantized value is updated */
 			/* NOTE: mouse input does NOT need this */
-			report-on-change-only;
+			#report-on-change-only;
 
 		};
 	};
