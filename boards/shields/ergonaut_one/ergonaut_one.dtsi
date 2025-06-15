@@ -76,12 +76,6 @@
 		compatible = "zmk,input-listener";
 		status = "disabled";
 		device = <&joystick_split>;
-		layer0 {
-			layers = <0>;
-		};
-		layer1 {
-			layers = <1>;
-		};
 	};
 	
 };
