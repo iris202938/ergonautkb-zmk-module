@@ -69,13 +69,13 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		track_remainders;
-	        bindings = <&kp LS(SCRL_DOWN)>,
-	                  <&kp LS(SCRL_UP)>,
-	                  <&kp LC(SCRL_UP)>,
-	                  <&kp LC(SCRL_DOWN)>;
-	        tick = <40>;
+	        bindings = <&kp LSHIFT>,
+	                  <&kp LSHIFT>,
+	                  <&kp LCTRL>,
+	                  <&kp LCTRL>;
+	        tick = <0>;
 	        wait-ms = <0>;
-	        tap-ms = <10>;
+	        tap-ms = <100>;
 	        // mode = <0>
 	        // threshold = <10>
 	        // max_threshold = <200>
@@ -85,7 +85,12 @@
 
 &joystick_listener {
 	status = "okay";
-	input-processors = <&zip_keybind_keys>;
+	input-processors = <&zip_xy_scaler 1 30>
+			 , <&zip_xy_to_scroll_mapper>;
+	scroll {
+		layers = <0>;
+		input-processors = <&zip_keybind_keys>;
+	};
 };
 
 &kscan0 {
