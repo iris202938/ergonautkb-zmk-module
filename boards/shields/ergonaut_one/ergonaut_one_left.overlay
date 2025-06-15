@@ -85,12 +85,12 @@
 
 &joystick_listener {
 	status = "okay";
-	input-processors = <&zip_xy_scaler 1 30>
+	/*input-processors = <&zip_xy_scaler 1 30>
 			 , <&zip_xy_to_scroll_mapper>;
 	scroll {
-		layers = <0>;
+		layers = <0>;*/
 		input-processors = <&zip_keybind_keys>;
-	};
+	//};
 };
 
 &kscan0 {
