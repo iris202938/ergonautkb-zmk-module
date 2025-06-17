@@ -51,6 +51,32 @@
 
 		};
 	};
+	behaviors {
+		right: input_right {
+	            compatible = "zmk,behavior-mod-morph";
+	            #binding-cells = <0>;
+	            bindings = <&kp RIGHT>, <&kp N1>;
+	            mods = <(MOD_LCTRL|MOD_LSFT)>;
+	        };
+		left: input_left {
+	            compatible = "zmk,behavior-mod-morph";
+	            #binding-cells = <0>;
+	            bindings = <&kp LEFT>, <&kp N2>;
+	            mods = <(MOD_LCTRL|MOD_LSFT)>;
+	        };
+	        up: input_up {
+	            compatible = "zmk,behavior-mod-morph";
+	            #binding-cells = <0>;
+	            bindings = <&kp UP>, <&kp N3>;
+	            mods = <(MOD_LCTRL|MOD_LSFT)>;
+	        };
+		down: input_down {
+	            compatible = "zmk,behavior-mod-morph";
+	            #binding-cells = <0>;
+	            bindings = <&kp DOWN>, <&kp N4>;
+	            mods = <(MOD_LCTRL|MOD_LSFT)>;
+	        };
+    	};
 
 	analog_input_listener {
 	        status = "okay";
@@ -69,10 +95,10 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		track_remainders;
-	        bindings = <&kp RIGHT>,
-	                  <&kp LEFT>,
-	                  <&kp UP>,
-	                  <&kp DOWN>;
+	        bindings = <&right>,
+	                  <&left>,
+	                  <&up>,
+	                  <&down>;
 	        tick = <40>;
 	        wait-ms = <0>;
 	        tap-ms = <10>;
