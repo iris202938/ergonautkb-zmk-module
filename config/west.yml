@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Reinmuth66
       url-base: https://github.com/Reinmuth66/
-    - name: te9no
-      url-base: https://github.com/te9no
+    - name: zettaface
+      url-base: https://github.com/zettaface
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,7 +18,7 @@ manifest:
       remote: Reinmuth66
       revision: main
     - name: zmk-input-processor-keybind
-      remote: te9no
+      remote: zettaface
       revision: main
   self:
     path: config
