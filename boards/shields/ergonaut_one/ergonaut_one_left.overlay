@@ -91,7 +91,7 @@
 		};
         };
 
-	zip_keybind_keys: zip_keybind_keys {
+	zip_keybind_keys0: zip_keybind_keys0 {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		track_remainders;
@@ -107,11 +107,34 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     	};
+	zip_keybind_keys1: zip_keybind_keys1 {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+		track_remainders;
+	        bindings = <&kp N1>,
+	                  <&kp N2>,
+	                  <&kp N3>,
+	                  <&kp N4>;
+	        tick = <40>;
+	        wait-ms = <0>;
+	        tap-ms = <10>;
+	        // mode = <0>
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    	};
 };
 
 &joystick_listener {
 	status = "okay";
-	input-processors = <&zip_keybind_keys>;
+	default {
+		layers = <0>;
+		input-processors = <&zip_keybind_keys0>;
+	};
+	layer1 {
+		layers = <1>;
+		input-processors = <&zip_keybind_keys1>;
+	};
 };
 
 &kscan0 {
