@@ -127,13 +127,23 @@
 
 &joystick_listener {
 	status = "okay";
-	default {
-		layers = <0>;
-		input-processors = <&zip_keybind_keys0>;
-	};
 	layer1 {
 		layers = <1>;
 		input-processors = <&zip_keybind_keys1>;
+		process-next;
+	};
+	layer1-prevent {
+		layers = <1>;
+		input-processors = <&zip_xy_scaler 0 1>;
+	};
+	default {
+		layers = <0>;
+		input-processors = <&zip_keybind_keys0>;
+		process-next;
+	};
+	default-prevent {
+		layers = <0>;
+		input-processors = <&zip_xy_scaler 0 1>;
 	};
 };
 
