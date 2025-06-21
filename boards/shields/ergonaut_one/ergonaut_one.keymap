@@ -51,9 +51,9 @@
         raise_layer {
             display-name = "NUM";
             bindings = <
-                &mt LGUI KP_NUM   &kp KP_SLASH      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &kp C_VOL_UP   &kp HOME   &kp PSCRN   &kp PG_UP   &kp SLCK          &kp CLCK
-                &mt LCTRL EQUAL   &kp KP_MULTIPLY   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &kp C_MUTE     &kp LEFT   &kp UP      &kp RIGHT   &kp INS           &mt RCTRL  K_APP
-                &kp LALT          &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp PAUSE_BREAK   &kp RALT
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp 1             &kp 2       &kp 3       &kp 4       &kp 5          &kp 6          &kp 7      &kp 8       &kp 9       &kp 0             &kp LG(C)
+                &trans            &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp LG(V)         &trans
                                                                 &trans      &trans      &trans         &trans         &trans     &trans
             >;
         };
