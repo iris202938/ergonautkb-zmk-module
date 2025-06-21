@@ -9,11 +9,11 @@
 #define ADJ 3
 
 &lt {
-    quick-tap-ms = <150>;
+    quick-tap-ms = <140>;
 };
 
 &mt {
-    quick-tap-ms = <150>;
+    quick-tap-ms = <140>;
 };
 
 / {
