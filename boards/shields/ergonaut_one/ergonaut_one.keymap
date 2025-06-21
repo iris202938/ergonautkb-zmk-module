@@ -41,10 +41,10 @@
         lower_layer {
             display-name = "SYM";
             bindings = <
-                &trans           &kp PG_UP  &kp HOME &kp UP        &kp END    &kp F6      &kp DEL     &msc SCEL_LEFT &mmv MOVE_UP   &msc SCEL_RIGHT   &msc SCEL_UP   &kp X           
-                &trans           &kp PG_DN  &kp LEFT &kp DOWN      &kp RIGHT  &kp F5      &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCEL_DOWN &kp C
-                &trans           &kp V      &mkp MB1 &mkp MB3      &mkp MB2   &kp F6      &kp N       &kp ENTER      &kp N8         &kp N9            &kp N0         &trans
-                                                     &trans        &trans     &trans      &trans      &trans         &trans
+                &trans           &kp PG_UP  &kp HOME  &kp UP        &kp END    &kp F6      &kp DEL     &msc SCEL_LEFT &mmv MOVE_UP   &msc SCEL_RIGHT   &msc SCEL_UP   &kp X           
+                &trans           &kp PG_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &kp F5      &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCEL_DOWN &kp C
+                &trans           &kp V      &mkp LCLK &mkp MCLK     &mkp RCLK  &kp F6      &kp N       &kp ENTER      &kp N8         &kp N9            &kp N0         &trans
+                                                      &trans        &trans     &trans      &trans      &trans         &trans
             >;
         };
 
