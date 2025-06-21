@@ -52,9 +52,9 @@
             display-name = "NUM";
             bindings = <
                 &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
-                &mt LCTRL TILDE   &kp 1             &kp 2       &kp 3       &kp 4       &kp 5          &kp 6          &kp 7      &kp 8       &kp 9       &kp 0             &kp LG(C)
-                &trans            &kp KP_N0         &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_DOT     &kp C_VOL_DN   &kp END    &kp DOWN    &kp PG_DN   &kp LG(V)         &trans
-                                                                &trans      &trans      &trans         &trans         &trans     &trans
+                &mt LCTRL TILDE   &kp 1             &kp 2       &kp 3       &kp 4       &kp 5          &kp 6          &kp 7      &kp 8       &kp 9       &kp 0             &kp LC(C)
+                &trans            &kp INT_RO        &kp BSLH    &kp INT_YEN &kp DEVIDE  &kp MULTIPY    &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
             >;
         };
         adjust_layer {
