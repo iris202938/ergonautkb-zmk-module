@@ -61,9 +61,9 @@
             display-name = "ADJ";
             bindings = <
                 &bootloader   &kp F11        &kp F12        &none          &none          &none          &none          &none          &none          &none          &studio_unlock &bootloader
-                &sys_reset    &none          &none          &none          &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_SEL 4   &bt BT_SEL 3   &bt BT_SEL 2   &bt BT_SEL 1   &bt BT_SEL 0   &bt BT_CLR
-                &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none          &none          &none          &none          &none          &none          &none          &sys_reset
-                                                            &trans         &none          &trans         &none          &trans         &trans
+                &sys_reset    &none          &none          &none          &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)     &kp LS(F6)     &kp LC(F6)     &bt BT_CLR
+                &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &kp K_APP      &kp LS(LEFT)   &none          &none          &none          &none          &none          &sys_reset
+                                                            &trans         &kp LS(LEFT)   &trans         &none          &kp LS(RIGHT)  &kp CAPS
             >;
         };
     };
