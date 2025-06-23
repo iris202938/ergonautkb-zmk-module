@@ -13,6 +13,9 @@
 #define LWR 1
 #define RSE 2
 #define ADJ 3
+#define MOV 4
+#define NUM 5
+#define BLE 6
 
 &lt {
     quick-tap-ms = <150>;
@@ -70,6 +73,33 @@
                 &sys_reset    &out OUT_BLE   &out OUT_USB   &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &bt BT_CLR_ALL
                 &trans        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(HOME)   &sys_reset
                                                             &trans            &kp LS(LEFT)   &trans         &none          &kp LS(RIGHT)  &trans
+            >;
+        };
+        move_layer {
+            display-name = "MOV";
+            bindings = <
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
+            >;
+        };
+        numpad_layer {
+            display-name = "NUM";
+            bindings = <
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
+            >;
+        };
+        bluetooth_layer {
+            display-name = "BLE";
+            bindings = <
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
             >;
         };
     };
