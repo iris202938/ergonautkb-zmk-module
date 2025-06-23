@@ -87,10 +87,10 @@
         numpad_layer {
             display-name = "NUM";
             bindings = <
-                &trans            &kp PG_UP  &kp HOME     &kp UP        &kp END         &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
-                &mt LCTRL F4      &kp PG_DN  &kp LEFT     &kp DOWN      &kp RIGHT       &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
-                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
-                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
+                &trans            &kp PG_UP     &kp HOME      &kp UP        &kp END         &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL F4      &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT       &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &mt LGUI N0       &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)    &kp LA(RIGHT)   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                              &trans        &kp LS(F5)      &kp LS(F6)     &kp KP_ENTER   &kp INT4   &kp RSHFT
             >;
         };
         bluetooth_layer {
