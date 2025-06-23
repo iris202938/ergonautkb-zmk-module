@@ -55,25 +55,25 @@
 		right: input_right {
 	            compatible = "zmk,behavior-mod-morph";
 	            #binding-cells = <0>;
-	            bindings = <&kp RIGHT>, <&kp N1>;
+	            bindings = <&kp RIGHT>, <&kp HOME>;
 	            mods = <(MOD_LCTL|MOD_LSFT)>;
 	        };
 		left: input_left {
 	            compatible = "zmk,behavior-mod-morph";
 	            #binding-cells = <0>;
-	            bindings = <&kp LEFT>, <&kp N2>;
+	            bindings = <&kp LEFT>, <&kp END>;
 	            mods = <(MOD_LCTL|MOD_LSFT)>;
 	        };
 	        up: input_up {
 	            compatible = "zmk,behavior-mod-morph";
 	            #binding-cells = <0>;
-	            bindings = <&kp UP>, <&kp N3>;
+	            bindings = <&kp UP>, <&kp PG_UP>;
 	            mods = <(MOD_LCTL|MOD_LSFT)>;
 	        };
 		down: input_down {
 	            compatible = "zmk,behavior-mod-morph";
 	            #binding-cells = <0>;
-	            bindings = <&kp DOWN>, <&kp N4>;
+	            bindings = <&kp DOWN>, <&kp PG_DOWN>;
 	            mods = <(MOD_LCTL|MOD_LSFT)>;
 	        };
     	};
