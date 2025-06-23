@@ -84,7 +84,7 @@
 	        device = <&anin0>;
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 		scroll {
-			layers = <1>;
+			layers = <2>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>
 					 , <&zip_xy_scaler 1 30>
 					 , <&zip_xy_to_scroll_mapper>;
