@@ -73,7 +73,7 @@
 		down: input_down {
 	            compatible = "zmk,behavior-mod-morph";
 	            #binding-cells = <0>;
-	            bindings = <&kp DOWN>, <&kp PG_DOWN>;
+	            bindings = <&kp DOWN>, <&kp PG_DN>;
 	            mods = <(MOD_LCTL|MOD_LSFT)>;
 	        };
     	};
@@ -114,7 +114,7 @@
 	        bindings = <&kp HOME>,
 	                  <&kp END>,
 	                  <&kp PG_UP>,
-	                  <&kp PG_DOWN>;
+	                  <&kp PG_DN>;
 	        tick = <40>;
 	        wait-ms = <0>;
 	        tap-ms = <10>;
