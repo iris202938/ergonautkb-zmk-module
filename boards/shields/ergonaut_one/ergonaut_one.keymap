@@ -78,10 +78,10 @@
         move_layer {
             display-name = "MOV";
             bindings = <
-                &kp LG(BSPC)      &kp LC(PG_UP)     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP         &kp LC(Y)      &kp HOME     &kp UP        &kp END        &kp PG_UP         &kp LG(N)
-                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN       &kp BSPC       &kp LEFT     &kp DOWN      &kp RIGHT      &kp PG_DN         &kp LC(C)
-                &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)     &kp LC(PG_DN)        &kp LC(Z)      &kp PLUS     &kp LBKT      &kp RBKT       &kp LC(V)         &trans
-                                                                    &kp LC(C)      &kp LC(V)         &mkp MB2             &kp ENTER      &mkp MB1     &trans
+                &kp LG(BSPC)      &kp LC(PG_UP)     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP         &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP         &kp LG(N)
+                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN       &kp BSPC       &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN         &kp LC(C)
+                &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)     &kp LC(PG_DN)        &kp LC(Z)      &kp LS(LC(TAB))  &kp LBKT      &kp RBKT       &kp LC(V)         &trans
+                                                                    &kp LC(C)      &kp LC(V)         &mkp MB2             &kp ENTER      &mkp MB1         &trans
             >;
         };
         numpad_layer {
