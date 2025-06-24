@@ -99,7 +99,7 @@
                 &bootloader  &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3 &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4 &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &bootloader
                 &none        &kp LS(LG(F23))   &none          &none          &none         &trans          &trans         &none         &none         &none         &none         &none
                 &none        &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &sys_reset      &sys_reset     &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
-                                                              &trans         &none         &none           &none          &none         &trans
+                                                              &trans         &none         &bt BT_CLR      &bt BT_CLR     &none         &trans
             >;
         };
     };
