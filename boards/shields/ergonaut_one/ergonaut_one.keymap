@@ -44,7 +44,7 @@
                 &mt LSHFT ESC     &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LGUI          &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
-                                                  &lt NUM LBKT  &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV RBKT
+                                                  &lt NUM LBKT  &kp SPACE         &tog LWR      &lt RSE ENTER &kp INT4         &lt MOV RBKT
             >;
         };
         lower_layer {
@@ -96,10 +96,10 @@
         bluetooth_layer {
             display-name = "BLE";
             bindings = <
-                &bootloader  &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3 &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4 &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &bootloader
-                &none        &kp LS(LG(F23))   &none          &none          &none         &trans          &trans         &none         &none         &none         &none         &none
-                &none        &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &sys_reset      &sys_reset     &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
-                                                              &trans         &none         &bt BT_CLR      &bt BT_CLR     &none         &trans
+                &bootloader    &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &bootloader
+                &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
+                &none          &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &sys_reset      &sys_reset     &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
+                                                                &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
     };
