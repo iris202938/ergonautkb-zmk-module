@@ -52,34 +52,34 @@
 	};
 	behaviors {
 		right: input_right {
-	            compatible = "zmk,behavior-mod-morph";
-	            #binding-cells = <0>;
-	            bindings = <&kp RIGHT>, <&kp END>;
-	            mods = <(MOD_LCTL|MOD_LSFT)>;
-	        };
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp RIGHT>, <&kp END>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
 		left: input_left {
-	            compatible = "zmk,behavior-mod-morph";
-	            #binding-cells = <0>;
-	            bindings = <&kp LEFT>, <&kp HOME>;
-	            mods = <(MOD_LCTL|MOD_LSFT)>;
-	        };
-	        up: input_up {
-	            compatible = "zmk,behavior-mod-morph";
-	            #binding-cells = <0>;
-	            bindings = <&kp UP>, <&kp PG_UP>;
-	            mods = <(MOD_LCTL|MOD_LSFT)>;
-	        };
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp LEFT>, <&kp HOME>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
+		up: input_up {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp UP>, <&kp PG_UP>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+	};
 		down: input_down {
-	            compatible = "zmk,behavior-mod-morph";
-	            #binding-cells = <0>;
-	            bindings = <&kp DOWN>, <&kp PG_DN>;
-	            mods = <(MOD_LCTL|MOD_LSFT)>;
-	        };
-    	};
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp DOWN>, <&kp PG_DN>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
+};
 
 	analog_input_listener {
-	        status = "okay";
-	        compatible = "zmk,input-listener";
+			status = "okay";
+			compatible = "zmk,input-listener";
 	        device = <&anin0>; // 前述のアナログ入力デバイス (anin0) を監視
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // X軸とY軸の入力をスワップ
 
@@ -92,33 +92,33 @@
         };
 
 	zip_keybind_keys0: zip_keybind_keys0 {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
 		track_remainders;
-	        bindings = <&right>,
-	                   <&left>,
-	                   <&up>,
-	                   <&down>;
-	        tick = <40>; // ティック間隔
+			bindings = <&right>,
+						<&left>,
+						<&up>,
+						<&down>;
+	        tick = <80>; // ティック間隔
 	        wait-ms = <0>; // 待機時間
 	        tap-ms = <10>; // タップ時間
-    	};
+	};
 	zip_keybind_keys1: zip_keybind_keys1 {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
 		track_remainders;
-	        bindings = <&kp END>,
-	                   <&kp HOME>,
-	                   <&kp PG_UP>,
-	                   <&kp PG_DN>;
-	        tick = <40>;
-	        wait-ms = <0>;
-	        tap-ms = <10>;
+			bindings = <&kp END>,
+						<&kp HOME>,
+						<&kp PG_UP>,
+						<&kp PG_DN>;
+			tick = <80>;
+			wait-ms = <0>;
+			tap-ms = <10>;
 	        // mode = <0>
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
-    	};
+	};
 };
 
 &joystick_listener {
