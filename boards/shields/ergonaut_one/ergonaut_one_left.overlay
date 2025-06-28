@@ -96,9 +96,9 @@
 			#input-processor-cells = <0>;
 		track_remainders;
 			bindings = <&right>,
-						<&left>,
-						<&up>,
-						<&down>;
+					<&left>,
+					<&up>,
+					<&down>;
 	        tick = <80>; // ティック間隔
 	        wait-ms = <0>; // 待機時間
 	        tap-ms = <10>; // タップ時間
@@ -107,10 +107,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp END>,
-						<&kp HOME>,
-						<&kp PG_UP>,
-						<&kp PG_DN>;
+			bindings = <&kp C_NEXT>,
+					<&kp C_PREV>,
+					<&kp C_VOL_UP>,
+					<&kp C_VOL_DN>;
 			tick = <80>;
 			wait-ms = <0>;
 			tap-ms = <10>;
