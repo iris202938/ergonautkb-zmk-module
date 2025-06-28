@@ -69,7 +69,7 @@
         adjust_layer {
             display-name = "ADJ";
             bindings = <
-                &trans        &kp F11        &kp F12        &none             &none          &none          &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
+                &trans        &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
                 &trans        &out OUT_BLE   &out OUT_USB   &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
                 &kp LGUI      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
                                                             &trans            &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &trans
@@ -96,9 +96,9 @@
         bluetooth_layer {
             display-name = "BLE";
             bindings = <
-                &bootloader    &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &bootloader
+                &soft_off 　   &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &soft_off
                 &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
-                &none          &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &sys_reset      &sys_reset     &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
+                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &sys_reset
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
