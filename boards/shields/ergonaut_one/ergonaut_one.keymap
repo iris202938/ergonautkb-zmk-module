@@ -53,7 +53,7 @@
                 &trans           &kp PG_UP  &kp HOME     &kp UP        &kp END    &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
                 &trans           &kp PG_DN  &kp LEFT     &kp DOWN      &kp RIGHT  &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
                 &trans           &kp LC(V)  &mkp MB1     &mkp MB3      &mkp MB2   &mkp MB2    &kp LC(N)   &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
-                                                         &kp LSHFT     &kp LANG2  &trans      &trans      &kp LS(LC(V))  &kp RSHFT
+                                                         &kp LSHFT     &kp INT5　  &trans      &trans      &kp LS(LC(V))  &kp RSHFT
             >;
         };
 
@@ -69,9 +69,9 @@
         adjust_layer {
             display-name = "ADJ";
             bindings = <
-                &trans        &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-                &trans        &out OUT_BLE   &out OUT_USB   &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
-                &kp LGUI      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
+                &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
+                &mt LCTRL LANG5   &out OUT_BLE   &out OUT_USB   &kp LANG4         &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &kp LGUI          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
                                                             &trans            &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &trans
             >;
         };
