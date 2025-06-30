@@ -94,8 +94,8 @@
             layers = <1>; // レイヤー1がアクティブな場合
             // 既存のX/Yスワップを維持しつつ、速度を1/2にする
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-                             , <&zip_xy_scaler 1 2> // 速度を1/2に設定 (乗数1, 除数2)
-			     , <&zip_xy_filter 44>; // ★追加★ デッドゾーンを88の半分である44に設定
+                             , <&zip_xy_scaler 1 2>; // 速度を1/2に設定 (乗数1, 除数2)
+	//		     , <&zip_xy_filter 44>; // ★追加★ デッドゾーンを88の半分である44に設定
         };
         // ★★★ ここまで追加 ★★★
         };
