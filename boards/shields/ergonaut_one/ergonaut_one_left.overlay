@@ -89,6 +89,14 @@
 					 , <&zip_xy_scaler 1 30> // スケーリング（1/30）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
+		// ★★★ 追加箇所 ★★★
+        layer1_speed_half {
+            layers = <1>; // レイヤー1がアクティブな場合
+            // 既存のX/Yスワップを維持しつつ、速度を1/2にする
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+                             , <&zip_xy_scaler 1 2>; // 速度を1/2に設定 (乗数1, 除数2)
+        };
+        // ★★★ ここまで追加 ★★★
         };
 
 	zip_keybind_keys0: zip_keybind_keys0 {
@@ -141,6 +149,27 @@
 		layers = <0>; // レイヤー0がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
+	    // ★★★ 追加箇所 ★★★
+    // レイヤー1ではキーバインドではなく、マウス移動のスケールが行われるため、
+    // ここで直接input-processorsを設定します。
+    layer1_mouse_speed {
+        layers = <1>;
+        // レイヤー1では、ジョイスティックの動きがマウスイベントとして処理されるようにします。
+        // ここでは、ジョイスティックからの入力をそのままマウス移動にマッピングするため、
+        // zip_keybind_keysは使いません。
+        // anin0のinput-code設定がINPUT_EV_REL/INPUT_REL_X,Yなので、
+        // そのイベントをそのまま引き継ぎます。
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
+        process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
+    };
+    layer1_prevent_keybind {
+        layers = <1>;
+        // レイヤー1ではキーバインドが有効にならないように、joystick_listener側でも無効化
+        // （または、joystick_listenerのlayer1セクション全体を削除しても良いですが、
+        // 明示的に無効化する方が意図が伝わりやすいです）
+        input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
+    };
+    // ★★★ ここまで追加 ★★★
 };
 
 &kscan0 {
