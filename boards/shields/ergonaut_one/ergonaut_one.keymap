@@ -35,9 +35,9 @@
 #define BLE 6
 #define NIC 7
 
-&lt {
-    quick-tap-ms = <150>;
-};
+// &lt {
+//     quick-tap-ms = <150>;
+// };
 
 &mt {
     quick-tap-ms = <150>;
