@@ -1,206 +1,115 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-// #include <dt-bindings/zmk/matrix.h> // この行を削除
-#include <dt-bindings/zmk/hid_usage.h>
-#include <dt-bindings/zmk/hid_usage_pages.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <dt-bindings/zmk/pointing.h>
+
+#define QWE 0
+#define LWR 1
+#define RSE 2
+#define ADJ 3
+#define MOV 4
+#define NUM 5
+#define BLE 6
+#define NIC 7
+
+&lt {
+    quick-tap-ms = <150>;
+};
+
+&mt {
+    quick-tap-ms = <150>;
+};
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri-layer {
+            if-layers = <LWR RSE>;
+            then-layer = <ADJ>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        // 親指シフトで使用するマクロ定義をkeymapノード内に移動
-        // Adv360-Pro-ZMK の macros.dtsi を参考にしています
-        macros {
-            macro_JPPERIOD: macro_JPPERIOD { compatible = "zmk,macro"; label = "JPPERIOD"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PERIOD>; };
-            macro_KA: macro_KA { compatible = "zmk,macro"; label = "KA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_KA>; };
-            macro_TA: macro_TA { compatible = "zmk,macro"; label = "TA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TA>; };
-            macro_KO: macro_KO { compatible = "zmk,macro"; label = "KO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_KO>; };
-            macro_SA: macro_SA { compatible = "zmk,macro"; label = "SA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_SA>; };
-            macro_RA: macro_RA { compatible = "zmk,macro"; label = "RA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_RA>; };
-            macro_TI: macro_TI { compatible = "zmk,macro"; label = "TI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TI>; };
-            macro_KU: macro_KU { compatible = "zmk,macro"; label = "KU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_KU>; };
-            macro_TU: macro_TU { compatible = "zmk,macro"; label = "TU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TU>; };
-            macro_JPCOMMA2: macro_JPCOMMA2 { compatible = "zmk,macro"; label = "JPCOMMA2"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_COMMA>; }; // JP_COMMA
-            macro_JPCOMMA1: macro_JPCOMMA1 { compatible = "zmk,macro"; label = "JPCOMMA1"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_COMMA>; }; // JP_COMMA
-            macro_U: macro_U { compatible = "zmk,macro"; label = "U"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_U>; };
-            macro_SI: macro_SI { compatible = "zmk,macro"; label = "SI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_SI>; };
-            macro_TE: macro_TE { compatible = "zmk,macro"; label = "TE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TE>; };
-            macro_KE: macro_KE { compatible = "zmk,macro"; label = "KE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_KE>; };
-            macro_SE: macro_SE { compatible = "zmk,macro"; label = "SE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_SE>; };
-            macro_HA: macro_HA { compatible = "zmk,macro"; label = "HA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_HA>; };
-            macro_TO: macro_TO { compatible = "zmk,macro"; label = "TO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TO>; };
-            macro_KI: macro_KI { compatible = "zmk,macro"; label = "KI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_KI>; };
-            macro_I: macro_I { compatible = "zmk,macro"; label = "I"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_I>; };
-            macro_NN: macro_NN { compatible = "zmk,macro"; label = "NN"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NN>; };
-            macro_JPBACKSPACE: macro_JPBACKSPACE { compatible = "zmk,macro"; label = "JPBACKSPACE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp BSPC>; };
-            macro_JPTEN: macro_JPTEN { compatible = "zmk,macro"; label = "JPTEN"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_TEN>; };
-            macro_HI: macro_HI { compatible = "zmk,macro"; label = "HI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_HI>; };
-            macro_SU: macro_SU { compatible = "zmk,macro"; label = "SU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_SU>; };
-            macro_HU: macro_HU { compatible = "zmk,macro"; label = "HU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_HU>; };
-            macro_HE: macro_HE { compatible = "zmk,macro"; label = "HE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_HE>; };
-            macro_ME: macro_ME { compatible = "zmk,macro"; label = "ME"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ME>; };
-            macro_SO: macro_SO { compatible = "zmk,macro"; label = "SO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_SO>; };
-            macro_NE: macro_NE { compatible = "zmk,macro"; label = "NE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NE>; };
-            macro_HO: macro_HO { compatible = "zmk,macro"; label = "HO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_HO>; };
-            macro_JPNAKATEN: macro_JPNAKATEN { compatible = "zmk,macro"; label = "JPNAKATEN"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NAKATEN>; };
-            macro_JPEN: macro_JPEN { compatible = "zmk,macro"; label = "JPEN"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp RET>; }; // JP_EN (Enter)
-
-            // コンボ用のマクロ
-            macro_XA: macro_XA { compatible = "zmk,macro"; label = "XA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XA>; };
-            macro_E: macro_E { compatible = "zmk,macro"; label = "E"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_E>; };
-            macro_RI: macro_RI { compatible = "zmk,macro"; label = "RI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_RI>; };
-            macro_XYA: macro_XYA { compatible = "zmk,macro"; label = "XYA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XYA>; };
-            macro_RE: macro_RE { compatible = "zmk,macro"; label = "RE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_RE>; };
-            macro_PA: macro_PA { compatible = "zmk,macro"; label = "PA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PA>; };
-            macro_DI: macro_DI { compatible = "zmk,macro"; label = "DI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_DI>; };
-            macro_GU: macro_GU { compatible = "zmk,macro"; label = "GU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_GU>; };
-            macro_DU: macro_DU { compatible = "zmk,macro"; label = "DU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_DU>; };
-            macro_PI: macro_PI { compatible = "zmk,macro"; label = "PI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PI>; };
-            macro_WO: macro_WO { compatible = "zmk,macro"; label = "WO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_WO>; };
-            macro_A: macro_A { compatible = "zmk,macro"; label = "A"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_A>; };
-            macro_NA: macro_NA { compatible = "zmk,macro"; label = "NA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NA>; };
-            macro_XYU: macro_XYU { compatible = "zmk,macro"; label = "XYU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XYU>; };
-            macro_MO: macro_MO { compatible = "zmk,macro"; label = "MO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MO>; };
-            macro_BA: macro_BA { compatible = "zmk,macro"; label = "BA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BA>; };
-            macro_DO: macro_DO { compatible = "zmk,macro"; label = "DO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_DO>; };
-            macro_GI: macro_GI { compatible = "zmk,macro"; label = "GI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_GI>; };
-            macro_PO: macro_PO { compatible = "zmk,macro"; label = "PO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PO>; };
-            macro_XU: macro_XU { compatible = "zmk,macro"; label = "XU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XU>; };
-            macro_JPMINUS2: macro_JPMINUS2 { compatible = "zmk,macro"; label = "JPMINUS2"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MINUS>; }; // JP_MINUS
-            macro_RO: macro_RO { compatible = "zmk,macro"; label = "RO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_RO>; };
-            macro_YA: macro_YA { compatible = "zmk,macro"; label = "YA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_YA>; };
-            macro_XI: macro_XI { compatible = "zmk,macro"; label = "XI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XI>; };
-            macro_PU: macro_PU { compatible = "zmk,macro"; label = "PU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PU>; };
-            macro_ZO: macro_ZO { compatible = "zmk,macro"; label = "ZO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ZO>; };
-            macro_PE: macro_PE { compatible = "zmk,macro"; label = "PE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_PE>; };
-            macro_BO: macro_BO { compatible = "zmk,macro"; label = "BO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BO>; };
-            macro_GA: macro_GA { compatible = "zmk,macro"; label = "GA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_GA>; };
-            macro_DA: macro_DA { compatible = "zmk,macro"; label = "DA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_DA>; };
-            macro_GO: macro_GO { compatible = "zmk,macro"; label = "GO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_GO>; };
-            macro_ZA: macro_ZA { compatible = "zmk,macro"; label = "ZA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ZA>; };
-            macro_YO: macro_YO { compatible = "zmk,macro"; label = "YO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_YO>; };
-            macro_NI: macro_NI { compatible = "zmk,macro"; label = "NI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NI>; };
-            macro_RU: macro_RU { compatible = "zmk,macro"; label = "RU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_RU>; };
-            macro_MA: macro_MA { compatible = "zmk,macro"; label = "MA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MA>; };
-            macro_XE: macro_XE { compatible = "zmk,macro"; label = "XE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XE>; };
-            macro_VU: macro_VU { compatible = "zmk,macro"; label = "VU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_VU>; };
-            macro_JI: macro_JI { compatible = "zmk,macro"; label = "JI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_JI>; };
-            macro_DE: macro_DE { compatible = "zmk,macro"; label = "DE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_DE>; };
-            macro_GE: macro_GE { compatible = "zmk,macro"; label = "GE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_GE>; };
-            macro_ZE: macro_ZE { compatible = "zmk,macro"; label = "ZE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ZE>; };
-            // 以下の行を修正しました
-            combo_MI { timeout-ms = <50>; key-positions = <18 40>; layers = <4>; bindings = <&macro_MI>; };
-            combo_O { timeout-ms = <50>; key-positions = <19 40>; layers = <4>; bindings = <&macro_O>; };
-            combo_NO { timeout-ms = <50>; key-positions = <20 40>; layers = <4>; bindings = <&macro_NO>; };
-            combo_XYO { timeout-ms = <50>; key-positions = <21 40>; layers = <4>; bindings = <&macro_XYO>; };
-            combo_XTU { timeout-ms = <50>; key-positions = <22 40>; layers = <4>; bindings = <&macro_XTU>; };
-            combo_BI { timeout-ms = <50>; key-positions = <26 40>; layers = <4>; bindings = <&macro_BI>; };
-            combo_ZU { timeout-ms = <50>; key-positions = <27 40>; layers = <4>; bindings = <&macro_ZU>; };
-            combo_BU { timeout-ms = <50>; key-positions = <28 40>; layers = <4>; bindings = <&macro_BU>; };
-            combo_BE { timeout-ms = <50>; key-positions = <29 40>; layers = <4>; bindings = <&macro_BE>; };
-            combo_NU { timeout-ms = <50>; key-positions = <30 40>; layers = <4>; bindings = <&macro_NU>; };
-            combo_YU { timeout-ms = <50>; key-positions = <31 40>; layers = <4>; bindings = <&macro_YU>; };
-            combo_MU { timeout-ms = <50>; key-positions = <32 40>; layers = <4>; bindings = <&macro_MU>; };
-            combo_WA { timeout-ms = <50>; key-positions = <33 40>; layers = <4>; bindings = <&macro_WA>; };
-            combo_XO { timeout-ms = <50>; key-positions = <34 40>; layers = <4>; bindings = <&macro_XO>; };
-        };
-
         default_layer {
+            display-name = "QWER";
             bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp MINUS       &kp EQUAL       &kp LBRC        &kp RBRC
-                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT         &kp BSLH        &kp GRAVE       &kp CAPS
-                &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp LSHIFT      &kp RSHIFT      &kp LCTRL       &kp RCTRL
-                &kp LALT        &kp LGUI        &kp TAB         &kp ESC         &kp SPACE       &kp RET         &kp BSPC        &kp DEL         &kp UP          &kp DOWN        &kp LEFT        &kp RIGHT       &kp PG_UP       &kp PG_DN
-                &trans          &trans          &trans          &trans          &trans          &trans          &mo 4           &trans          &trans          &trans          &trans          &trans          &trans          &trans
+                &mt LSHFT ESC     &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LGUI          &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
+                                                  &lt NUM LBKT  &kp SPACE         &mo LWR       &lt RSE ENTER &kp LANG1        &lt MOV RBKT
+            >;
+        };
+        lower_layer {
+            display-name = "LWR";
+            bindings = <
+                &trans           &kp PG_UP  &kp HOME     &kp UP        &kp END    &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
+                &trans           &kp PG_DN  &kp LEFT     &kp DOWN      &kp RIGHT  &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
+                &trans           &kp LC(V)  &mkp MB1     &mkp MB3      &mkp MB2   &mkp MB2    &kp LC(N)   &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
+                                                         &kp LSHFT     &kp LANG2  &trans      &trans      &kp LS(LC(V))  &kp RSHFT
             >;
         };
 
-        // 親指シフトレイヤー (レイヤー4)
-        nicola_layer {
-            display-name = "NICOLA";
+        raise_layer {
+            display-name = "RSE";
             bindings = <
-                // Row 0 (Keys 0-13)
-                &trans          &macro_JPPERIOD &macro_KA       &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA2 &macro_JPCOMMA1 &trans          &trans
-                // Row 1 (Keys 14-27)
-                &trans          &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &macro_JPBACKSPACE &trans          &trans
-                // Row 2 (Keys 28-41)
-                &trans          &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &macro_JPEN    &trans          &trans
-                // Row 3 (Keys 42-55) - Peripheral keys, set to transparent
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                // Row 4 (Keys 56-69) - Thumb keys / bottom row, set to transparent
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7     &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7     &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS   &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp INT4   &kp RSHFT
             >;
         };
-    };
-
-    // 親指シフトコンボ定義 (keymapノードの外に維持)
-    combos {
-        compatible = "zmk,combos";
-
-        combo_XA { timeout-ms = <50>; key-positions = <1 37>; layers = <4>; bindings = <&macro_XA>; };
-        combo_E { timeout-ms = <50>; key-positions = <2 37>; layers = <4>; bindings = <&macro_E>; };
-        combo_RI { timeout-ms = <50>; key-positions = <3 37>; layers = <4>; bindings = <&macro_RI>; };
-        combo_XYA { timeout-ms = <50>; key-positions = <4 37>; layers = <4>; bindings = <&macro_XYA>; };
-        combo_RE { timeout-ms = <50>; key-positions = <5 37>; layers = <4>; bindings = <&macro_RE>; };
-        combo_PA { timeout-ms = <50>; key-positions = <6 37>; layers = <4>; bindings = <&macro_PA>; };
-        combo_DI { timeout-ms = <50>; key-positions = <7 37>; layers = <4>; bindings = <&macro_DI>; };
-        combo_GU { timeout-ms = <50>; key-positions = <8 37>; layers = <4>; bindings = <&macro_GU>; };
-        combo_DU { timeout-ms = <50>; key-positions = <9 37>; layers = <4>; bindings = <&macro_DU>; };
-        combo_PI { timeout-ms = <50>; key-positions = <10 37>; layers = <4>; bindings = <&macro_PI>; };
-        combo_WO { timeout-ms = <50>; key-positions = <13 37>; layers = <4>; bindings = <&macro_WO>; };
-        combo_A { timeout-ms = <50>; key-positions = <14 37>; layers = <4>; bindings = <&macro_A>; };
-        combo_NA { timeout-ms = <50>; key-positions = <15 37>; layers = <4>; bindings = <&macro_NA>; };
-        combo_XYU { timeout-ms = <50>; key-positions = <16 37>; layers = <4>; bindings = <&macro_XYU>; };
-        combo_MO { timeout-ms = <50>; key-positions = <17 37>; layers = <4>; bindings = <&macro_MO>; };
-        combo_BA { timeout-ms = <50>; key-positions = <18 37>; layers = <4>; bindings = <&macro_BA>; };
-        combo_DO { timeout-ms = <50>; key-positions = <19 37>; layers = <4>; bindings = <&macro_DO>; };
-        combo_GI { timeout-ms = <50>; key-positions = <20 37>; layers = <4>; bindings = <&macro_GI>; };
-        combo_PO { timeout-ms = <50>; key-positions = <21 37>; layers = <4>; bindings = <&macro_PO>; };
-        combo_XU { timeout-ms = <50>; key-positions = <25 37>; layers = <4>; bindings = <&macro_XU>; };
-        combo_JPMINUS2 { timeout-ms = <50>; key-positions = <26 37>; layers = <4>; bindings = <&macro_JPMINUS2>; };
-        combo_RO { timeout-ms = <50>; key-positions = <27 37>; layers = <4>; bindings = <&macro_RO>; };
-        combo_YA { timeout-ms = <50>; key-positions = <28 37>; layers = <4>; bindings = <&macro_YA>; };
-        combo_XI { timeout-ms = <50>; key-positions = <29 37>; layers = <4>; bindings = <&macro_XI>; };
-        combo_PU { timeout-ms = <50>; key-positions = <30 37>; layers = <4>; bindings = <&macro_PU>; };
-        combo_ZO { timeout-ms = <50>; key-positions = <31 37>; layers = <4>; bindings = <&macro_ZO>; };
-        combo_PE { timeout-ms = <50>; key-positions = <32 37>; layers = <4>; bindings = <&macro_PE>; };
-        combo_BO { timeout-ms = <50>; key-positions = <33 37>; layers = <4>; bindings = <&macro_BO>; };
-
-        combo_GA { timeout-ms = <50>; key-positions = <2 40>; layers = <4>; bindings = <&macro_GA>; };
-        combo_DA { timeout-ms = <50>; key-positions = <3 40>; layers = <4>; bindings = <&macro_DA>; };
-        combo_GO { timeout-ms = <50>; key-positions = <4 40>; layers = <4>; bindings = <&macro_GO>; };
-        combo_ZA { timeout-ms = <50>; key-positions = <5 40>; layers = <4>; bindings = <&macro_ZA>; };
-        combo_YO { timeout-ms = <50>; key-positions = <6 40>; layers = <4>; bindings = <&macro_YO>; };
-        combo_NI { timeout-ms = <50>; key-positions = <7 40>; layers = <4>; bindings = <&macro_NI>; };
-        combo_RU { timeout-ms = <50>; key-positions = <8 40>; layers = <4>; bindings = <&macro_RU>; };
-        combo_MA { timeout-ms = <50>; key-positions = <9 40>; layers = <4>; bindings = <&macro_MA>; };
-        combo_XE { timeout-ms = <50>; key-positions = <10 40>; layers = <4>; bindings = <&macro_XE>; };
-        combo_VU { timeout-ms = <50>; key-positions = <13 40>; layers = <4>; bindings = <&macro_VU>; };
-        combo_JI { timeout-ms = <50>; key-positions = <14 40>; layers = <4>; bindings = <&macro_JI>; };
-        combo_DE { timeout-ms = <50>; key-positions = <15 40>; layers = <4>; bindings = <&macro_DE>; };
-        combo_GE { timeout-ms = <50>; key-positions = <16 40>; layers = <4>; bindings = <&macro_GE>; };
-        combo_ZE { timeout-ms = <50>; key-positions = <17 40>; layers = <4>; bindings = <&macro_ZE>; };
-        combo_MI { timeout-ms = <50>; key-positions = <18 40>; layers = <4>; bindings = <&macro_MI>; };
-        combo_O { timeout-ms = <50>; key-positions = <19 40>; layers = <4>; bindings = <&macro_O>; };
-        combo_NO { timeout-ms = <50>; key-positions = <20 40>; layers = <4>; bindings = <&macro_NO>; };
-        combo_XYO { timeout-ms = <50>; key-positions = <21 40>; layers = <4>; bindings = <&macro_XYO>; };
-        combo_XTU { timeout-ms = <50>; key-positions = <22 40>; layers = <4>; bindings = <&macro_XTU>; };
-        combo_BI { timeout-ms = <50>; key-positions = <26 40>; layers = <4>; bindings = <&macro_BI>; };
-        combo_ZU { timeout-ms = <50>; key-positions = <27 40>; layers = <4>; bindings = <&macro_ZU>; };
-        combo_BU { timeout-ms = <50>; key-positions = <28 40>; layers = <4>; bindings = <&macro_BU>; };
-        combo_BE { timeout-ms = <50>; key-positions = <29 40>; layers = <4>; bindings = <&macro_BE>; };
-        combo_NU { timeout-ms = <50>; key-positions = <30 40>; layers = <4>; bindings = <&macro_NU>; };
-        combo_YU { timeout-ms = <50>; key-positions = <31 40>; layers = <4>; bindings = <&macro_YU>; };
-        combo_MU { timeout-ms = <50>; key-positions = <32 40>; layers = <4>; bindings = <&macro_MU>; };
-        combo_WA { timeout-ms = <50>; key-positions = <33 40>; layers = <4>; bindings = <&macro_WA>; };
-        combo_XO { timeout-ms = <50>; key-positions = <34 40>; layers = <4>; bindings = <&macro_XO>; };
-    };
+        adjust_layer {
+            display-name = "ADJ";
+            bindings = <
+                &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
+                &mt LCTRL LANG5   &out OUT_BLE   &out OUT_USB   &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &kp LGUI          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
+                                                                &trans            &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &trans
+            >;
+        };
+        move_layer {
+            display-name = "MOV";
+            bindings = <
+                &kp LG(BSPC)      &kp LC(PG_UP)     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP       &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP    &kp ESC
+                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN     &lt BLE BSPC   &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB2
+                &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)     &kp LC(PG_DN)      &kp LC(Z)      &kp LS(LC(TAB))  &kp LG(LBKT)  &kp LG(RBKT)   &kp LC(TAB)  &trans
+                                                                    &kp LC(C)      &kp LC(V)         &mkp MB2           &kp ENTER      &mkp MB1         &trans
+            >;
+        };
+        numpad_layer {
+            display-name = "NUM";
+            bindings = <
+                &trans            &kp PG_UP     &kp HOME      &kp UP        &kp END         &kp CARET         &kp KP_SLASH    &kp KP_N7   &kp KP_N8   &kp KP_N9     &kp KP_N0         &kp KP_NLCK
+                &mt LCTRL F4      &kp PG_DN     &kp LEFT      &kp DOWN      &kp RIGHT       &lt BLE DEL       &kp BSPC        &kp KP_N4   &kp KP_N5   &kp KP_N6     &kp KP_MINUS      &kp KP_DOT
+                &mt LGUI N0       &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)    &kp LA(RIGHT)   &kp EQUAL         &kp KP_MULTIPLY &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_PLUS       &trans
+                                                              &trans        &kp LS(F5)      &kp LS(F6)        &kp KP_ENTER    &kp UNDER   &kp SPACE
+            >;
+        };
+        bluetooth_layer {
+            display-name = "BLE";
+            bindings = <
+                &soft_off      &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &soft_off
+                &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
+                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &sys_reset
+                                                                &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
+            >;
+        };
+         nicola_layer {
+            display-name = "NIC";
+            bindings = <
+                &trans        &macro_JPPERIOD &macro_KA       &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA2  &macro_JPCOMMA1
+                &trans        &macro_U        &macro_SI       &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &macro_JPBACKSPACE
+                &trans        &macro_JPTEN    &macro_HI       &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &macro_JPEN
+                                                              &trans         &none          &trans         &none          &trans         &trans
+            >;
+        };
 };
