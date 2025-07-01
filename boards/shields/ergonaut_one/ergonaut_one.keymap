@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/matrix.h>
+// #include <dt-bindings/zmk/matrix.h> // この行を削除
 #include <dt-bindings/zmk/hid_usage.h>
 #include <dt-bindings/zmk/hid_usage_pages.h>
 
@@ -187,19 +187,19 @@
         combo_DE { timeout-ms = <50>; key-positions = <15 40>; layers = <4>; bindings = <&macro_DE>; };
         combo_GE { timeout-ms = <50>; key-positions = <16 40>; layers = <4>; bindings = <&macro_GE>; };
         combo_ZE { timeout-ms = <50>; key-positions = <17 40>; layers = <4>; bindings = <&macro_ZE>; };
-        combo_MI: macro_MI { compatible = "zmk,macro"; label = "MI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MI>; };
-        combo_O: macro_O { compatible = "zmk,macro"; label = "O"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_O>; };
-        combo_NO: macro_NO { compatible = "zmk,macro"; label = "NO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NO>; };
-        combo_XYO: macro_XYO { compatible = "zmk,macro"; label = "XYO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XYO>; };
-        combo_XTU: macro_XTU { compatible = "zmk,macro"; label = "XTU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XTU>; };
-        combo_BI: macro_BI { compatible = "zmk,macro"; label = "BI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BI>; };
-        combo_ZU: macro_ZU { compatible = "zmk,macro"; label = "ZU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ZU>; };
-        combo_BU: macro_BU { compatible = "zmk,macro"; label = "BU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BU>; };
-        combo_BE: macro_BE { compatible = "zmk,macro"; label = "BE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BE>; };
-        combo_NU: macro_NU { compatible = "zmk,macro"; label = "NU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NU>; };
-        combo_YU: macro_YU { compatible = "zmk,macro"; label = "YU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_YU>; };
-        combo_MU: macro_MU { compatible = "zmk,macro"; label = "MU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MU>; };
-        combo_WA: macro_WA { compatible = "zmk,macro"; label = "WA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_WA>; };
-        combo_XO: macro_XO { compatible = "zmk,macro"; label = "XO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XO>; };
+        combo_MI { compatible = "zmk,macro"; label = "MI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MI>; };
+        combo_O { compatible = "zmk,macro"; label = "O"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_O>; };
+        combo_NO { compatible = "zmk,macro"; label = "NO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NO>; };
+        combo_XYO { compatible = "zmk,macro"; label = "XYO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XYO>; };
+        combo_XTU { compatible = "zmk,macro"; label = "XTU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XTU>; };
+        combo_BI { compatible = "zmk,macro"; label = "BI"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BI>; };
+        combo_ZU { compatible = "zmk,macro"; label = "ZU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_ZU>; };
+        combo_BU { compatible = "zmk,macro"; label = "BU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BU>; };
+        combo_BE { compatible = "zmk,macro"; label = "BE"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_BE>; };
+        combo_NU { compatible = "zmk,macro"; label = "NU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_NU>; };
+        combo_YU { compatible = "zmk,macro"; label = "YU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_YU>; };
+        combo_MU { compatible = "zmk,macro"; label = "MU"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_MU>; };
+        combo_WA { compatible = "zmk,macro"; label = "WA"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_WA>; };
+        combo_XO { compatible = "zmk,macro"; label = "XO"; wait-ms = <0>; tap-ms = <0>; bindings = <&kp JP_XO>; };
     };
 };
