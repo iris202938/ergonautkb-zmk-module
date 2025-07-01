@@ -44,7 +44,7 @@
                 &mt LSHFT ESC     &kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LGUI          &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
-                                                  &lt NUM LBKT  &kp SPACE         &mo LWR       &lt RSE ENTER &kp LANG1        &lt MOV RBKT
+                                                  &lt NUM LBKT  &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV RBKT
             >;
         };
         lower_layer {
@@ -53,7 +53,7 @@
                 &trans           &kp PG_UP  &kp HOME     &kp UP        &kp END    &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
                 &trans           &kp PG_DN  &kp LEFT     &kp DOWN      &kp RIGHT  &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
                 &trans           &kp LC(V)  &mkp MB1     &mkp MB3      &mkp MB2   &mkp MB2    &kp LC(N)   &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
-                                                         &kp LSHFT     &kp LANG2  &trans      &trans      &kp LS(LC(V))  &kp RSHFT
+                                                         &kp LSHFT     &kp INT5   &trans      &trans      &kp LS(LC(V))  &kp RSHFT
             >;
         };
 
