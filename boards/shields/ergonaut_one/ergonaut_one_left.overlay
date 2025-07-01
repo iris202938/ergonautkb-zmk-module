@@ -5,6 +5,7 @@
  */
 
 #include "ergonaut_one.dtsi"
+#include "combos.keymap"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
