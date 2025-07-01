@@ -39,9 +39,9 @@
 //     quick-tap-ms = <150>;
 // };
 
-&mt {
-    quick-tap-ms = <150>;
-};
+// &mt {
+//     quick-tap-ms = <150>;
+// };
 
 / {
     conditional_layers {
