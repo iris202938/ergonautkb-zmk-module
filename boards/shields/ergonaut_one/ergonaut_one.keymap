@@ -43,15 +43,15 @@
 //     quick-tap-ms = <150>;
 // };
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri-layer {
-            if-layers = <LWR RSE>;
-            then-layer = <ADJ>;
-        };
-    };
+// / {
+//     conditional_layers {
+//         compatible = "zmk,conditional-layers";
+// 
+//         tri-layer {
+//             if-layers = <LWR RSE>;
+//             then-layer = <ADJ>;
+//         };
+//     };
 
     keymap {
         compatible = "zmk,keymap";
