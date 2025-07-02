@@ -2,7 +2,7 @@ macro_LCSP4: macro_LCSP4{
 compatible = "zmk,behavior-macro";
 label = "macro_LCSP4";
 #binding-cells = <0>;
-bindings = <&kp LC(SPACE)>, <&tog 4>;
+bindings = <&kp LC(SPACE)>, <&tog 7>;
 };
 macro_JPN1: macro_JPN1{
 compatible = "zmk,behavior-macro";
