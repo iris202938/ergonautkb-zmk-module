@@ -86,7 +86,7 @@
 		scroll {
 			layers = <2>; // レイヤー2がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)> // X/YスワップとY反転
-					 , <&zip_xy_scaler 1 20> // スケーリング（1/20）
+					 , <&zip_xy_scaler 1 10> // スケーリング（1/10）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		// ★★★ 追加箇所 ★★★
@@ -116,8 +116,8 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C_NEXT>,
-					<&kp C_PREV>,
+			bindings = <&kp C_FF>,
+					<&kp C_RW>,
 					<&kp C_VOL_UP>,
 					<&kp C_VOL_DN>;
 			tick = <80>;
