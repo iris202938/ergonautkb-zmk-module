@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/Reinmuth66/
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: refil
+      url-base: https://github.com/refil
   projects:
     - name: zmk
       remote: zmkfirmware
