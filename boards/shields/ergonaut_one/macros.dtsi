@@ -4,66 +4,66 @@ label = "macro_LCSP4";
 #binding-cells = <0>;
 bindings = <&kp LC(SPACE)>, <&tog 7>;
 };
-macro_JPN1: macro_JPN1{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN1";
-#binding-cells = <0>;
-bindings = <&kp N1>;
-};
-macro_JPN2: macro_JPN2{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN2";
-#binding-cells = <0>;
-bindings = <&kp N2>;
-};
-macro_JPN3: macro_JPN3{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN3";
-#binding-cells = <0>;
-bindings = <&kp N3>;
-};
-macro_JPN4: macro_JPN4{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN4";
-#binding-cells = <0>;
-bindings = <&kp N4>;
-};
-macro_JPN5: macro_JPN5{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN5";
-#binding-cells = <0>;
-bindings = <&kp N5>;
-};
-macro_JPN6: macro_JPN6{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN6";
-#binding-cells = <0>;
-bindings = <&kp N6>;
-};
-macro_JPN7: macro_JPN7{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN7";
-#binding-cells = <0>;
-bindings = <&kp N7>;
-};
-macro_JPN8: macro_JPN8{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN8";
-#binding-cells = <0>;
-bindings = <&kp N8>;
-};
-macro_JPN9: macro_JPN9{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN9";
-#binding-cells = <0>;
-bindings = <&kp N9>;
-};
-macro_JPN0: macro_JPN0{
-compatible = "zmk,behavior-macro";
-label = "macro_JPN0";
-#binding-cells = <0>;
-bindings = <&kp N0>;
-};
+// macro_JPN1: macro_JPN1{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN1";
+// #binding-cells = <0>;
+// bindings = <&kp N1>;
+// };
+// macro_JPN2: macro_JPN2{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN2";
+// #binding-cells = <0>;
+// bindings = <&kp N2>;
+// };
+// macro_JPN3: macro_JPN3{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN3";
+// #binding-cells = <0>;
+// bindings = <&kp N3>;
+// };
+// macro_JPN4: macro_JPN4{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN4";
+// #binding-cells = <0>;
+// bindings = <&kp N4>;
+// };
+// macro_JPN5: macro_JPN5{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN5";
+// #binding-cells = <0>;
+// bindings = <&kp N5>;
+// };
+// macro_JPN6: macro_JPN6{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN6";
+// #binding-cells = <0>;
+// bindings = <&kp N6>;
+// };
+// macro_JPN7: macro_JPN7{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN7";
+// #binding-cells = <0>;
+// bindings = <&kp N7>;
+// };
+// macro_JPN8: macro_JPN8{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN8";
+// #binding-cells = <0>;
+// bindings = <&kp N8>;
+// };
+// macro_JPN9: macro_JPN9{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN9";
+// #binding-cells = <0>;
+// bindings = <&kp N9>;
+// };
+// macro_JPN0: macro_JPN0{
+// compatible = "zmk,behavior-macro";
+// label = "macro_JPN0";
+// #binding-cells = <0>;
+// bindings = <&kp N0>;
+// };
 macro_JPMINUS1: macro_JPMINUS1{
 compatible = "zmk,behavior-macro";
 label = "macro_JPMINUS1";
