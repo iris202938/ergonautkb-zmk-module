@@ -54,7 +54,7 @@
     // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
     macro_LANG1: macro_LANG1 {
         compatible = "zmk,behavior-macro";
-        label = "macro_LANG1;
+        label = "macro_LANG1";
         #binding-cells = <0>;
         bindings = <&kp LANG1>, <&tog 7>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
