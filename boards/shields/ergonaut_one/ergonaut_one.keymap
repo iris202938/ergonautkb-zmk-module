@@ -50,33 +50,35 @@ combo_U {
 };
 
 / {
-macro_LCSP4: macro_LCSP4{
-compatible = "zmk,behavior-macro";
-label = "macro_LCSP4";
-#binding-cells = <0>;
-bindings = <&kp LC(SPACE)>, <&tog 7>;
-};
-macro_U: macro_U{
-compatible = "zmk,behavior-macro";
-label = "macro_U";
-#binding-cells = <0>;
-bindings = <&kp U>;
-};
-macro_WO: macro_WO{
-compatible = "zmk,behavior-macro";
-label = "macro_WO";
-#binding-cells = <0>;
-bindings = <&kp W>, <&kp O>;
-};
-macro_VU: macro_VU{
-compatible = "zmk,behavior-macro";
-label = "macro_VU";
-#binding-cells = <0>;
-bindings = <&kp V>, <&kp U>;
-};
-};
+    macro_LCSP4: macro_LCSP4 {
+        compatible = "zmk,behavior-macro";
+        label = "macro_LCSP4";
+        #binding-cells = <0>;
+        bindings = <&kp LC(SPACE)>, <&tog 7>;
+    }; // ここにセミコロンを追加
 
-/ {
+    macro_U: macro_U {
+        compatible = "zmk,behavior-macro";
+        label = "macro_U";
+        #binding-cells = <0>;
+        bindings = <&kp U>;
+    }; // ここにセミコロンを追加
+
+    macro_WO: macro_WO {
+        compatible = "zmk,behavior-macro";
+        label = "macro_WO";
+        #binding-cells = <0>;
+        bindings = <&kp W>, <&kp O>;
+    }; // ここにセミコロンを追加
+
+    macro_VU: macro_VU {
+        compatible = "zmk,behavior-macro";
+        label = "macro_VU";
+        #binding-cells = <0>;
+        bindings = <&kp V>, <&kp U>;
+    }; // ここにセミコロンを追加
+
+    // 新しいルートノード `/ {` は不要です。既存のルートノード内で定義を続けます。
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -84,7 +86,8 @@ bindings = <&kp V>, <&kp U>;
             if-layers = <LWR RSE>;
             then-layer = <ADJ>;
         };
-    };
+    }; // conditional_layers の閉じ括弧の後にセミコロンを追加
+}; // / ルートノードの閉じ括弧
 
     keymap {
         compatible = "zmk,keymap";
