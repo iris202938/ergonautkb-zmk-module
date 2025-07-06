@@ -12,13 +12,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define QWE 0
-#define LWR 1
-#define RSE 2
-#define ADJ 3
-#define MOV 4
-#define NUM 5
-#define BLE 6
-#define NIC 7
+#define NIC 1
+#define LWR 2
+#define RSE 3
+#define ADJ 4
+#define MOV 5
+#define NUM 6
+#define BLE 7
+
 
 &lt {
     quick-tap-ms = <150>;
@@ -34,19 +35,19 @@
         combo_WO {
             timeout-ms = <50>;
             key-positions = <13 37>;
-            layers = <7>;
+            layers = <1>;
             bindings = <&macro_WO>;
         };
         combo_VU {
             timeout-ms = <50>;
             key-positions = <13 40>;
-            layers = <7>;
+            layers = <1>;
             bindings = <&macro_VU>;
         };
         combo_U {
             timeout-ms = <50>;
             key-positions = <13 41>;
-            layers = <7>;
+            layers = <1>;
             bindings = <&macro_U>;
         };
     }; // combos ノードの閉じ括弧の後にセミコロンが必要
@@ -56,7 +57,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_LANG1";
         #binding-cells = <0>;
-        bindings = <&kp LANG1>, <&to 7>;
+        bindings = <&kp LANG1>, <&to 1>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
 
     macro_LANG2: macro_LANG2 {
@@ -106,6 +107,15 @@
                 &mt LCTRL TAB     &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LGUI          &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
                                                   &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
+            >;
+        };
+        nicola_layer {
+            display-name = "NIC";
+            bindings = <
+                &trans        &none           &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
+                &trans        &macro_U        &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
+                &trans        &none           &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
+                                                              &trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
             >;
         };
         lower_layer {
@@ -161,15 +171,6 @@
                 &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
                 &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &sys_reset
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
-            >;
-        };
-        nicola_layer {
-            display-name = "NIC";
-            bindings = <
-                &trans        &none           &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
-                &trans        &macro_U        &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
-                &trans        &none           &none           &none          &none          &none          &none          &none          &none          &none          &none            &none
-                                                              &trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
             >;
         };
     }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
