@@ -84,14 +84,14 @@
 	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // X軸とY軸の入力をスワップ
 
 		scroll {
-			layers = <3>; // レイヤー3がアクティブな場合
+			layers = <4>; // レイヤー4がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)> // X/YスワップとY反転
 					 , <&zip_xy_scaler 1 8> // スケーリング（1/8）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		// ★★★ 追加箇所 ★★★
         layer1_speed_half {
-            layers = <2>; // レイヤー2がアクティブな場合
+            layers = <3>; // レイヤー3がアクティブな場合
             // 既存のX/Yスワップを維持しつつ、速度を1/3にする
             input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
                              , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
@@ -133,12 +133,12 @@
 &joystick_listener {
 	status = "okay";
 	layer3 {
-		layers = <4>; // レイヤー4がアクティブな場合
+		layers = <5>; // レイヤー5がアクティブな場合
 		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	layer3-prevent {
-		layers = <4>; // レイヤー4がアクティブな場合
+		layers = <5>; // レイヤー5がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	default {
@@ -154,8 +154,8 @@
     // レイヤー1ではキーバインドではなく、マウス移動のスケールが行われるため、
     // ここで直接input-processorsを設定します。
     layer1_mouse_speed {
-        layers = <2>;
-        // レイヤー2では、ジョイスティックの動きがマウスイベントとして処理されるようにします。
+        layers = <3>;
+        // レイヤー3では、ジョイスティックの動きがマウスイベントとして処理されるようにします。
         // ここでは、ジョイスティックからの入力をそのままマウス移動にマッピングするため、
         // zip_keybind_keysは使いません。
         // anin0のinput-code設定がINPUT_EV_REL/INPUT_REL_X,Yなので、
@@ -164,8 +164,8 @@
         process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
     };
     layer1_prevent_keybind {
-        layers = <2>;
-        // レイヤー2ではキーバインドが有効にならないように、joystick_listener側でも無効化
+        layers = <3>;
+        // レイヤー3ではキーバインドが有効にならないように、joystick_listener側でも無効化
         // （または、joystick_listenerのlayer2セクション全体を削除しても良いですが、
         // 明示的に無効化する方が意図が伝わりやすいです）
         input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
