@@ -47,8 +47,8 @@
 
 	combo_JPTILDEL {
 		timeout-ms = <50>;
-		key-positions = <3 37>;
-		layers = <1>;
+		key-positions = <15 37>;
+		layers = <4>;
 		bindings = <&macro_JPTILDEL>;
 	};
 
