@@ -31,82 +31,82 @@
 / { // ここが唯一のルートノードの始まり
     combos {
         compatible = "zmk,combos";
-	// combo_JPQMARKL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <1 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPQMARKL>;
-	// };
+	combo_JPQMARKL {
+		timeout-ms = <50>;
+		key-positions = <1 37>;
+		layers = <1>;
+		bindings = <&macro_JPQMARKL>;
+	};
 
-	// combo_JPSLASHL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <2 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPSLASHL>;
-	// };
+	combo_JPSLASHL {
+		timeout-ms = <50>;
+		key-positions = <2 37>;
+		layers = <1>;
+		bindings = <&macro_JPSLASHL>;
+	};
 
-	// combo_JPTILDEL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <3 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPTILDEL>;
-	// };
+	combo_JPTILDEL {
+		timeout-ms = <50>;
+		key-positions = <3 37>;
+		layers = <1>;
+		bindings = <&macro_JPTILDEL>;
+	};
 
-	// combo_JPLKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <4 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLKAGIL>;
-	// };
+	combo_JPLKAGIL {
+		timeout-ms = <50>;
+		key-positions = <4 37>;
+		layers = <1>;
+		bindings = <&macro_JPLKAGIL>;
+	};
 
-	// combo_JPRKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <5 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRKAGIL>;
-	// };
+	combo_JPRKAGIL {
+		timeout-ms = <50>;
+		key-positions = <5 37>;
+		layers = <1>;
+		bindings = <&macro_JPRKAGIL>;
+	};
 
-	// combo_JPLKADOL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <8 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLKADOL>;
-	// };
+	combo_JPLKADOL {
+		timeout-ms = <50>;
+		key-positions = <8 37>;
+		layers = <1>;
+		bindings = <&macro_JPLKADOL>;
+	};
 
-	// combo_JPRKADOL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <9 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRKADOL>;
-	// };
+	combo_JPRKADOL {
+		timeout-ms = <50>;
+		key-positions = <9 37>;
+		layers = <1>;
+		bindings = <&macro_JPRKADOL>;
+	};
 
-	// combo_JPLMARUL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <10 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLMARUL>;
-	// };
+	combo_JPLMARUL {
+		timeout-ms = <50>;
+		key-positions = <10 37>;
+		layers = <1>;
+		bindings = <&macro_JPLMARUL>;
+	};
 
-	// combo_JPRMARUL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <11 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRMARUL>;
-	// };
+	combo_JPRMARUL {
+		timeout-ms = <50>;
+		key-positions = <11 37>;
+		layers = <1>;
+		bindings = <&macro_JPRMARUL>;
+	};
 
-	// combo_JPLDKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <12 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLDKAGIL>;
-	// };
+	combo_JPLDKAGIL {
+		timeout-ms = <50>;
+		key-positions = <12 37>;
+		layers = <1>;
+		bindings = <&macro_JPLDKAGIL>;
+	};
 
-	// combo_JPRDKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <13 37>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRDKAGIL>;
-	// };
+	combo_JPRDKAGIL {
+		timeout-ms = <50>;
+		key-positions = <13 37>;
+		layers = <1>;
+		bindings = <&macro_JPRDKAGIL>;
+	};
 
 	combo_XA {
 		timeout-ms = <50>;
@@ -304,82 +304,82 @@
 		bindings = <&macro_BO>;
 	};
 
-	// combo_JPQMARKR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <1 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPQMARKR>;
-	// };
+	combo_JPQMARKR {
+		timeout-ms = <50>;
+		key-positions = <1 40>;
+		layers = <1>;
+		bindings = <&macro_JPQMARKR>;
+	};
 
-	// combo_JPSLASHR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <2 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPSLASHR>;
-	// };
+	combo_JPSLASHR {
+		timeout-ms = <50>;
+		key-positions = <2 40>;
+		layers = <1>;
+		bindings = <&macro_JPSLASHR>;
+	};
 
-	// combo_JPTILDER {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <3 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPTILDER>;
-	// };
+	combo_JPTILDER {
+		timeout-ms = <50>;
+		key-positions = <3 40>;
+		layers = <1>;
+		bindings = <&macro_JPTILDER>;
+	};
 
-	// combo_JPLKAGIR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <4 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLKAGIR>;
-	// };
+	combo_JPLKAGIR {
+		timeout-ms = <50>;
+		key-positions = <4 40>;
+		layers = <1>;
+		bindings = <&macro_JPLKAGIR>;
+	};
 
-	// combo_JPRKAGIR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <5 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRKAGIR>;
-	// };
+	combo_JPRKAGIR {
+		timeout-ms = <50>;
+		key-positions = <5 40>;
+		layers = <1>;
+		bindings = <&macro_JPRKAGIR>;
+	};
 
-	// combo_JPLKADOR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <8 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLKADOR>;
-	// };
+	combo_JPLKADOR {
+		timeout-ms = <50>;
+		key-positions = <8 40>;
+		layers = <1>;
+		bindings = <&macro_JPLKADOR>;
+	};
 
-	// combo_JPRKADOR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <9 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRKADOR>;
-	// };
+	combo_JPRKADOR {
+		timeout-ms = <50>;
+		key-positions = <9 40>;
+		layers = <1>;
+		bindings = <&macro_JPRKADOR>;
+	};
 
-	// combo_JPLMARUR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <10 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLMARUR>;
-	// };
+	combo_JPLMARUR {
+		timeout-ms = <50>;
+		key-positions = <10 40>;
+		layers = <1>;
+		bindings = <&macro_JPLMARUR>;
+	};
 
-	// combo_JPRMARUR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <11 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRMARUR>;
-	// };
+	combo_JPRMARUR {
+		timeout-ms = <50>;
+		key-positions = <11 40>;
+		layers = <1>;
+		bindings = <&macro_JPRMARUR>;
+	};
 
-	// combo_JPLDKAGIR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <12 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPLDKAGIR>;
-	// };
+	combo_JPLDKAGIR {
+		timeout-ms = <50>;
+		key-positions = <12 40>;
+		layers = <1>;
+		bindings = <&macro_JPLDKAGIR>;
+	};
 
-	// combo_JPRDKAGIR {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <13 40>;
-	// 	layers = <1>;
-	// 	bindings = <&macro_JPRDKAGIR>;
-	// };
+	combo_JPRDKAGIR {
+		timeout-ms = <50>;
+		key-positions = <13 40>;
+		layers = <1>;
+		bindings = <&macro_JPRDKAGIR>;
+	};
 
 	combo_GA {
 		timeout-ms = <50>;
