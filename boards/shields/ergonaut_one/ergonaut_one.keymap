@@ -30,7 +30,7 @@
 
 / { // ここが唯一のルートノードの始まり
     combos {
-        compatible = "zmk,combos";
+		compatible = "zmk,combos";
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <1 37>;
@@ -1422,4 +1422,3 @@
         };
     }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
 }; // ルートノード / の閉じ括弧
-
