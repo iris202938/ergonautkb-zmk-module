@@ -9,8 +9,8 @@
 
 #include <dt-bindings/zmk/pointing.h>
 
-#define NIC 0
-#define QWE 1
+#define QWE 0
+#define NIC 1
 #define WIN 2
 #define LWR 3
 #define RSE 4
@@ -30,557 +30,550 @@
 
 / { // ここが唯一のルートノードの始まり
     combos {
-		compatible = "zmk,combos";
-
-	// --- ここから修正 ---
-        // NICレイヤーがアクティブな場合は、以下のコンボを無効にする
-        // もし修飾キーを押下中に有効になるレイヤーがNIC以外にあるなら、そのレイヤーもここに追加します
-        // ignored-layers = <NIC>; 
-        // --- ここまで修正 ---
-
+        compatible = "zmk,combos";
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <1 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPQMARKL>;
 	// };
 
 	// combo_JPSLASHL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <2 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPSLASHL>;
 	// };
 
 	// combo_JPTILDEL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <3 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPTILDEL>;
 	// };
 
 	// combo_JPLKAGIL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <4 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLKAGIL>;
 	// };
 
 	// combo_JPRKAGIL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <5 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRKAGIL>;
 	// };
 
 	// combo_JPLKADOL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <8 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLKADOL>;
 	// };
 
 	// combo_JPRKADOL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <9 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRKADOL>;
 	// };
 
 	// combo_JPLMARUL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <10 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLMARUL>;
 	// };
 
 	// combo_JPRMARUL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <11 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRMARUL>;
 	// };
 
 	// combo_JPLDKAGIL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <12 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLDKAGIL>;
 	// };
 
 	// combo_JPRDKAGIL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <13 37>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRDKAGIL>;
 	// };
 
 	combo_XA {
 		timeout-ms = <50>;
 		key-positions = <1 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XA>;
 	};
 
 	combo_E {
 		timeout-ms = <50>;
 		key-positions = <2 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_E>;
 	};
 
 	combo_RI {
 		timeout-ms = <50>;
 		key-positions = <3 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_RI>;
 	};
 
 	combo_XYA {
 		timeout-ms = <50>;
 		key-positions = <4 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XYA>;
 	};
 
 	combo_RE {
 		timeout-ms = <50>;
 		key-positions = <5 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_RE>;
 	};
 
 	combo_PA {
 		timeout-ms = <50>;
 		key-positions = <6 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_PA>;
 	};
 
 	combo_DI {
 		timeout-ms = <50>;
 		key-positions = <7 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_DI>;
 	};
 
 	combo_GU {
 		timeout-ms = <50>;
 		key-positions = <8 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_GU>;
 	};
 
 	combo_DU {
 		timeout-ms = <50>;
 		key-positions = <9 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_DU>;
 	};
 
 	combo_PI {
 		timeout-ms = <50>;
 		key-positions = <10 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_PI>;
 	};
 
 	combo_WO {
 		timeout-ms = <50>;
 		key-positions = <13 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_WO>;
 	};
 
 	combo_A {
 		timeout-ms = <50>;
 		key-positions = <14 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_A>;
 	};
 
 	combo_NA {
 		timeout-ms = <50>;
 		key-positions = <15 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_NA>;
 	};
 
 	combo_XYU {
 		timeout-ms = <50>;
 		key-positions = <16 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XYU>;
 	};
 
 	combo_MO {
 		timeout-ms = <50>;
 		key-positions = <17 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_MO>;
 	};
 
 	combo_BA {
 		timeout-ms = <50>;
 		key-positions = <18 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_BA>;
 	};
 
 	combo_DO {
 		timeout-ms = <50>;
 		key-positions = <19 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_DO>;
 	};
 
 	combo_GI {
 		timeout-ms = <50>;
 		key-positions = <20 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_GI>;
 	};
 
 	combo_PO {
 		timeout-ms = <50>;
 		key-positions = <21 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_PO>;
 	};
 
 	combo_XU {
 		timeout-ms = <50>;
 		key-positions = <25 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XU>;
 	};
 
 	combo_JPMINUS2 {
 		timeout-ms = <50>;
 		key-positions = <26 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_JPMINUS2>;
 	};
 
 	combo_RO {
 		timeout-ms = <50>;
 		key-positions = <27 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_RO>;
 	};
 
 	combo_YA {
 		timeout-ms = <50>;
 		key-positions = <28 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_YA>;
 	};
 
 	combo_XI {
 		timeout-ms = <50>;
 		key-positions = <29 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XI>;
 	};
 
 	combo_PU {
 		timeout-ms = <50>;
 		key-positions = <30 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_PU>;
 	};
 
 	combo_ZO {
 		timeout-ms = <50>;
 		key-positions = <31 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_ZO>;
 	};
 
 	combo_PE {
 		timeout-ms = <50>;
 		key-positions = <32 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_PE>;
 	};
 
 	combo_BO {
 		timeout-ms = <50>;
 		key-positions = <33 37>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_BO>;
 	};
 
 	// combo_JPQMARKR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <1 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPQMARKR>;
 	// };
 
 	// combo_JPSLASHR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <2 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPSLASHR>;
 	// };
 
 	// combo_JPTILDER {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <3 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPTILDER>;
 	// };
 
 	// combo_JPLKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <4 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLKAGIR>;
 	// };
 
 	// combo_JPRKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <5 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRKAGIR>;
 	// };
 
 	// combo_JPLKADOR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <8 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLKADOR>;
 	// };
 
 	// combo_JPRKADOR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <9 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRKADOR>;
 	// };
 
 	// combo_JPLMARUR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <10 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLMARUR>;
 	// };
 
 	// combo_JPRMARUR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <11 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRMARUR>;
 	// };
 
 	// combo_JPLDKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <12 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPLDKAGIR>;
 	// };
 
 	// combo_JPRDKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <13 40>;
-	// 	layers = <0>;
+	// 	layers = <1>;
 	// 	bindings = <&macro_JPRDKAGIR>;
 	// };
 
 	combo_GA {
 		timeout-ms = <50>;
 		key-positions = <2 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_GA>;
 	};
 
 	combo_DA {
 		timeout-ms = <50>;
 		key-positions = <3 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_DA>;
 	};
 
 	combo_GO {
 		timeout-ms = <50>;
 		key-positions = <4 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_GO>;
 	};
 
 	combo_ZA {
 		timeout-ms = <50>;
 		key-positions = <5 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_ZA>;
 	};
 
 	combo_YO {
 		timeout-ms = <50>;
 		key-positions = <6 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_YO>;
 	};
 
 	combo_NI {
 		timeout-ms = <50>;
 		key-positions = <7 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_NI>;
 	};
 
 	combo_RU {
 		timeout-ms = <50>;
 		key-positions = <8 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_RU>;
 	};
 
 	combo_MA {
 		timeout-ms = <50>;
 		key-positions = <9 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_MA>;
 	};
 
 	combo_XE {
 		timeout-ms = <50>;
 		key-positions = <10 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XE>;
 	};
 
 	combo_VU {
 		timeout-ms = <50>;
 		key-positions = <13 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_VU>;
 	};
 
 	combo_JI {
 		timeout-ms = <50>;
 		key-positions = <14 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_JI>;
 	};
 
 	combo_DE {
 		timeout-ms = <50>;
 		key-positions = <15 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_DE>;
 	};
 
 	combo_GE {
 		timeout-ms = <50>;
 		key-positions = <16 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_GE>;
 	};
 
 	combo_ZE {
 		timeout-ms = <50>;
 		key-positions = <17 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_ZE>;
 	};
 
 	combo_MI {
 		timeout-ms = <50>;
 		key-positions = <18 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_MI>;
 	};
 
 	combo_O {
 		timeout-ms = <50>;
 		key-positions = <19 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_O>;
 	};
 
 	combo_NO {
 		timeout-ms = <50>;
 		key-positions = <20 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_NO>;
 	};
 
 	combo_XYO {
 		timeout-ms = <50>;
 		key-positions = <21 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XYO>;
 	};
 
 	combo_XTU {
 		timeout-ms = <50>;
 		key-positions = <22 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XTU>;
 	};
 
 	combo_BI {
 		timeout-ms = <50>;
 		key-positions = <26 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_BI>;
 	};
 
 	combo_ZU {
 		timeout-ms = <50>;
 		key-positions = <27 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_ZU>;
 	};
 
 	combo_BU {
 		timeout-ms = <50>;
 		key-positions = <28 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_BU>;
 	};
 
 	combo_BE {
 		timeout-ms = <50>;
 		key-positions = <29 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_BE>;
 	};
 
 	combo_NU {
 		timeout-ms = <50>;
 		key-positions = <30 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_NU>;
 	};
 
 	combo_YU {
 		timeout-ms = <50>;
 		key-positions = <31 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_YU>;
 	};
 
 	combo_MU {
 		timeout-ms = <50>;
 		key-positions = <32 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_MU>;
 	};
 
 	combo_WA {
 		timeout-ms = <50>;
 		key-positions = <33 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_WA>;
 	};
 
 	combo_XO {
 		timeout-ms = <50>;
 		key-positions = <34 40>;
-		layers = <0>;
+		layers = <1>;
 		bindings = <&macro_XO>;
 	};
 
@@ -591,14 +584,14 @@
         compatible = "zmk,behavior-macro";
         label = "macro_LANG1";
         #binding-cells = <0>;
-        bindings = <&kp LANG1>, <&to 0>;
+        bindings = <&kp LANG1>, <&to 1>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
 
     macro_LANG2: macro_LANG2 {
         compatible = "zmk,behavior-macro";
         label = "macro_LANG2";
         #binding-cells = <0>;
-        bindings = <&kp LANG2>, <&to 1>;
+        bindings = <&kp LANG2>, <&to 0>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
 
 	macro_JPN1: macro_JPN1{
@@ -1334,6 +1327,8 @@
 		bindings = <&kp X>, <&kp O>;
 	};
 
+// behaviors ノードに conditional_layer を追加
+behaviors {
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -1342,26 +1337,63 @@
             then-layer = <ADJ>;
         };
     }; // conditional_layers の閉じ括弧の後にセミコロンが必要
+	    conditional_layer_sft_qwe: conditional_layer_sft_qwe {
+        compatible = "zmk,behavior-conditional-layer";
+        // label = "COND_SFT_QWE"; // オプション
+        #binding-cells = <0>;
+        // Shiftキーが押されている間、QWE_SFTレイヤーをアクティブにする
+        // depends-on はZMKのどのModifierがアクティブかによって発火
+        // ただし、このビヘイビア自体をキーにバインドするのではなく、キーマップに条件を定義
+    };
+
+    // 同様にCtrl, Alt, Win用にも定義できます
+};
+
+// keymap ノードに conditional-layers を追加
 
     keymap {
         compatible = "zmk,keymap";
 
-        nicola_layer {
-            display-name = "NIC";
-            bindings = <
-                &mt LSHFT ESC   &macro_JPPERIOD &macro_KA	&macro_TA	&macro_KO	&macro_SA      &macro_RA		&macro_TI   &macro_KU      &macro_TU      &macro_JPCOMMA1	&mt RSHFT MINUS
-                &mt LCTRL TAB   &macro_U        &macro_SI	&macro_TE	&macro_KE	&macro_SE      &macro_HA		&macro_TO   &macro_KI      &macro_I       &macro_NN       	&mt RCTRL SQT
-		&kp LALT      	&macro_JPTEN    &macro_HI   	&macro_SU	&macro_HU	&macro_HE      &macro_ME		&macro_SO   &macro_NE      &macro_HO      &macro_JPNAKATEN	&kp RGUI
-								&lt NUM LANG2	&kp SPACE    	&mo LWR        &lt RSE ENTER   		&kp INT4    &lt MOV LANG1
-			>;
-		};
+		conditional-layers {
+				compatible = "zmk,conditional-layers";
+				// Shiftキーが押されている場合に QWE_SFT レイヤーを有効にする
+				shift_qwe_condition {
+					bindings = <&layer_sft_qwe>; // このレイヤーをアクティブにする
+					condition = <&mod_state LSHFT>; // 左Shiftがアクティブな場合
+				};
+				// Ctrlキーが押されている場合に QWE_CTL レイヤーを有効にする
+				ctrl_qwe_condition {
+					bindings = <&layer_ctl_qwe>;
+					condition = <&mod_state LCTRL>; // 左Ctrlがアクティブな場合
+				};
+				// Altキーが押されている場合に QWE_ALT レイヤーを有効にする
+				alt_qwe_condition {
+					bindings = <&layer_alt_qwe>;
+					condition = <&mod_state LALT>; // 左Altがアクティブな場合
+				};
+				// Winキーが押されている場合に QWE_WIN レイヤーを有効にする
+				win_qwe_condition {
+					bindings = <&layer_win_qwe>;
+					condition = <&mod_state LGUI>; // 左Winがアクティブな場合
+				};
+			};
+
         default_layer {
             display-name = "QWER";
             bindings = <
-                &mt LSHFT ESC	      	&kp Q   &kp W	&kp E   &kp R             &kp T         &kp Y   &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
-                &mt LCTRL TAB	      	&kp A   &kp S	&kp D   &kp F             &kp G         &kp H   &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-                &trans	          	&kp Z   &kp X	&kp C   &kp V             &kp B         &kp N   &kp M            &kp COMMA     &kp DOT   &kp FSLH   &trans
-							&trans	&trans            &trans        &trans	&trans         	 &trans
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
+                                                    &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
+            >;
+        };
+        nicola_layer {
+            display-name = "NIC";
+            bindings = <
+                &trans        &macro_JPPERIOD &macro_KA     &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &mt RSHFT MINUS
+                &trans        &macro_U        &macro_SI     &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &macro_JPBACKSPACE
+                &trans        &macro_JPTEN    &macro_HI     &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &kp RGUI
+                                                            &trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
             >;
         };
         windows_layer {
@@ -1427,5 +1459,81 @@
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
+		layer {
+        label = "NIC";
+        bindings = <
+            // NICレイヤーは通常のキーバインドを持つ
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
+    };
+
+    // 基本となる QWE レイヤー
+    layer {
+        label = "QWE"; // このレイヤーは直接切り替えないが、以下のレイヤーのベースとなる
+        bindings = <
+            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp BSLH &kp Equal
+            &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SCLN &kp LBKT &kp RBKT
+            &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FWD_SLASH &kp NUHS &kp NUBS
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
+    };
+
+    // 修飾キー長押しで有効になる「条件付きオーバーレイレイヤー」
+    // これらのレイヤーは、QWEレイヤーのバインディングを継承し、特定のアクションを追加/変更します。
+    // ZMK 開発者によると、これらのレイヤーは新しいレイヤーとして数えられる場合がありますが、
+    // 従来の to/mo を使うレイヤーとは異なり、条件が満たされた場合にのみ「透過的に」アクティブになります。
+    layer_sft_qwe: layer {
+        label = "QWE_SFT";
+        bindings = <
+            &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T) &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O) &kp LS(P) &kp LS(BSLH) &kp LS(EQUAL)
+            &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G) &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L) &kp LS(SCLN) &kp LS(LBKT) &kp LS(RBKT)
+            &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B) &kp LS(N) &kp LS(M) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLASH) &kp LS(NUHS) &kp LS(NUBS)
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
+    };
+
+    layer_ctl_qwe: layer {
+        label = "QWE_CTL";
+        bindings = <
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &copy  &paste &undo  &trans &trans &trans &trans &trans &trans &trans // C, V, Z にマクロを割り当て
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
+    };
+
+    layer_alt_qwe: layer {
+        label = "QWE_ALT";
+        bindings = <
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
+    };
+
+    layer_win_qwe: layer {
+        label = "QWE_WIN";
+        bindings = <
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+        >;
     }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
 }; // ルートノード / の閉じ括弧
