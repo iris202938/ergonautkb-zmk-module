@@ -1327,8 +1327,6 @@
 		bindings = <&kp X>, <&kp O>;
 	};
 
-// behaviors ノードに conditional_layer を追加
-behaviors {
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -1337,178 +1335,99 @@ behaviors {
             then-layer = <ADJ>;
         };
     }; // conditional_layers の閉じ括弧の後にセミコロンが必要
-	    conditional_layer_sft_qwe: conditional_layer_sft_qwe {
-        compatible = "zmk,behavior-conditional-layer";
-        // label = "COND_SFT_QWE"; // オプション
-        #binding-cells = <0>;
-        // Shiftキーが押されている間、QWE_SFTレイヤーをアクティブにする
-        // depends-on はZMKのどのModifierがアクティブかによって発火
-        // ただし、このビヘイビア自体をキーにバインドするのではなく、キーマップに条件を定義
-    };
-
-    // 同様にCtrl, Alt, Win用にも定義できます
-};
-
-// keymap ノードに conditional-layers を追加
 
     keymap {
         compatible = "zmk,keymap";
 
-		conditional-layers {
-				compatible = "zmk,conditional-layers";
-				// Shiftキーが押されている場合に QWE_SFT レイヤーを有効にする
-				shift_qwe_condition {
-					bindings = <&layer_sft_qwe>; // このレイヤーをアクティブにする
-					condition = <&mod_state LSHFT>; // 左Shiftがアクティブな場合
-				};
-				// Ctrlキーが押されている場合に QWE_CTL レイヤーを有効にする
-				ctrl_qwe_condition {
-					bindings = <&layer_ctl_qwe>;
-					condition = <&mod_state LCTRL>; // 左Ctrlがアクティブな場合
-				};
-				// Altキーが押されている場合に QWE_ALT レイヤーを有効にする
-				alt_qwe_condition {
-					bindings = <&layer_alt_qwe>;
-					condition = <&mod_state LALT>; // 左Altがアクティブな場合
-				};
-				// Winキーが押されている場合に QWE_WIN レイヤーを有効にする
-				win_qwe_condition {
-					bindings = <&layer_win_qwe>;
-					condition = <&mod_state LGUI>; // 左Winがアクティブな場合
-				};
-			};
+        default_layer {
+            display-name = "QWER";
+            bindings = <
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
+                                                    &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
+            >;
+        };
+        nicola_layer {
+            display-name = "NIC";
+            bindings = <
+                &trans        &macro_JPPERIOD &macro_KA     &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &mt RSHFT MINUS
+                &trans        &macro_U        &macro_SI     &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &macro_JPBACKSPACE
+                &trans        &macro_JPTEN    &macro_HI     &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &kp RGUI
+                                                            &trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
+            >;
+        };
+        windows_layer {
+            display-name = "WIN";
+            bindings = <
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LGUI          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
+                                                    &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
+            >;
+        };        
+        lower_layer {
+            display-name = "LWR";
+            bindings = <
+                &trans           &kp PG_UP  &kp HOME    &kp UP        &kp END      &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
+                &trans           &kp PG_DN  &kp LEFT    &kp DOWN      &kp RIGHT    &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
+                &trans           &kp LC(V)  &mkp MB1    &mkp MB3      &mkp MB2     &mkp MB2    &mkp MB1    &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
+                                                        &kp LSHFT     &macro_LANG2 &trans      &trans      &kp LS(LC(V))  &kp RSHFT
+            >;
+        };
+        raise_layer {
+            display-name = "RSE";
+            bindings = <
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7       &kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7       &kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS     &kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &macro_LANG1 &kp RSHFT
+            >;
+        };
+        adjust_layer {
+            display-name = "ADJ";
+            bindings = <
+                &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
+                &mt LCTRL LANG5   &out OUT_BLE   &out OUT_USB   &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &kp LGUI          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
+                                                                &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
+            >;
+        };
+        move_layer {
+            display-name = "MOV";
+            bindings = <
+                &kp LG(BSPC)      &kp LC(PG_UP)     &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP       &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP    &kp ESC
+                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN     &lt BLE BSPC   &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB2
+                &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)     &kp LC(PG_DN)      &kp LC(Z)      &kp LS(LC(TAB))  &kp LG(LBKT)  &kp LG(RBKT)   &kp LC(TAB)  &trans
+                                                                    &kp LC(C)      &kp LC(V)         &mkp MB2           &kp ENTER      &mkp MB1         &trans
+            >;
+        };
+        numpad_layer {
+            display-name = "NUM";
+            bindings = <
+                &trans            &kp PG_UP     &kp HOME        &kp UP        &kp END         &kp CARET         &kp KP_SLASH    &kp KP_N7   &kp KP_N8   &kp KP_N9     &kp KP_N0         &kp KP_NLCK
+                &mt LCTRL F4      &kp PG_DN     &kp LEFT        &kp DOWN      &kp RIGHT       &lt BLE DEL       &kp BSPC        &kp KP_N4   &kp KP_N5   &kp KP_N6     &kp KP_MINUS      &kp KP_DOT
+                &mt LGUI N0       &kp LA(LEFT)  &kp LA(DOWN)    &kp LA(UP)    &kp LA(RIGHT)   &kp EQUAL         &kp KP_MULTIPLY &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_PLUS       &trans
+                                                                &trans        &kp LS(F5)      &kp LS(F6)        &kp KP_ENTER    &kp UNDER   &kp SPACE
+            >;
+        };
+        bluetooth_layer {
+            display-name = "BLE";
+            bindings = <
+                &soft_off      &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &soft_off
+                &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
+                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &sys_reset
+                                                                &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
+            >;
+        };
+		// --- 新しく追加する条件付きオーバーレイレイヤー ---
+    // default_layer (QWER) をベースとして、修飾キーに応じてオーバーレイされる
+    // MOD_LSFT: 左Shiftが押されている場合
+    sft_nic_qwe: layer {
+        label = "SFT_NIC_QWE";
+        layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
+        if-mods = <(MOD_LSFT)>; // 左Shiftが押されている間だけ有効
+    };
 
-default_layer {
-    display-name = "QWER";
-    bindings = <
-        &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R           &kp T         &kp Y         &kp U          &kp I         &kp O     &kp P      &mt RSHFT MINUS
-        &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F           &kp G         &kp H         &kp J          &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-        &kp LALT          &kp Z   &kp X     &kp C         &kp V           &kp B         &kp N         &kp M          &kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
-                                              &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
-    >;
-};
-nicola_layer {
-    display-name = "NIC";
-    bindings = <
-        &trans          &macro_JPPERIOD &macro_KA     &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &mt RSHFT MINUS
-        &trans          &macro_U        &macro_SI     &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &macro_JPBACKSPACE
-        &trans          &macro_JPTEN    &macro_HI     &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &kp RGUI
-                                                      &trans           &trans           &mo LWR        &lt RSE ENTER  &trans         &trans
-    >;
-};
-windows_layer {
-    display-name = "WIN";
-    bindings = <
-        &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R           &kp T         &kp Y         &kp U          &kp I         &kp O     &kp P      &mt RSHFT MINUS
-        &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F           &kp G         &kp H         &kp J          &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-        &kp LGUI          &kp Z   &kp X     &kp C         &kp V           &kp B         &kp N         &kp M          &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
-                                              &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
-    >;
-};
-lower_layer {
-    display-name = "LWR";
-    bindings = <
-        &trans            &kp PG_UP  &kp HOME    &kp UP        &kp END        &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)
-        &trans            &kp PG_DN  &kp LEFT    &kp DOWN      &kp RIGHT    &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
-        &trans            &kp LC(V)  &mkp MB1    &mkp MB3      &mkp MB2     &mkp MB2    &mkp MB1    &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
-                                                                &kp LSHFT      &macro_LANG2 &trans      &trans        &kp LS(LC(V))  &kp RSHFT
-    >;
-};
-raise_layer {
-    display-name = "RSE";
-    bindings = <
-        &trans              &kp F1        &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7       &kp F8      &kp F9      &kp F10           &kp LC(X)
-        &mt LCTRL TILDE   &kp N1        &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7       &kp N8      &kp N9      &kp N0            &kp LC(C)
-        &trans              &kp INT1        &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS     &kp LBKT    &kp RBKT    &kp LC(V)         &trans
-                                                                  &kp LSHFT     &kp SPACE   &trans        &trans         &macro_LANG1 &kp RSHFT
-    >;
-};
-adjust_layer {
-    display-name = "ADJ";
-    bindings = <
-        &trans            &kp F11        &kp F12       &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-        &mt LCTRL LANG5   &out OUT_BLE   &out OUT_USB  &none           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
-        &kp LGUI          &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2      &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
-                                                                       &to QWE        &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
-    >;
-};
-move_layer {
-    display-name = "MOV";
-    bindings = <
-        &kp LG(BSPC)      &kp LC(PG_UP)     &msc SCRL_LEFT  &mmv MOVE_UP  &msc SCRL_RIGHT  &msc SCRL_UP       &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP    &kp ESC
-        &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &msc SCRL_DOWN     &lt BLE BSPC &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB2
-        &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)    &kp LC(PG_DN)      &kp LC(Z)      &kp LS(LC(TAB))  &kp LG(LBKT)  &kp LG(RBKT)   &kp LC(TAB)  &trans
-                                                                           &kp LC(C)      &kp LC(V)        &mkp MB2       &kp ENTER      &mkp MB1         &trans
-    >;
-};
-numpad_layer {
-    display-name = "NUM";
-    bindings = <
-        &trans            &kp PG_UP     &kp HOME        &kp UP        &kp END         &kp CARET          &kp KP_SLASH    &kp KP_N7  &kp KP_N8  &kp KP_N9    &kp KP_N0          &kp KP_NLCK
-        &mt LCTRL F4      &kp PG_DN     &kp LEFT        &kp DOWN      &kp RIGHT       &lt BLE DEL        &kp BSPC        &kp KP_N4  &kp KP_N5  &kp KP_N6    &kp KP_MINUS       &kp KP_DOT
-        &mt LGUI N0       &kp LA(LEFT)  &kp LA(DOWN)    &kp LA(UP)    &kp LA(RIGHT)   &kp EQUAL          &kp KP_MULTIPLY &kp KP_N1  &kp KP_N2  &kp KP_N3    &kp KP_PLUS        &trans
-                                                                     &trans         &kp LS(F5)      &kp LS(F6)      &kp KP_ENTER    &kp UNDER  &kp SPACE
-    >;
-};
-bluetooth_layer {
-    display-name = "BLE";
-    bindings = <
-        &soft_off       &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &soft_off
-        &kp LC(LG(H))   &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
-        &sys_reset      &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &sys_reset
-                                                                       &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
-    >;
-};
-
-// 修飾キー長押しで有効になる「条件付きオーバーレイレイヤー」
-// これらのレイヤーは、QWEレイヤーのバインディングを継承し、特定のアクションを追加/変更します。
-// ZMK 開発者によると、これらのレイヤーは新しいレイヤーとして数えられる場合がありますが、
-// 従来の to/mo を使うレイヤーとは異なり、条件が満たされた場合にのみ「透過的に」アクティブになります。
-layer_sft_qwe: layer {
-    label = "QWE_SFT";
-    bindings = <
-        &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T) &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O) &kp LS(P) &kp LS(BSLH) &kp LS(EQUAL)
-        &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G) &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L) &kp LS(SCLN) &kp LS(LBKT) &kp LS(RBKT)
-        &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B) &kp LS(N) &kp LS(M) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLASH) &kp LS(NUHS) &kp LS(NUBS)
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-    >;
-};
-
-layer_ctl_qwe: layer {
-    label = "QWE_CTL";
-    bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &kp LC(C) &kp LC(V) &kp LC(Z) &trans &trans &trans &trans &trans &trans &trans // C, V, Z にCtrl+C, Ctrl+V, Ctrl+Zを割り当て
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-    >;
-};
-
-layer_alt_qwe: layer {
-    label = "QWE_ALT";
-    bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-    >;
-};
-
-layer_win_qwe: layer {
-    label = "QWE_WIN";
-    bindings = <
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-    >;
-}; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
-};
+    }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
+}; // ルートノード / の閉じ括弧
