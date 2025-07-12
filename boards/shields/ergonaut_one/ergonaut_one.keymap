@@ -1459,31 +1459,7 @@ behaviors {
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
-		layer {
-        label = "NIC";
-        bindings = <
-            // NICレイヤーは通常のキーバインドを持つ
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-        >;
-    };
 
-    // 基本となる QWE レイヤー
-    layer {
-        label = "QWE"; // このレイヤーは直接切り替えないが、以下のレイヤーのベースとなる
-        bindings = <
-            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp BSLH &kp Equal
-            &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SCLN &kp LBKT &kp RBKT
-            &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FWD_SLASH &kp NUHS &kp NUBS
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                            &trans &trans &trans &trans &trans &trans
-        >;
-    };
 
     // 修飾キー長押しで有効になる「条件付きオーバーレイレイヤー」
     // これらのレイヤーは、QWEレイヤーのバインディングを継承し、特定のアクションを追加/変更します。
