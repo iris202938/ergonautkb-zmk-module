@@ -1511,3 +1511,4 @@ layer_win_qwe: layer {
                             &trans &trans &trans &trans &trans &trans
     >;
 }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
+};
