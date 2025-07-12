@@ -1378,7 +1378,7 @@ behaviors {
 				};
 			};
 
-        default_layer {
+default_layer {
     display-name = "QWER";
     bindings = <
         &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R           &kp T         &kp Y         &kp U          &kp I         &kp O     &kp P      &mt RSHFT MINUS
@@ -1470,6 +1470,8 @@ layer_sft_qwe: layer {
         &kp LS(Q) &kp LS(W) &kp LS(E) &kp LS(R) &kp LS(T) &kp LS(Y) &kp LS(U) &kp LS(I) &kp LS(O) &kp LS(P) &kp LS(BSLH) &kp LS(EQUAL)
         &kp LS(A) &kp LS(S) &kp LS(D) &kp LS(F) &kp LS(G) &kp LS(H) &kp LS(J) &kp LS(K) &kp LS(L) &kp LS(SCLN) &kp LS(LBKT) &kp LS(RBKT)
         &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B) &kp LS(N) &kp LS(M) &kp LS(COMMA) &kp LS(DOT) &kp LS(FSLASH) &kp LS(NUHS) &kp LS(NUBS)
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                             &trans &trans &trans &trans &trans &trans
     >;
 };
@@ -1479,6 +1481,8 @@ layer_ctl_qwe: layer {
     bindings = <
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &kp LC(C) &kp LC(V) &kp LC(Z) &trans &trans &trans &trans &trans &trans &trans // C, V, Z にCtrl+C, Ctrl+V, Ctrl+Zを割り当て
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                             &trans &trans &trans &trans &trans &trans
     >;
@@ -1490,6 +1494,8 @@ layer_alt_qwe: layer {
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                             &trans &trans &trans &trans &trans &trans
     >;
 };
@@ -1497,6 +1503,8 @@ layer_alt_qwe: layer {
 layer_win_qwe: layer {
     label = "QWE_WIN";
     bindings = <
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
