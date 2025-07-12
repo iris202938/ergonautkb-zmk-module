@@ -1427,7 +1427,6 @@
         label = "SFT_NIC_QWE";
         layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
         if-mods = <(MOD_LSFT)>; // 左Shiftが押されている間だけ有効
-    };
 
     }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
 }; // ルートノード / の閉じ括弧
