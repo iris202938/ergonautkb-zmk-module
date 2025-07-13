@@ -1341,7 +1341,7 @@ macros { // <--- この行を追加！全てのマクロ定義をこの中に含
             , <&macro_pause_for_release> // キーが離されるまで待機
             , <&macro_param_1to1>      // 1番目のパラメータを1番目の引数として渡す（リリース時）
             , <&macro_param_2to2>      // 2番目のパラメータを2番目の引数として渡す（リリース時）
-            , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEER> // Mod-Tap挙動をリリース
+            , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER> // Mod-Tap挙動をリリース
             , <&macro_release &mo QWE> // QWERTYレイヤーを無効にする
             ;
     };
