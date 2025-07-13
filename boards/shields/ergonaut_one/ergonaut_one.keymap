@@ -579,7 +579,8 @@
 
     }; // combos ノードの閉じ括弧の後にセミコロンが必要
 
-    // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
+macros { // <--- この行を追加！全てのマクロ定義をこの中に含める
+
     macro_LANG1: macro_LANG1 {
         compatible = "zmk,behavior-macro";
         label = "macro_LANG1";
@@ -1326,8 +1327,7 @@
 		#binding-cells = <0>;
 		bindings = <&kp X>, <&kp O>;
 	};
-	
-macros { // <--- この行を追加！全てのマクロ定義をこの中に含める
+
     qmt: qwerty_mt {
         compatible = "zmk,behavior-macro-two-param";
         wait-ms = <0>;
