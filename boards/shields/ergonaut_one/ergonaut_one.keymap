@@ -1453,18 +1453,20 @@ keymap {
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                                 &trans &trans &trans &trans &trans &trans
             >;
-        };
+    };
 
-        win_nic_qwe: layer {
-            label = "WIN_NIC_QWE";
-            layer-bindings = <&default_layer>;
-            if-mods = <(MOD_LGUI)>;
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                                    &trans &trans &trans &trans &trans &trans
+    win_nic_qwe: layer {
+        label = "WIN_NIC_QWE";
+        layer-bindings = <&default_layer>;
+        if-mods = <(MOD_LGUI)>;
+        bindings = <
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                                &trans &trans &trans &trans &trans &trans
             >;
-        };
+    };
+
+};
