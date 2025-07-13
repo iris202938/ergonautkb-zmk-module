@@ -1421,7 +1421,7 @@ keymap {
         >;
     };
 
-    sft_nic_qwe: layer {
+    sft_nic_qwe: sft_nic_qwe_layer {
         label = "SFT_NIC_QWE";
         layer-bindings = <&default_layer>;
         if-mods = <(MOD_LSFT)>;
@@ -1432,11 +1432,11 @@ keymap {
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                             &trans &trans &trans &trans &trans &trans
-	    >;
+	>;
 
     };
 
-    ctl_nic_qwe: layer {
+    ctl_nic_qwe: ctl_nic_qwe_layer {
         label = "CTL_NIC_QWE";
         layer-bindings = <&default_layer>;
         if-mods = <(MOD_LCTRL)>;
@@ -1450,7 +1450,7 @@ keymap {
             >;
     };
 
-    alt_nic_qwe: layer {
+    alt_nic_qwe: alt_nic_qwe_layer {
         label = "ALT_NIC_QWE";
         layer-bindings = <&default_layer>;
         if-mods = <(MOD_LALT)>;
@@ -1464,7 +1464,7 @@ keymap {
             >;
     };
 
-    win_nic_qwe: layer {
+    win_nic_qwe: win_nic_qwe_layer {
         label = "WIN_NIC_QWE";
         layer-bindings = <&default_layer>;
         if-mods = <(MOD_LGUI)>;
