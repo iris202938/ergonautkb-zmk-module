@@ -1420,5 +1420,5 @@
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
-    }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
-}; // ルートノード / の閉じ括弧
+    };
+};
