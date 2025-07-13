@@ -1425,6 +1425,15 @@ keymap {
         label = "SFT_NIC_QWE";
         layer-bindings = <&default_layer>;
         if-mods = <(MOD_LSFT)>;
+        bindings = <
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                            &trans &trans &trans &trans &trans &trans
+			>;
+
     };
 
     ctl_nic_qwe: ctl_nic_qwe {
