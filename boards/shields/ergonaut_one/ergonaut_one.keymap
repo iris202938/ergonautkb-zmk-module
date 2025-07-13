@@ -1327,7 +1327,6 @@
 		bindings = <&kp X>, <&kp O>;
 	};
 
-	macros {
     qmt: qwerty_mt {
         compatible = "zmk,behavior-macro-two-param";
         wait-ms = <0>;
