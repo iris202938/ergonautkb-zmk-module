@@ -1334,7 +1334,7 @@
         tap-ms = <0>;
         #binding-cells = <2>; // 2つのパラメータを受け取る
         bindings
-            = <&macro_press &mo QWERTY> // QWERTYレイヤーをモーメンタリーに有効にする（押している間だけ）
+            = <&macro_press &mo QWE> // QWERTYレイヤーをモーメンタリーに有効にする（押している間だけ）
             , <&macro_param_1to1>      // 1番目のパラメータを1番目の引数として渡す
             , <&macro_param_2to2>      // 2番目のパラメータを2番目の引数として渡す
             , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER> // Mod-Tap挙動をプレス
@@ -1342,7 +1342,7 @@
             , <&macro_param_1to1>      // 1番目のパラメータを1番目の引数として渡す（リリース時）
             , <&macro_param_2to2>      // 2番目のパラメータを2番目の引数として渡す（リリース時）
             , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER> // Mod-Tap挙動をリリース
-            , <&macro_release &mo QWERTY> // QWERTYレイヤーを無効にする
+            , <&macro_release &mo QWE> // QWERTYレイヤーを無効にする
             ;
     };
 };
