@@ -1420,22 +1420,18 @@ keymap {
                                                             &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
         >;
     };
-    // --- 新しく追加する条件付きオーバーレイレイヤー ---
-    // default_layer (QWER) をベースとして、修飾キーに応じてオーバーレイされる
-    // MOD_LSFT: 左Shiftが押されている場合
+
     sft_nic_qwe: layer {
         label = "SFT_NIC_QWE";
-        layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
-        if-mods = <(MOD_LSFT)>; // 左Shiftが押されている間だけ有効
+        layer-bindings = <&default_layer>;
+        if-mods = <(MOD_LSFT)>;
     };
 
-    // MOD_LCTRL: 左Ctrlが押されている場合 (追加予定のレイヤー)
     ctl_nic_qwe: layer {
         label = "CTL_NIC_QWE";
-        layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
-        if-mods = <(MOD_LCTRL)>; // 左Ctrlが押されている間だけ有効
+        layer-bindings = <&default_layer>;
+        if-mods = <(MOD_LCTRL)>;
         bindings = <
-            // 何も定義しない場合は全て &trans で透過させる
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
@@ -1445,14 +1441,11 @@ keymap {
             >;
     };
 
-    // MOD_LALT: 左Altが押されている場合
     alt_nic_qwe: layer {
         label = "ALT_NIC_QWE";
-        layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
-        if-mods = <(MOD_LALT)>; // 左Altが押されている間だけ有効
+        layer-bindings = <&default_layer>;
+        if-mods = <(MOD_LALT)>;
         bindings = <
-            // Alt + QWE のキーバインドを必要に応じて定義
-            // 何も定義しない場合は全て &trans で透過させる
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
@@ -1462,14 +1455,11 @@ keymap {
             >;
         };
 
-        // MOD_LGUI: 左Winが押されている場合
         win_nic_qwe: layer {
             label = "WIN_NIC_QWE";
-            layer-bindings = <&default_layer>; // QWERTYベースレイヤーを指定
-            if-mods = <(MOD_LGUI)>; // 左Winが押されている間だけ有効
+            layer-bindings = <&default_layer>;
+            if-mods = <(MOD_LGUI)>;
             bindings = <
-                // Win + QWE のキーバインドを必要に応じて定義
-                // 何も定義しない場合は全て &trans で透過させる
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
@@ -1479,4 +1469,4 @@ keymap {
             >;
         };
 
-    }; // keymap ノードの閉じ括弧の後にセミコロンは不要 (最後の要素なので)
+    };
