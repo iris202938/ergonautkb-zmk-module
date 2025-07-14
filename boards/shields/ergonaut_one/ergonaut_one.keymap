@@ -1377,7 +1377,7 @@ keymap {
     compatible = "zmk,keymap";
 
     default_layer {
-        display-name = "QWER";
+        display-name = "QWE";
         bindings = <
             &qmt LSHFT ESC	&kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &qmt RSHFT MINUS
             &qmt LCTRL TAB  &kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &qmt RCTRL SQT
