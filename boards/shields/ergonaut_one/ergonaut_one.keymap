@@ -578,6 +578,7 @@
 	};
 
 }; // combos ノードの閉じ括弧の後にセミコロンが必要
+};
 
 macros { // <--- この行を追加！全てのマクロ定義をこの中に含める
 
@@ -1440,4 +1441,5 @@ keymap {
                                             &trans         &kp LS(LG(F23))	&bt BT_CLR      &bt BT_CLR		&kp LA(LG(G))   &trans
         >;
     };
+};
 };
