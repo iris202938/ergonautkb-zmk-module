@@ -33,10 +33,17 @@
         compatible = "zmk,combos";
 	
 	combo_ESC {
-		timeout-ms = <50>;
+		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <0>;
+		layers = <0 1>;
 		bindings = <&kp ESC>;
+	};
+
+	combo_SHIFT {
+		timeout-ms = <80>;
+		key-positions = <24 35>;
+		// layers = <0>;
+		bindings = <&kp LSHIFT>;
 	};
 
 	// combo_JPQMARKL {
@@ -1387,7 +1394,7 @@ keymap {
     default_layer {
         display-name = "QWE";
         bindings = <
-            &mt LSHFT ESC	&kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+            &qmt LSHFT ESC	&kp Q   &kp W   &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &qmt RSHFT MINUS
             &mt LCTRL TAB	&kp A   &kp S   &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
             &kp LALT        &kp Z   &kp X   &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
 											&lt NUM LANG2 &mt LSHFT SPACE   &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
@@ -1396,8 +1403,8 @@ keymap {
     nicola_layer {
         display-name = "NIC";
         bindings = <
-            &lt QWE ESC     &macro_JPPERIOD	&macro_KA   &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  	 &lt QWE MINUS
-            &lt  QWE TAB    &macro_U        &macro_SI   &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN       	 &lt QWE SQT
+            &qmt LSHFT ESC  &macro_JPPERIOD	&macro_KA   &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  	&qmt RSHFT MINUS
+            &qmt LCTRL TAB  &macro_U        &macro_SI   &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN       	&qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN	&qm RGUI
 														&trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
         >;
