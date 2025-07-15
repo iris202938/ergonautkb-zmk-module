@@ -46,19 +46,19 @@
 		bindings = <&kp LSHIFT>;
 	};
 
-	combo_LSHIFT {
-		timeout-ms = <80>;
-		key-positions = <12 24>;
-		// layers = <0 1>;
-		bindings = <&kp LSHIFT>;
-	};
+	// combo_LSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <12 24>;
+	// 	// layers = <0 1>;
+	// 	bindings = <&kp LSHIFT>;
+	// };
 
-	combo_RSHIFT {
-		timeout-ms = <80>;
-		key-positions = <23 35>;
-		// layers = <0 1>;
-		bindings = <&kp RSHIFT>;
-	};
+	// combo_RSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <23 35>;
+	// 	// layers = <0 1>;
+	// 	bindings = <&kp RSHIFT>;
+	// };
 
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
