@@ -35,7 +35,7 @@
 	combo_ESC {
 		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <0 1>;
+		layers = <0 1 2>;
 		bindings = <&kp ESC>;
 	};
 
