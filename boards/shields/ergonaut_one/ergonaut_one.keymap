@@ -31,6 +31,28 @@
 / { // ここが唯一のルートノードの始まり
     combos {
         compatible = "zmk,combos";
+
+	combo_ESC {
+		timeout-ms = <80>;
+		key-positions = <11 23>;
+		layers = <0 1>;
+		bindings = <&kp ESC>;
+	};
+
+	combo_PSHIFT {
+		timeout-ms = <80>;
+		key-positions = <24 35>;
+		// layers = <0 1>;
+		bindings = <&kp LSHIFT>;
+	};
+
+	combo_TSHIFT {
+		timeout-ms = <80>;
+		key-positions = <36 41>;
+		// layers = <0 1>;
+		bindings = <&kp RSHIFT>;
+	};
+
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <1 37>;
