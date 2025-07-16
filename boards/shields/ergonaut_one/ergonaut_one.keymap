@@ -46,12 +46,12 @@
 		bindings = <&kp LSHIFT>;
 	};
 
-	combo_TSHIFT {
-		timeout-ms = <80>;
-		key-positions = <36 41>;
-		// layers = <0 1 2 3 4>;
-		bindings = <&kp RSHIFT>;
-	};
+	// combo_TSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <36 41>;
+	// 	// layers = <0 1 2 3 4>;
+	// 	bindings = <&kp RSHIFT>;
+	// };
 
 	// combo_LSHIFT {
 	// 	timeout-ms = <80>;
