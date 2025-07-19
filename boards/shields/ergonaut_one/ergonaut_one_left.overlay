@@ -32,7 +32,7 @@
 			scale-divisor = <50>; // スケーリングの除数
 			#invert; // Y軸の入力を反転
 			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
-			input-code = <INPUT_REL_X>; // Y軸の動きをマウスのX軸（水平）にマッピング
+			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
 		};
 		x-ch {
 			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
@@ -43,7 +43,7 @@
 			scale-divisor = <50>;
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_Y>; // X軸の動きをマウスのY軸（垂直）にマッピング
+			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
 			#report-on-change-only;
 		};
 	};
