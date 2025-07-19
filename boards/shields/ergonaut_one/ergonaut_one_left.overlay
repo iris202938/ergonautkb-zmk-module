@@ -130,7 +130,7 @@
 	};
 };
 
-&joystick_listener {
+/* &joystick_listener {
 	status = "okay";
 	layer3 {
 		layers = <5>; // レイヤー5がアクティブな場合
@@ -172,7 +172,7 @@
     };
     // ★★★ ここまで追加 ★★★
 };
-
+*/
 &kscan0 {
     col-gpios
         = <&gpio0 9 GPIO_ACTIVE_HIGH>
