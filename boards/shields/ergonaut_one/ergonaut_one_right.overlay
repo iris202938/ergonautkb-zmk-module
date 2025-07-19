@@ -51,16 +51,16 @@
 };
 
 // 右のジョイスティックリスナー
-/*&joystick_split {
+&joystick_split {
     device = <&anin0>;
-    // マウスホイールイベントはXYスワップを必要としないため、zip_xy_transform は削除
+    // 以前のコメントを削除し、純粋なプロセッサの定義のみにする
     // スクロール速度を調整したい場合は zip_xy_scaler を追加
     input-processors = <&zip_xy_scaler 1 2>; // 例: スクロール速度を半分にする (乗数1, 除数2)
 };
 
 &default_transform {
     col-offset = <6>;
-};*/
+};
 
 &kscan0 {
     col-gpios
