@@ -1359,7 +1359,7 @@
             if-layers = <LWR RSE>;
             then-layer = <ADJ>;
         };
-		tri-layer {
+		tri-layerw {
             if-layers = <LWRW RSEW>;
             then-layer = <ADJW>;
         };
