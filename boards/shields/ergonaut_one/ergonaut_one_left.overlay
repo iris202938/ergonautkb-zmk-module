@@ -125,7 +125,7 @@
     	};
 };
 
-&joystick_listener {
+/*&joystick_listener {
 	status = "okay";
 	layer1 {
 		layers = <1>;
@@ -145,7 +145,7 @@
 		layers = <0>;
 		input-processors = <&zip_xy_scaler 0 1>;
 	};
-};
+};*/
 
 &kscan0 {
     col-gpios
