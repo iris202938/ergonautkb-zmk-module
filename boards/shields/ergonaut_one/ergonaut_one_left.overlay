@@ -9,9 +9,9 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600   // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
 
 &adc {
@@ -19,6 +19,7 @@
 };
 
 / {
+	// 左のジョイスティック（マウスカーソル移動用）
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
@@ -43,13 +44,10 @@
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>; // X軸の動きをマウスのY軸（垂直）にマッピング
-
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
-			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
+			#report-on-change-only;
 		};
 	};
+
 	behaviors {
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
@@ -75,13 +73,12 @@
 				bindings = <&kp DOWN>, <&kp PG_DN>;
 				mods = <(MOD_LCTL|MOD_LSFT)>;
 		};
-};
+	};
 
 	analog_input_listener {
-			status = "okay";
-			compatible = "zmk,input-listener";
-	        device = <&anin0>; // 前述のアナログ入力デバイス (anin0) を監視
-	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // X軸とY軸の入力をスワップ
+		status = "okay";
+		compatible = "zmk,input-listener";
+		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
 
 		scroll {
 			layers = <4>; // レイヤー4がアクティブな場合
@@ -89,16 +86,12 @@
 					 , <&zip_xy_scaler 1 8> // スケーリング（1/8）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		// ★★★ 追加箇所 ★★★
-        layer1_speed_half {
-            layers = <3>; // レイヤー3がアクティブな場合
-            // 既存のX/Yスワップを維持しつつ、速度を1/3にする
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-                             , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
-	//		     , <&zip_xy_filter 44>; // ★追加★ デッドゾーンを88の半分である44に設定
-        };
-        // ★★★ ここまで追加 ★★★
-        };
+		layer1_speed_half {
+			layers = <3>; // レイヤー3がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+							 , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
+		};
+	};
 
 	zip_keybind_keys0: zip_keybind_keys0 {
 			compatible = "zmk,input-processor-keybind";
@@ -108,9 +101,9 @@
 					<&left>,
 					<&up>,
 					<&down>;
-	        tick = <60>; // ティック間隔
-	        wait-ms = <0>; // 待機時間
-	        tap-ms = <10>; // タップ時間
+			tick = <60>; // ティック間隔
+			wait-ms = <0>; // 待機時間
+			tap-ms = <10>; // タップ時間
 	};
 	zip_keybind_keys1: zip_keybind_keys1 {
 			compatible = "zmk,input-processor-keybind";
@@ -123,14 +116,12 @@
 			tick = <60>;
 			wait-ms = <0>;
 			tap-ms = <10>;
-	        // mode = <0>
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
 	};
 };
 
-/*&joystick_listener {
+/* joystick_listener は元のコードでコメントアウトされているため、このままコメントアウトを維持します。
+   もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
+&joystick_listener {
 	status = "okay";
 	layer3 {
 		layers = <5>; // レイヤー5がアクティブな場合
@@ -150,36 +141,25 @@
 		layers = <0>; // レイヤー0がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	    // ★★★ 追加箇所 ★★★
-    // レイヤー1ではキーバインドではなく、マウス移動のスケールが行われるため、
-    // ここで直接input-processorsを設定します。
-    layer1_mouse_speed {
-        layers = <3>;
-        // レイヤー3では、ジョイスティックの動きがマウスイベントとして処理されるようにします。
-        // ここでは、ジョイスティックからの入力をそのままマウス移動にマッピングするため、
-        // zip_keybind_keysは使いません。
-        // anin0のinput-code設定がINPUT_EV_REL/INPUT_REL_X,Yなので、
-        // そのイベントをそのまま引き継ぎます。
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
-        process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
-    };
-    layer1_prevent_keybind {
-        layers = <3>;
-        // レイヤー3ではキーバインドが有効にならないように、joystick_listener側でも無効化
-        // （または、joystick_listenerのlayer2セクション全体を削除しても良いですが、
-        // 明示的に無効化する方が意図が伝わりやすいです）
-        input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
-    };
-    // ★★★ ここまで追加 ★★★
-};*/
+	layer1_mouse_speed {
+		layers = <3>;
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
+		process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
+	};
+	layer1_prevent_keybind {
+		layers = <3>;
+		input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
+	};
+};
+*/
 
 &kscan0 {
-    col-gpios
-        = <&gpio0 9 GPIO_ACTIVE_HIGH>
-        , <&gpio0 10 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 2 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 3 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 4 GPIO_ACTIVE_HIGH>
-        , <&xiao_d 5 GPIO_ACTIVE_HIGH>
-        ;
+	col-gpios
+		= <&gpio0 9 GPIO_ACTIVE_HIGH>
+		, <&gpio0 10 GPIO_ACTIVE_HIGH>
+		, <&xiao_d 2 GPIO_ACTIVE_HIGH>
+		, <&xiao_d 3 GPIO_ACTIVE_HIGH>
+		, <&xiao_d 4 GPIO_ACTIVE_HIGH>
+		, <&xiao_d 5 GPIO_ACTIVE_HIGH>
+		;
 };
