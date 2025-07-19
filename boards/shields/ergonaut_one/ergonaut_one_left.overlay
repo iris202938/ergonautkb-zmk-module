@@ -130,7 +130,7 @@
 	};
 };
 
-&joystick_listener {
+/*&joystick_listener {
 	status = "okay";
 	layer3 {
 		layers = <5>; // レイヤー5がアクティブな場合
@@ -171,7 +171,7 @@
         input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
     };
     // ★★★ ここまで追加 ★★★
-};
+};*/
 
 &kscan0 {
     col-gpios
