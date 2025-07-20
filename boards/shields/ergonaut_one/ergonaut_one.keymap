@@ -1491,4 +1491,35 @@
             >;
         };
     };
+
+	behaviors {
+        // Bluetoothプロファイル0を選択し、レイヤー0を有効化
+        bt0_l0: bt0_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0, &bt BT_SEL 0, &to 0>;
+        };
+
+        // Bluetoothプロファイル1を選択し、レイヤー2を有効化
+        bt1_l2: bt1_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0, &bt BT_SEL 1, &to 2>;
+        };
+
+        // Bluetoothプロファイル2を選択し、レイヤー2を有効化
+        bt2_l2: bt2_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0, &bt BT_SEL 2, &to 2>;
+        };
+
+        // USB接続を選択し、レイヤー2を有効化
+        usb_l2: usb_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0, &out OUT_USB, &to 2>;
+        };
+    };
+
 };
