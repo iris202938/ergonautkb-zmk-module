@@ -1373,6 +1373,7 @@
 		bindings = <&kp X>, <&kp O>;
 	};
 
+macros {
 	lm: lm {
 	        compatible = "zmk,behavior-macro-two-param";
 	        wait-ms = <0>;
@@ -1390,6 +1391,7 @@
 	            , <&macro_release &mo MACRO_PLACEHOLDER>
 	            ;
 	    };
+	};
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
