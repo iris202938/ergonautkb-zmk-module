@@ -1528,6 +1528,7 @@
             bindings = <&to 0 &out OUT_USB &to 2>; // カンマを削除
         };
 
+macros {
     lm: lm {
         compatible = "zmk,behavior-macro-two-param";
         wait-ms = <0>;
@@ -1545,4 +1546,5 @@
             , <&macro_release &mo MACRO_PLACEHOLDER>
             ;
     };
+};
 };
