@@ -55,6 +55,13 @@
 		// layers = <0 1 2 3 4>;
 		bindings = <&kp RSHIFT>;
 	};
+	
+	combo_P1SHIFT {
+		timeout-ms = <80>;
+		key-positions = <23 35>;
+		// layers = <0 1 2 3 4 5 6>;
+		bindings = <&kp RSHIFT>;
+	};
 
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
@@ -1452,8 +1459,8 @@
         move_layer {
             display-name = "MOV";
             bindings = <
-                &kp LG(BSPC)      &kp LS(LC(TAB))   &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP       &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP    &kp ESC
-                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN     &lt BLE BSPC   &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB2
+                &kp LG(BSPC)      &kp LS(LC(TAB))   &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP       &kp LC(Y)      &kp HOME         &kp UP        &kp END        &kp PG_UP    &mkp MB2
+                &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN     &lt BLE BSPC   &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB1
                 &mt LGUI SPACE    &kp W             &kp LA(LEFT)    &mkp MB3       &kp LA(RIGHT)     &kp LC(TAB)      	&kp LC(Z)      &kp LS(LC(TAB))  &kp LG(LBKT)  &kp LG(RBKT)   &kp LC(TAB)  &trans
                                                                     &kp LC(C)      &kp LC(V)         &mkp MB2           &kp ENTER      &mkp MB1         &trans
             >;
