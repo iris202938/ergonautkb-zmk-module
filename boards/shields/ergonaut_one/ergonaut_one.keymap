@@ -1392,18 +1392,18 @@
         default_layer {
             display-name = "QWER";
             bindings = <
-                &qmt LSHFT ESC    &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &qmt RSHFT MINUS
-                &qmt LCTRL TAB    &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &qmt RCTRL SQT
-                &qm LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &qm RGUI
+                &mt LSHFT ESC    &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U            &kp I         &kp O     &kp P      &qmt RSHFT MINUS
+                &mt LCTRL TAB    &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J            &kp K         &kp L     &kp SEMI   &qmt RCTRL SQT
+                &kp LALT         &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M            &kp COMMA     &kp DOT   &kp FSLH   &qm RGUI
                                                     &lt NUM LANG2 &kp SPACE         &mo LWR       &lt RSE ENTER &kp INT4         &lt MOV LANG1
             >;
         };
         nicola_layer {
             display-name = "NIC";
             bindings = <
-                &qmt LSHFT ESC	&macro_JPPERIOD &macro_KA     &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &qmt RSHFT MINUS
-                &kp lctrl_qw	&macro_U        &macro_SI     &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &qmt RCTRL SQT
-                &kp lalt_qw	&macro_JPTEN    &macro_HI     &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
+                &qmt LSHFT ESC	&macro_JPPERIOD &macro_KA     &macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &mt RSHFT MINUS
+                &kp LCTRL_QW	&macro_U        &macro_SI     &macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &mt RCTRL SQT
+                &kp LALT_QW	&macro_JPTEN    &macro_HI     &macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &kp RGUI
                                                         	&trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
             >;
         };
@@ -1562,49 +1562,49 @@
                 ;
         };
 		// LCTRL を押すと QWER レイヤーに移行し、LCTRL キー自体も押された状態になる
-		lctrl_qw: lctrl_qw { // マクロ名を短縮
+		LCTRL_QW: LCTRL_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp LCTRL>;
 		};
 
 		// LSHIFT を押すと QWER レイヤーに移行し、LSHIFT キー自体も押された状態になる
-		lshft_qw: lshft_qw { // マクロ名を短縮
+		LSHFT_QW: LSHFT_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp LSHFT>;
 		};
 
 		// LALT を押すと QWER レイヤーに移行し、LALT キー自体も押された状態になる
-		lalt_qw: lalt_qw { // マクロ名を短縮
+		LALT_QW: LALT_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp LALT>;
 		};
 
 		// LGUI (Windows) を押すと QWER レイヤーに移行し、LGUI キー自体も押された状態になる
-		lgui_qw: lgui_qw { // マクロ名を短縮
+		LGUI_QW: LGUI_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp LGUI>;
 		};
 
 		// RGUI (Windows) を押すと QWER レイヤーに移行し、RGUI キー自体も押された状態になる
-		rgui_qw: rgui_qw { // マクロ名を短縮
+		RGUI_QW: RGUI_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp RGUI>;
 		};
 
 		// RSHFT も必要であれば追加
-		rshft_qw: rshft_qw { // マクロ名を短縮
+		RSHFT_QW: RSHFT_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp RSHFT>;
 		};
 
 		// RCTRL も必要であれば追加
-		rctrl_qw: rctrl_qw { // マクロ名を短縮
+		RCTRL_QW: RCTRL_QW { // マクロ名を短縮
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings = <&mo QWE &kp RCTRL>;
