@@ -56,35 +56,35 @@
 	combo_PSHIFT {
 		timeout-ms = <80>;
 		key-positions = <24 35>;
-		// layers = <0 1 2 3 4>;
+		layers = <0 2 3 4 5 6>;
 		bindings = <&kp LSHIFT>;
 	};
 
 	combo_TSHIFT {
 		timeout-ms = <80>;
 		key-positions = <36 41>;
-		// layers = <0 1 2 3 4>;
+		// layers = <0 2 3 4 5 6>;
 		bindings = <&kp RSHIFT>;
 	};
 	
 	combo_PLSHIFT {
 		timeout-ms = <80>;
 		key-positions = <12 24>;
-		layers = <3 4 5 6>;
+		layers = <0 2 3 4 5 6>;
 		bindings = <&kp LSHIFT>;
 	};
 
 	combo_PRSHIFT {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <3 4 5 6>;
+		layers = <0 2 3 4 5 6>;
 		bindings = <&kp RSHIFT>;
 	};
 
 	combo_CAPSWORD {
 		timeout-ms = <80>;
 		key-positions = <38 39>;
-		layers = <1 3 4 5 6>;
+		layers = <0 2 3 4 5 6>;
 		bindings = <&caps_word>;
 	};
 
