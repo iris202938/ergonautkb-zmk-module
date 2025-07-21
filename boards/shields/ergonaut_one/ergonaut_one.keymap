@@ -35,12 +35,6 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
-/ {
-    keymap {
-        ...
-    };
-};
-
 / { // ここが唯一のルートノードの始まり
     combos {
         compatible = "zmk,combos";
