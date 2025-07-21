@@ -63,7 +63,7 @@
 	combo_TSHIFT {
 		timeout-ms = <80>;
 		key-positions = <36 41>;
-		// layers = <0 2 3 4 5 6>;
+		layers = <0 2 3 4 5 6>;
 		bindings = <&kp RSHIFT>;
 	};
 	
