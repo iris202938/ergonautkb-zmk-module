@@ -77,6 +77,13 @@
 		bindings = <&kp RSHIFT>;
 	};
 
+	combo_CAPSWORD {
+		timeout-ms = <80>;
+		key-positions = <38 39>;
+		// layers = <1 23 4 5 6>;
+		bindings = <&caps_word>;
+	};
+
 	// combo_JPQMARKL {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <1 37>;
