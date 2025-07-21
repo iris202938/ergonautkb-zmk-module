@@ -82,7 +82,7 @@
 	};
 
 	combo_CAPSWORD {
-		timeout-ms = <80>;
+		timeout-ms = <40>;
 		key-positions = <38 39>;
 		layers = <0 2 3 4 5 6>;
 		bindings = <&caps_word>;
