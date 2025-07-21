@@ -31,6 +31,16 @@
     quick-tap-ms = <150>;
 };
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
+/ {
+    keymap {
+        ...
+    };
+};
+
 / { // ここが唯一のルートノードの始まり
     combos {
         compatible = "zmk,combos";
