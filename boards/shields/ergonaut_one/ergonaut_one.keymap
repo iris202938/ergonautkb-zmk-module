@@ -78,8 +78,8 @@
 		timeout-ms = <80>;
 		key-positions = <23 35>;
 		layers = <0 2 5 6>;
-	};
 		bindings = <&kp RSHIFT>;
+	};
 
 	combo_CAPSWORD {
 		timeout-ms = <30>;
