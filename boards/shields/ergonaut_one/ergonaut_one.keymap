@@ -88,6 +88,13 @@
 		bindings = <&kp C>;
 		};
 
+	combo_RDEL {
+		timeout-ms = <80>;
+		key-positions = <23 35>;
+		layers = <9>;
+		bindings = <&kp D>;
+		};
+
 	combo_CAPSWORD {
 		timeout-ms = <30>;
 		key-positions = <36 41>;
