@@ -1606,7 +1606,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_NUM_LANG2";
             #binding-cells = <0>;
-            bindings = <&kp LANG2>, <&to NUM>, <&to 0>; // シングルタップ: LANG2, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: default (0)
+            bindings = <&kp LANG2>, <&mo NUM>, <&to 0>; // シングルタップ: LANG2, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: default (0)
             tapping-term-ms = <200>; // 必要に応じて調整
         };
 
@@ -1615,7 +1615,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MOV_LANG1";
             #binding-cells = <0>;
-            bindings = <&kp LANG1>, <&to MOV>, <&to 0>; // シングルタップ: LANG1, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: default (0)
+            bindings = <&kp LANG1>, <&mo MOV>, <&to 0>; // シングルタップ: LANG1, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: default (0)
             tapping-term-ms = <200>; // 必要に応じて調整
         };
 
@@ -1624,7 +1624,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_NUM_INT5";
             #binding-cells = <0>;
-            bindings = <&kp INT5>, <&to NUM>, <&to 2>; // シングルタップ: INT5, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: windows_layer (2)
+            bindings = <&kp INT5>, <&mo NUM>, <&to 2>; // シングルタップ: INT5, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: windows_layer (2)
             tapping-term-ms = <200>; // 必要に応じて調整
         };
 
@@ -1633,7 +1633,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MOV_INT2";
             #binding-cells = <0>;
-            bindings = <&kp INT2>, <&to MOV>, <&to 2>; // シングルタップ: INT2, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: windows_layer (2)
+            bindings = <&kp INT2>, <&mo MOV>, <&to 2>; // シングルタップ: INT2, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: windows_layer (2)
             tapping-term-ms = <200>; // 必要に応じて調整
         };
     };
