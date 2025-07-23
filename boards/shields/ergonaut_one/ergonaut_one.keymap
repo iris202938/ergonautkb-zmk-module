@@ -1600,5 +1600,41 @@
             #binding-cells = <0>;
             bindings = <&to 0 &out OUT_USB &to 2>;
         };
+
+	// QWERレイヤーのキー36 (元: &lt NUM LANG2)
+        td_num_lang2: td_num_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NUM_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2>, <&to NUM>, <&to 0>; // シングルタップ: LANG2, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: default (0)
+            tapping-term-ms = <200>; // 必要に応じて調整
+        };
+
+        // QWERレイヤーのキー41 (元: &lt MOV LANG1)
+        td_mov_lang1: td_mov_lang1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MOV_LANG1";
+            #binding-cells = <0>;
+            bindings = <&kp LANG1>, <&to MOV>, <&to 0>; // シングルタップ: LANG1, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: default (0)
+            tapping-term-ms = <200>; // 必要に応じて調整
+        };
+
+        // WINレイヤーのキー36 (元: &lt NUM INT5)
+        td_num_int5: td_num_int5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NUM_INT5";
+            #binding-cells = <0>;
+            bindings = <&kp INT5>, <&to NUM>, <&to 2>; // シングルタップ: INT5, ホールド: NUM, ダブルタップ: NUM, 保持中のNUMでシングルタップ: windows_layer (2)
+            tapping-term-ms = <200>; // 必要に応じて調整
+        };
+
+        // WINレイヤーのキー41 (元: &lt MOV INT2)
+        td_mov_int2: td_mov_int2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MOV_INT2";
+            #binding-cells = <0>;
+            bindings = <&kp INT2>, <&to MOV>, <&to 2>; // シングルタップ: INT2, ホールド: MOV, ダブルタップ: MOV, 保持中のMOVでシングルタップ: windows_layer (2)
+            tapping-term-ms = <200>; // 必要に応じて調整
+        };
     };
 };
