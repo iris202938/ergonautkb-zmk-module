@@ -1580,6 +1580,13 @@
             bindings = <&to 0 &bt BT_SEL 0 &to 0>;
         };
 
+        // Bluetoothプロファイル0を選択し、レイヤー1を有効化
+        bt0_l0: bt0_l1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 0 &to 1>;
+        };
+
         // Bluetoothプロファイル1を選択し、レイヤー2を有効化
         bt1_l2: bt1_l2 {
             compatible = "zmk,behavior-macro";
@@ -1592,6 +1599,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0 &bt BT_SEL 2 &to 2>;
+        };
+
+		// Bluetoothプロファイル3を選択し、レイヤー2を有効化
+        bt3_l2: bt3_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 3 &to 2>;
+        };
+
+        // USB接続を選択し、レイヤー0を有効化
+        usb_l0: usb_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &out OUT_USB &to 0>;
         };
 
         // USB接続を選択し、レイヤー2を有効化
