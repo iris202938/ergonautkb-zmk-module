@@ -1573,11 +1573,11 @@
     };
 
 	behaviors {
-        // Bluetoothプロファイル0を選択し、レイヤー1を有効化
+        // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         bt0_l0: bt0_l0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 0 &to 1>;
+            bindings = <&to 0 &bt BT_SEL 0 &to 0>;
         };
 
         // Bluetoothプロファイル1を選択し、レイヤー2を有効化
