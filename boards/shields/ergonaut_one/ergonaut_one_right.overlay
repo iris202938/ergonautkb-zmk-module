@@ -9,55 +9,56 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h> // マウススクロール機能のためにこのヘッダーも追加しておくと安全です
+
+// ZMK_POINTING_DEFAULT_MOVE_VAL と ZMK_POINTING_DEFAULT_SCRL_VAL は
+// ポインティングデバイス全般に影響するため、右ジョイスティックのスクロール速度は
+// input-processors の zip_xy_scaler で調整するのがより一般的です。
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 &adc {
-	status = "okay";
+    status = "okay";
 };
 
 / {
-	anin0: analog_input_0 {
-		compatible = "zmk,analog-input";
-		sampling-hz = <100>;
-		y-ch {
-			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1590>;
-			mv-min-max = <1600>;
-			mv-deadzone = <88>;
-			scale-multiplier = <1>;
-			scale-divisor = <50>;
-			#invert;
-			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_X>;
-			#report-on-change-only;
-		};
-		x-ch {
-			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1683>;
-			mv-min-max = <1600>;
-			mv-deadzone = <88>;
-			scale-multiplier = <1>;
-			scale-divisor = <50>;
-			invert;
-			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_Y>;
+    // 右のジョイスティック（マウスホイール用）
+    anin0: analog_input_0 {
+        compatible = "zmk,analog-input";
+        sampling-hz = <100>;
+        y-ch {
+            io-channels = <&adc 0>; // **右ジョイスティックのY軸のADCチャンネルを指定**
+            mv-mid = <1590>; // 必要に応じて調整
+            mv-min-max = <1600>; // 必要に応じて調整
+            mv-deadzone = <88>; // 必要に応じて調整
+            scale-multiplier = <1>;
+            scale-divisor = <50>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_WHEEL_Y>; // 垂直ホイールスクロール
+            // スクロール方向が逆になる場合は #invert; を追加
+            #report-on-change-only;
+        };
+        x-ch {
+            io-channels = <&adc 1>; // **右ジョイスティックのX軸のADCチャンネルを指定**
+            mv-mid = <1683>; // 必要に応じて調整
+            mv-min-max = <1600>; // 必要に応じて調整
+            mv-deadzone = <88>; // 必要に応じて調整
+            scale-multiplier = <1>;
+            scale-divisor = <50>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_WHEEL_X>; // 水平ホイールスクロール
+            // スクロール方向が逆になる場合は invert; を追加
+            #report-on-change-only;
+        };
+    };
 
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
-			#report-on-change-only;
-
-		};
-	};
-	
-};
-
-&joystick_split {
-	device = <&anin0>;
-	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
-};
-
-&default_transform {
-    col-offset = <6>;
+    // 右のジョイスティックリスナーを有効にする
+    &joystick_split {
+        status = "okay";
+        device = <&anin0>;
+        // スクロール速度を調整
+        input-processors = <&zip_xy_scaler 1 2>; // 例: スクロール速度を半分にする
+    };
 };
 
 &kscan0 {
