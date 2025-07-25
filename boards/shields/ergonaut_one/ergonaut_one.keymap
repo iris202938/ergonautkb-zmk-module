@@ -1476,8 +1476,8 @@
             bindings = <
                 &qmt LSHFT ESC	&macro_JPPERIOD &macro_KA	&macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &qmt RSHFT MINUS
                 &qmt LCTRL TAB	&macro_U        &macro_SI	&macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &qmt RCTRL SQT
-                &qm LALT	&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
-                                                		&trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
+                &qm LALT		&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
+															&trans         &trans         &mo LWR        &lt RSE ENTER  &trans         &trans
             >;
         };
         windows_layer {
@@ -1529,7 +1529,7 @@
             display-name = "ADJ";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      	&kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     		&mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l0        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  	&to WIN
             >;
@@ -1538,7 +1538,7 @@
             display-name = "ADJW";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &none             &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l0        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
             >;
@@ -1573,8 +1573,15 @@
     };
 
 	behaviors {
-        // Bluetoothプロファイル0を選択し、レイヤー1を有効化
+        // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         bt0_l0: bt0_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 0 &to 0>;
+        };
+
+        // Bluetoothプロファイル0を選択し、レイヤー1を有効化
+        bt0_l0: bt0_l1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0 &bt BT_SEL 0 &to 1>;
@@ -1592,6 +1599,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0 &bt BT_SEL 2 &to 2>;
+        };
+
+		// Bluetoothプロファイル3を選択し、レイヤー2を有効化
+        bt3_l2: bt3_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 3 &to 2>;
+        };
+
+        // USB接続を選択し、レイヤー0を有効化
+        usb_l0: usb_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &out OUT_USB &to 0>;
         };
 
         // USB接続を選択し、レイヤー2を有効化
