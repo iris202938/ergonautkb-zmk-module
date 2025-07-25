@@ -102,82 +102,82 @@
 		bindings = <&caps_word>;
 	};
 
-	// combo_JPQMARKL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <13 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPQMARKL>;
-	// };
+	combo_JPQMARKL {
+		timeout-ms = <50>;
+		key-positions = <13 37>;
+		layers = <5>;
+		bindings = <&macro_JPQMARKL>;
+	};
 
-	// combo_JPSLASHL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <14 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPSLASHL>;
-	// };
+	combo_JPSLASHL {
+		timeout-ms = <50>;
+		key-positions = <14 37>;
+		layers = <5>;
+		bindings = <&macro_JPSLASHL>;
+	};
 
-	// combo_JPTILDEL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <15 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPTILDEL>;
-	// };
+	combo_JPTILDEL {
+		timeout-ms = <50>;
+		key-positions = <15 37>;
+		layers = <5>;
+		bindings = <&macro_JPTILDEL>;
+	};
 
-	// combo_JPLKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <16 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPLKAGIL>;
-	// };
+	combo_JPLKAGIL {
+		timeout-ms = <50>;
+		key-positions = <16 37>;
+		layers = <5>;
+		bindings = <&macro_JPLKAGIL>;
+	};
 
-	// combo_JPRKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <17 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPRKAGIL>;
-	// };
+	combo_JPRKAGIL {
+		timeout-ms = <50>;
+		key-positions = <17 37>;
+		layers = <5>;
+		bindings = <&macro_JPRKAGIL>;
+	};
 
-	// combo_JPLKADOL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <18 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPLKADOL>;
-	// };
+	combo_JPLKADOL {
+		timeout-ms = <50>;
+		key-positions = <18 37>;
+		layers = <5>;
+		bindings = <&macro_JPLKADOL>;
+	};
 
-	// combo_JPRKADOL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <19 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPRKADOL>;
-	// };
+	combo_JPRKADOL {
+		timeout-ms = <50>;
+		key-positions = <19 37>;
+		layers = <5>;
+		bindings = <&macro_JPRKADOL>;
+	};
 
-	// combo_JPLMARUL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <20 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPLMARUL>;
-	// };
+	combo_JPLMARUL {
+		timeout-ms = <50>;
+		key-positions = <20 37>;
+		layers = <5>;
+		bindings = <&macro_JPLMARUL>;
+	};
 
-	// combo_JPRMARUL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <21 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPRMARUL>;
-	// };
+	combo_JPRMARUL {
+		timeout-ms = <50>;
+		key-positions = <21 37>;
+		layers = <5>;
+		bindings = <&macro_JPRMARUL>;
+	};
 
-	// combo_JPLDKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <22 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPLDKAGIL>;
-	// };
+	combo_JPLDKAGIL {
+		timeout-ms = <50>;
+		key-positions = <22 37>;
+		layers = <5>;
+		bindings = <&macro_JPLDKAGIL>;
+	};
 
-	// combo_JPRDKAGIL {
-	// 	timeout-ms = <50>;
-	// 	key-positions = <23 37>;
-	// 	layers = <5>;
-	// 	bindings = <&macro_JPRDKAGIL>;
-	// };
+	combo_JPRDKAGIL {
+		timeout-ms = <50>;
+		key-positions = <23 37>;
+		layers = <5>;
+		bindings = <&macro_JPRDKAGIL>;
+	};
 
 	combo_XA {
 		timeout-ms = <50>;
