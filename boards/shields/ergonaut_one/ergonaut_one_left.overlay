@@ -15,151 +15,196 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
 
 &adc {
-	status = "okay";
+    status = "okay";
 };
 
 / {
-	// 左のジョイスティック（マウスカーソル移動用）
-	anin0: analog_input_0 {
-		compatible = "zmk,analog-input";
-		sampling-hz = <100>;
-		y-ch {
-			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
-			mv-mid = <1716>; // Y軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
-			scale-multiplier = <1>; // スケーリングの乗数
-			scale-divisor = <50>; // スケーリングの除数
-			#invert; // Y軸の入力を反転
-			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
-			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
-		};
-		x-ch {
-			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
-			mv-mid = <1682>; // X軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // X軸のデッドゾーン
-			scale-multiplier = <1>;
-			scale-divisor = <50>;
-			invert; // X軸の入力を反転
-			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
-			#report-on-change-only;
-		};
-	};
+    // 左のジョイスティック（マウスカーソル移動用）
+    anin0: analog_input_0 {
+        compatible = "zmk,analog-input";
+        sampling-hz = <100>;
+        y-ch {
+            io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
+            mv-mid = <1716>; // Y軸のニュートラル（中央）でのミリボルト値
+            mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
+            mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
+            scale-multiplier = <1>; // スケーリングの乗数
+            scale-divisor = <50>; // スケーリングの除数
+            #invert; // Y軸の入力を反転
+            evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
+            input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
+        };
+        x-ch {
+            io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
+            mv-mid = <1682>; // X軸のニュートラル（中央）でのミリボルト値
+            mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
+            mv-deadzone = <88>; // X軸のデッドゾーン
+            scale-multiplier = <1>;
+            scale-divisor = <50>;
+            invert; // X軸の入力を反転
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_X>; // X軸の動きをマウスのX（水平）にマッピング
+            #report-on-change-only;
+        };
+    };
 
-	behaviors {
-		right: input_right {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp RIGHT>, <&kp END>;
-				mods = <(MOD_RCTL|MOD_RSFT)>;
-		};
-		left: input_left {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp LEFT>, <&kp HOME>;
-				mods = <(MOD_RCTL|MOD_RSFT)>;
-		};
-		up: input_up {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp UP>, <&kp PG_UP>;
-				mods = <(MOD_RCTL|MOD_RSFT)>;
-	};
-		down: input_down {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp DOWN>, <&kp PG_DN>;
-				mods = <(MOD_RCTL|MOD_RSFT)>;
-		};
-	};
+    // --- ここから右のジョイスティックの設定を追加 ---
+    // 右のジョイスティック（マウススクロール用）
+    anin1: analog_input_1 {
+        compatible = "zmk,analog-input";
+        sampling-hz = <100>;
 
-	analog_input_listener {
-		status = "okay";
-		compatible = "zmk,input-listener";
-		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
+        y-ch {
+            io-channels = <&adc 2>; // **右ジョイスティックのY軸のADCチャンネルを指定**
+            mv-mid = <1716>;
+            mv-min-max = <1600>;
+            mv-deadzone = <88>;
+            scale-multiplier = <1>;
+            scale-divisor = <50>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_VIRT_SCROLL>; // 垂直スクロール
+            // スクロール方向が逆になる場合は #invert; を追加
+        };
 
-		scroll {
-			layers = <5 6>; // レイヤー5,6がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-					 , <&zip_xy_scaler 1 6> // スケーリング（1/6）
-					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
-		};
-		layer1_speed_half {
-			layers = <3 4 9>; // レイヤー3,4,9がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
-		};
-	};
+        x-ch {
+            io-channels = <&adc 3>; // **右ジョイスティックのX軸のADCチャンネルを指定**
+            mv-mid = <1682>;
+            mv-min-max = <1600>;
+            mv-deadzone = <88>;
+            scale-multiplier = <1>;
+            scale-divisor = <50>;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_VIRT_SCROLL_H>; // 水平スクロール
+            #report-on-change-only;
+            // スクロール方向が逆になる場合は invert; を追加
+        };
+    };
 
-	zip_keybind_keys0: zip_keybind_keys0 {
-			compatible = "zmk,input-processor-keybind";
-			#input-processor-cells = <0>;
-		track_remainders;
-			bindings = <&right>,
-					<&left>,
-					<&up>,
-					<&down>;
-			tick = <60>; // ティック間隔
-			wait-ms = <0>; // 待機時間
-			tap-ms = <10>; // タップ時間
-	};
-	zip_keybind_keys1: zip_keybind_keys1 {
-			compatible = "zmk,input-processor-keybind";
-			#input-processor-cells = <0>;
-		track_remainders;
-			bindings = <&kp C_FF>,
-					<&kp C_RW>,
-					<&kp C_VOL_UP>,
-					<&kp C_VOL_DN>;
-			tick = <60>;
-			wait-ms = <0>;
-			tap-ms = <10>;
-	};
+    // 右のジョイスティック用リスナー
+    analog_input_listener_right_joystick {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&anin1>; // 右のアナログ入力デバイス (anin1) を監視
+
+        default {
+            input-processors = <&zip_xy_scaler 1 10> // スクロール速度調整 (1/10)
+                             , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+        };
+    };
+    // --- 右のジョイスティックの設定ここまで ---
+
+    behaviors {
+        right: input_right {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp RIGHT>, <&kp END>;
+                mods = <(MOD_RCTL|MOD_RSFT)>;
+        };
+        left: input_left {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp LEFT>, <&kp HOME>;
+                mods = <(MOD_RCTL|MOD_RSFT)>;
+        };
+        up: input_up {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp UP>, <&kp PG_UP>;
+                mods = <(MOD_RCTL|MOD_RSFT)>;
+    };
+        down: input_down {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp DOWN>, <&kp PG_DN>;
+                mods = <(MOD_RCTL|MOD_RSFT)>;
+        };
+    };
+
+    analog_input_listener {
+        status = "okay";
+        compatible = "zmk,input-listener";
+        device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
+
+        scroll {
+            layers = <5 6>; // レイヤー5,6がアクティブな場合
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
+                     , <&zip_xy_scaler 1 8> // スケーリング（1/8）
+                     , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+        };
+        layer1_speed_half {
+            layers = <3 4 9>; // レイヤー3,4,9がアクティブな場合
+            input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+                             , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
+        };
+    };
+
+    zip_keybind_keys0: zip_keybind_keys0 {
+            compatible = "zmk,input-processor-keybind";
+            #input-processor-cells = <0>;
+        track_remainders;
+            bindings = <&right>,
+                    <&left>,
+                    <&up>,
+                    <&down>;
+            tick = <60>; // ティック間隔
+            wait-ms = <0>; // 待機時間
+            tap-ms = <10>; // タップ時間
+    };
+    zip_keybind_keys1: zip_keybind_keys1 {
+            compatible = "zmk,input-processor-keybind";
+            #input-processor-cells = <0>;
+        track_remainders;
+            bindings = <&kp C_FF>,
+                    <&kp C_RW>,
+                    <&kp C_VOL_UP>,
+                    <&kp C_VOL_DN>;
+            tick = <60>;
+            wait-ms = <0>;
+            tap-ms = <10>;
+    };
 };
 
 /* joystick_listener は元のコードでコメントアウトされているため、このままコメントアウトを維持します。
    もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
-	status = "okay";
-	layer3 {
-		layers = <5>; // レイヤー5がアクティブな場合
-		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
-		process-next; // 他のプロセッサも処理を継続
-	};
-	layer3-prevent {
-		layers = <5>; // レイヤー5がアクティブな場合
-		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	};
-	default {
-		layers = <0>; // レイヤー0（デフォルト）がアクティブな場合
-		input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
-		process-next;
-	};
-	default-prevent {
-		layers = <0>; // レイヤー0がアクティブな場合
-		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	};
-	layer1_mouse_speed {
-		layers = <3>;
-		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
-		process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
-	};
-	layer1_prevent_keybind {
-		layers = <3>;
-		input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
-	};
+    status = "okay";
+    layer3 {
+        layers = <5>; // レイヤー5がアクティブな場合
+        input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
+        process-next; // 他のプロセッサも処理を継続
+    };
+    layer3-prevent {
+        layers = <5>; // レイヤー5がアクティブな場合
+        input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+    };
+    default {
+        layers = <0>; // レイヤー0（デフォルト）がアクティブな場合
+        input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
+        process-next;
+    };
+    default-prevent {
+        layers = <0>; // レイヤー0がアクティブな場合
+        input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+    };
+    layer1_mouse_speed {
+        layers = <3>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
+        process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
+    };
+    layer1_prevent_keybind {
+        layers = <3>;
+        input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
+    };
 };
 */
 
 &kscan0 {
-	col-gpios
-		= <&gpio0 9 GPIO_ACTIVE_HIGH>
-		, <&gpio0 10 GPIO_ACTIVE_HIGH>
-		, <&xiao_d 2 GPIO_ACTIVE_HIGH>
-		, <&xiao_d 3 GPIO_ACTIVE_HIGH>
-		, <&xiao_d 4 GPIO_ACTIVE_HIGH>
-		, <&xiao_d 5 GPIO_ACTIVE_HIGH>
-		;
+    col-gpios
+        = <&gpio0 9 GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 2 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 3 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 4 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 5 GPIO_ACTIVE_HIGH>
+        ;
 };
