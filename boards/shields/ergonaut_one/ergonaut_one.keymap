@@ -312,6 +312,13 @@
 		bindings = <&macro_PO>;
 	};
 
+	combo_ZL {
+		timeout-ms = <50>;
+		key-positions = <22 37>;
+		layers = <1>;
+		bindings = <&macro_ZL>;
+	};
+
 	combo_XU {
 		timeout-ms = <50>;
 		key-positions = <25 37>;
@@ -1122,6 +1129,12 @@
 		label = "macro_PO";
 		#binding-cells = <0>;
 		bindings = <&kp P>, <&kp O>;
+	};
+	macro_ZL: macro_ZL{
+		compatible = "zmk,behavior-macro";
+		label = "macro_ZL";
+		#binding-cells = <0>;
+		bindings = <&kp Z>, <&kp L>;
 	};
 	macro_XU: macro_XU{
 		compatible = "zmk,behavior-macro";
