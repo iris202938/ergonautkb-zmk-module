@@ -389,11 +389,11 @@
 		bindings = <&macro_JPSLASHR>;
 	};
 
-	combo_JPTILDER {
+	combo_JPTILDERA {
 		timeout-ms = <50>;
 		key-positions = <15 40>;
 		layers = <1>;
-		bindings = <&macro_JPTILDER>;
+		bindings = <&macro_JPTILDERA>;
 	};
 
 	combo_JPLKAGIR {
