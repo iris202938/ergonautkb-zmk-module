@@ -665,17 +665,25 @@
     }; // combos ノードの閉じ括弧の後にセミコロンが必要
 
     // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
-    macro_tap_action_LANG1: macro_tap_action_LANG1 {
+    // LANG1 (0レイヤー移行 & 言語切り替え)
+	macro_lang1_full: macro_lang1_full {
 		compatible = "zmk,behavior-macro";
-		label = "macro_tap_action_LANG1";
+		label = "macro_lang1_full";
 		#binding-cells = <0>;
-		bindings = <&to 1>, <&kp LANG1>; // タップ時にレイヤー1へ移行し、LANG1（言語切り替え）を実行
+		// タップ時のアクション: レイヤー1へ移行し、LANG1（言語切り替え）を実行
+		tap-bindings = <&to 1>, <&kp LANG1>;
+		// ホールド時のアクション: MOV レイヤーへ移行し、離したら戻る
+		hold-bindings = <&ov MOV>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
 	};
-	macro_tap_action_LANG2: macro_tap_action_LANG2 {
+	// LANG2 (1レイヤー移行 & 言語切り替え)
+	macro_lang2_full: macro_lang2_full {
 		compatible = "zmk,behavior-macro";
-		label = "macro_tap_action_LANG2";
+		label = "macro_lang2_full";
 		#binding-cells = <0>;
-		bindings = <&to 0>, <&kp LANG2>; // タップ時にレイヤー0へ移行し、LANG2（言語切り替え）を実行
+		// タップ時のアクション: レイヤー0へ移行し、LANG2（言語切り替え）を実行
+		tap-bindings = <&to 0>, <&kp LANG2>;
+		// ホールド時のアクション: NUM レイヤーへ移行し、離したら戻る
+		hold-bindings = <&ov NUM>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
 	};
 	macro_JPN1: macro_JPN1{
 		compatible = "zmk,behavior-macro";
@@ -1466,7 +1474,7 @@
                 &mt LSHFT ESC     &kp Q   &kp W     &kp E         					&kp R             &kp T         &kp Y         &kp U				&kp I         					&kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S     &kp D         					&kp F             &kp G         &kp H         &kp J				&kp K         					&kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LALT          &kp Z   &kp X     &kp C         					&kp V             &kp B         &kp N         &kp M				&kp COMMA						&kp DOT   &kp FSLH   &kp RGUI
-                                                    &lt NUM &macro_tap_action_LANG2	&mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV &macro_tap_action_LANG1
+                                                    &macro_lang2_full				&mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&macro_lang1_full
             >;
         };
         nicola_layer {
