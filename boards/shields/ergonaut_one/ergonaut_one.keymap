@@ -665,31 +665,17 @@
     }; // combos ノードの閉じ括弧の後にセミコロンが必要
 
     // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
-    macro_LANG1: macro_LANG1 {
+    macro_tap_action_LANG1: macro_tap_action_LANG1 {
 		compatible = "zmk,behavior-macro";
-		label = "macro_LANG1";
+		label = "macro_tap_action_LANG1";
 		#binding-cells = <0>;
-		// タップ時の動作: レイヤー1へ移行し、LANG1（言語切り替え）を実行
-		bindings = <&to 1>, <&macro_tap_LANG1_mod>;
+		bindings = <&to 1>, <&kp LANG1>; // タップ時にレイヤー1へ移行し、LANG1（言語切り替え）を実行
 	};
-	macro_tap_LANG1_mod: macro_tap_LANG1_mod {
+	macro_tap_action_LANG2: macro_tap_action_LANG2 {
 		compatible = "zmk,behavior-macro";
-		label = "macro_tap_LANG1_mod";
+		label = "macro_tap_action_LANG2";
 		#binding-cells = <0>;
-		bindings = <&kp LANG1>; // LANG1は言語切り替えのキーコードを想定
-	};
-	macro_LANG2: macro_LANG2 {
-		compatible = "zmk,behavior-macro";
-		label = "macro_LANG2";
-		#binding-cells = <0>;
-		// タップ時の動作: レイヤー0へ移行し、LANG2（言語切り替え）を実行
-		bindings = <&to 0>, <&macro_tap_LANG2_mod>;
-	};
-	macro_tap_LANG2_mod: macro_tap_LANG2_mod {
-		compatible = "zmk,behavior-macro";
-		label = "macro_tap_LANG2_mod";
-		#binding-cells = <0>;
-		bindings = <&kp LANG2>; // LANG2は言語切り替えのキーコードを想定
+		bindings = <&to 0>, <&kp LANG2>; // タップ時にレイヤー0へ移行し、LANG2（言語切り替え）を実行
 	};
 	macro_JPN1: macro_JPN1{
 		compatible = "zmk,behavior-macro";
@@ -1477,10 +1463,10 @@
         default_layer {
             display-name = "QWER";
             bindings = <
-                &mt LSHFT ESC     &kp Q   &kp W     &kp E         			&kp R             &kp T         &kp Y         &kp U				&kp I         			&kp O     &kp P      &mt RSHFT MINUS
-                &mt LCTRL TAB     &kp A   &kp S     &kp D         			&kp F             &kp G         &kp H         &kp J				&kp K         			&kp L     &kp SEMI   &mt RCTRL SQT
-                &kp LALT          &kp Z   &kp X     &kp C         			&kp V             &kp B         &kp N         &kp M				&kp COMMA				&kp DOT   &kp FSLH   &kp RGUI
-                                                    &lt NUM &macro_LANG2	&mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV &macro_LANG1
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         					&kp R             &kp T         &kp Y         &kp U				&kp I         					&kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         					&kp F             &kp G         &kp H         &kp J				&kp K         					&kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LALT          &kp Z   &kp X     &kp C         					&kp V             &kp B         &kp N         &kp M				&kp COMMA						&kp DOT   &kp FSLH   &kp RGUI
+                                                    &lt NUM &macro_tap_action_LANG2	&mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV &macro_tap_action_LANG1
             >;
         };
         nicola_layer {
