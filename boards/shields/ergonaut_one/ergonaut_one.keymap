@@ -669,14 +669,14 @@
         compatible = "zmk,behavior-macro";
         label = "macro_LANG1";
         #binding-cells = <0>;
-        bindings = <&kp LANG1>, <&to 1>;
+        bindings = <&lt MOV LANG1>, <&to 1>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
 
     macro_LANG2: macro_LANG2 {
         compatible = "zmk,behavior-macro";
         label = "macro_LANG2";
         #binding-cells = <0>;
-        bindings = <&kp LANG2>, <&to 0>;
+        bindings = <&lt NUM LANG2>, <&to 0>;
     }; // 各マクロノードの閉じ括弧の後にセミコロンが必要
 
 	macro_JPN1: macro_JPN1{
