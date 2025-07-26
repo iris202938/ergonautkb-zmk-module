@@ -673,7 +673,7 @@
 		// タップ時のアクション: レイヤー1へ移行し、LANG1（言語切り替え）を実行
 		tap-bindings = <&to 1>, <&kp LANG1>;
 		// ホールド時のアクション: MOV レイヤーへ移行し、離したら戻る
-		hold-bindings = <&ov MOV>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
+		hold-bindings = <&mo MOV>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
 	};
 	// LANG2 (1レイヤー移行 & 言語切り替え)
 	macro_lang2_full: macro_lang2_full {
@@ -683,7 +683,7 @@
 		// タップ時のアクション: レイヤー0へ移行し、LANG2（言語切り替え）を実行
 		tap-bindings = <&to 0>, <&kp LANG2>;
 		// ホールド時のアクション: NUM レイヤーへ移行し、離したら戻る
-		hold-bindings = <&ov NUM>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
+		hold-bindings = <&mo NUM>; // &ov (Overlay) はホールド中に一時的にレイヤーを切り替える
 	};
 	macro_JPN1: macro_JPN1{
 		compatible = "zmk,behavior-macro";
