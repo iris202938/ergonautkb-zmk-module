@@ -392,63 +392,63 @@
 	combo_JPTILDERA {
 		timeout-ms = <50>;
 		key-positions = <15 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPTILDER>;
 	};
 
 	combo_JPLKAGIR {
 		timeout-ms = <50>;
 		key-positions = <16 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPLKAGIR>;
 	};
 
 	combo_JPRKAGIR {
 		timeout-ms = <50>;
 		key-positions = <17 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPRKAGIR>;
 	};
 
 	combo_JPLKADOR {
 		timeout-ms = <50>;
 		key-positions = <18 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPLKADOR>;
 	};
 
 	combo_JPRKADOR {
 		timeout-ms = <50>;
 		key-positions = <19 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPRKADOR>;
 	};
 
 	combo_JPLMARUR {
 		timeout-ms = <50>;
 		key-positions = <20 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPLMARUR>;
 	};
 
 	combo_JPRMARUR {
 		timeout-ms = <50>;
 		key-positions = <21 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPRMARUR>;
 	};
 
 	combo_JPLDKAGIR {
 		timeout-ms = <50>;
 		key-positions = <22 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPLDKAGIR>;
 	};
 
 	combo_JPRDKAGIR {
 		timeout-ms = <50>;
 		key-positions = <23 40>;
-		layers = <1>;
+		layers = <5>;
 		bindings = <&macro_JPRDKAGIR>;
 	};
 	
