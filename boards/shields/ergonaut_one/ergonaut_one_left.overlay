@@ -75,7 +75,7 @@
 	// 			bindings = <&kp DOWN>, <&kp PG_DN>;
 	// 			mods = <(MOD_LCTL|MOD_LSFT)>;
 	// 	};
-// };
+};
 
 	analog_input_listener {
 			status = "okay";
