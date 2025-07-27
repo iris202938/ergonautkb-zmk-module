@@ -99,13 +99,24 @@
 				#binding-cells = <0>;
 				bindings = <&kp UP>, <&kp PG_UP>;
 				mods = <(MOD_LCTL|MOD_LSFT)>;
-	};
+		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp DOWN>, <&kp PG_DN>;
 				mods = <(MOD_LCTL|MOD_LSFT)>;
 		};
+		 // マウススクロールを処理するビヘイビア (ロータリーエンコーダーの例をXY入力に適用)
+        // ここでアナログスティックのXYイベントを &zip_scroll_mapper にルーティングする
+        scroll_behavior: mouse_scroll_stick_behavior {
+            compatible = "zmk,behavior-mouse-scroll"; // マウススクロールに特化した互換性
+            // アナログスティックのXY入力をスクロールイベントに変換するための内部ロジックが必要
+            // 具体的な実装はZMKのカスタムbehaviorを記述するか、
+            // input-processorを直接利用する方式 (trackball_listenerの`scroll-layers`のような) が望ましい [7]
+            // もし `zmk,behavior-mouse-scroll`がXY入力を直接扱えるなら、bindingsは不要で、
+            // `input-processor`で定義した`zip_scroll_mapper`をこのbehaviorに紐付ける形になる
+        };
+
 };
 
 	analog_input_listener {
