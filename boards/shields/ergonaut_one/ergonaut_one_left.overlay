@@ -49,32 +49,63 @@
 			/* NOTE: mouse input does NOT need this */
 			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
 		};
+	anin1: analog_input_1 {
+		compatible = "zmk,analog-input";
+		sampling-hz = <100>;
+		y-ch {
+			io-channels = <&adc 2>; // Y軸がADCチャンネル2に接続
+			mv-mid = <1716>; // Y軸のニュートラル（中央）でのミリボルト値
+			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
+			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
+			scale-multiplier = <1>; // スケーリングの乗数
+			scale-divisor = <50>; // スケーリングの除数
+			#invert; // Y軸の入力を反転
+			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
+			input-code = <INPUT_REL_X>; // Y軸の動きをマウスのX軸（水平）にマッピング
+		};
+		x-ch {
+			io-channels = <&adc 3>; // X軸がADCチャンネル3に接続
+			mv-mid = <1682>; // X軸のニュートラル（中央）でのミリボルト値
+			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
+			mv-deadzone = <88>; // X軸のデッドゾーン
+			scale-multiplier = <1>;
+			scale-divisor = <50>;
+			invert; // X軸の入力を反転
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_Y>; // X軸の動きをマウスのY軸（垂直）にマッピング
+
+			/* enable report mdoe for gamepad axix or knob */
+			/* to only call input_report on quantquantized value is updated */
+			/* NOTE: mouse input does NOT need this */
+			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
+		};
+
 	};
-	// behaviors {
-	// 	right: input_right {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp RIGHT>, <&kp END>;
-	// 			mods = <(MOD_LCTL|MOD_LSFT)>;
-	// 	};
-	// 	left: input_left {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp LEFT>, <&kp HOME>;
-	// 			mods = <(MOD_LCTL|MOD_LSFT)>;
-	// 	};
-	// 	up: input_up {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp UP>, <&kp PG_UP>;
-	// 			mods = <(MOD_LCTL|MOD_LSFT)>;
-	// };
-	// 	down: input_down {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp DOWN>, <&kp PG_DN>;
-	// 			mods = <(MOD_LCTL|MOD_LSFT)>;
-	// 	};
+	behaviors {
+		right: input_right {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp RIGHT>, <&kp END>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
+		left: input_left {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp LEFT>, <&kp HOME>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
+		up: input_up {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp UP>, <&kp PG_UP>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+	};
+		down: input_down {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp DOWN>, <&kp PG_DN>;
+				mods = <(MOD_LCTL|MOD_LSFT)>;
+		};
 };
 
 	analog_input_listener {
@@ -100,35 +131,35 @@
         // ★★★ ここまで追加 ★★★
         };
 
-	// zip_keybind_keys0: zip_keybind_keys0 {
-	// 		compatible = "zmk,input-processor-keybind";
-	// 		#input-processor-cells = <0>;
-	// 	track_remainders;
-	// 		bindings = <&right>,
-	// 				<&left>,
-	// 				<&up>,
-	// 				<&down>;
-	//         tick = <60>; // ティック間隔
-	//         wait-ms = <0>; // 待機時間
-	//         tap-ms = <10>; // タップ時間
-	// };
-	// zip_keybind_keys1: zip_keybind_keys1 {
-	// 		compatible = "zmk,input-processor-keybind";
-	// 		#input-processor-cells = <0>;
-	// 	track_remainders;
-	// 		bindings = <&kp C_FF>,
-	// 				<&kp C_RW>,
-	// 				<&kp C_VOL_UP>,
-	// 				<&kp C_VOL_DN>;
-	// 		tick = <60>;
-	// 		wait-ms = <0>;
-	// 		tap-ms = <10>;
-	//         // mode = <0>
-	//         // threshold = <10>
-	//         // max_threshold = <200>
-	//         // max_pending_activations = <10>
-	// };
-// };
+	zip_keybind_keys0: zip_keybind_keys0 {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&right>,
+					<&left>,
+					<&up>,
+					<&down>;
+	        tick = <60>; // ティック間隔
+	        wait-ms = <0>; // 待機時間
+	        tap-ms = <10>; // タップ時間
+	};
+	zip_keybind_keys1: zip_keybind_keys1 {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp C_FF>,
+					<&kp C_RW>,
+					<&kp C_VOL_UP>,
+					<&kp C_VOL_DN>;
+			tick = <60>;
+			wait-ms = <0>;
+			tap-ms = <10>;
+	        // mode = <0>
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+	};
+};
 
 /*&joystick_listener {
 	status = "okay";
