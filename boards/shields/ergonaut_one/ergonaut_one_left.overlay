@@ -49,6 +49,7 @@
 			/* NOTE: mouse input does NOT need this */
 			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
 		};
+	};
 	anin1: analog_input_1 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
@@ -79,7 +80,6 @@
 			/* NOTE: mouse input does NOT need this */
 			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
 		};
-
 	};
 	behaviors {
 		right: input_right {
