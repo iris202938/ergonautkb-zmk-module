@@ -22,7 +22,7 @@
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		// 右のジョイスティックにマウスホイール機能を割り当てるため、input-codeを変更
-		y-ch {
+		y-ch { // この行のインデントも半角スペースになっているか確認
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続 (右ジョイスティックのY軸)
 			mv-mid = <1590>; // 必要に応じて調整
 			mv-min-max = <1600>; // 必要に応じて調整
@@ -64,6 +64,7 @@
 
 &kscan0 {
     // row-gpiosは前回の修正で追加済みのはず
+    // ★★★ 修正箇所: ここから下のインデントを全て半角スペースまたはタブに置き換える ★★★
     row-gpios
         = <&gpio0 5 GPIO_ACTIVE_HIGH> // 実際のピン番号に合わせる
         , <&gpio0 6 GPIO_ACTIVE_HIGH>
