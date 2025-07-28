@@ -55,7 +55,7 @@
 	device = <&anin0>; // 右のジョイスティック (anin0) を監視
 	// マウスホイールイベントはXYスワップを通常必要としないため、zip_xy_transform は削除。
 	// スクロール速度を調整したい場合は zip_xy_scaler を追加
-	input-processors = <&zip_xy_scaler 1 2>; // 例: スクロール速度を半分にする (乗数1, 除数2)
+	// input-processors = <&zip_xy_scaler 1 2>; // 例: スクロール速度を半分にする (乗数1, 除数2)
 };
 
 &default_transform {
