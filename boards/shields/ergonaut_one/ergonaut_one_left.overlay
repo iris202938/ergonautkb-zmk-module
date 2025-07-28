@@ -11,14 +11,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600   // デフォルト: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // デフォルト: 10
 
 &adc {
 	status = "okay";
 };
 
 / {
+	// 左手側ジョイスティック (マウスカーソル移動用)
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
@@ -43,44 +44,43 @@
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_Y>; // X軸の動きをマウスのY軸（垂直）にマッピング
-
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
 			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
 		};
 	};
+
+	// ★★★ 修正点: anin1 の定義を削除/コメントアウト ★★★
+	// 左手側にはジョイスティックが一つだけなので、anin1は不要です。
+	// このブロック全体を削除するか、コメントアウトしてください。
+	/*
 	anin1: analog_input_1 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
 		y-ch {
-			io-channels = <&adc 2>; // Y軸がADCチャンネル2に接続
-			mv-mid = <1716>; // Y軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
-			scale-multiplier = <1>; // スケーリングの乗数
-			scale-divisor = <50>; // スケーリングの除数
-			#invert; // Y軸の入力を反転
-			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
-			input-code = <INPUT_REL_X>; // Y軸の動きをマウスのX軸（水平）にマッピング
-		};
-		x-ch {
-			io-channels = <&adc 3>; // X軸がADCチャンネル3に接続
-			mv-mid = <1682>; // X軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // X軸のデッドゾーン
+			io-channels = <&adc 2>;
+			mv-mid = <1716>;
+			mv-min-max = <1600>;
+			mv-deadzone = <88>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
-			invert; // X軸の入力を反転
+			#invert;
 			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_Y>; // X軸の動きをマウスのY軸（垂直）にマッピング
-
-			/* enable report mdoe for gamepad axix or knob */
-			/* to only call input_report on quantquantized value is updated */
-			/* NOTE: mouse input does NOT need this */
-			#report-on-change-only; // 値が変更された時のみレポート（マウス入力では不要とコメントされているが、設定されている）
+			input-code = <INPUT_REL_X>;
+		};
+		x-ch {
+			io-channels = <&adc 3>;
+			mv-mid = <1682>;
+			mv-min-max = <1600>;
+			mv-deadzone = <88>;
+			scale-multiplier = <1>;
+			scale-divisor = <50>;
+			invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_Y>;
+			#report-on-change-only;
 		};
 	};
+	*/
+
 	behaviors {
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
@@ -106,24 +106,19 @@
 				bindings = <&kp DOWN>, <&kp PG_DN>;
 				mods = <(MOD_LCTL|MOD_LSFT)>;
 		};
-		 // マウススクロールを処理するビヘイビア (ロータリーエンコーダーの例をXY入力に適用)
-        // ここでアナログスティックのXYイベントを &zip_scroll_mapper にルーティングする
-        scroll_behavior: mouse_scroll_stick_behavior {
-            compatible = "zmk,behavior-mouse-scroll"; // マウススクロールに特化した互換性
-            // アナログスティックのXY入力をスクロールイベントに変換するための内部ロジックが必要
-            // 具体的な実装はZMKのカスタムbehaviorを記述するか、
-            // input-processorを直接利用する方式 (trackball_listenerの`scroll-layers`のような) が望ましい [7]
-            // もし `zmk,behavior-mouse-scroll`がXY入力を直接扱えるなら、bindingsは不要で、
-            // `input-processor`で定義した`zip_scroll_mapper`をこのbehaviorに紐付ける形になる
-        };
+		 scroll_behavior: mouse_scroll_stick_behavior {
+			 compatible = "zmk,behavior-mouse-scroll";
+		 };
+	};
 
-};
-
+	// ★★★ 修正点: `joystick_listener` はコメントアウトを維持 ★★★
+	// 左手側のジョイスティックが一つだけなので、`analog_input_listener` が `anin0` を監視すれば十分です。
+	// `joystick_listener` は完全にコメントアウトされたままにしておきます。
 	analog_input_listener {
 			status = "okay";
 			compatible = "zmk,input-listener";
-	        device = <&anin0>; // 前述のアナログ入力デバイス (anin0) を監視
-	        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // X軸とY軸の入力をスワップ
+			device = <&anin0>; // 左手側ジョイスティック (anin0) を監視
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // X軸とY軸の入力をスワップ
 
 		scroll {
 			layers = <4>; // レイヤー4がアクティブな場合
@@ -131,33 +126,29 @@
 					 , <&zip_xy_scaler 1 8> // スケーリング（1/8）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		// ★★★ 追加箇所 ★★★
-        layer1_speed_half {
-            layers = <3>; // レイヤー3がアクティブな場合
-            // 既存のX/Yスワップを維持しつつ、速度を1/3にする
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
-                             , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
-	//		     , <&zip_xy_filter 44>; // ★追加★ デッドゾーンを88の半分である44に設定
-        };
-        // ★★★ ここまで追加 ★★★
-        };
+		layer1_speed_half {
+			layers = <3>; // レイヤー3がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>
+							 , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
+		};
+	};
 
 	zip_keybind_keys0: zip_keybind_keys0 {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
-		track_remainders;
+		track-remainders; // ハイフンに修正済み
 			bindings = <&right>,
 					<&left>,
 					<&up>,
 					<&down>;
-	        tick = <60>; // ティック間隔
-	        wait-ms = <0>; // 待機時間
-	        tap-ms = <10>; // タップ時間
+			tick = <60>; // ティック間隔
+			wait-ms = <0>; // 待機時間
+			tap-ms = <10>; // タップ時間
 	};
 	zip_keybind_keys1: zip_keybind_keys1 {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
-		track_remainders;
+		track-remainders; // ハイフンに修正済み
 			bindings = <&kp C_FF>,
 					<&kp C_RW>,
 					<&kp C_VOL_UP>,
@@ -165,57 +156,30 @@
 			tick = <60>;
 			wait-ms = <0>;
 			tap-ms = <10>;
-	        // mode = <0>
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
 	};
 };
 
-/*&joystick_listener {
+// ★★★ 修正点: joystick_listener のブロックは削除またはコメントアウトしたままにする ★★★
+// 左手側にジョイスティックが一つだけなので、このブロックは不要です。
+/*
+&joystick_listener {
 	status = "okay";
-	layer3 {
-		layers = <5>; // レイヤー5がアクティブな場合
-		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
-		process-next; // 他のプロセッサも処理を継続
-	};
-	layer3-prevent {
-		layers = <5>; // レイヤー5がアクティブな場合
-		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	};
-	default {
-		layers = <0>; // レイヤー0（デフォルト）がアクティブな場合
-		input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
-		process-next;
-	};
-	default-prevent {
-		layers = <0>; // レイヤー0がアクティブな場合
-		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	};
-	    // ★★★ 追加箇所 ★★★
-    // レイヤー1ではキーバインドではなく、マウス移動のスケールが行われるため、
-    // ここで直接input-processorsを設定します。
-    layer1_mouse_speed {
-        layers = <3>;
-        // レイヤー3では、ジョイスティックの動きがマウスイベントとして処理されるようにします。
-        // ここでは、ジョイスティックからの入力をそのままマウス移動にマッピングするため、
-        // zip_keybind_keysは使いません。
-        // anin0のinput-code設定がINPUT_EV_REL/INPUT_REL_X,Yなので、
-        // そのイベントをそのまま引き継ぎます。
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
-        process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
-    };
-    layer1_prevent_keybind {
-        layers = <3>;
-        // レイヤー3ではキーバインドが有効にならないように、joystick_listener側でも無効化
-        // （または、joystick_listenerのlayer2セクション全体を削除しても良いですが、
-        // 明示的に無効化する方が意図が伝わりやすいです）
-        input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
-    };
-    // ★★★ ここまで追加 ★★★
-};*/
+	device = <&anin1>; // 2つ目のジョイスティック (anin1) を監視
+	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
+	process-next;
+};
+*/
 
 &kscan0 {
+    // ★★★ 修正点: row-gpiosを追加 (繰り返しになりますが、重要です) ★★★
+    // ここに左手側の行のGPIOピンを追記してください。
+    // 例: (これは一般的なXIAO BLEボードのピンアサインの可能性を考慮した例です)
+    row-gpios
+        = <&gpio0 5 GPIO_ACTIVE_HIGH> // 実際のピン番号に合わせる
+        , <&gpio0 6 GPIO_ACTIVE_HIGH>
+        , <&gpio0 7 GPIO_ACTIVE_HIGH>
+        , <&gpio0 8 GPIO_ACTIVE_HIGH>
+        ;
     col-gpios
         = <&gpio0 9 GPIO_ACTIVE_HIGH>
         , <&gpio0 10 GPIO_ACTIVE_HIGH>
