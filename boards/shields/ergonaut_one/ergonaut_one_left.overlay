@@ -94,7 +94,7 @@
 	};
 
 	zip_keybind_keys0: zip_keybind_keys0 {
-			compatible = "zmk,input-processor-keybind"
+			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
 			bindings = <&right>,
