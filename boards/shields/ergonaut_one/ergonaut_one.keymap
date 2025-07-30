@@ -1618,7 +1618,7 @@
         };
 
 		// Bluetoothプロファイル3を選択し、レイヤー3を有効化
-        bt3_l2: bt3_l3 {
+        bt3_l3: bt3_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0 &bt BT_SEL 3 &to 3>;
