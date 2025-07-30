@@ -1552,8 +1552,8 @@
             display-name = "ADJ";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      	&kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     		&mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l3        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
-                &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l3           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
+                &kp LGUI          &bt0_l0        &bt1_l3        &bt2_l3           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  	&to WIN
             >;
         };
@@ -1561,8 +1561,8 @@
             display-name = "ADJW";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l3        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
-                &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l3           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &kp LGUI          &bt0_l0        &bt1_l3        &bt2_l3           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
             >;
         };
@@ -1603,32 +1603,32 @@
             bindings = <&to 0 &bt BT_SEL 0 &to 0>;
         };
 
-        // Bluetoothプロファイル1を選択し、レイヤー2を有効化
-        bt1_l2: bt1_l2 {
+        // Bluetoothプロファイル1を選択し、レイヤー3を有効化
+        bt1_l3: bt1_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 1 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 1 &to 3>;
         };
 
-        // Bluetoothプロファイル2を選択し、レイヤー2を有効化
-        bt2_l2: bt2_l2 {
+        // Bluetoothプロファイル2を選択し、レイヤー3を有効化
+        bt2_l3: bt2_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 2 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 2 &to 3>;
         };
 
-		// Bluetoothプロファイル3を選択し、レイヤー2を有効化
-        bt3_l2: bt3_l2 {
+		// Bluetoothプロファイル3を選択し、レイヤー3を有効化
+        bt3_l2: bt3_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 3 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 3 &to 3>;
         };
 
-        // USB接続を選択し、レイヤー3を有効化
-        usb_l3: usb_l3 {
+        // USB接続を選択し、レイヤー2を有効化
+        usb_l2: usb_l2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &out OUT_USB &to 3>;
+            bindings = <&to 0 &out OUT_USB &to 2>;
         };
     };
 };
