@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 &adc {
 	status = "okay";
@@ -29,7 +29,7 @@
 			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
 			scale-multiplier = <1>; // スケーリングの乗数
-			scale-divisor = <50>; // スケーリングの除数
+			scale-divisor = <100>; // スケーリングの除数
 			#invert; // Y軸の入力を反転
 			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
 			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
@@ -40,7 +40,7 @@
 			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // X軸のデッドゾーン
 			scale-multiplier = <1>;
-			scale-divisor = <50>;
+			scale-divisor = <100>;
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
@@ -81,15 +81,15 @@
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
 
 		scroll {
-			layers = <5 6>; // レイヤー5,6がアクティブな場合
+			layers = <6 7>; // レイヤー6,7がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-					 , <&zip_xy_scaler 1 6> // スケーリング（1/6）
+					 , <&zip_xy_scaler 1 12> // スケーリング（1/12）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		layer1_speed_half {
-			layers = <3 4 9>; // レイヤー3,4,9がアクティブな場合
+			layers = <4 5 10>; // レイヤー4,5,10がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 1 3>; // 速度を1/3に設定 (乗数1, 除数3)
+							 , <&zip_xy_scaler 1 6>; // 速度を1/6に設定 (乗数1, 除数6)
 		};
 	};
 
