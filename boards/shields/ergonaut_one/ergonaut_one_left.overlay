@@ -83,7 +83,7 @@
 		scroll {
 			layers = <6 7>; // レイヤー6,7がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-					 , <&zip_xy_scaler 1 12> // スケーリング（1/12）
+					 , <&zip_xy_scaler 1 6> // スケーリング（1/6）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		layer1_speed_half {
