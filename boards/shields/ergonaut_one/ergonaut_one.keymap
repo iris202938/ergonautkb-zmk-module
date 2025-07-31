@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
 // #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #include <dt-bindings/zmk/pointing.h>
@@ -1563,7 +1563,7 @@
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
                 &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l3           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l3        &bt2_l3           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
-                                                                &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
+                                                                &to LIN           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
             >;
         };
         move_layer {
