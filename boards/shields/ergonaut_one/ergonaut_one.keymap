@@ -11,16 +11,17 @@
 
 #define QWE 0
 #define NIC 1
-#define WIN 2
-#define LWR 3
-#define LWRW 4
-#define RSE 5
-#define RSEW 6
-#define ADJ 7
-#define ADJW 8
-#define MOV 9
-#define NUM 10
-#define BLE 11
+#define LIN 2
+#define WIN 3
+#define LWR 4
+#define LWRW 5
+#define RSE 6
+#define RSEW 7
+#define ADJ 8
+#define ADJW 9
+#define MOV 10
+#define NUM 11
+#define BLE 12
 
 
 &lt {
@@ -49,133 +50,133 @@
 	combo_ESC {
 		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <0 1 2>;
+		layers = <0 1 2 3>;
 		bindings = <&kp ESC>;
 	};
 
 	combo_PSHIFT {
 		timeout-ms = <80>;
 		key-positions = <24 35>;
-		layers = <0 2 3 4 5 6>;
+		layers = <0 2 3 4 5 6 7>;
 		bindings = <&kp LSHIFT>;
 	};
 
 	// combo_TSHIFT {
 	// 	timeout-ms = <80>;
 	// 	key-positions = <36 41>;
-	// 	layers = <0 2 3 4 5 6>;
+	// 	layers = <0 2 3 4 5 6 7>;
 	// 	bindings = <&kp RSHIFT>;
 	// };
 	
 	combo_PLSHIFT {
 		timeout-ms = <80>;
 		key-positions = <12 24>;
-		layers = <0 5 6>;
+		layers = <0 6 7>;
 		bindings = <&kp LSHIFT>;
 	};
 
 	combo_PRSHIFT {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <0 5 6>;
+		layers = <0 6 7>;
 		bindings = <&kp RSHIFT>;
 		};
 
 	combo_RCOPY {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <1 2>;
+		layers = <1 2 3>;
 		bindings = <&kp C>;
 		};
 
 	combo_RDEL {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <9>;
+		layers = <10>;
 		bindings = <&kp D>;
 		};
 
 	combo_CAPSWORD {
 		timeout-ms = <30>;
 		key-positions = <36 41>;
-		layers = <0 2>;
+		layers = <0 2 3>;
 		bindings = <&caps_word>;
 	};
 
 	combo_JPQMARKL {
 		timeout-ms = <50>;
 		key-positions = <13 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPQMARKL>;
 	};
 
 	combo_JPSLASHL {
 		timeout-ms = <50>;
 		key-positions = <14 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPSLASHL>;
 	};
 
 	combo_JPTILDEL {
 		timeout-ms = <50>;
 		key-positions = <15 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPTILDEL>;
 	};
 
 	combo_JPLKAGIL {
 		timeout-ms = <50>;
 		key-positions = <16 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPLKAGIL>;
 	};
 
 	combo_JPRKAGIL {
 		timeout-ms = <50>;
 		key-positions = <17 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPRKAGIL>;
 	};
 
 	combo_JPLKADOL {
 		timeout-ms = <50>;
 		key-positions = <18 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPLKADOL>;
 	};
 
 	combo_JPRKADOL {
 		timeout-ms = <50>;
 		key-positions = <19 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPRKADOL>;
 	};
 
 	combo_JPLMARUL {
 		timeout-ms = <50>;
 		key-positions = <20 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPLMARUL>;
 	};
 
 	combo_JPRMARUL {
 		timeout-ms = <50>;
 		key-positions = <21 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPRMARUL>;
 	};
 
 	combo_JPLDKAGIL {
 		timeout-ms = <50>;
 		key-positions = <22 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPLDKAGIL>;
 	};
 
 	combo_JPRDKAGIL {
 		timeout-ms = <50>;
 		key-positions = <23 37>;
-		layers = <5>;
+		layers = <6>;
 		bindings = <&macro_JPRDKAGIL>;
 	};
 
@@ -385,21 +386,21 @@
 	// combo_JPQMARKR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <13 40>;
-	// 	layers = <5>;
+	// 	layers = <6>;
 	// 	bindings = <&macro_JPQMARKR>;
 	// };
 
 	// combo_JPSLASHR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <14 40>;
-	// 	layers = <5>;
+	// 	layers = <6>;
 	// 	bindings = <&macro_JPSLASHR>;
 	// };
 
 	// combo_JPTILDER {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <15 40>;
-	// 	layers = <1>;
+	// 	layers = <6>;
 	// 	bindings = <&macro_JPTILDER>;
 	// };
 
@@ -980,53 +981,29 @@
 		#binding-cells = <0>;
 		bindings = <&kp RBKT>;
 	};
-	// macro_JPLKADOL: macro_JPLKADOL{
-	// 	compatible = "zmk,behavior-macro";
-	// 	label = "macro_JPLKADOL";
-	// 	#binding-cells = <0>;
-	// 	bindings = <&kp LA(LBKT)>;
-	// };
-	// macro_JPRKADOL: macro_JPRKADOL{
-	// 	compatible = "zmk,behavior-macro";
-	// 	label = "macro_JPRKADOL";
-	// 	#binding-cells = <0>;
-	// 	bindings = <&kp LA(RBKT)>;
-	// };
-	// macro_JPLMARUL: macro_JPLMARUL{
-	// 	compatible = "zmk,behavior-macro";
-	// 	label = "macro_JPLMARUL";
-	// 	#binding-cells = <0>;
-	// 	bindings = <&kp LS(N9)>;
-	// };
-	// macro_JPRMARUL: macro_JPRMARUL{
-	// 	compatible = "zmk,behavior-macro";
-	// 	label = "macro_JPRMARUL";
-	// 	#binding-cells = <0>;
-	// 	bindings = <&kp LS(N0)>;
-	// };
-  macro_JPLKADOL: macro_JPLKADOL{
+	macro_JPLKADOL: macro_JPLKADOL{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPLKADOL";
 		#binding-cells = <0>;
-		bindings = <&kp Z>, <&kp H>;
+		bindings = <&kp LA(LBKT)>;
 	};
 	macro_JPRKADOL: macro_JPRKADOL{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPRKADOL";
 		#binding-cells = <0>;
-		bindings = <&kp Z>, <&kp J>;
+		bindings = <&kp LA(RBKT)>;
 	};
 	macro_JPLMARUL: macro_JPLMARUL{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPLMARUL";
 		#binding-cells = <0>;
-		bindings = <&kp Z>, <&kp K>;
+		bindings = <&kp LS(N9)>;
 	};
 	macro_JPRMARUL: macro_JPRMARUL{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPRMARUL";
 		#binding-cells = <0>;
-		bindings = <&kp Z>, <&kp L>;
+		bindings = <&kp LS(N0)>;
 	};
 	macro_JPLDKAGIL: macro_JPLDKAGIL{
 		compatible = "zmk,behavior-macro";
@@ -1513,10 +1490,19 @@
             bindings = <
                 &qmt LSHFT ESC	&macro_JPPERIOD &macro_KA	&macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &qmt RSHFT MINUS
                 &qmt LCTRL TAB	&macro_U        &macro_SI	&macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &qmt RCTRL SQT
-                &qm LALT		&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
-															&trans         &kp SPACE	  &mo LWR        &lt RSE ENTER  &kp INT4       &trans
+                &qm LALT	&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
+                                                		&trans         &kp SPACE      &mo LWR        &lt RSE ENTER  &kp INT4       &trans
             >;
         };
+        linux_layer {
+            display-name = "LIN";
+            bindings = <
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T		&kp Y         	&kp U            &kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G		&kp H         	&kp J            &kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LGUI          &kp Z   &kp X     &kp C         &kp V             &kp B		&kp N         	&kp M            &kp COMMA     &kp DOT   &kp FSLH   &kp RALT
+                                                    &lt NUM INT5  &mt LSHIFT SPACE  &mo LWRW		&lt RSEW ENTER	&mt RSHIFT SPACE &lt MOV INT2
+            >;
+        };        		
         windows_layer {
             display-name = "WIN";
             bindings = <
@@ -1535,13 +1521,13 @@
                                                         &kp LSHFT     &macro_LANG2 &trans      &trans      &kp LS(LC(V))  &kp RSHFT
             >;
         };
-		lowerw_layer {
+	lowerw_layer {
             display-name = "LWRW";
             bindings = <
-                &trans           &kp PG_UP  &kp HOME    &kp UP        &kp END     &mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
-                &trans           &kp PG_DN  &kp LEFT    &kp DOWN      &kp RIGHT   &mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
-                &trans           &kp LC(V)  &mkp MB1    &mkp MB3      &mkp MB2    &mkp MB2    &mkp MB1    &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
-                                                        &kp LSHFT     &kp LANG2   &trans      &trans      &kp LS(LC(V))  &kp RSHFT
+                &trans           &kp PG_UP  &kp HOME    &kp UP        &kp END     	&mkp MB3    &kp DEL     &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP   &kp LG(X)           
+                &trans           &kp PG_DN  &kp LEFT    &kp DOWN      &kp RIGHT   	&mkp MB1    &kp BSPC    &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN &kp LG(C)
+                &trans           &kp LC(V)  &mkp MB1    &mkp MB3      &mkp MB2		&mkp MB2    &mkp MB1    &kp ENTER      &kp LC(LEFT)   &kp LC(RIGHT)     &kp LG(V)      &trans
+                                                        &kp LSHFT     &macro_LANG2	&trans      &trans      &kp LS(LC(V))  &kp RSHFT
             >;
         };
         raise_layer {
@@ -1553,31 +1539,31 @@
                                                                 &kp LSHFT   &kp SPACE   &trans         &trans         &macro_LANG1 &kp RSHFT
             >;
         };
-		raisew_layer {
+	raisew_layer {
             display-name = "RSEW";
             bindings = <
-                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7    &kp F8      &kp F9      &kp F10           &kp LC(X)
-                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    &kp N8      &kp N9      &kp N0            &kp LC(C)
-                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS  &kp LBKT    &kp RBKT    &kp LC(V)         &trans
-                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &kp LANG1 &kp RSHFT
+                &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7    	&kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    	&kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS  	&kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &macro_LANG1	&kp RSHFT
             >;
         };
         adjust_layer {
             display-name = "ADJ";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      	&kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     		&mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l0        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
-                &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l3           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
+                &kp LGUI          &bt0_l0        &bt1_l3        &bt2_l3           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  	&to WIN
             >;
         };
-		adjustw_layer {
+	adjustw_layer {
             display-name = "ADJW";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l0        &bt3_l2           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
-                &kp LGUI          &bt0_l0        &bt1_l2        &bt2_l2           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
-                                                                &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l3           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) &kp LS(F5)       &kp LS(F6)        &kp LC(F6)     &kp RCTRL
+                &kp LGUI          &bt0_l0        &bt1_l3        &bt2_l3           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
+                                                                &to LIN           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
             >;
         };
         move_layer {
@@ -1617,32 +1603,32 @@
             bindings = <&to 0 &bt BT_SEL 0 &to 0>;
         };
 
-        // Bluetoothプロファイル1を選択し、レイヤー2を有効化
-        bt1_l2: bt1_l2 {
+        // Bluetoothプロファイル1を選択し、レイヤー3を有効化
+        bt1_l3: bt1_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 1 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 1 &to 3>;
         };
 
-        // Bluetoothプロファイル2を選択し、レイヤー2を有効化
-        bt2_l2: bt2_l2 {
+        // Bluetoothプロファイル2を選択し、レイヤー3を有効化
+        bt2_l3: bt2_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 2 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 2 &to 3>;
         };
 
-		// Bluetoothプロファイル3を選択し、レイヤー2を有効化
-        bt3_l2: bt3_l2 {
+		// Bluetoothプロファイル3を選択し、レイヤー3を有効化
+        bt3_l3: bt3_l3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 3 &to 2>;
+            bindings = <&to 0 &bt BT_SEL 3 &to 3>;
         };
 
-        // USB接続を選択し、レイヤー0を有効化
-        usb_l0: usb_l0 {
+        // USB接続を選択し、レイヤー2を有効化
+        usb_l2: usb_l2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &out OUT_USB &to 0>;
+            bindings = <&to 0 &out OUT_USB &to 2>;
         };
     };
 };
