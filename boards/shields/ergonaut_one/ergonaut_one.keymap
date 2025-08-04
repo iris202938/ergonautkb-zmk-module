@@ -1490,9 +1490,9 @@
         default_layer {
             display-name = "QWER";
             bindings = <
-                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U				&kp I         &kp O     &kp P      &mt RSHFT MINUS
-                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J				&kp K         &kp L     &kp SEMI   &mt RCTRL SQT
-                &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M				&kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
+                &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U			&kp I         &kp O     &kp P      &mt RSHFT MINUS
+                &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J			&kp K         &kp L     &kp SEMI   &mt RCTRL SQT
+                &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M			&kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
                                                     &lt NUM LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV LANG1
             >;
         };
@@ -1520,7 +1520,7 @@
                 &qmt LSHFT ESC	&macro_JPPERIOD &macro_KA	&macro_TA      &macro_KO      &macro_SA      &macro_RA      &macro_TI      &macro_KU      &macro_TU      &macro_JPCOMMA1  &qmt RSHFT MINUS
                 &qmt LCTRL TAB	&macro_U        &macro_SI	&macro_TE      &macro_KE      &macro_SE      &macro_HA      &macro_TO      &macro_KI      &macro_I       &macro_NN        &qmt RCTRL SQT
                 &qm LALT	&macro_JPTEN    &macro_HI	&macro_SU      &macro_HU      &macro_HE      &macro_ME      &macro_SO      &macro_NE      &macro_HO      &macro_JPNAKATEN &qm RGUI
-                                                		&trans         &kp SPACE      &mo LWRW        &lt RSEW ENTER  &kp INT4       &trans
+                                                		&trans         &kp SPACE      &mo LWRW       &lt RSEW ENTER &kp INT4       &trans
             >;
         };
         windows_layer {
@@ -1571,8 +1571,8 @@
         adjust_layer {
             display-name = "ADJ";
             bindings = <
-                &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      	&kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     		&mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l4           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     		&kp RCTRL
+                &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      	&kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     	&mt RSHFT INS
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l4           &kp LS(RIGHT)  &kp G          &kp INT5       &kp LS(LC(F6)) 	&kp LS(F5)       &kp LS(F6)        &kp LC(F6)     	&kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l4        &bt2_l4           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(LG(LEFT))	&kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT))	&trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  	&to WIN
             >;
@@ -1609,7 +1609,7 @@
             bindings = <
                 &soft_off      &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &none
                 &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
-                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
+                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt4_l2	      &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
@@ -1637,11 +1637,18 @@
             bindings = <&to 0 &bt BT_SEL 2 &to 4>;
         };
 
-		// Bluetoothプロファイル3を選択し、レイヤー4を有効化
+	// Bluetoothプロファイル3を選択し、レイヤー4を有効化
         bt3_l4: bt3_l4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0 &bt BT_SEL 3 &to 4>;
+        };
+
+	// Bluetoothプロファイル4を選択し、レイヤー2を有効化
+        bt4_l2: bt4_l2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 4 &to 2>;
         };
 
         // USB接続を選択し、レイヤー2を有効化
