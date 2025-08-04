@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 240    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 &adc {
 	status = "okay";
@@ -66,7 +66,7 @@
 				#binding-cells = <0>;
 				bindings = <&kp UP>, <&kp PG_UP>;
 				mods = <(MOD_RCTL|MOD_RSFT)>;
-		};
+	};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
@@ -81,15 +81,15 @@
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
 
 		scroll {
-			layers = <6 7>; // レイヤー6,7がアクティブな場合
+			layers = <7 8>; // レイヤー7,8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-					 , <&zip_xy_scaler 1 2> // スケーリング（1/2）
+					 , <&zip_xy_scaler 1 12> // スケーリング（1/12）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		layer1_speed_half {
-			layers = <4 5 10>; // レイヤー4,5,10がアクティブな場合
+			layers = <5 6 11>; // レイヤー5,6,11がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-					 , <&zip_xy_scaler 1 2>; // 速度を1/2に設定 (乗数1, 除数2)
+							 , <&zip_xy_scaler 1 6>; // 速度を1/6に設定 (乗数1, 除数6)
 		};
 	};
 
