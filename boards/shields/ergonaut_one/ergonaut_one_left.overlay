@@ -29,7 +29,7 @@
 			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
 			scale-multiplier = <2>; // スケーリングの乗数
-			scale-divisor = <70>; // スケーリングの除数
+			scale-divisor = <90>; // スケーリングの除数
 			#invert; // Y軸の入力を反転
 			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
 			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
@@ -40,7 +40,7 @@
 			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // X軸のデッドゾーン
 			scale-multiplier = <2>;
-			scale-divisor = <70>;
+			scale-divisor = <90>;
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
