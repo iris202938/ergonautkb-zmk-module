@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 40    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
 
 &adc {
 	status = "okay";
@@ -89,7 +89,7 @@
 		layer1_speed_half {
 			layers = <5 6 11>; // レイヤー5,6,11がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 1 5>; // 速度を1/5に設定 (乗数1, 除数5)
+							 , <&zip_xy_scaler 1 7>; // 速度を1/7に設定 (乗数1, 除数7)
 		};
 	};
 
