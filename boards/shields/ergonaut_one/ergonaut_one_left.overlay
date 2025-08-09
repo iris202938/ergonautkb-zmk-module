@@ -12,7 +12,22 @@
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 110    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 120    // default: 10
+
+#define QWE 0
+#define NIC 1
+#define LIN 2
+#define NICL 3
+#define WIN 4
+#define LWR 5
+#define LWRW 6
+#define RSE 7
+#define RSEW 8
+#define ADJ 9
+#define ADJW 10
+#define MOV 11
+#define NUM 12
+#define BLE 13
 
 &adc {
 	status = "okay";
@@ -81,13 +96,13 @@
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
 
 		scroll {
-			layers = <7 8>; // レイヤー7,8がアクティブな場合
+			layers = <RSE RSEW>; // レイヤー7,8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
 					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		layer1_speed_half {
-			layers = <5 6 11>; // レイヤー5,6,11がアクティブな場合
+			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 16 100>; // 速度を16/100に設定 (乗数16, 除数100)
 		};
