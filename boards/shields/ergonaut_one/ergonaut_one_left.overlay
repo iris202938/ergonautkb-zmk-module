@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 160    // default: 10
 
 #define QWE 0
 #define NIC 1
