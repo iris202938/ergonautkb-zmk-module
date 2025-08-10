@@ -317,7 +317,7 @@
 		timeout-ms = <50>;
 		key-positions = <22 37>;
 		layers = <NIC NICL>;
-		bindings = <&macro_ZL>;
+		bindings = <&macro_ZL>; // ●を出したい
 	};
 
 	combo_XU {
@@ -1243,41 +1243,77 @@
 		#binding-cells = <0>;
 		bindings = <&kp RBKT>;
 	};
+	// macro_JPLKADOR: macro_JPLKADOR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPLKADOR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LA(LBKT)>;
+	// };
+	// macro_JPRKADOR: macro_JPRKADOR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPRKADOR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LA(RBKT)>;
+	// };
+	// macro_JPLMARUR: macro_JPLMARUR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPLMARUR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LS(N9)>;
+	// };
+	// macro_JPRMARUR: macro_JPRMARUR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPRMARUR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LS(N0)>;
+	// };
+	// macro_JPLDKAGIR: macro_JPLDKAGIR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPLDKAGIR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LS(LBKT)>;
+	// };
+	// macro_JPRDKAGIR: macro_JPRDKAGIR{
+	// 	compatible = "zmk,behavior-macro";
+	// 	label = "macro_JPRDKAGIR";
+	// 	#binding-cells = <0>;
+	// 	bindings = <&kp LS(RBKT)>;
+	// };
 	macro_JPLKADOR: macro_JPLKADOR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPLKADOR";
 		#binding-cells = <0>;
-		bindings = <&kp LA(LBKT)>;
+		bindings = <&kp Z>, <&kp H>;
 	};
 	macro_JPRKADOR: macro_JPRKADOR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPRKADOR";
 		#binding-cells = <0>;
-		bindings = <&kp LA(RBKT)>;
+		bindings = <&kp Z>, <&kp J>;
 	};
 	macro_JPLMARUR: macro_JPLMARUR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPLMARUR";
 		#binding-cells = <0>;
-		bindings = <&kp LS(N9)>;
+		bindings = <&kp Z>, <&kp K>;
 	};
 	macro_JPRMARUR: macro_JPRMARUR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPRMARUR";
 		#binding-cells = <0>;
-		bindings = <&kp LS(N0)>;
+		bindings = <&kp Z>, <&kp L>;
 	};
 	macro_JPLDKAGIR: macro_JPLDKAGIR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPLDKAGIR";
 		#binding-cells = <0>;
-		bindings = <&kp LS(LBKT)>;
+		bindings = <&kp LS(LBKT)>; // □を出したい
 	};
 	macro_JPRDKAGIR: macro_JPRDKAGIR{
 		compatible = "zmk,behavior-macro";
 		label = "macro_JPRDKAGIR";
 		#binding-cells = <0>;
-		bindings = <&kp LS(RBKT)>;
+		bindings = <&kp LS(RBKT)>; // ✓を出したい
 	};
 	macro_GA: macro_GA{
 		compatible = "zmk,behavior-macro";
@@ -1620,7 +1656,7 @@
             bindings = <
                 &soft_off      &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &none
                 &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
-                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt BT_SEL 4    &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
+                &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt4_l3    	  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
             >;
         };
@@ -1653,6 +1689,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
+        };
+
+		// Bluetoothプロファイル4を選択し、レイヤー3を有効化
+        bt4_l3: bt4_l3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
         };
 
         // USB接続を選択し、レイヤー2を有効化
