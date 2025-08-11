@@ -139,30 +139,25 @@
 &joystick_listener {
 	status = "okay";
 	layer3 {
-		layers = <5>; // レイヤー5がアクティブな場合
-		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
-		process-next; // 他のプロセッサも処理を継続
-	};
-	layer3-prevent {
-		layers = <5>; // レイヤー5がアクティブな場合
+		layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	default {
-		layers = <0>; // レイヤー0（デフォルト）がアクティブな場合
+		layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 		input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
 		process-next;
 	};
 	default-prevent {
-		layers = <0>; // レイヤー0がアクティブな場合
+		layers = <QWE LIN WIN>; // レイヤー0,2,4がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	layer1_mouse_speed {
-		layers = <3>;
+		layers = <MOV>; // レイヤー11がアクティブな場合
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>; // デフォルトのスワップを維持
 		process-next; // 別のリスナー（例: analog_input_listener）が処理を続けるように
 	};
 	layer1_prevent_keybind {
-		layers = <3>;
+		layers = <MOV>; // レイヤー11がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
 	};
 };
