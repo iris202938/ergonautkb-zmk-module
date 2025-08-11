@@ -116,11 +116,23 @@
                   	<&kp LEFT>,
                   	<&kp UP>,
                   	<&kp DOWN>;
-			tick = <60>; // ティック間隔
+			tick = <80>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
-	zip_keybind_keys1: zip_keybind_keys1 {
+	zip_keybind_keys4: zip_keybind_keys4 {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp RIGHT>,
+                  	<&kp LEFT>,
+                  	<&kp UP>,
+                  	<&kp DOWN>;
+			tick = <40>; // ティック間隔
+			wait-ms = <0>; // 待機時間
+			tap-ms = <10>; // タップ時間
+	};
+	zip_keybind_keys11: zip_keybind_keys11 {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
@@ -140,12 +152,22 @@
 	status = "okay";
 	layer11 {
 		layers = <MOV>; // レイヤー11がアクティブな場合
-		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
+		input-processors = <&zip_keybind_keys11>; // zip_keybind_keys11 を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	layer11-prevent {
 		layers = <MOV>; // レイヤー11がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
+	layer4 {
+		layers = <WIN>; // レイヤー4がアクティブな場合
+		input-processors = <&zip_keybind_keys4>; // zip_keybind_keys4 を使用
+		process-next;
+	};
+	layer4-prevent {
+		layers = <WIN>; // レイヤー4がアクティブな場合
+		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
 	};default {
 		layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 		input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
@@ -155,7 +177,6 @@
 		layers = <QWE>; // レイヤー0がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	
 };
 
 &kscan0 {
