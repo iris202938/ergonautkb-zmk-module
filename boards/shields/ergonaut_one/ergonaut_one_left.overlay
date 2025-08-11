@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 160    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 240    // default: 10
 
 #define QWE 0
 #define NIC 1
@@ -134,8 +134,8 @@
 	};
 };
 
-/* joystick_listener は元のコードでコメントアウトされているため、このままコメントアウトを維持します。
-   もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
+// joystick_listener は元のコードでコメントアウトされているため、このままコメントアウトを維持します。
+// もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
 	status = "okay";
 	layer3 {
@@ -166,7 +166,6 @@
 		input-processors = <&zip_xy_scaler 0 1>; // キーバインドの入力をゼロにする
 	};
 };
-*/
 
 &kscan0 {
 	col-gpios
