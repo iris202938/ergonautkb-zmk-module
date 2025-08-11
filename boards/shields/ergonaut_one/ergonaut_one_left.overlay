@@ -138,22 +138,22 @@
 // もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
 	status = "okay";
-	layer3 {
-		layers = <5>; // レイヤー5がアクティブな場合
+	layer11 {
+		layers = <MOV>; // レイヤー11がアクティブな場合
 		input-processors = <&zip_keybind_keys1>; // zip_keybind_keys1 を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer3-prevent {
-		layers = <5>; // レイヤー5がアクティブな場合
+	layer11-prevent {
+		layers = <MOV>; // レイヤー11がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	default {
-		layers = <0>; // レイヤー0（デフォルト）がアクティブな場合
+		layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 		input-processors = <&zip_keybind_keys0>; // zip_keybind_keys0 を使用
 		process-next;
 	};
 	default-prevent {
-		layers = <0>; // レイヤー0がアクティブな場合
+		layers = <QWE>; // レイヤー0がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 };
