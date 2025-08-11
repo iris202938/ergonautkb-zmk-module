@@ -112,10 +112,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&right>,
-					<&left>,
-					<&up>,
-					<&down>;
+			bindings = <&kp RIGHT>,
+                  	<&kp LEFT>,
+                  	<&kp DOWN>,
+                  	<&kp UP>;
 			tick = <60>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
