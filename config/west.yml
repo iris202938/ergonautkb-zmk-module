@@ -16,13 +16,14 @@ manifest:
     - name: zmk-rgbled-widget
       remote: Reinmuth66
       revision: main
-    - name: zmk-analog-input-driver
-      remote: Reinmuth66
-      revision: main
+    # Reinmuth66 の zmk-analog-input-driver を削除
+    # - name: zmk-analog-input-driver
+    #   remote: Reinmuth66
+    #   revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
-    - name: zmk-analog-input-driver
+    - name: zmk-analog-input-driver # badjeff のバージョンを使用
       remote: badjeff
       revision: main
   self:
