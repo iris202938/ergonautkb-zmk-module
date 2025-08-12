@@ -52,7 +52,7 @@
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
 			// Set to 32767 (0x7FFF) to enable auto-calibration
 			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
+			mv-min-max = <800>; // Y軸の最小/最大ミリボルト範囲
 			mv-deadzone = <10>; // Y軸のデッドゾーン（感度を調整）
 			scale-multiplier = <22>; // スケーリングの乗数
 			scale-divisor = <1000>; // スケーリングの除数
@@ -63,7 +63,7 @@
 		x-ch {
 			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
 			mv-mid = <32767>; // X軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
+			mv-min-max = <800>; // X軸の最小/最大ミリボルト範囲
 			mv-deadzone = <10>; // X軸のデッドゾーン
 			scale-multiplier = <22>;
 			scale-divisor = <1000>;
