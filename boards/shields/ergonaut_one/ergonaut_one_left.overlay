@@ -17,6 +17,13 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1200   // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 240    // default: 10
 
+// 校准相关常量定义
+#define ANALOG_INPUT_AUTO_CALIBRATE_FLAG 32767  // 0x7FFF
+#define ANALOG_INPUT_STABILIZE_DELAY_MS 50      // 校准前稳定时间(ms)
+#define ANALOG_INPUT_CALIBRATE_SAMPLES 5        // 每次校准采样次数
+#define ANALOG_INPUT_CALIBRATE_MAX_RETRIES 2    // 最大校准重试次数
+#define ANALOG_INPUT_CALIBRATE_VARIANCE_THRESHOLD 50  // 最大允许方差(mV)
+
 #define QWE 0
 #define NIC 1
 #define LIN 2
