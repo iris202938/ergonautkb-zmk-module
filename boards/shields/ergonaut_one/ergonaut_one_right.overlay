@@ -10,6 +10,12 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define ANALOG_INPUT_AUTO_CALIBRATE_FLAG 32767  // 0x7FFF
+#define ANALOG_INPUT_STABILIZE_DELAY_MS 50      // 校准前稳定时间(ms)
+#define ANALOG_INPUT_CALIBRATE_SAMPLES 5        // 每次校准采样次数
+#define ANALOG_INPUT_CALIBRATE_MAX_RETRIES 2    // 最大校准重试次数
+#define ANALOG_INPUT_CALIBRATE_VARIANCE_THRESHOLD 50  // 最大允许方差(mV)
+
 &adc {
 	status = "okay";
 };
@@ -20,7 +26,8 @@
 		sampling-hz = <100>;
 		y-ch {
 			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1590>;
+      // Set to 32767 (0x7FFF) to enable auto-calibration
+			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
 			scale-multiplier = <1>;
@@ -32,7 +39,8 @@
 		};
 		x-ch {
 			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1683>;
+			// Set to 32767 (0x7FFF) to enable auto-calibration
+			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
 			mv-deadzone = <88>;
 			scale-multiplier = <1>;
