@@ -20,9 +20,10 @@
 		sampling-hz = <100>;
 		y-ch {
 			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1590>;
+      // Set to 32767 (0x7FFF) to enable auto-calibration
+			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <10>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			#invert;
@@ -32,9 +33,10 @@
 		};
 		x-ch {
 			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
-			mv-mid = <1683>;
+			// Set to 32767 (0x7FFF) to enable auto-calibration
+			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <10>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			invert;
