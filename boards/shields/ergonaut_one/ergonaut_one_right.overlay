@@ -29,7 +29,7 @@
       // Set to 32767 (0x7FFF) to enable auto-calibration
 			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <10>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			#invert;
@@ -42,7 +42,7 @@
 			// Set to 32767 (0x7FFF) to enable auto-calibration
 			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <1600>;
-			mv-deadzone = <88>;
+			mv-deadzone = <10>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			invert;
