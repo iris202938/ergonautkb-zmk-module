@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/Reinmuth66/
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: badjeff
+      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,6 +21,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    - name: zmk-analog-input-driver
+      remote: badjeff
       revision: main
   self:
     path: config
