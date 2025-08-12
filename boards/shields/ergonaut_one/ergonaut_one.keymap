@@ -386,77 +386,77 @@
 	// combo_JPQMARKR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <13 40>;
-	// 	layers = <RSE RSEW>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPQMARKR>;
 	// };
 
 	// combo_JPSLASHR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <14 40>;
-	// 	layers = <RSE RSEW>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPSLASHR>;
 	// };
 
 	// combo_JPTILDER {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <15 40>;
-	// 	layers = <RSE RSEW>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPTILDER>;
 	// };
 
 	// combo_JPLKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <16 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPLKAGIR>;
 	// };
 
 	// combo_JPRKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <17 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPRKAGIR>;
 	// };
 
 	// combo_JPLKADOR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <18 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPLKADOR>;
 	// };
 
 	// combo_JPRKADOR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <19 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPRKADOR>;
 	// };
 
 	// combo_JPLMARUR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <20 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPLMARUR>;
 	// };
 
 	// combo_JPRMARUR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <21 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPRMARUR>;
 	// };
 
 	// combo_JPLDKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <22 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPLDKAGIR>;
 	// };
 
 	// combo_JPRDKAGIR {
 	// 	timeout-ms = <50>;
 	// 	key-positions = <23 40>;
-	// 	layers = <NIC NICL>;
+	// 	layers = <RSE>;
 	// 	bindings = <&macro_JPRDKAGIR>;
 	// };
 	
@@ -1654,7 +1654,7 @@
         bluetooth_layer {
             display-name = "BLE";
             bindings = <
-                &soft_off      &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &none
+                &cal_stick     &bt BT_DISC 0     &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL &bt BT_DISC 4   &bt BT_DISC 5 &bt BT_DISC 6 &bt BT_DISC 7 &cal_stick
                 &kp LC(LG(H))  &kp LC(LG(T))     &kp LC(LG(C))  &kp LC(LG(P))  &kp LC(LG(G))   &trans          &trans         &kp LC(LG(E))   &kp LC(LG(A)) &kp LC(LG(L)) &kp LC(LG(X)) &kp LC(LG(W))
                 &sys_reset     &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bootloader     &bootloader    &bt4_l2    	  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_SEL 7  &none
                                                                 &trans         &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR     &kp LA(LG(G))   &trans
@@ -1710,6 +1710,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
+        };
+		
+		cal_stick: calibrate_analog_stick {
+            compatible = "zmk,behavior-analog-calibrate";
+            #binding-cells = <0>;  
         };
     };
 };
