@@ -40,7 +40,6 @@
 	// 左のジョイスティック（マウスカーソル移動用）
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
-		behavior = <&cal_stick>; // <-- この行を追加
 		sampling-hz = <100>;
 		y-ch {
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
