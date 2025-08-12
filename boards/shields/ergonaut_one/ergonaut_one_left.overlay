@@ -53,24 +53,25 @@
 			// Set to 32767 (0x7FFF) to enable auto-calibration
 			mv-mid = <32767>; // Y軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <800>; // Y軸の最小/最大ミリボルト範囲
-			mv-deadzone = <10>; // Y軸のデッドゾーン（感度を調整）
+			mv-deadzone = <50>; // Y軸のデッドゾーン（感度を調整）
 			scale-multiplier = <22>; // スケーリングの乗数
 			scale-divisor = <1000>; // スケーリングの除数
 			#invert; // Y軸の入力を反転
 			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
 			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
+			report-on-change-only;
 		};
 		x-ch {
 			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
 			mv-mid = <32767>; // X軸のニュートラル（中央）でのミリボルト値
 			mv-min-max = <800>; // X軸の最小/最大ミリボルト範囲
-			mv-deadzone = <10>; // X軸のデッドゾーン
+			mv-deadzone = <50>; // X軸のデッドゾーン
 			scale-multiplier = <22>;
 			scale-divisor = <1000>;
 			invert; // X軸の入力を反転
 			evt-type = <INPUT_EV_REL>;
 			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
-			#report-on-change-only;
+			report-on-change-only;
 		};
 	};
 
