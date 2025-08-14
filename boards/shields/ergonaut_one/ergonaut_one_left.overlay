@@ -104,7 +104,7 @@
 		layer1_speed_half {
 			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 16 100>; // 速度を16/100に設定 (乗数16, 除数100)
+							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
 		};
 	};
 
