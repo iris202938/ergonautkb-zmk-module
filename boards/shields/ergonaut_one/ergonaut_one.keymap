@@ -95,7 +95,7 @@
 		};
 
 	combo_CAPSWORD {
-		timeout-ms = <30>;
+		timeout-ms = <80>;
 		key-positions = <36 41>;
 		layers = <QWE LIN WIN>;
 		bindings = <&caps_word>;
@@ -109,567 +109,567 @@
 		};
 
 	combo_JPQMARKL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <13 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPQMARKL>;
 	};
 
 	combo_JPSLASHL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <14 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPSLASHL>;
 	};
 
 	combo_JPTILDEL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <15 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPTILDEL>;
 	};
 
 	combo_JPLKAGIL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <16 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPLKAGIL>;
 	};
 
 	combo_JPRKAGIL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <17 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPRKAGIL>;
 	};
 
 	combo_JPLKADOL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <18 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPLKADOL>;
 	};
 
 	combo_JPRKADOL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <19 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPRKADOL>;
 	};
 
 	combo_JPLMARUL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <20 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPLMARUL>;
 	};
 
 	combo_JPRMARUL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <21 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPRMARUL>;
 	};
 
 	combo_JPLDKAGIL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <22 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPLDKAGIL>;
 	};
 
 	combo_JPRDKAGIL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <23 37>;
 		layers = <RSE>; // ここにはRSEWは含まない
 		bindings = <&macro_JPRDKAGIL>;
 	};
 
 	combo_XA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <1 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XA>;
 	};
 
 	combo_E {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <2 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_E>;
 	};
 
 	combo_RI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <3 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_RI>;
 	};
 
 	combo_XYA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <4 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XYA>;
 	};
 
 	combo_RE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <5 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_RE>;
 	};
 
 	combo_PA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <6 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_PA>;
 	};
 
 	combo_DI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <7 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_DI>;
 	};
 
 	combo_GU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <8 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_GU>;
 	};
 
 	combo_DU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <9 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_DU>;
 	};
 
 	combo_PI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <10 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_PI>;
 	};
 
 	combo_WO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <13 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_WO>;
 	};
 
 	combo_A {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <14 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_A>;
 	};
 
 	combo_NA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <15 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_NA>;
 	};
 
 	combo_XYU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <16 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XYU>;
 	};
 
 	combo_MO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <17 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_MO>;
 	};
 
 	combo_BA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <18 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_BA>;
 	};
 
 	combo_DO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <19 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_DO>;
 	};
 
 	combo_GI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <20 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_GI>;
 	};
 
 	combo_PO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <21 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_PO>;
 	};
 
 	combo_ZL {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <22 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_ZL>; // ●を出したい
 	};
 
 	combo_XU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <25 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XU>;
 	};
 
 	combo_JPMINUS2 {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <26 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_JPMINUS2>;
 	};
 
 	combo_RO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <27 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_RO>;
 	};
 
 	combo_YA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <28 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_YA>;
 	};
 
 	combo_XI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <29 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XI>;
 	};
 
 	combo_PU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <30 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_PU>;
 	};
 
 	combo_ZO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <31 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_ZO>;
 	};
 
 	combo_PE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <32 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_PE>;
 	};
 
 	combo_BO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <33 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_BO>;
 	};
 
 	// combo_JPQMARKR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <13 40>;
 	// 	layers = <RSE RSEW>;
 	// 	bindings = <&macro_JPQMARKR>;
 	// };
 
 	// combo_JPSLASHR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <14 40>;
 	// 	layers = <RSE RSEW>;
 	// 	bindings = <&macro_JPSLASHR>;
 	// };
 
 	// combo_JPTILDER {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <15 40>;
 	// 	layers = <RSE RSEW>;
 	// 	bindings = <&macro_JPTILDER>;
 	// };
 
 	// combo_JPLKAGIR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <16 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPLKAGIR>;
 	// };
 
 	// combo_JPRKAGIR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <17 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPRKAGIR>;
 	// };
 
 	// combo_JPLKADOR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <18 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPLKADOR>;
 	// };
 
 	// combo_JPRKADOR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <19 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPRKADOR>;
 	// };
 
 	// combo_JPLMARUR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <20 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPLMARUR>;
 	// };
 
 	// combo_JPRMARUR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <21 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPRMARUR>;
 	// };
 
 	// combo_JPLDKAGIR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <22 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPLDKAGIR>;
 	// };
 
 	// combo_JPRDKAGIR {
-	// 	timeout-ms = <45>;
+	// 	timeout-ms = <48>;
 	// 	key-positions = <23 40>;
 	// 	layers = <NIC NICL>;
 	// 	bindings = <&macro_JPRDKAGIR>;
 	// };
 	
 	combo_JPTILDER {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <1 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_JPTILDER>;
 	};
 
 	combo_GA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <2 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_GA>;
 	};
 
 	combo_DA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <3 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_DA>;
 	};
 
 	combo_GO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <4 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_GO>;
 	};
 
 	combo_ZA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <5 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_ZA>;
 	};
 
 	combo_YO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <6 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_YO>;
 	};
 
 	combo_NI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <7 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_NI>;
 	};
 
 	combo_RU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <8 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_RU>;
 	};
 
 	combo_MA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <9 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_MA>;
 	};
 
 	combo_XE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <10 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XE>;
 	};
 
 	combo_VU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <13 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_VU>;
 	};
 
 	combo_JI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <14 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_JI>;
 	};
 
 	combo_DE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <15 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_DE>;
 	};
 
 	combo_GE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <16 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_GE>;
 	};
 
 	combo_ZE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <17 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_ZE>;
 	};
 
 	combo_MI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <18 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_MI>;
 	};
 
 	combo_O {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <19 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_O>;
 	};
 
 	combo_NO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <20 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_NO>;
 	};
 
 	combo_XYO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <21 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XYO>;
 	};
 
 	combo_XTU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <22 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XTU>;
 	};
 
 	combo_JPCOMMA2 {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <25 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_JPCOMMA2>;
 	};
 
 	combo_BI {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <26 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_BI>;
 	};
 
 	combo_ZU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <27 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_ZU>;
 	};
 
 	combo_BU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <28 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_BU>;
 	};
 
 	combo_BE {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <29 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_BE>;
 	};
 
 	combo_NU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <30 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_NU>;
 	};
 
 	combo_YU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <31 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_YU>;
 	};
 
 	combo_MU {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <32 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_MU>;
 	};
 
 	combo_WA {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <33 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_WA>;
 	};
 
 	combo_XO {
-		timeout-ms = <45>;
+		timeout-ms = <48>;
 		key-positions = <34 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_XO>;
