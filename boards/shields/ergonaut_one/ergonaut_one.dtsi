@@ -30,6 +30,21 @@
         zmk,physical_layout = &ergonaut_one_layout;
     };
 
+    mouse_gesture: mouse-gesture {
+        compatible = "zmk,mouse-gesture";
+        // 右上、左上、右下、左下、上、下、右、左
+        actions = <
+            &kp RALT,  // 右上ジェスチャー
+            &kp LALT,  // 左上ジェスチャー
+            &kp RCTL,  // 右下ジェスチャー
+            &kp LCTL,  // 左下ジェスチャー
+            &kp PG_UP, // 上ジェスチャー
+            &kp PG_DN, // 下ジェスチャー
+            &kp PG_UP, // 右ジェスチャー (例)
+            &kp PG_DN  // 左ジェスチャー (例)
+        >;
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -77,7 +92,6 @@
 		status = "disabled";
 		device = <&joystick_split>;
 	};
-	
 };
 
 &xiao_spi { status = "disabled"; };
