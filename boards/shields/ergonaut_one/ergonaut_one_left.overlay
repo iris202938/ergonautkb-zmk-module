@@ -92,10 +92,9 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>;
-
-		autolayer_processor {
-			input-processors = <&zip_autolayer>;
-		};
+		
+		// `input-processors`を直接定義し、`layers`プロパティを明示的に指定
+		input-processors = <&zip_autolayer>;
 
 		scroll {
 			layers = <RSE RSEW>;
