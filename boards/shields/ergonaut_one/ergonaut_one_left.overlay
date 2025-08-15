@@ -38,9 +38,6 @@
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-
-		// オートマウスレイヤーを制御するInput Processorを割り当て
-		input-processors = <&zip_autolayer_on>;
 		
 		y-ch {
 			io-channels = <&adc 0>;
@@ -96,8 +93,7 @@
 		compatible = "zmk,input-listener";
 		device = <&anin0>;
 
-		// アナログ入力デバイスの動きをトリガーとしてオートマウスレイヤーを有効化
-		zip_autolayer_on: autolayer_active {
+		autolayer_processor {
 			input-processors = <&zip_autolayer>;
 		};
 
