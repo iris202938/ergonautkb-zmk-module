@@ -64,38 +64,11 @@
 		};
 	};
 
-	zip_autolayer: zip_autolayer {
-		compatible = "zmk,input-processor-autolayer";
-		#input-processor-cells = <0>;
-		
-		layer-on = <MOV>;
-		timeout-ms = <10000>;
-		
-		mouse-layer-keys = <
-			&kp MB1 &kp MB2 &kp MB3
-			&mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_LEFT &mmv MOVE_RIGHT
-			&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT
-		>;
-		
-		non-mouse-layer-keys = <
-			&kp LSHFT &kp RSHFT
-			&kp LCTRL &kp RCTRL
-			&kp LALT &kp RALT
-			&kp LGUI &kp RGUI
-			&mo LWR &mo LWRW
-			&to QWE &to NIC &to LIN &to NICL &to WIN
-			&trans
-		>;
-	};
-
 	analog_input_listener {
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>;
 		
-		// `input-processors`を直接定義し、`layers`プロパティを明示的に指定
-		input-processors = <&zip_autolayer>;
-
 		scroll {
 			layers = <RSE RSEW>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
