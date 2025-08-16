@@ -4,9 +4,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <layout_shift.dtsi>
 
 #include <dt-bindings/zmk/pointing.h>
+#include <layout_shift.dtsi>
 
 #define QWE 0
 #define NIC 1
