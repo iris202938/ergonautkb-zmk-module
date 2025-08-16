@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/Reinmuth66/
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,5 +22,8 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
   self:
     path: config
