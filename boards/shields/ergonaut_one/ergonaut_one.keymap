@@ -1616,7 +1616,7 @@
             display-name = "RSEW";
             bindings = <
                 &trans            &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7    	&kp F8      &kp F9      &kp F10           &kp LC(X)
-                &mt LCTRL TILDE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    	&kp N8      &kp N9      &kp N0            &kp LC(C)
+                &mt LCTRL TILDE   &kp N1            &kpls N2    &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    	&kp N8      &kp N9      &kp N0            &kp LC(C)
                 &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS  	&kp LBKT    &kp RBKT    &kp LC(V)         &trans
                                                                 &kp LSHFT   &kp SPACE   &trans         &trans         &macro_INT4L	&kp RSHFT
             >;
