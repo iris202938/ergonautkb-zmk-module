@@ -69,14 +69,14 @@
 	combo_PLSHIFT {
 		timeout-ms = <80>;
 		key-positions = <12 24>;
-		layers = <QWE RSE RSEW>;
+		layers = <QWE LIN RSE RSEW>;
 		bindings = <&kp LSHIFT>;
 	};
 
 	combo_PRSHIFT {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <QWE RSE RSEW>;
+		layers = <QWE LIN RSE RSEW>;
 		bindings = <&kp RSHIFT>;
 		};
 
