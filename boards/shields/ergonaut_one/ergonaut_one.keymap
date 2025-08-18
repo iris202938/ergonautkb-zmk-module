@@ -90,7 +90,7 @@
 	combo_RDEL {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <RSE RSEW>;
+		layers = <MOV>;
 		bindings = <&kp D>;
 		};
 
