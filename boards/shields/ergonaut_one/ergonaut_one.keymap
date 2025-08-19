@@ -1523,17 +1523,17 @@
                 ;
         };
 
-	fail_f: fail_fwd {
+	file_f: file_f {
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LSHFT>
+			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F6>
-			, <&macro_release &kp LSHFT>
+			, <&macro_release &kp LCTRL>
 			;
     };
 
-	fail_r: fail_rwd {
+	file_r: file_r {
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings
@@ -1545,6 +1545,25 @@
 			;
     };
 
+	pr_pg: pr_pg {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LSHFT>
+			, <&macro_tap &kp F5>
+			, <&macro_release &kp LSHFT>
+			;
+    };
+
+	nx_pg: nx_pg {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LSHFT>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LSHFT>
+			;
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -1656,7 +1675,7 @@
             display-name = "ADJW";
             bindings = <
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
-                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l4           &kp LS(RIGHT)  &kp G          &kp INT5       &fail_r        &kp LS(F5)       &kp LS(F6)        &fail_f        &kp RCTRL
+                &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l4           &kp LS(RIGHT)  &kp G          &kp INT5       &file_r        &pr_pg           &nx_pg            &file_f        &kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l4        &bt2_l4           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
                                                                 &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
             >;
