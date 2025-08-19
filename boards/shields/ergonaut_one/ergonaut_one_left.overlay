@@ -101,7 +101,7 @@
 					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		layer1_speed_half {
+		lower_speed_half {
 			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
@@ -125,9 +125,9 @@
 			#input-processor-cells = <0>;
 		track_remainders;
 			bindings = <&kp RIGHT>,
-                  	<&kp LEFT>,
-                  	<&kp UP>,
-                  	<&kp DOWN>;
+                	<&kp LEFT>,
+					<&kp UP>,
+                	<&kp DOWN>;
 			tick = <40>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
@@ -151,12 +151,12 @@
 &joystick_listener {
 	status = "okay";
 	layer11 {
-		layers = <MOV>; // レイヤー11がアクティブな場合
+		layers = <NUM>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	layer11-prevent {
-		layers = <MOV>; // レイヤー11がアクティブな場合
+		layers = <NUM>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	layer4 {
