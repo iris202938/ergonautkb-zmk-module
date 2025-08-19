@@ -29,6 +29,8 @@
 #define NUM 12
 #define BLE 13
 
+/ {
+    macros {
 file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -70,6 +72,8 @@ file_f: file_f { // ファイルの切り替え正
 			, <&macro_release &kp LSHFT>
 			;
     };
+    };
+};
 
 &adc {
 	status = "okay";
