@@ -29,6 +29,48 @@
 #define NUM 12
 #define BLE 13
 
+file_f: file_f { // ファイルの切り替え正
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LCTRL>
+			;
+    };
+
+	file_r: file_r { // ファイルの切り替え逆
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LSHFT>
+			, <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LCTRL>
+			, <&macro_release &kp LSHFT>
+			;
+    };
+
+	pr_pg: pr_pg { // 前ページ切り替え
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LSHFT>
+			, <&macro_tap &kp F5>
+			, <&macro_release &kp LSHFT>
+			;
+    };
+
+	nx_pg: nx_pg { // 次ページ切り替え
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LSHFT>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LSHFT>
+			;
+    };
+
 &adc {
 	status = "okay";
 };
