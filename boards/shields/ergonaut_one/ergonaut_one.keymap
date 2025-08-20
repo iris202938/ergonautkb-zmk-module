@@ -1581,10 +1581,7 @@
 		bindings
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp TAB>
-			, <&macro_wait_time 50>
-			;
-		release-bindings
-			= <&macro_wait_time 2000>
+			, <&macro_wait_time 2000>
 			, <&macro_release &kp LALT>
 			;
 	};
@@ -1600,9 +1597,7 @@
             , <&macro_press &kp LSHFT>
             , <&macro_tap &kp TAB>
             , <&macro_wait_time 50>
-            ;
-        release-bindings
-            = <&macro_release &kp LSHFT>
+            , <&macro_release &kp LSHFT>
             , <&macro_wait_time 2000>
             , <&macro_release &kp LALT>
             ;
