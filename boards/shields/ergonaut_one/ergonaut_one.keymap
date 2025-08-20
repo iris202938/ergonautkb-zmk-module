@@ -1579,7 +1579,7 @@
 		bindings
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp TAB>
-			, <&dly 2000>
+			, <&macro_wait_time 200>
 			, <&macro_release &kp LALT>
 			;
 	};
@@ -1590,10 +1590,10 @@
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LALT>
-      , <&macro_press &kp LSHFT>
+      		, <&macro_press &kp LSHFT>
 			, <&macro_tap &kp TAB>
-			, <&dly 2000>
-      , <&macro_release &kp LSHFT>
+			, <&macro_wait_time 200>
+      		, <&macro_release &kp LSHFT>
 			, <&macro_release &kp LALT>
 			;
 	};
