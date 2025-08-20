@@ -1572,36 +1572,41 @@
 			;
     };
 
-	m_alt_tab: m_alt_tab { // Alt+Tabを長押しで切り替え
+	m_alt_tab: m_alt_tab {
 		label = "ALT_TAB_HOLD";
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		wait-ms = <40>;
-    	tap-ms = <40>;
+		tap-ms = <40>;
 		bindings
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp TAB>
-			, <&macro_wait_time 200>
+			, <&macro_wait_time 50>
+			;
+		release-bindings
+			= <&macro_wait_time 2000>
 			, <&macro_release &kp LALT>
 			;
 	};
 	
-	m_alt_s_tab: m_alt_s_tab { // Alt+Shift+Tabを長押しで切り替え
-		label = "ALT_SHFT_TAB_HOLD";
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		wait-ms = <40>;
-    	tap-ms = <40>;
-		bindings
-			= <&macro_press &kp LALT>
-      		, <&macro_press &kp LSHFT>
-			, <&macro_tap &kp TAB>
-			, <&macro_wait_time 200>
-      		, <&macro_release &kp LSHFT>
-			, <&macro_release &kp LALT>
-			;
-	};
-
+	m_alt_s_tab: m_alt_s_tab {
+        label = "ALT_SHFT_TAB_HOLD";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp TAB>
+            , <&macro_wait_time 50>
+            ;
+        release-bindings
+            = <&macro_release &kp LSHFT>
+            , <&macro_wait_time 2000>
+            , <&macro_release &kp LALT>
+            ;
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
