@@ -1572,6 +1572,33 @@
 			;
     };
 
+	m_alt_tab: m_alt_tab { // Alt+Tabを長押しで切り替え
+		label = "ALT_TAB_HOLD";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp TAB>
+			, <&dly 2000>
+			, <&macro_release &kp LALT>
+			;
+	};
+	
+	m_alt_s_tab: m_alt_s_tab { // Alt+Shift+Tabを長押しで切り替え
+		label = "ALT_SHFT_TAB_HOLD";
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+      , <&macro_press &kp LSHFT>
+			, <&macro_tap &kp TAB>
+			, <&dly 2000>
+      , <&macro_release &kp LSHFT>
+			, <&macro_release &kp LALT>
+			;
+	};
+
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -1684,7 +1711,7 @@
                 &trans            &kp F11        &kp F12        &kp C_MUTE        &kp C_VOL_DN   &kp C_VOL_UP   &kp CAPS       &kp PSCRN      &kp SLCK         &kp PAUSE_BREAK   &kp LS(UP)     &mt RSHFT INS
                 &mt LCTRL LANG5   &out OUT_BLE   &usb_l2        &bt3_l4           &kp LS(RIGHT)  &kp G          &kp INT5       &file_r        &pr_pg           &nx_pg            &file_f        &kp RCTRL
                 &kp LGUI          &bt0_l0        &bt1_l4        &bt2_l4           &kp K_APP      &kp LS(LEFT)   &kp LS(DOWN)   &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)    &trans
-                                                                &to QWE           &kp LS(LEFT)   &trans         &trans         &kp LS(RIGHT)  &to WIN
+                                                                &to QWE           &m_alt_s_tab   &trans         &trans         &m_alt_tab	  &to WIN
             >;
         };
         move_layer {
