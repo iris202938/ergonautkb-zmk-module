@@ -114,6 +114,20 @@
 		layers = <MOV>;
 		bindings = <&mkp MB3>;
 	};
+	
+	combo_WIN_S_L {
+		timeout-ms = <80>;
+		key-positions = <13 14>;
+		layers = <LWRW>;
+		bindings = <&kp LG(LS(LEFT))>;
+	};
+
+	combo_WIN_S_R {
+		timeout-ms = <80>;
+		key-positions = <15 16>;
+		layers = <LWRW>;
+		bindings = <&kp LG(LS(RIGHT))>;
+	};
 
 	combo_JPQMARKL {
 		timeout-ms = <48>;
