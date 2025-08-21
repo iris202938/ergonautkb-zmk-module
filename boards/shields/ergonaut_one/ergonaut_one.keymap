@@ -1758,6 +1758,13 @@
     };
 
 	behaviors {
+		gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_RGUI|MOD_RSFT)>;
+        };
+
         bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
