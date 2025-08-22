@@ -1758,12 +1758,12 @@
     };
 
 	behaviors {
-		// gresc: grave_escape {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp ESC>, <&kp GRAVE>;
-        //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        // };
+		gresc: grave_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_RGUI|MOD_RSFT)>;
+        };
 
         // 長押しでShift、単押しでGrave Escape
         sft_hold_gresc: sft_hold_grave_escape {
