@@ -1769,7 +1769,7 @@
         sft_hold_gresc: sft_hold_grave_escape {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <140>; // 長押しと単押しの区別をつける時間
+            tapping-term-ms = <140>;
             bindings = <&kp LSFT>, <&gresc>;
         };
 
