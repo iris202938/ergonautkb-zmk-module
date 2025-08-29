@@ -30,10 +30,10 @@
     quick-tap-ms = <140>;
 };
 
-&mt GRAVE_TAP LCTRL {
-    bindings = <&kp GRAVE_TAP>;
-    bindings-on-shift = <&kp TILDE_TAP>;
-};
+// &mt GRAVE_TAP LCTRL {
+//     bindings = <&kp GRAVE_TAP>;
+//     bindings-on-shift = <&kp TILDE_TAP>;
+// };
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -1616,28 +1616,35 @@
 	};
 
 	GRAVE_TAP: GRAVE_TAP {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <40>;
-    tap-ms = <40>;
-    #binding-cells = <0>;
-    bindings
-        = <&macro_press &kp LALT>
-        , <&macro_tap &kp KP_N9 &kp KP_N6>
-        , <&macro_release &kp LALT>
-        ;
-};
+		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp KP_N9 &kp KP_N6>
+			, <&macro_release &kp LALT>
+			;
+	};
 
-TILDE_TAP: TILDE_TAP {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <40>;
-    tap-ms = <40>;
-    #binding-cells = <0>;
-    bindings
-        = <&macro_press &kp LALT>
-        , <&macro_tap &kp KP_N1 &kp KP_N2 &kp KP_N6>
-        , <&macro_release &kp LALT>
-        ;
-};
+	TILDE_TAP: TILDE_TAP {
+		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp KP_N1 &kp KP_N2 &kp KP_N6>
+			, <&macro_release &kp LALT>
+			;
+	};
+
+	mt_grave_ctrl: mt_grave_ctrl {
+		compatible = "zmk,behavior-tap-hold";
+		label = "MT_GRAVE_CTRL";
+		bindings = <&kp GRAVE_TAP>, <&kp LCTRL>;
+		bindings-on-shift = <&kp TILDE_TAP>;
+	};
 
 	// m_alt_tab: m_alt_tab {
 	// 	label = "ALT_TAB_HOLD";
