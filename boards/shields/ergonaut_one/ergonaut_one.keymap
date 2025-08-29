@@ -30,6 +30,11 @@
     quick-tap-ms = <140>;
 };
 
+&mt GRAVE_TAP LCTRL {
+    bindings = <&kp GRAVE_TAP>;
+    bindings-on-shift = <&kp TILDE_TAP>;
+};
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
 };
@@ -1610,6 +1615,30 @@
 			;
 	};
 
+	GRAVE_TAP: GRAVE_TAP {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LALT>
+        , <&macro_tap &kp KP_N9 &kp KP_N6>
+        , <&macro_release &kp LALT>
+        ;
+};
+
+TILDE_TAP: TILDE_TAP {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LALT>
+        , <&macro_tap &kp KP_N1 &kp KP_N2 &kp KP_N6>
+        , <&macro_release &kp LALT>
+        ;
+};
+
 	// m_alt_tab: m_alt_tab {
 	// 	label = "ALT_TAB_HOLD";
 	// 	compatible = "zmk,behavior-macro";
@@ -1728,10 +1757,10 @@
 		raisew_layer {
             display-name = "RSEW";
             bindings = <
-                &trans			  &kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7    	&kp F8      &kp F9      &kp F10           &kp LC(X)
-                &mt LCTRL GRAVE   &kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    	&kp N8      &kp N9      &kp N0            &kp LC(C)
-                &trans            &kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS  	&kp LBKT    &kp RBKT    &kp LC(V)         &trans
-                                                                &kp LSHFT   &kp SPACE   &trans         &trans         &macro_INT4L	&kp RSHFT
+                &trans			  	&kp F1            &kp F2      &kp F3      &kp F4      &kp F5         &kp F6         &kp F7    		&kp F8      &kp F9      &kp F10           &kp LC(X)
+                &mt GRAVE_TAP LCTRL	&kp N1            &kp N2      &kp N3      &kp N4      &kp N5         &kp N6         &kp N7    		&kp N8      &kp N9      &kp N0            &kp LC(C)
+                &trans            	&kp INT1          &kp BSLH    &kp INT3    &kp SLASH   &kp ASTRK      &kp MINUS      &kp PLUS  		&kp LBKT    &kp RBKT    &kp LC(V)         &trans
+                                                                  &kp LSHFT   &kp SPACE   &trans         &trans         &macro_INT4L	&kp RSHFT
             >;
         };
         adjust_layer {
