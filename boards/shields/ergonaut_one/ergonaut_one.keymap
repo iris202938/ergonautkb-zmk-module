@@ -1639,13 +1639,6 @@
 			;
 	};
 
-	mt_grave_ctrl: mt_grave_ctrl {
-		compatible = "zmk,behavior-tap-hold";
-		label = "MT_GRAVE_CTRL";
-		bindings = <&kp GRAVE_TAP>, <&kp LCTRL>;
-		bindings-on-shift = <&kp TILDE_TAP>;
-	};
-
 	// m_alt_tab: m_alt_tab {
 	// 	label = "ALT_TAB_HOLD";
 	// 	compatible = "zmk,behavior-macro";
@@ -1824,6 +1817,13 @@
         //     bindings = <&kp ESC>, <&kp GRAVE>;
         //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         // };
+
+		mt_grave_ctrl: mt_grave_ctrl {
+			compatible = "zmk,behavior-tap-hold";
+			label = "MT_GRAVE_CTRL";
+			bindings = <&kp GRAVE_TAP>, <&kp LCTRL>;
+			bindings-on-shift = <&kp TILDE_TAP>;
+		};
 
         bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
             compatible = "zmk,behavior-macro";
