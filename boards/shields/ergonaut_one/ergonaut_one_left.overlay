@@ -148,10 +148,27 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 			track_remainders;
-	        bindings = <&kp MINUS>
-	                 , <&kp PLUS>
+	        bindings = <&kp PLUS>
+	                 , <&kp MINUS>
 	                 , <&kp ASTERISK>
 	                 , <&kp SLASH>
+					 ;
+	        tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <50>;
+	        mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_browser: zip_keybind_keys_browser {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+			track_remainders;
+	        bindings = <&kp T>
+	                 , <&kp W>
+					 , <&kp R>
+	                 , <&kp LS(T)>
 					 ;
 	        tick = <150>;
 	        wait-ms = <100>;
@@ -179,13 +196,22 @@
 // もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
 	status = "okay";
-	layer11 {
+	layer12 {
 		layers = <NUM>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer11-prevent {
+	layer12-prevent {
 		layers = <NUM>; // レイヤー12がアクティブな場合
+		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
+	layer11 {
+		layers = <MOV>; // レイヤー12がアクティブな場合
+		input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
+		process-next; // 他のプロセッサも処理を継続
+	};
+	layer11-prevent {
+		layers = <MOV>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	layer5_6 {
