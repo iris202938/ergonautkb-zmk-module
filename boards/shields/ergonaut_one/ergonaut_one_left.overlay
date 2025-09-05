@@ -26,8 +26,9 @@
 #define ADJ 9
 #define ADJW 10
 #define MOV 11
-#define NUM 12
-#define BLE 13
+#define MOVW 12
+#define NUM 13
+#define BLE 14
 
 &adc {
 	status = "okay";
@@ -196,22 +197,22 @@
 // もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
 	status = "okay";
-	layer12 {
-		layers = <NUM>; // レイヤー12がアクティブな場合
+	layer13 {
+		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer12-prevent {
-		layers = <NUM>; // レイヤー12がアクティブな場合
+	layer13-prevent {
+		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	layer11 {
-		layers = <MOV>; // レイヤー12がアクティブな場合
+	layer11_12 {
+		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
 		input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer11-prevent {
-		layers = <MOV>; // レイヤー12がアクティブな場合
+	layer11_12-prevent {
+		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	layer5_6 {
