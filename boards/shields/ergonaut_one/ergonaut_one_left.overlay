@@ -116,7 +116,7 @@
                   	<&kp LEFT>,
                   	<&kp UP>,
                   	<&kp DOWN>;
-			tick = <120>; // ティック間隔
+			tick = <100>; // ティック間隔
 			wait-ms = <10>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
@@ -144,6 +144,23 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
+	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+			track_remainders;
+	        bindings = <&kp MINUS>
+	                 , <&kp PLUS>
+	                 , <&kp ASTERISK>
+	                 , <&kp SLASH>
+					 ;
+	        tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <50>;
+	        mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
 	zip_keybind_keys_media: zip_keybind_keys_media {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
@@ -164,7 +181,7 @@
 	status = "okay";
 	layer11 {
 		layers = <NUM>; // レイヤー12がアクティブな場合
-		input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
+		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	layer11-prevent {
