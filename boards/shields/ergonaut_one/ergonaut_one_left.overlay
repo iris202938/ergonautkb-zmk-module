@@ -117,9 +117,13 @@
                   	<&kp LEFT>,
                   	<&kp UP>,
                   	<&kp DOWN>;
-			tick = <100>; // ティック間隔
-			wait-ms = <10>; // 待機時間
-			tap-ms = <10>; // タップ時間
+			tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <50>;
+	        mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
 	};
 	zip_keybind_keys_directionM: zip_keybind_keys_directionM {
 			compatible = "zmk,input-processor-keybind";
@@ -217,7 +221,7 @@
 	};
 	layer5_6 {
 		layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-		input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+		input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
 		process-next;
 	};
 	layer5_6-prevent {
