@@ -108,8 +108,8 @@
 		l_scroll {
 			layers = <RSE RSEW>; // レイヤー7,8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
-					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+							 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		l_mouse_speed_ipad {
 			layers = <LWR>; // レイヤー5がアクティブな場合
@@ -241,15 +241,15 @@
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	r_mouse_speed_full {
-			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 50 100>; // 速度を50/100に設定 (乗数18, 除数100)
+		layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
+		input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+						 , <&zip_xy_scaler 50 100>; // 速度を50/100に設定 (乗数18, 除数100)
 	};
 	r_scroll {
 		layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+						 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
+						 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
 	layer4 {
 		layers = <WIN>; // レイヤー4がアクティブな場合
@@ -263,8 +263,8 @@
 	default {
 		layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+						 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
+						 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
 };
 
