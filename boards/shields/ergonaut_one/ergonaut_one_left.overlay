@@ -111,12 +111,12 @@
 					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		lower_speed_slow {
+		l_mouse_speed_ipad {
 			layers = <LWR>; // レイヤー5がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 30 100>; // 速度を30/100に設定 (乗数18, 除数100)
 		};
-		lowerw_speed_slow {
+		l_mouse_speed_half {
 			layers = <LWRW>; // レイヤー6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
@@ -235,12 +235,12 @@
 		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	move_speed_full {
+	r_mouse_speed_full {
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 50 100>; // 速度を50/100に設定 (乗数18, 除数100)
 	};
-	move_speed_half {
+	r_mouse_speed_half {
 			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
