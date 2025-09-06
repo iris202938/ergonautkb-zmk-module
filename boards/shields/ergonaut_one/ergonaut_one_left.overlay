@@ -118,14 +118,15 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp RIGHT>,
-                  	<&kp LEFT>,
-                  	<&kp UP>,
-                  	<&kp DOWN>;
+			bindings = <&kp RIGHT>
+					  ,<&kp LEFT>
+					  ,<&kp UP>
+					  ,<&kp DOWN>
+					  ;
 			tick = <150>;
-	        wait-ms = <100>;
-	        tap-ms = <50>;
-	        mode = <1>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
@@ -134,10 +135,11 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp RIGHT>,
-                	<&kp LEFT>,
-                  	<&kp UP>,
-                	<&kp DOWN>;
+			bindings = <&kp RIGHT>
+					  ,<&kp LEFT>
+					  ,<&kp UP>
+					  ,<&kp DOWN>
+					  ;
 			tick = <60>; // ティック間隔
 			wait-ms = <5>; // 待機時間
 			tap-ms = <10>; // タップ時間
@@ -146,44 +148,45 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp RIGHT>,
-                	<&kp LEFT>,
-                  	<&kp UP>,
-                	<&kp DOWN>;
+			bindings = <&kp RIGHT>
+					  ,<&kp LEFT>
+					  ,<&kp UP>
+					  ,<&kp DOWN>
+					  ;
 			tick = <40>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
 	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-			track_remainders;
-	        bindings = <&kp PLUS>
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp PLUS>
 	                 , <&kp MINUS>
 	                 , <&kp ASTERISK>
 	                 , <&kp SLASH>
 					 ;
-	        tick = <150>;
-	        wait-ms = <100>;
-	        tap-ms = <50>;
-	        mode = <1>;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_browser: zip_keybind_keys_browser {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-			track_remainders;
-	        bindings = <&kp T>
-	                 , <&kp W>
-					 , <&kp R>
-	                 , <&kp LS(T)>
+	zip_keybind_keys_ecad: zip_keybind_keys_ecad {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp C>
+	                 , <&kp D>
+					 , <&kp A>
+	                 , <&kp Z>
 					 ;
-	        tick = <150>;
-	        wait-ms = <100>;
-	        tap-ms = <50>;
-	        mode = <1>;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
@@ -192,18 +195,17 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C_FF>,
-					<&kp C_RW>,
-					<&kp C_VOL_UP>,
-					<&kp C_VOL_DN>;
+			bindings = <&kp C_FF>
+					  ,<&kp C_RW>
+					  ,<&kp C_VOL_UP>
+					  ,<&kp C_VOL_DN>
+					  ;
 			tick = <60>;
 			wait-ms = <0>;
 			tap-ms = <10>;
 	};
 };
 
-// joystick_listener は元のコードでコメントアウトされているため、このままコメントアウトを維持します。
-// もし使用する場合は、このセクションのコメントアウトを外し、適切に設定してください。
 &joystick_listener {
 	status = "okay";
 	layer13 {
@@ -215,9 +217,9 @@
 		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	layer11_12 {
-		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
-		input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
+	layer12 {
+		layers = <MOVW>; // レイヤー12がアクティブな場合
+		input-processors = <&zip_keybind_keys_ecad>; // zip_keybind_keys_ecad を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	layer11_12-prevent {
@@ -229,15 +231,6 @@
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
 	};
-	// layer5_6 {
-	// 	layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-	// 	input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
-	// 	process-next;
-	// };
-	// layer5_6-prevent {
-	// 	layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-	// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	// };
 	layer4 {
 		layers = <WIN>; // レイヤー4がアクティブな場合
 		input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
