@@ -105,7 +105,7 @@
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		scroll {
+		l_scroll {
 			layers = <RSE RSEW>; // レイヤー7,8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
 					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
@@ -231,8 +231,8 @@
 		input-processors = <&zip_keybind_keys_ecad>; // zip_keybind_keys_ecad を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer11_12-prevent {
-		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
+	layer12-prevent {
+		layers = <MOVW>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
 	r_mouse_speed_full {
@@ -240,10 +240,11 @@
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 50 100>; // 速度を50/100に設定 (乗数18, 除数100)
 	};
-	r_mouse_speed_half {
-			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
+	r_scroll {
+		layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
 	layer4 {
 		layers = <WIN>; // レイヤー4がアクティブな場合
