@@ -95,7 +95,16 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-
+		
+		layer9_10 {
+			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		layer9_10-prevent {
+			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
 		scroll {
 			layers = <RSE RSEW>; // レイヤー7,8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
