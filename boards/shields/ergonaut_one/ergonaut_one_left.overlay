@@ -102,7 +102,7 @@
 					 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
 					 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
-		lower_speed_half {
+		lower_speed_slow {
 			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
@@ -219,15 +219,20 @@
 		layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	layer5_6 {
-		layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-		input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
-		process-next;
+	move_speed_half {
+			layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 18 100>; // 速度を18/100に設定 (乗数18, 除数100)
 	};
-	layer5_6-prevent {
-		layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
-		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-	};
+	// layer5_6 {
+	// 	layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
+	// 	input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+	// 	process-next;
+	// };
+	// layer5_6-prevent {
+	// 	layers = <LWR LWRW>; // レイヤー5,6がアクティブな場合
+	// 	input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	// };
 	layer4 {
 		layers = <WIN>; // レイヤー4がアクティブな場合
 		input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
