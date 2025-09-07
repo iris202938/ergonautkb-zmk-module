@@ -105,8 +105,14 @@
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
+		l_scroll_w {
+			layers = <RSEW>; // レイヤー8がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
+							 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
+							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
 		l_scroll {
-			layers = <RSE RSEW>; // レイヤー7,8がアクティブな場合
+			layers = <RSE>; // レイヤー7がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
 							 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
@@ -120,6 +126,16 @@
 			layers = <LWR>; // レイヤー5がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 60 100>; // 速度を60/100に設定 (乗数60, 除数100)
+		};
+		l_mouse_speed_win {
+			layers = <WIN>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+		};
+		l_mouse_speed_lin {
+			layers = <LIN>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
 		};
 		l_mouse_speed_full {
 			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
