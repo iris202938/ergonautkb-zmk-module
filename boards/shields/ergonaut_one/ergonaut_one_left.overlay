@@ -95,7 +95,7 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-		l_mouse_speed_full {
+		l_mouse_speed_full_b {
 			layers = <NUM BLE>; // レイヤー13,14がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数18, 除数100)
