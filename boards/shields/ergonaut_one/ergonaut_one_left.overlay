@@ -95,7 +95,6 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-<<<<<<< HEAD
 		l_mouse_speed_full_b {
 			layers = <NUM BLE>; // レイヤー13,14がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
@@ -109,21 +108,8 @@
 		l_layer11_12-prevent {
 			layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-		};
-		l_layer9_10 {
-=======
-		
-		l_layer14 {
-			layers = <BLE>; // レイヤー14がアクティブな場合
-			input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
-			process-next; // 他のプロセッサも処理を継続
-		};
-		l_layer14-prevent {
-			layers = <BLE>; // レイヤー14がアクティブな場合
-			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
-		};
+		};		
 		layer9_10 {
->>>>>>> 9bd2d2af92f4cfc1018e7d605e2468aa7cfaf880
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
@@ -299,27 +285,16 @@
 
 &joystick_listener {
 	status = "okay";
-<<<<<<< HEAD
 	r_layer14 {
 		layers = <BLE>; // レイヤー14がアクティブな場合
 		input-processors = <&zip_keybind_keys_ecadb>; // zip_keybind_keys_ecadb を使用
-=======
-	
-	r_layer14 {
-		layers = <BLE>; // レイヤー14がアクティブな場合
-		input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
->>>>>>> 9bd2d2af92f4cfc1018e7d605e2468aa7cfaf880
 		process-next; // 他のプロセッサも処理を継続
 	};
 	r_layer14-prevent {
 		layers = <BLE>; // レイヤー14がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-<<<<<<< HEAD
 	r_layer13 {
-=======
-	layer13 {
->>>>>>> 9bd2d2af92f4cfc1018e7d605e2468aa7cfaf880
 		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
 		process-next; // 他のプロセッサも処理を継続
