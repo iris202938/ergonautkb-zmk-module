@@ -24,11 +24,19 @@
 #define BLE 14
 
 &lt {
+<<<<<<< HEAD
     quick-tap-ms = <140>;
 };
 
 &mt {
     quick-tap-ms = <140>;
+=======
+    quick-tap-ms = <170>;
+};
+
+&mt {
+    quick-tap-ms = <170>;
+>>>>>>> b58585d562f17bc3e07c5089a1da949a5fb448c6
 };
 
 &caps_word {
@@ -1842,3 +1850,4 @@
         };
     };
 };
+
