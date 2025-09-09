@@ -95,13 +95,26 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-		
-		layer9_10 {
+		l_mouse_speed_full {
+			layers = <NUM BLE>; // レイヤー13,14がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数18, 除数100)
+		};
+		l_layer11_12 {
+			layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
+			input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		l_layer11_12-prevent {
+			layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		l_layer9_10 {
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
 		};
-		layer9_10-prevent {
+		l_layer9_10-prevent {
 			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
@@ -188,7 +201,7 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecad: zip_keybind_keys_ecad {
+	zip_keybind_keys_ecadm: zip_keybind_keys_ecadm {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
@@ -196,6 +209,40 @@
 	                 , <&kp D>
 					 , <&kp A>
 	                 , <&kp Z>
+					 ;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_ecadb: zip_keybind_keys_ecadb {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp E>
+	                 , <&kp T>
+					 , <&kp Q>
+	                 , <&kp W>
+					 ;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_browser: zip_keybind_keys_browser {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp LC(ENTER)>
+	                 , <&kp LC(W)>
+					 , <&kp LS(TAB)>
+	                 , <&kp TAB>
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -222,21 +269,30 @@
 
 &joystick_listener {
 	status = "okay";
-	layer13 {
+	r_layer14 {
+		layers = <BLE>; // レイヤー14がアクティブな場合
+		input-processors = <&zip_keybind_keys_ecadb>; // zip_keybind_keys_ecadb を使用
+		process-next; // 他のプロセッサも処理を継続
+	};
+	r_layer14-prevent {
+		layers = <BLE>; // レイヤー14がアクティブな場合
+		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
+	r_layer13 {
 		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer13-prevent {
+	r_layer13-prevent {
 		layers = <NUM>; // レイヤー13がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	layer12 {
+	r_layer12 {
 		layers = <MOVW>; // レイヤー12がアクティブな場合
-		input-processors = <&zip_keybind_keys_ecad>; // zip_keybind_keys_ecad を使用
+		input-processors = <&zip_keybind_keys_ecadm>; // zip_keybind_keys_ecadm を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
-	layer12-prevent {
+	r_layer12-prevent {
 		layers = <MOVW>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
@@ -251,16 +307,16 @@
 						 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
 						 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
-	layer4 {
+	r_layer4 {
 		layers = <WIN>; // レイヤー4がアクティブな場合
 		input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 		process-next;
 	};
-	layer4-prevent {
+	r_layer4-prevent {
 		layers = <WIN>; // レイヤー4がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
-	default {
+	r_default {
 		layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 						 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
