@@ -64,32 +64,32 @@
 		};
 	};
 
-	// behaviors {
-	// 	right: input_right {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp RIGHT>, <&kp END>;
-	// 			mods = <(MOD_RCTL|MOD_RSFT)>;
-	// 	};
-	// 	left: input_left {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp LEFT>, <&kp HOME>;
-	// 			mods = <(MOD_RCTL|MOD_RSFT)>;
-	// 	};
-	// 	up: input_up {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp UP>, <&kp PG_UP>;
-	// 			mods = <(MOD_RCTL|MOD_RSFT)>;
-	// };
-	// 	down: input_down {
-	// 			compatible = "zmk,behavior-mod-morph";
-	// 			#binding-cells = <0>;
-	// 			bindings = <&kp DOWN>, <&kp PG_DN>;
-	// 			mods = <(MOD_RCTL|MOD_RSFT)>;
-	// 	};
-	// };
+	behaviors {
+		right: input_right {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp C>, <&kp E>;
+				mods = <(MOD_RCTL|MOD_RSFT)>;
+		};
+		left: input_left {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp D>, <&kp T>;
+				mods = <(MOD_RCTL|MOD_RSFT)>;
+		};
+		up: input_up {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp A>, <&kp Q>;
+				mods = <(MOD_RCTL|MOD_RSFT)>;
+		};
+		down: input_down {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp Z>, <&kp W>;
+				mods = <(MOD_RCTL|MOD_RSFT)>;
+		};
+	};
 
 	analog_input_listener {
 		status = "okay";
