@@ -41,8 +41,8 @@
 		sampling-hz = <100>;
 		y-ch {
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
-			mv-mid = <1716>; // Y軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // Y軸の最小/最大ミリボルト範囲
+			mv-mid = <1555>; // Y軸のニュートラル（中央）でのミリボルト値
+			mv-min-max = <2615>; // Y軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
 			scale-multiplier = <1>; // スケーリングの乗数
 			scale-divisor = <50>; // スケーリングの除数
@@ -52,8 +52,8 @@
 		};
 		x-ch {
 			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
-			mv-mid = <1682>; // X軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <1600>; // X軸の最小/最大ミリボルト範囲
+			mv-mid = <1576>; // X軸のニュートラル（中央）でのミリボルト値
+			mv-min-max = <2460>; // X軸の最小/最大ミリボルト範囲
 			mv-deadzone = <88>; // X軸のデッドゾーン
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
