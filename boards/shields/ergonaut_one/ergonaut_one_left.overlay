@@ -106,6 +106,75 @@
 			;
     };
 
+	ctrl_d_n: ctrl_d_n { // 自動線番範囲選択
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			, <&macro_tap &kp TAB>
+			, <&macro_tap &kp SPACE>
+			, <&macro_tap &kp TAB>
+			;
+    };
+
+	ctrl_d_x: ctrl_d_x { // 図面管理情報
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp X>
+			;
+    };
+
+	ctrl_d_y: ctrl_d_y { // ページ管理情報
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Y>
+			;
+    };
+
+	ctrl_d_z: ctrl_d_z { // 全ページ情報
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Z>
+			;
+    };
+
+	ctrl_f_u: ctrl_f_u { // 図面種別情報
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp U>
+			;
+    };
+
+	ctrl_f_v: ctrl_f_v { // ページ編集
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp V>
+			;
+    };
+
 	behaviors {
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
@@ -285,14 +354,14 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecadb: zip_keybind_keys_ecadb {
+	zip_keybind_keys_ecadbr: zip_keybind_keys_ecadbr {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp E>
-	                 , <&kp T>
-					 , <&kp Q>
-	                 , <&kp W>
+			bindings = <&ctrl_d_n> // 自動線番範囲選択
+					 , <&ctrl_d_z> // 全ページ情報
+	                 , <&ctrl_d_x> // 図面管理情報
+	                 , <&ctrl_d_y> // ページ管理情報
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -338,7 +407,7 @@
 	status = "okay";
 	r_layer14 {
 		layers = <BLE>; // レイヤー14がアクティブな場合
-		input-processors = <&zip_keybind_keys_ecadb>; // zip_keybind_keys_ecadb を使用
+		input-processors = <&zip_keybind_keys_ecadbr>; // zip_keybind_keys_ecadbr を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	r_layer14-prevent {
