@@ -105,7 +105,7 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
-	
+
 	behaviors {
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
@@ -251,14 +251,14 @@
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
-	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
+	zip_keybind_keys_file: zip_keybind_keys_file {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp PLUS>
-	                 , <&kp MINUS>
-	                 , <&kp ASTERISK>
-	                 , <&kp SLASH>
+			bindings = <&nx_pg>
+					 , <&pr_pg>
+					 , <&file_r>
+					 , <&file_f>
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -347,7 +347,7 @@
 	};
 	r_layer13 {
 		layers = <NUM>; // レイヤー13がアクティブな場合
-		input-processors = <&zip_keybind_keys_f_a_o>; // zip_keybind_keys_f_a_o を使用
+		input-processors = <&zip_keybind_keys_file>; // zip_keybind_keys_file を使用
 		process-next; // 他のプロセッサも処理を継続
 	};
 	r_layer13-prevent {
