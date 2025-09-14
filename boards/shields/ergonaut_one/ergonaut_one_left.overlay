@@ -73,7 +73,6 @@
 			, <&macro_release &kp LCTRL>
 			;
     };
-
 	file_r: file_r { // ファイルの切り替え逆
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -85,7 +84,6 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
-
 	pr_pg: pr_pg { // 前ページ切り替え
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -95,7 +93,6 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
-
 	nx_pg: nx_pg { // 次ページ切り替え
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -105,7 +102,6 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
-
 	ctrl_d_n: ctrl_d_n { // 自動線番範囲選択
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -119,7 +115,6 @@
 			, <&macro_tap &kp TAB>
 			;
     };
-
 	ctrl_d_x: ctrl_d_x { // 図面管理情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -130,7 +125,6 @@
 			, <&macro_tap &kp X>
 			;
     };
-
 	ctrl_d_y: ctrl_d_y { // ページ管理情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -141,7 +135,6 @@
 			, <&macro_tap &kp Y>
 			;
     };
-
 	ctrl_d_z: ctrl_d_z { // 全ページ情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -152,7 +145,6 @@
 			, <&macro_tap &kp Z>
 			;
     };
-
 	ctrl_f_u: ctrl_f_u { // 図面種別情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -163,7 +155,6 @@
 			, <&macro_tap &kp U>
 			;
     };
-
 	ctrl_f_v: ctrl_f_v { // ページ編集
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -179,25 +170,25 @@
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp C>, <&kp E>;
+				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
 				mods = <(MOD_RCTL|MOD_RALT)>;
 		};
 		left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&kp T>;
+				bindings = <&kp D>, <&kp T>; // 左：削除／文字
 				mods = <(MOD_RCTL|MOD_RALT)>;
 		};
 		up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp A>, <&kp Q>;
+				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
 				mods = <(MOD_RCTL|MOD_RALT)>;
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp Z>, <&kp W>;
+				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
 				mods = <(MOD_RCTL|MOD_RALT)>;
 		};
 	};
@@ -241,7 +232,7 @@
 		l_scroll_w {
 			layers = <RSEW>; // レイヤー8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)> // Y反転
-							 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
+							 , <&zip_xy_scaler 32 100> // スケーリング（32/100）
 							 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		l_scroll {
@@ -324,10 +315,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&nx_pg>
-					 , <&pr_pg>
-					 , <&file_r>
-					 , <&file_f>
+			bindings = <&nx_pg>  // 右：次ページ切り替え
+					 , <&pr_pg>  // 左：前ページ切り替え
+					 , <&file_r> // 上：ファイルの切り替え逆
+					 , <&file_f> // 下：ファイルの切り替え正
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -341,10 +332,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C>
-	                 , <&kp D>
-					 , <&kp A>
-	                 , <&kp Z>
+			bindings = <&kp C> // 右：複写
+	                 , <&kp D> // 左：削除
+					 , <&kp A> // 上：領域移動
+	                 , <&kp Z> // 下：属性変更
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -358,10 +349,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&ctrl_d_n> // 自動線番範囲選択
-					 , <&ctrl_d_z> // 全ページ情報
-	                 , <&ctrl_d_x> // 図面管理情報
-	                 , <&ctrl_d_y> // ページ管理情報
+			bindings = <&ctrl_d_n> // 右：自動線番範囲選択
+					 , <&ctrl_d_z> // 左：全ページ情報
+	                 , <&ctrl_d_x> // 上：図面管理情報
+	                 , <&ctrl_d_y> // 下：ページ管理情報
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -375,10 +366,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp LC(ENTER)>
-	                 , <&kp LC(W)>
-					 , <&kp LS(TAB)>
-	                 , <&kp TAB>
+			bindings = <&kp LC(ENTER)> // 右：新しいタブで開く
+	                 , <&kp LC(W)>     // 左：タブを閉じる
+					 , <&kp LS(TAB)>   // 上：前の項目へ戻る
+	                 , <&kp TAB>       // 下：次の項目へ進む
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -392,10 +383,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C_FF>
-					  ,<&kp C_RW>
-					  ,<&kp C_VOL_UP>
-					  ,<&kp C_VOL_DN>
+			bindings = <&kp C_FF>     // 右：早送り
+					  ,<&kp C_RW>     // 左：巻き戻し
+					  ,<&kp C_VOL_UP> // 上：音量アップ
+					  ,<&kp C_VOL_DN> // 下：音量ダウン
 					  ;
 			tick = <60>;
 			wait-ms = <0>;
