@@ -211,22 +211,40 @@
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数18, 除数100)
 		};
-		l_layer11_12 {
-			layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
+		l_layer12 {
+			layers = <MOVW>; // レイヤー12がアクティブな場合
 			input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		l_layer11_12-prevent {
-			layers = <MOV MOVW>; // レイヤー11,12がアクティブな場合
+		l_layer12-prevent {
+			layers = <MOVW>; // レイヤー12がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		l_layer11 {
+			layers = <MOV>; // レイヤー11がアクティブな場合
+			input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		l_layer11-prevent {
+			layers = <MOV>; // レイヤー11がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};		
-		layer9_10 {
-			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
+		layer10 {
+			layers = <ADJW>; // レイヤー10がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
 		};
-		l_layer9_10-prevent {
-			layers = <ADJ ADJW>; // レイヤー9,10がアクティブな場合
+		l_layer10-prevent {
+			layers = <ADJW>; // レイヤー10がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		layer9 {
+			layers = <ADJ>; // レイヤー9がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		l_layer9-prevent {
+			layers = <ADJ>; // レイヤー9がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		l_scroll_w {
@@ -423,6 +441,15 @@
 		layers = <MOVW>; // レイヤー12がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 	};
+	r_layer11 {
+		layers = <MOV>; // レイヤー11がアクティブな場合
+		input-processors = <&zip_keybind_keys_ecadm>; // zip_keybind_keys_ecadm を使用
+		process-next; // 他のプロセッサも処理を継続
+	};
+	r_layer11-prevent {
+		layers = <MOV>; // レイヤー11がアクティブな場合
+		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
 	r_mouse_speed_w_full {
 		layers = <ADJW>; // レイヤー10がアクティブな場合
 		input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
@@ -453,6 +480,12 @@
 	r_layer4-prevent {
 		layers = <WIN>; // レイヤー4がアクティブな場合
 		input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+	};
+	r_lin {
+		layers = <LIN>; // レイヤー2（デフォルト）がアクティブな場合
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+						 , <&zip_xy_scaler 10 100> // スケーリング（10/100）
+						 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
 	r_default {
 		layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
