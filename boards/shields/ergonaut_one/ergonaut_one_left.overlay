@@ -482,7 +482,7 @@
 	r_scroll_rse {
 		layers = <RSE>; // レイヤー7がアクティブな場合
 		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-						 , <&zip_xy_scaler 16 100> // スケーリング（16/100）
+						 , <&zip_xy_scaler 8 100> // スケーリング（8/100）
 						 , <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 	};
 	r_scroll_w {
