@@ -296,25 +296,25 @@
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
-				mods = <(MOD_RCTL|MOD_LGUI)>;
+				mods = <(MOD_LCTL|MOD_LGUI)>;
 		};
 		left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp D>, <&kp T>; // 左：削除／文字
-				mods = <(MOD_RCTL|MOD_LGUI)>;
+				mods = <(MOD_LCTL|MOD_LGUI)>;
 		};
 		up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
-				mods = <(MOD_RCTL|MOD_LGUI)>;
+				mods = <(MOD_LCTL|MOD_LGUI)>;
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
-				mods = <(MOD_RCTL|MOD_LGUI)>;
+				mods = <(MOD_LCTL|MOD_LGUI)>;
 		};
 	};
 
