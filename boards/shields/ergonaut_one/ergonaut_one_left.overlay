@@ -530,25 +530,25 @@
 		r_nicl {
 			layers = <NICL>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 10 100> // スケーリング（10/100）
+							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_lin {
 			layers = <LIN>; // レイヤー2がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 10 100> // スケーリング（10/100）
+							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_nic {
 			layers = <NIC>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 10 100> // スケーリング（10/100）
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_default {
 			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 10 100> // スケーリング（10/100）
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 };
