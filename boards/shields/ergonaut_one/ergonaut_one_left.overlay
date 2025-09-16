@@ -439,7 +439,7 @@
 		};
 		r_layer13 {
 			layers = <NUM>; // レイヤー13がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer13-prevent {
