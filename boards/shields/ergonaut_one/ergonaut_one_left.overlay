@@ -111,7 +111,7 @@
 			, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp N>
 			, <&macro_tap &kp TAB>
-			, <&macro_tap &kp SPACE>
+			, <&macro_tap &kp TAB>
 			, <&macro_tap &kp TAB>
 			;
     };
@@ -296,25 +296,25 @@
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
-				mods = <(MOD_RCTL|MOD_RALT)>;
+				mods = <(MOD_RCTL|MOD_LGUI)>;
 		};
 		left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp D>, <&kp T>; // 左：削除／文字
-				mods = <(MOD_RCTL|MOD_RALT)>;
+				mods = <(MOD_RCTL|MOD_LGUI)>;
 		};
 		up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
-				mods = <(MOD_RCTL|MOD_RALT)>;
+				mods = <(MOD_RCTL|MOD_LGUI)>;
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
-				mods = <(MOD_RCTL|MOD_RALT)>;
+				mods = <(MOD_RCTL|MOD_LGUI)>;
 		};
 	};
 
@@ -331,10 +331,14 @@
 			layers = <BLE>; // レイヤー14がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		l_mouse_speed_num {
+		l_layer13 {
 			layers = <NUM>; // レイヤー13がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数18, 除数100)
+			input-processors = <&zip_keybind_keys_file>; // zip_keybind_keys_file を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		l_layer13-prevent {
+			layers = <NUM>; // レイヤー13がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		l_layer12 {
 			layers = <MOVW>; // レイヤー12がアクティブな場合
@@ -435,7 +439,7 @@
 		};
 		r_layer13 {
 			layers = <NUM>; // レイヤー13がアクティブな場合
-			input-processors = <&zip_keybind_keys_file>; // zip_keybind_keys_file を使用
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer13-prevent {
