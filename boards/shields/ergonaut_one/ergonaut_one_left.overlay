@@ -166,33 +166,6 @@
 			;
     };
 
-	behaviors {
-		right: input_right {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
-				mods = <(MOD_RCTL|MOD_RALT)>;
-		};
-		left: input_left {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp D>, <&kp T>; // 左：削除／文字
-				mods = <(MOD_RCTL|MOD_RALT)>;
-		};
-		up: input_up {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
-				mods = <(MOD_RCTL|MOD_RALT)>;
-		};
-		down: input_down {
-				compatible = "zmk,behavior-mod-morph";
-				#binding-cells = <0>;
-				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
-				mods = <(MOD_RCTL|MOD_RALT)>;
-		};
-	};
-
 	zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
@@ -316,6 +289,33 @@
 			tick = <60>;
 			wait-ms = <0>;
 			tap-ms = <10>;
+	};
+
+	behaviors {
+		right: input_right {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
+				mods = <(MOD_RCTL|MOD_RALT)>;
+		};
+		left: input_left {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp D>, <&kp T>; // 左：削除／文字
+				mods = <(MOD_RCTL|MOD_RALT)>;
+		};
+		up: input_up {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
+				mods = <(MOD_RCTL|MOD_RALT)>;
+		};
+		down: input_down {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
+				mods = <(MOD_RCTL|MOD_RALT)>;
+		};
 	};
 
 	analog_input_listener {
