@@ -522,7 +522,7 @@
 			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		r_layer8-prevent {
+		r_layer7-prevent {
 			layers = <RSE>; // レイヤー7がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
