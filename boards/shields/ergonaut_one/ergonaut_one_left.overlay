@@ -192,7 +192,7 @@
 					  ,<&kp UP>
 					  ,<&kp DOWN>
 					  ;
-			tick = <60>; // ティック間隔
+			tick = <100>; // ティック間隔
 			wait-ms = <5>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
@@ -205,7 +205,7 @@
 					  ,<&kp UP>
 					  ,<&kp DOWN>
 					  ;
-			tick = <40>; // ティック間隔
+			tick = <50>; // ティック間隔
 			wait-ms = <0>; // 待機時間
 			tap-ms = <10>; // タップ時間
 	};
@@ -226,7 +226,7 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecadm: zip_keybind_keys_ecadm {
+	zip_keybind_keys_ecad_rsew: zip_keybind_keys_ecad_rsew {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
@@ -234,6 +234,23 @@
 	                 , <&kp D> // 左：削除
 					 , <&kp A> // 上：領域移動
 	                 , <&kp Z> // 下：属性変更
+					 ;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_ecad_movw: zip_keybind_keys_ecad_movw {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&kp E> // 右：文字修正
+	                 , <&kp T> // 左：文字
+					 , <&kp Q> // 上：水平垂直補助線入力
+	                 , <&kp W> // 下：図形情報表示
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -465,7 +482,7 @@
 		};
 		r_layer12 {
 			layers = <MOVW>; // レイヤー12がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecadm>; // zip_keybind_keys_ecadm を使用
+			input-processors = <&zip_keybind_keys_ecad_movw>; // zip_keybind_keys_ecad_movw を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer12-prevent {
@@ -474,7 +491,7 @@
 		};
 		r_layer11 {
 			layers = <MOV>; // レイヤー11がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecadm>; // zip_keybind_keys_ecadm を使用
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer11-prevent {
@@ -493,18 +510,21 @@
 		};
 		r_layer8 {
 			layers = <RSEW>; // レイヤー8がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecadbr>; // zip_keybind_keys_ecadbr を使用
+			input-processors = <&zip_keybind_keys_ecad_rsew>; // zip_keybind_keys_ecad_rsew を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer8-prevent {
 			layers = <RSEW>; // レイヤー8がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_scroll_rse {
+		r_layer7 {
 			layers = <RSE>; // レイヤー7がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer8-prevent {
+			layers = <RSE>; // レイヤー7がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_scroll_w {
 			layers = <LWRW>; // レイヤー6がアクティブな場合
