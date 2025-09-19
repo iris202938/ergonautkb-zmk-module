@@ -165,6 +165,76 @@
 			, <&macro_tap &kp V>
 			;
     };
+	ctrl_d_e: ctrl_d_e { // 文字種別変更
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp E>
+			;
+    };
+	ctrl_f_f: ctrl_f_f { // 文章修正
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp F>
+			;
+    };
+	ctrl_d_f: ctrl_f_x { // 多相結線
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp F>
+			;
+    };
+	ctrl_f_n: ctrl_f_n { // 三相線番
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			;
+    };
+	ctrl_d_w: ctrl_d_w { // 渡りページ編集
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp W>
+			;
+    };
+	ctrl_d_r: ctrl_d_r { // リファレンス編集
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp R>
+			;
+    };
+	ctrl_d_l: ctrl_d_l { // 並行補助線入力
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp L>
+			;
+    };
 
 	zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
