@@ -102,19 +102,6 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
-	ctrl_d_n: ctrl_d_n { // 自動線番範囲選択
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-			= <&macro_press &kp LCTRL>
-			, <&macro_tap &kp D>
-			, <&macro_release &kp LCTRL>
-			, <&macro_tap &kp N>
-			, <&macro_tap &kp TAB>
-			, <&macro_tap &kp TAB>
-			, <&macro_tap &kp TAB>
-			;
-    };
 	ctrl_d_x: ctrl_d_x { // 図面管理情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -205,6 +192,19 @@
 			, <&macro_tap &kp N>
 			;
     };
+	ctrl_d_n: ctrl_d_n { // 自動線番範囲選択
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			, <&macro_tap &kp TAB>
+			, <&macro_tap &kp TAB>
+			, <&macro_tap &kp TAB>
+			;
+    };	
 	ctrl_d_w: ctrl_d_w { // 渡りページ編集
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -225,6 +225,16 @@
 			, <&macro_tap &kp R>
 			;
     };
+	ctrl_d_l: ctrl_d_l { // 水平垂直補助線入力
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp L>
+			;
+    };
 	ctrl_d_l: ctrl_d_l { // 並行補助線入力
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -233,6 +243,16 @@
 			, <&macro_tap &kp D>
 			, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp L>
+			;
+    };
+	ctrl_d_d: ctrl_d_d { // 補助線削除
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp D>
 			;
     };
 
@@ -296,7 +316,7 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecad_rsew: zip_keybind_keys_ecad_rsew {
+	zip_keybind_keys_ecad_rrsew: zip_keybind_keys_ecad_rrsew {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
@@ -313,14 +333,14 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecad_movw: zip_keybind_keys_ecad_movw {
+	zip_keybind_keys_ecad_ladjw: zip_keybind_keys_ecad_ladjw {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp E> // 右：文字修正
-	                 , <&kp T> // 左：文字
-					 , <&kp Q> // 上：水平垂直補助線入力
-	                 , <&kp W> // 下：図形情報表示
+			bindings = <&kp E>     // 右：文字修正
+	                 , <&kp T>     // 左：文字
+					 , <&ctrl_d_e> // 上：文字種別変更
+					 , <&ctrl_f_f> // 下：文章修正
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -330,11 +350,45 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecadbr: zip_keybind_keys_ecadbr {
+	zip_keybind_keys_ecad_radjw: zip_keybind_keys_ecad_radjw {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&ctrl_d_n> // 右：自動線番範囲選択
+			bindings = <&ctrl_f_x>     // 右：多相結線
+	                 , <&ctrl_f_n>     // 左：三相線番
+					 , <&ctrl_d_n>     // 上：自動線番範囲選択
+					 , <&kp LS(LA(S))> // 下：シンボル一覧(AHK)
+					 ;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_ecad_rmovw: zip_keybind_keys_ecad_rmovw {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&ctrl_d_l> // 右：水平垂直補助線入力
+					 , <&ctrl_d_l> // 左：並行補助線入力
+	                 , <&kp W>     // 上：図形情報表示
+					 , <&ctrl_d_d> // 下：補助線削除
+					 ;
+			tick = <150>;
+			wait-ms = <100>;
+			tap-ms = <50>;
+			mode = <1>;
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_ecad_rble: zip_keybind_keys_ecad_rble {
+			compatible = "zmk,input-processor-keybind";
+			#input-processor-cells = <0>;
+		track_remainders;
+			bindings = <&ctrl_f_v> // 右：ページ編集
 					 , <&ctrl_d_z> // 左：全ページ情報
 	                 , <&ctrl_d_x> // 上：図面管理情報
 	                 , <&ctrl_d_y> // 下：ページ管理情報
@@ -462,16 +516,16 @@
 			layers = <MOV>; // レイヤー11がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};		
-		layer10 {
+		l_layer10 {
 			layers = <ADJW>; // レイヤー10がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			input-processors = <&zip_keybind_keys_ecad_ladjw>; // zip_keybind_keys_ladjw を使用
 			process-next;
 		};
 		l_layer10-prevent {
 			layers = <ADJW>; // レイヤー10がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		layer9 {
+		l_layer9 {
 			layers = <ADJ>; // レイヤー9がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
@@ -534,7 +588,7 @@
 		status = "okay";
 		r_layer14 {
 			layers = <BLE>; // レイヤー14がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecadbr>; // zip_keybind_keys_ecadbr を使用
+			input-processors = <&zip_keybind_keys_ecad_rble>; // zip_keybind_keys_ecad_rble を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer14-prevent {
@@ -552,7 +606,7 @@
 		};
 		r_layer12 {
 			layers = <MOVW>; // レイヤー12がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_movw>; // zip_keybind_keys_ecad_movw を使用
+			input-processors = <&zip_keybind_keys_ecad_rmovw>; // zip_keybind_keys_ecad_rmovw を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer12-prevent {
@@ -568,10 +622,14 @@
 			layers = <MOV>; // レイヤー11がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_mouse_speed_w_full {
+		r_layer10 {
+			layers = <ADJWW>; // レイヤー10がアクティブな場合
+			input-processors = <&zip_keybind_keys_ecad_radjw>; // zip_keybind_keys_ecad_radjw を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer10-prevent {
 			layers = <ADJW>; // レイヤー10がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_mouse_speed_full {
 			layers = <ADJ>; // レイヤー9がアクティブな場合
@@ -580,7 +638,7 @@
 		};
 		r_layer8 {
 			layers = <RSEW>; // レイヤー8がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_rsew>; // zip_keybind_keys_ecad_rsew を使用
+			input-processors = <&zip_keybind_keys_ecad_rrsew>; // zip_keybind_keys_ecad_rrsew を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer8-prevent {
