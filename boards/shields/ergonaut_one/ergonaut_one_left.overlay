@@ -172,7 +172,7 @@
 			, <&macro_tap &kp F>
 			;
     };
-	ctrl_d_f: ctrl_f_x { // 多相結線
+	ctrl_d_f: ctrl_d_f { // 多相結線
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings
@@ -344,7 +344,7 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&ctrl_f_x>     // 右：多相結線
+			bindings = <&ctrl_d_f>     // 右：多相結線
 	                 , <&ctrl_f_n>     // 左：三相線番
 					 , <&ctrl_d_n>     // 上：自動線番範囲選択
 					 , <&kp LS(LA(S))> // 下：シンボル一覧(AHK)
