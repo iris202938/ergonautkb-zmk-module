@@ -236,6 +236,16 @@
 			, <&macro_tap &kp R>
 			;
     };
+	ctrl_f_r: ctrl_f_r { // R枠変更
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp R>
+			;
+    };
 	ctrl_d_l: ctrl_d_l { // 並行補助線入力
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -454,26 +464,26 @@
 		right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp C>, <&kp E>; // 右：複写／文字修正
-				mods = <(MOD_LCTL|MOD_LGUI)>;
+				bindings = <&kp C>, <&ctrl_d_w>; // 右：複写／渡りページ編集
+				mods = <(MOD_LSHFT)>;
 		};
 		left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&kp T>; // 左：削除／文字
-				mods = <(MOD_LCTL|MOD_LGUI)>;
+				bindings = <&kp D>, <&ctrl_d_r>; // 左：削除／リファレンス編集
+				mods = <(MOD_LSHFT)>;
 		};
 		up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp A>, <&kp Q>; // 上：領域移動／水平垂直補助線入力
-				mods = <(MOD_LCTL|MOD_LGUI)>;
+				bindings = <&kp A>, <&ctrl_f_r>; // 上：領域移動／R枠変更
+				mods = <(MOD_LSHFT)>;
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp Z>, <&kp W>; // 下：属性変更／図形情報表示
-				mods = <(MOD_LCTL|MOD_LGUI)>;
+				bindings = <&kp Z>, <&ctrl_alt_s>; // 下：属性変更／シンボル一覧(AHK)
+				mods = <(MOD_LSHFT)>;
 		};
 	};
 
