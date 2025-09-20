@@ -205,6 +205,16 @@
 			, <&macro_tap &kp TAB>
 			;
     };
+	ctrl_d_a: ctrl_d_a { // ツイスト線
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp A>
+			;
+    };
 	ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -368,7 +378,7 @@
 			bindings = <&ctrl_d_f>     // 右：多相結線
 	                 , <&ctrl_f_n>     // 左：三相線番
 					 , <&ctrl_d_n>     // 上：自動線番範囲選択
-					 , <&ctrl_alt_s>   // 下：シンボル一覧(AHK)
+					 , <&ctrl_d_a>     // 下：ツイスト線
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -465,25 +475,25 @@
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp C>, <&ctrl_d_w>; // 右：複写／渡りページ編集
-				mods = <(MOD_LSHFT)>;
+				mods = <(MOD_LSFT)>;
 		};
 		left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp D>, <&ctrl_d_r>; // 左：削除／リファレンス編集
-				mods = <(MOD_LSHFT)>;
+				mods = <(MOD_LSFT)>;
 		};
 		up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp A>, <&ctrl_f_r>; // 上：領域移動／R枠変更
-				mods = <(MOD_LSHFT)>;
+				mods = <(MOD_LSFT)>;
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp Z>, <&ctrl_alt_s>; // 下：属性変更／シンボル一覧(AHK)
-				mods = <(MOD_LSHFT)>;
+				mods = <(MOD_LSFT)>;
 		};
 	};
 
