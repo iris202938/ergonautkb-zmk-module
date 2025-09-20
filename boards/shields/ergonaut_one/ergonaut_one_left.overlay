@@ -204,6 +204,17 @@
 			, <&macro_tap &kp TAB>
 			, <&macro_tap &kp TAB>
 			;
+    };
+	ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_press &kp LALT>
+			, <&macro_tap &kp S>
+			, <&macro_release &kp LALT>
+			, <&macro_release &kp LCTRL>
+			;
     };	
 	ctrl_d_w: ctrl_d_w { // 渡りページ編集
 		compatible = "zmk,behavior-macro";
@@ -347,7 +358,7 @@
 			bindings = <&ctrl_d_f>     // 右：多相結線
 	                 , <&ctrl_f_n>     // 左：三相線番
 					 , <&ctrl_d_n>     // 上：自動線番範囲選択
-					 , <&kp LC(LA(S))> // 下：シンボル一覧(AHK)
+					 , <&ctrl_alt_s>   // 下：シンボル一覧(AHK)
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
