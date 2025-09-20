@@ -341,10 +341,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C> // 右：複写
-	                 , <&kp D> // 左：削除
-					 , <&kp A> // 上：領域移動
-	                 , <&kp Z> // 下：属性変更
+			bindings = <&right> // 右：複写   ／渡りページ編集
+	                 , <&left>  // 左：削除   ／リファレンス編集
+					 , <&up>    // 上：領域移動／R枠変更
+	                 , <&down>  // 下：属性変更／シンボル一覧(AHK)
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -487,7 +487,7 @@
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp A>, <&ctrl_f_r>; // 上：領域移動／R枠変更
-				mods = <(MOD_LSFT|MOD_RSFT)>;
+				mods = <(MOD_LSFT|MOD_RSFT)>;// 上：領域移動
 		};
 		down: input_down {
 				compatible = "zmk,behavior-mod-morph";
