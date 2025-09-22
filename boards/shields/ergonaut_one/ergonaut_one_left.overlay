@@ -341,10 +341,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&right> // 右：複写   ／渡りページ編集
-	                 , <&left>  // 左：削除   ／リファレンス編集
-					 , <&up>    // 上：領域移動／R枠変更
-	                 , <&down>  // 下：属性変更／シンボル一覧(AHK)
+			bindings = <&rsew_right> // 右：複写   ／渡りページ編集
+	                 , <&rsew_left>  // 左：削除   ／リファレンス編集
+					 , <&rsew_up>    // 上：領域移動／R枠変更
+	                 , <&rsew_down>  // 下：属性変更／シンボル一覧(AHK)
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -471,25 +471,25 @@
 	};
 
 	behaviors {
-		right: input_right {
+		rsew_right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp C>, <&ctrl_d_w>; // 右：複写／渡りページ編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		left: input_left {
+		rsew_left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp D>, <&ctrl_d_r>; // 左：削除／リファレンス編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		up: input_up {
+		rsew_up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp A>, <&ctrl_f_r>; // 上：領域移動／R枠変更
 				mods = <(MOD_LSFT|MOD_RSFT)>;// 上：領域移動
 		};
-		down: input_down {
+		rsew_down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp Z>, <&ctrl_alt_s>; // 下：属性変更／シンボル一覧(AHK)
