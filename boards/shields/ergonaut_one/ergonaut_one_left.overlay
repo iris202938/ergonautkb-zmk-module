@@ -326,6 +326,24 @@
 			, <&macro_tap &kp C>
 			;
     };
+	alt_home: alt_home { // 移動右90度回転[AHK]
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp HOME>
+			, <&macro_release &kp LALT>
+			;
+    };
+	alt_end: alt_end { // 移動左90度回転[AHK]
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp END>
+			, <&macro_release &kp LALT>
+			;
+    };
 
 	zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
