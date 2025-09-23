@@ -524,13 +524,13 @@
 		rrsew_right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp C>, <&LA(HOME)>; // 右：複写／移動右90度回転[AHK]
+				bindings = <&kp C>, <&kp LA(HOME)>; // 右：複写／移動右90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		rrsew_left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&LA(END)>; // 左：削除／移動左90度回転[AHK]
+				bindings = <&kp D>, <&kp LA(END)>; // 左：削除／移動左90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		rrsew_up: input_up {
