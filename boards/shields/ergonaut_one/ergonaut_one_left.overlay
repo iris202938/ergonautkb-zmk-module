@@ -548,7 +548,7 @@
 		radjw_right: radjw_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&ctrl_d_f>, <&ctrl_d_w)>; // 右：多相結線／渡りページ編集
+				bindings = <&ctrl_d_f>, <&ctrl_d_w>; // 右：多相結線／渡りページ編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		radjw_left: radjw_left {
