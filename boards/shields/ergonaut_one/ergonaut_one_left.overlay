@@ -426,7 +426,7 @@
 			#input-processor-cells = <0>;
 		track_remainders;
 			bindings = <&radjw_right>  // 右：多相結線／渡りページ編集
-	                 , <&radjw_left>   // 左：三相結線／リファレンス編集
+	                 , <&radjw_left>   // 左：三相線番／リファレンス編集
 					 , <&radjw_up>     // 上：自動線番／R枠変更
 					 , <&radjw_down>   // 下：ツイスト線／シンボル一覧[AHK]
 					 ;
@@ -554,7 +554,7 @@
 		radjw_left: radjw_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&LA(END)>; // 左：三相結線／リファレンス編集
+				bindings = <&ctrl_f_n>, <&ctrl_d_r>; // 左：三相線番／リファレンス編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		radjw_up: radjw_up {
