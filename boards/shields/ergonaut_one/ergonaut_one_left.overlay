@@ -545,25 +545,25 @@
 				bindings = <&kp Z>, <&ctrl_a_v>; // 下：属性変更／貼付け[ctrl+a+v]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		radjw_right: input_right {
+		radjw_right: radjw_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&ctrl_d_f>, <&ctrl_d_w)>; // 右：多相結線／渡りページ編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		radjw_left: input_left {
+		radjw_left: radjw_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp D>, <&LA(END)>; // 左：三相結線／リファレンス編集
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		radjw_up: input_up {
+		radjw_up: radjw_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&ctrl_d_n>, <&ctrl_f_r>; // 上：自動線番／R枠変更
 				mods = <(MOD_LSFT|MOD_RSFT)>;// 上：領域移動
 		};
-		radjw_down: input_down {
+		radjw_down: radjw_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&ctrl_d_a>, <&ctrl_alt_s>; // 下：ツイスト線／シンボル一覧[AHK]
