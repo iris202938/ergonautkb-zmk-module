@@ -276,6 +276,56 @@
 			, <&macro_tap &kp D>
 			;
     };
+	ctrl_a_c: ctrl_a_c { // コピー
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp C>
+			;
+    };
+	ctrl_a_v: ctrl_a_v { // 貼付け
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp V>
+			;
+    };
+	ctrl_d_q: ctrl_d_q { // 円(中心)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Q>
+			;
+    };
+	ctrl_a_k: ctrl_a_k { // コメント
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp K>
+			;
+    };
+	ctrl_d_c: ctrl_d_c { // 製品情報
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp C>
+			;
+    };
 
 	zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
@@ -337,14 +387,14 @@
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
     };
-	zip_keybind_keys_ecad_rrsew: zip_keybind_keys_ecad_rrsew {
+	zip_keybind_keys_ecad_rsew: zip_keybind_keys_ecad_rsew {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&rsew_right> // 右：複写   ／渡りページ編集
-	                 , <&rsew_left>  // 左：削除   ／リファレンス編集
-					 , <&rsew_up>    // 上：領域移動／R枠変更
-	                 , <&rsew_down>  // 下：属性変更／シンボル一覧(AHK)
+			bindings = <&rrsew_right> // 右：複写   ／移動右90度回転[AHK]
+	                 , <&rrsew_left>  // 左：削除   ／移動左90度回転[AHK]
+					 , <&rrsew_up>    // 上：領域移動／コピー[ctrl+a+c]
+	                 , <&rrsew_down>  // 下：属性変更／貼付け[ctrl+a+v]
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -375,10 +425,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&ctrl_d_f>     // 右：多相結線
-	                 , <&ctrl_f_n>     // 左：三相線番
-					 , <&ctrl_d_n>     // 上：自動線番範囲選択
-					 , <&ctrl_d_a>     // 下：ツイスト線
+			bindings = <&radjw_right>  // 右：多相結線／渡りページ編集
+	                 , <&radjw_left>   // 左：三相結線／リファレンス編集
+					 , <&radjw_up>     // 上：自動線番／R枠変更
+					 , <&radjw_down>   // 下：ツイスト線／シンボル一覧[AHK]
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
@@ -471,28 +521,52 @@
 	};
 
 	behaviors {
-		rsew_right: input_right {
+		rrsew_right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp C>, <&ctrl_d_w>; // 右：複写／渡りページ編集
+				bindings = <&kp C>, <&LA(HOME)>; // 右：複写／移動右90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		rsew_left: input_left {
+		rrsew_left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&ctrl_d_r>; // 左：削除／リファレンス編集
+				bindings = <&kp D>, <&LA(END)>; // 左：削除／移動左90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
-		rsew_up: input_up {
+		rrsew_up: input_up {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp A>, <&ctrl_f_r>; // 上：領域移動／R枠変更
+				bindings = <&kp A>, <&ctrl_a_c>; // 上：領域移動／コピー[ctrl+a+c]
 				mods = <(MOD_LSFT|MOD_RSFT)>;// 上：領域移動
 		};
-		rsew_down: input_down {
+		rrsew_down: input_down {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp Z>, <&ctrl_alt_s>; // 下：属性変更／シンボル一覧(AHK)
+				bindings = <&kp Z>, <&ctrl_a_v>; // 下：属性変更／貼付け[ctrl+a+v]
+				mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		radjw_right: input_right {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&ctrl_d_f>, <&ctrl_d_w)>; // 右：多相結線／渡りページ編集
+				mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		radjw_left: input_left {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&kp D>, <&LA(END)>; // 左：三相結線／リファレンス編集
+				mods = <(MOD_LSFT|MOD_RSFT)>;
+		};
+		radjw_up: input_up {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&ctrl_d_n>, <&ctrl_f_r>; // 上：自動線番／R枠変更
+				mods = <(MOD_LSFT|MOD_RSFT)>;// 上：領域移動
+		};
+		radjw_down: input_down {
+				compatible = "zmk,behavior-mod-morph";
+				#binding-cells = <0>;
+				bindings = <&ctrl_d_a>, <&ctrl_alt_s>; // 下：ツイスト線／シンボル一覧[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 	};
@@ -659,7 +733,7 @@
 		};
 		r_layer8 {
 			layers = <RSEW>; // レイヤー8がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_rrsew>; // zip_keybind_keys_ecad_rrsew を使用
+			input-processors = <&zip_keybind_keys_ecad_rsew>; // zip_keybind_keys_ecad_rsew を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer8-prevent {
