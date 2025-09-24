@@ -1700,6 +1700,12 @@
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
         };
+		td_lt_mov: tap_dance_layer_tap_mov {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt MOV LANG1>, <&kp RSHIFT>, <&mo MOVW>;
+        };
     };
 
     keymap {
@@ -1711,7 +1717,7 @@
                 &mt LSHFT ESC     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U				&kp I         &kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J				&kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M				&kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
-                                                    &lt NUM LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV LANG1
+                                                    &lt NUM LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&td_lt_mov
             >;
         };
         nicola_layer {
