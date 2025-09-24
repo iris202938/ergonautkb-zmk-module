@@ -1704,7 +1704,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt MOV LANG1>, <&kp RSHIFT>, <&mo MOVW>;
+            bindings = <&lt MOV LANG1>, <&to MOV>, <&kp RSHIFT>;
         };
     };
 
