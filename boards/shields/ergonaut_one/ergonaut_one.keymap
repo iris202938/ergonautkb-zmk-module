@@ -1704,7 +1704,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt MOV LANG1>, <&to MOV>, <&kp RSHIFT>;
+            bindings = <&lt MOV SPACE>, <&to MOV>, <&kp RSHIFT>;
         };
     };
 
@@ -1816,7 +1816,7 @@
                 &kp LG(BSPC)      &kp LS(LC(TAB))   &msc SCRL_LEFT  &mmv MOVE_UP   &msc SCRL_RIGHT   &msc SCRL_UP       &kp LC(Y)      &kp LC(A)        &kp UP        &kp LC(E)      &kp PG_UP    &mkp MB2
                 &trans            &mkp MB1          &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT   &msc SCRL_DOWN     &lt BLE BSPC   &kp LEFT         &kp DOWN      &kp RIGHT      &kp PG_DN    &mkp MB1
                 &mt LALT SPACE    &kp W             &kp LG(LBKT)    &mkp MB3       &kp LG(RBKT)      &kp LC(TAB)      	&kp LC(Z)      &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &trans
-                                                                    &kp LG(C)      &kp LG(V)         &mkp MB2           &kp ENTER      &mkp MB3         &trans
+                                                                    &kp LG(C)      &kp LG(V)         &mkp MB2           &kp ENTER      &mkp MB3         &to QWE
             >;
         };
 		movew_layer {
