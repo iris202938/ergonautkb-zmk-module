@@ -326,7 +326,7 @@
 			, <&macro_tap &kp C>
 			;
     };
-	alt_home: alt_home { // 移動右90度回転[AHK]
+	alt_home: alt_home { // 移動左90度回転[AHK]
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings
@@ -335,7 +335,7 @@
 			, <&macro_release &kp LALT>
 			;
     };
-	alt_end: alt_end { // 移動左90度回転[AHK]
+	alt_end: alt_end { // 移動右90度回転[AHK]
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings
@@ -542,13 +542,13 @@
 		rrsew_right: input_right {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp C>, <&kp LA(HOME)>; // 右：複写／移動右90度回転[AHK]
+				bindings = <&kp C>, <&kp LA(END)>; // 右：複写／移動右90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		rrsew_left: input_left {
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
-				bindings = <&kp D>, <&kp LA(END)>; // 左：削除／移動左90度回転[AHK]
+				bindings = <&kp D>, <&kp LA(HOME)>; // 左：削除／移動左90度回転[AHK]
 				mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
 		rrsew_up: input_up {
