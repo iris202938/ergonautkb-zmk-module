@@ -1547,6 +1547,8 @@
 
 	file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LCTRL>
@@ -1557,6 +1559,8 @@
 
 	file_r: file_r { // ファイルの切り替え逆
 		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LSHFT>
@@ -1569,6 +1573,8 @@
 
 	pr_pg: pr_pg { // 前ページ切り替え
 		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LSHFT>
@@ -1579,6 +1585,8 @@
 
 	nx_pg: nx_pg { // 次ページ切り替え
 		compatible = "zmk,behavior-macro";
+		wait-ms = <40>;
+		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LSHFT>
