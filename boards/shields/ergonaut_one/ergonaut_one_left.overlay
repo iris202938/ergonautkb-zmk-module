@@ -202,14 +202,15 @@
     };
 	ctrl_d_n: ctrl_d_n { // 自動線番範囲選択
 		compatible = "zmk,behavior-macro";
-		wait-ms = <40>;
-		tap-ms = <40>;
+		// wait-ms = <40>;
+		// tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
 			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp D>
 			, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp N>
+			, <&macro_wait_time 80>
 			, <&macro_tap &kp TAB>
 			, <&macro_tap &kp TAB>
 			, <&macro_tap &kp TAB>
