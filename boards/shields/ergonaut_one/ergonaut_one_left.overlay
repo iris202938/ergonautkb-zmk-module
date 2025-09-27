@@ -98,6 +98,8 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
+			// = <&macro_press &kp LSHFT &kp F5> // マクロキー押下時にLSHFTとF5を同時に押す
+			// , <&macro_release &kp LSHFT &kp F5> // マクロキー解放時にLSHFTとF5を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F5>
 			, <&macro_release &kp LSHFT>
@@ -109,6 +111,8 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
+			// = <&macro_press &kp LSHFT &kp F6> // マクロキー押下時にLSHFTとF6を同時に押す
+			// , <&macro_release &kp LSHFT &kp F6> // マクロキー解放時にLSHFTとF6を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F6>
 			, <&macro_release &kp LSHFT>
