@@ -70,11 +70,11 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LCTRL &kp F6> // マクロキー押下時にLCTRLとF6を同時に押す
-			, <&macro_release &kp LCTRL &kp F6> // マクロキー解放時にLCTRLとF6を同時に離す
-			// = <&macro_press &kp LCTRL>
-			// , <&macro_tap &kp F6>
-			// , <&macro_release &kp LCTRL>
+			// = <&macro_press &kp LCTRL &kp F6> // マクロキー押下時にLCTRLとF6を同時に押す
+			// , <&macro_release &kp LCTRL &kp F6> // マクロキー解放時にLCTRLとF6を同時に離す
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LCTRL>
 			;
     };
 	file_r: file_r { // ファイルの切り替え逆
@@ -83,13 +83,13 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LSHIFT &kp LCTRL &kp F6> // マクロキー押下時にLSHIFTとLCTRLとF6を同時に押す
-			, <&macro_release &kp LSHIFT &kp LCTRL &kp F6> // マクロキー解放時にLSHIFTとLCTRLとF6を同時に離す
-			// = <&macro_press &kp LSHFT>
-			// , <&macro_press &kp LCTRL>
-			// , <&macro_tap &kp F6>
-			// , <&macro_release &kp LCTRL>
-			// , <&macro_release &kp LSHFT>
+			// = <&macro_press &kp LSHFT &kp LCTRL &kp F6> // マクロキー押下時にLSHFTとLCTRLとF6を同時に押す
+			// , <&macro_release &kp LSHFT &kp LCTRL &kp F6> // マクロキー解放時にLSHFTとLCTRLとF6を同時に離す
+			= <&macro_press &kp LSHFT>
+			, <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F6>
+			, <&macro_release &kp LCTRL>
+			, <&macro_release &kp LSHFT>
 			;
     };
 	pr_pg: pr_pg { // 前ページ切り替え
