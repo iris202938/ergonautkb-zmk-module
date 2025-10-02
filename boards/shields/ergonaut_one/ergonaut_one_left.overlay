@@ -430,10 +430,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&&kp C>  // 右：複写
-	                 , <&&kp D>  // 左：削除
-					 , <&&kp A>  // 上：領域移動
-	                 , <&&kp Z>  // 下：属性変更
+			bindings = <&kp C>  // 右：複写
+	                 , <&kp D>  // 左：削除
+					 , <&kp A>  // 上：領域移動
+	                 , <&kp Z>  // 下：属性変更
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
