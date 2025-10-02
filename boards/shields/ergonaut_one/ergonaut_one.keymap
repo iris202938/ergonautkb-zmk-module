@@ -47,7 +47,7 @@
     //          36 37 38	39 40 41 
 
 	combo_ESCL {
-		timeout-ms = <80>;
+		timeout-ms = <60>;
 		key-positions = <0 12>;
 		layers = <QWE NIC LIN NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
@@ -60,12 +60,12 @@
 		bindings = <&kp ESC>;
 	};
 
-	combo_PSHIFT {
-		timeout-ms = <80>;
-		key-positions = <24 35>;
-		layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-		bindings = <&kp LSHIFT>;
-	};
+	// combo_PSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <24 35>;
+	// 	layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+	// 	bindings = <&kp LSHIFT>;
+	// };
 
 	// combo_TSHIFT {
 	// 	timeout-ms = <80>;
@@ -74,19 +74,19 @@
 	// 	bindings = <&kp RSHIFT>;
 	// };
 	
-	combo_PLSHIFT {
-		timeout-ms = <80>;
-		key-positions = <12 24>;
-		layers = <QWE LIN RSE RSEW>;
-		bindings = <&kp LSHIFT>;
-	};
+	// combo_PLSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <12 24>;
+	// 	layers = <QWE LIN RSE RSEW>;
+	// 	bindings = <&kp LSHIFT>;
+	// };
 
-	combo_PRSHIFT {
-		timeout-ms = <80>;
-		key-positions = <23 35>;
-		layers = <QWE LIN RSE RSEW>;
-		bindings = <&kp RSHIFT>;
-	};
+	// combo_PRSHIFT {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <23 35>;
+	// 	layers = <QWE LIN RSE RSEW>;
+	// 	bindings = <&kp RSHIFT>;
+	// };
 
 	combo_RCOPY {
 		timeout-ms = <80>;
@@ -95,12 +95,12 @@
 		bindings = <&kp C>;
 	};
 
-	combo_RDEL {
-		timeout-ms = <80>;
-		key-positions = <23 35>;
-		layers = <MOV MOVW>;
-		bindings = <&kp D>;
-	};
+	// combo_RDEL {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <23 35>;
+	// 	layers = <MOV MOVW>;
+	// 	bindings = <&kp D>;
+	// };
 
 	combo_CAPSWORD {
 		timeout-ms = <80>;
@@ -123,19 +123,19 @@
 		bindings = <&mkp MB3>;
 	};
 	
-	combo_WIN_S_L {
-		timeout-ms = <80>;
-		key-positions = <13 14>;
-		layers = <LWRW>;
-		bindings = <&kp LG(LS(LEFT))>;
-	};
+	// combo_WIN_S_L {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <13 14>;
+	// 	layers = <LWRW>;
+	// 	bindings = <&kp LG(LS(LEFT))>;
+	// };
 
-	combo_WIN_S_R {
-		timeout-ms = <80>;
-		key-positions = <15 16>;
-		layers = <LWRW>;
-		bindings = <&kp LG(LS(RIGHT))>;
-	};
+	// combo_WIN_S_R {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <15 16>;
+	// 	layers = <LWRW>;
+	// 	bindings = <&kp LG(LS(RIGHT))>;
+	// };
 
 	combo_JPQMARKL {
 		timeout-ms = <50>;
@@ -1953,7 +1953,7 @@
             display-name = "NUM";
             bindings = <
                 &trans            &kp PG_UP     &kp HOME        &kp UP        &kp END         &kp CARET         &kp KP_SLASH    &kp KP_N7   &kp KP_N8   &kp KP_N9     &kp KP_N0         &kp KP_NLCK
-                &mt LCTRL F4      &kp PG_DN     &kp LEFT        &kp DOWN      &kp RIGHT       &lt BLE DEL       &kp BSPC        &kp KP_N4   &kp KP_N5   &kp KP_N6     &kp KP_MINUS      &kp KP_DOT
+                &mt LCTRL TAB     &kp PG_DN     &kp LEFT        &kp DOWN      &kp RIGHT       &lt BLE DEL       &kp BSPC        &kp KP_N4   &kp KP_N5   &kp KP_N6     &kp KP_MINUS      &kp KP_DOT
                 &mt LGUI N0       &alt_left	    &alt_down       &alt_up       &alt_right      &kp EQUAL         &kp KP_MULTIPLY &kp KP_N1   &kp KP_N2   &kp KP_N3     &kp KP_PLUS       &trans
                                                                 &to_WIN_i5    &pr_pg		  &nx_pg        	&kp KP_ENTER    &kp UNDER   &kp SPACE
             >;
