@@ -105,7 +105,7 @@
 	combo_CAPSWORD {
 		timeout-ms = <80>;
 		key-positions = <24 35>;
-		layers = <QWE LIN WIN>;
+		layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
 		bindings = <&caps_word>;
 	};
 
