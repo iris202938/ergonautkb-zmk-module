@@ -67,12 +67,12 @@
 	// 	bindings = <&kp LSHIFT>;
 	// };
 
-	// combo_TSHIFT {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <36 41>;
-	// 	layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-	// 	bindings = <&kp RSHIFT>;
-	// };
+	combo_TSHIFT {
+		timeout-ms = <80>;
+		key-positions = <36 41>;
+		layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+		bindings = <&kp RSHIFT>;
+	};
 	
 	// combo_PLSHIFT {
 	// 	timeout-ms = <80>;
@@ -91,7 +91,7 @@
 	combo_RCOPY {
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <NIC NICL WIN>;
+		layers = <NICL WIN>;
 		bindings = <&kp C>;
 	};
 
@@ -104,7 +104,7 @@
 
 	combo_CAPSWORD {
 		timeout-ms = <80>;
-		key-positions = <36 41>;
+		key-positions = <24 35>;
 		layers = <QWE LIN WIN>;
 		bindings = <&caps_word>;
 	};
