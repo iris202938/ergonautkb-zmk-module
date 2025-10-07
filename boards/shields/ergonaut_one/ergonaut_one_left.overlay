@@ -118,6 +118,17 @@
 			, <&macro_release &kp LSHFT>
 			;
     };
+	int5_g: int5_g { // 端点再設定(AHK)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp INT5>
+			, <&macro_wait_time 40>
+			, <&macro_tap &kp G>
+			, <&macro_wait_time 40>
+			, <&macro_release &kp INT5>
+			;
+    };	
 	ctrl_d_x: ctrl_d_x { // 図面管理情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -430,10 +441,10 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp C>  // 右：複写
-	                 , <&kp D>  // 左：削除
-					 , <&kp A>  // 上：領域移動
-	                 , <&kp Z>  // 下：属性変更
+			bindings = <&int5_g>  // 右：端点再設定(AHK)
+	                 , <&kp D>    // 左：削除
+					 , <&kp A>    // 上：領域移動
+	                 , <&kp Z>    // 下：属性変更
 					 ;
 			tick = <150>;
 			wait-ms = <100>;
