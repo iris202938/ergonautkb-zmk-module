@@ -87,6 +87,13 @@
 		layers = <RSEW>;
 		bindings = <&alt_int4>;
 	};
+
+	combo_ALT_INT5 {
+		timeout-ms = <80>;
+		key-positions = <31 32>;
+		layers = <RSEW>;
+		bindings = <&alt_int5>;
+	};
 	
 	// combo_PLSHIFT {
 	// 	timeout-ms = <80>;
@@ -1746,6 +1753,16 @@
 		bindings
 			= <&macro_press   &kp RALT>
 			, <&macro_tap     &kp INT4>
+			, <&macro_release &kp RALT>
+			;
+    };	
+
+	alt_int5: alt_int5 { // Alt+無変換 選択位置移動(移動)(AHK)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press   &kp RALT>
+			, <&macro_tap     &kp INT5>
 			, <&macro_release &kp RALT>
 			;
     };	
