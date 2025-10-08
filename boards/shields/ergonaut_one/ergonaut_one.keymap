@@ -80,6 +80,13 @@
 		layers = <NIC NICL>;
 		bindings = <&qm RSHIFT>;
 	};
+
+	combo_ALT_INT4 {
+		timeout-ms = <80>;
+		key-positions = <32 33>;
+		layers = <RSEW>;
+		bindings = <&alt_int4>;
+	};
 	
 	// combo_PLSHIFT {
 	// 	timeout-ms = <80>;
@@ -1730,6 +1737,16 @@
 			, <&macro_tap &kp G>
 			, <&macro_wait_time 40>
 			, <&macro_release &kp INT5>
+			;
+    };	
+
+	alt_int4: alt_int4 { // Alt+変換 選択位置移動(複写)(AHK)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press   &kp RALT>
+			, <&macro_tap     &kp INT4>
+			, <&macro_release &kp RALT>
 			;
     };	
 
