@@ -94,6 +94,20 @@
 		layers = <RSEW>;
 		bindings = <&alt_int5>;
 	};
+
+	combo_e {
+		timeout-ms = <80>;
+		key-positions = <30 31>;
+		layers = <RSEW>;
+		bindings = <&kp E>;
+	};
+
+	combo_t {
+		timeout-ms = <80>;
+		key-positions = <33 34>;
+		layers = <RSEW>;
+		bindings = <&kp T>;
+	};
 	
 	// combo_PLSHIFT {
 	// 	timeout-ms = <80>;
