@@ -102,12 +102,12 @@
 		bindings = <&kp E>;
 	};
 
-	combo_t {
-		timeout-ms = <80>;
-		key-positions = <33 34>;
-		layers = <RSEW>;
-		bindings = <&kp T>;
-	};
+	// combo_t {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <33 34>;
+	// 	layers = <RSEW>;
+	// 	bindings = <&kp T>;
+	// };
 	
 	// combo_PLSHIFT {
 	// 	timeout-ms = <80>;
