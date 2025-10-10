@@ -95,12 +95,12 @@
 		bindings = <&alt_int5>;
 	};
 
-	combo_e {
-		timeout-ms = <80>;
-		key-positions = <30 31>;
-		layers = <RSEW>;
-		bindings = <&kp E>;
-	};
+	// combo_e {
+	// 	timeout-ms = <80>;
+	// 	key-positions = <30 31>;
+	// 	layers = <RSEW>;
+	// 	bindings = <&kp E>;
+	// };
 
 	// combo_t {
 	// 	timeout-ms = <80>;
