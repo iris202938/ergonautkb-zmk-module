@@ -23,12 +23,14 @@
 #define NUM 13
 #define BLE 14
 
-&lt {
-    quick-tap-ms = <140>;
+&mt {
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
 };
 
-&mt {
-    quick-tap-ms = <140>;
+&lt {
+    flavor = "hold-preferred";
 };
 
 &caps_word {
