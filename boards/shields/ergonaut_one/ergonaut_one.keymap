@@ -83,28 +83,28 @@
 		bindings = <&qm RSHIFT>;
 	};
 
-	combo_ALT_INT4 {
+	combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
 		timeout-ms = <80>;
 		key-positions = <32 33>;
 		layers = <RSEW>;
-		bindings = <&alt_int4>;
+		bindings = <&alt_int4>; //変換
 	};
 
-	combo_ALT_INT5 {
+	combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
 		timeout-ms = <80>;
 		key-positions = <31 32>;
 		layers = <RSEW>;
-		bindings = <&alt_int5>;
+		bindings = <&alt_int5>; //無変換
 	};
 
-	combo_e_key {
+	combo_e_key { // ECADの文字修正
 		timeout-ms = <80>;
 		key-positions = <30 31>;
 		layers = <RSEW>;
 		bindings = <&kp E>;
 	};
 
-	combo_t_key {
+	combo_t_key { // ECADの文字
 		timeout-ms = <80>;
 		key-positions = <33 34>;
 		layers = <RSEW>;
@@ -125,7 +125,7 @@
 	// 	bindings = <&kp RSHIFT>;
 	// };
 
-	combo_INT5_G {
+	combo_INT5_G { // ECADの端点再設定(AHK)
 		timeout-ms = <80>;
 		key-positions = <23 35>;
 		layers = <NICL WIN>;
