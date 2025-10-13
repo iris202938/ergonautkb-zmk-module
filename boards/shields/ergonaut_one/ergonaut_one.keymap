@@ -34,7 +34,7 @@
 };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS SPACE PERIOD COMMA ENTER TAB BACKSPACE SLASH>;
 };
 
 / { // ここが唯一のルートノードの始まり
