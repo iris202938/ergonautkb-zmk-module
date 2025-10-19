@@ -964,7 +964,7 @@
     };
     combo_SYU {
         timeout-ms = <50>;
-        key-positions = <31 13>; // 13: A
+        key-positions = <31 14>; // 14: S
         layers = <NIC NICL>;
         bindings = <&macro_SYU>;
     };
@@ -1045,34 +1045,34 @@
         bindings = <&macro_BUYU>;
     };
 
-    // W (2) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
+    // E (3) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
     combo_CHE {
         timeout-ms = <50>;
-        key-positions = <2 7>; // 7: T
+        key-positions = <3 7>; // 7: T
         layers = <NIC NICL>;
         bindings = <&macro_CHE>;
     };
     combo_KUE {
         timeout-ms = <50>;
-        key-positions = <2 8>; // 8: U
+        key-positions = <3 8>; // 8: U
         layers = <NIC NICL>;
         bindings = <&macro_KUE>;
     };
     combo_TSE {
         timeout-ms = <50>;
-        key-positions = <2 9>; // 9: I
+        key-positions = <3 9>; // 9: I
         layers = <NIC NICL>;
         bindings = <&macro_TSE>;
     };
     combo_KIE {
         timeout-ms = <50>;
-        key-positions = <2 20>; // 20: K
+        key-positions = <3 20>; // 20: K
         layers = <NIC NICL>;
         bindings = <&macro_KIE>;
     };
     combo_IE {
         timeout-ms = <50>;
-        key-positions = <2 21>; // 21: L
+        key-positions = <3 21>; // 21: L
         layers = <NIC NICL>;
         bindings = <&macro_IE>;
     };
@@ -2744,12 +2744,12 @@
         bindings = <&kp B>, <&kp U>, <&kp X>, <&kp Y>, <&kp U>;
     };
 
-    // W (2) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
+    // E (3) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
     macro_CHE: macro_CHE{
         compatible = "zmk,behavior-macro";
         label = "macro_CHE";
         #binding-cells = <0>;
-        bindings = <&kp C>, <&kp H>, <&kp E>;
+        bindings = <&kp C>, <&kp H>, <&kp E>; // 拗音拡張で「ちぇ」
     };
     macro_KUE: macro_KUE{
         compatible = "zmk,behavior-macro";
@@ -2781,31 +2781,31 @@
         compatible = "zmk,behavior-macro";
         label = "macro_RIE";
         #binding-cells = <0>;
-        bindings = <&kp R>, <&kp I>, <&kp E>;
+        bindings = <&kp R>, <&kp I>, <&kp X>, <&kp E>;
     };
     macro_WE: macro_WE{
         compatible = "zmk,behavior-macro";
         label = "macro_WE";
         #binding-cells = <0>;
-        bindings = <&kp W>, <&kp E>;
+        bindings = <&kp W>, <&kp E>
     };
     macro_SIE: macro_SIE{
         compatible = "zmk,behavior-macro";
         label = "macro_SIE";
         #binding-cells = <0>;
-        bindings = <&kp S>, <&kp I>, <&kp E>;
+        bindings = <&kp S>, <&kp I>, <&kp X>, <&kp E>; //しぇ
     };
     macro_HIE: macro_HIE{
         compatible = "zmk,behavior-macro";
         label = "macro_HIE";
         #binding-cells = <0>;
-        bindings = <&kp H>, <&kp I>, <&kp E>;
+        bindings = <&kp H>, <&kp I>, <&kp X>, <&kp E>;
     };
     macro_FUE: macro_FUE{
         compatible = "zmk,behavior-macro";
         label = "macro_FUE";
         #binding-cells = <0>;
-        bindings = <&kp F>, <&kp U>, <&kp E>;
+        bindings = <&kp F>, <&kp U>, <&kp X>, <&kp E>;
     };
 
     // Q (1) と同時打鍵 (-2) - 「え」段 + 「ぇ」の音
@@ -2813,31 +2813,31 @@
         compatible = "zmk,behavior-macro";
         label = "macro_NIE";
         #binding-cells = <0>;
-        bindings = <&kp N>, <&kp I>, <&kp E>;
+        bindings = <&kp N>, <&kp I>, <&kp X>, <&kp E>; // にえ
     };
     macro_GUE: macro_GUE{
         compatible = "zmk,behavior-macro";
         label = "macro_GUE";
         #binding-cells = <0>;
-        bindings = <&kp G>, <&kp U>, <&kp E>;
+        bindings = <&kp G>, <&kp U>, <&kp X>, <&kp E>;
     };
     macro_DUE: macro_DUE{
         compatible = "zmk,behavior-macro";
         label = "macro_DUE";
         #binding-cells = <0>;
-        bindings = <&kp D>, <&kp U>, <&kp E>;
+        bindings = <&kp D>, <&kp U>, <&kp X>, <&kp E>;
     };
     macro_MIE: macro_MIE{
         compatible = "zmk,behavior-macro";
         label = "macro_MIE";
         #binding-cells = <0>;
-        bindings = <&kp M>, <&kp I>, <&kp E>;
+        bindings = <&kp M>, <&kp I>, <&kp X>, <&kp E>;
     };
     macro_PIE: macro_PIE{
         compatible = "zmk,behavior-macro";
         label = "macro_PIE";
         #binding-cells = <0>;
-        bindings = <&kp P>, <&kp I>, <&kp E>;
+        bindings = <&kp P>, <&kp I>, <&kp X>, <&kp E>;
     };
 
     // P (10) と同時打鍵 (-10) - 「え」段 + 「ぇ」の音、特殊な「ヴェ」
@@ -2857,13 +2857,13 @@
         compatible = "zmk,behavior-macro";
         label = "macro_BIE";
         #binding-cells = <0>;
-        bindings = <&kp B>, <&kp I>, <&kp E>;
+        bindings = <&kp B>, <&kp I>, <&kp X>, <&kp E>;
     };
     macro_BUE_: macro_BUE_{
         compatible = "zmk,behavior-macro";
         label = "macro_BUE_";
         #binding-cells = <0>;
-        bindings = <&kp B>, <&kp U>, <&kp E>;
+        bindings = <&kp B>, <&kp U>, <&kp X>, <&kp E>;
     };
 
     // D (15) と同時打鍵 (-15) - 「お」段 + 「ょ」の音、特殊な「くぉ」「ぬぉ」
@@ -2877,7 +2877,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_KUO";
         #binding-cells = <0>;
-        bindings = <&kp K>, <&kp U>, <&kp O>;
+        bindings = <&kp K>, <&kp U>, <&kp X>, <&kp O>;
     };
     macro_TSO: macro_TSO{
         compatible = "zmk,behavior-macro";
@@ -2901,7 +2901,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_NUO";
         #binding-cells = <0>;
-        bindings = <&kp N>, <&kp U>, <&kp O>;
+        bindings = <&kp N>, <&kp U>, <&kp X>, <&kp O>;
     };
     macro_PYO: macro_PYO{
         compatible = "zmk,behavior-macro";
