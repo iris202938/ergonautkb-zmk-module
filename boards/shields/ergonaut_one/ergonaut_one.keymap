@@ -2787,7 +2787,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_WE";
         #binding-cells = <0>;
-        bindings = <&kp W>, <&kp E>
+        bindings = <&kp W>, <&kp E>;
     };
     macro_SIE: macro_SIE{
         compatible = "zmk,behavior-macro";
