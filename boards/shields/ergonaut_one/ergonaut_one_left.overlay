@@ -276,6 +276,7 @@
 			, <&macro_tap &kp D>
 			, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp R>
+			, <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
 			;
     };
 	ctrl_f_r: ctrl_f_r { // R枠変更
