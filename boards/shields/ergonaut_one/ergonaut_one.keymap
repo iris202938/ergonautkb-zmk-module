@@ -1288,6 +1288,345 @@
         layers = <NIC NICL>;
         bindings = <&macro_BUO>;
     };
+	// ; (22) と同時打鍵 (-22) - 清音の促音
+    combo_KATTU {
+        timeout-ms = <50>;
+        key-positions = <22 1>; // 1: Q
+        layers = <NIC NICL>;
+        bindings = <&macro_KATTU>;
+    };
+    combo_TATTU {
+        timeout-ms = <50>;
+        key-positions = <22 2>; // 2: W
+        layers = <NIC NICL>;
+        bindings = <&macro_TATTU>;
+    };
+    combo_KOTTU {
+        timeout-ms = <50>;
+        key-positions = <22 3>; // 3: E
+        layers = <NIC NICL>;
+        bindings = <&macro_KOTTU>;
+    };
+    combo_SATTU {
+        timeout-ms = <50>;
+        key-positions = <22 4>; // 4: R
+        layers = <NIC NICL>;
+        bindings = <&macro_SATTU>;
+    };
+    combo_UTTU {
+        timeout-ms = <50>;
+        key-positions = <22 13>; // 13: A
+        layers = <NIC NICL>;
+        bindings = <&macro_UTTU>;
+    };
+    combo_SITTU {
+        timeout-ms = <50>;
+        key-positions = <22 14>; // 14: S
+        layers = <NIC NICL>;
+        bindings = <&macro_SITTU>;
+    };
+    combo_TETTU {
+        timeout-ms = <50>;
+        key-positions = <22 15>; // 15: D
+        layers = <NIC NICL>;
+        bindings = <&macro_TETTU>;
+    };
+    combo_KETTU {
+        timeout-ms = <50>;
+        key-positions = <22 16>; // 16: F
+        layers = <NIC NICL>;
+        bindings = <&macro_KETTU>;
+    };
+    combo_SETTU {
+        timeout-ms = <50>;
+        key-positions = <22 17>; // 17: G
+        layers = <NIC NICL>;
+        bindings = <&macro_SETTU>;
+    };
+    combo_HITTU {
+        timeout-ms = <50>;
+        key-positions = <22 26>; // 26: X
+        layers = <NIC NICL>;
+        bindings = <&macro_HITTU>;
+    };
+    combo_SUTTU {
+        timeout-ms = <50>;
+        key-positions = <22 27>; // 27: C
+        layers = <NIC NICL>;
+        bindings = <&macro_SUTTU>;
+    };
+    combo_FUTTU {
+        timeout-ms = <50>;
+        key-positions = <22 28>; // 28: V
+        layers = <NIC NICL>;
+        bindings = <&macro_FUTTU>;
+    };
+    combo_HETTU {
+        timeout-ms = <50>;
+        key-positions = <22 29>; // 29: B
+        layers = <NIC NICL>;
+        bindings = <&macro_HETTU>;
+    };
+
+    // / (34) と同時打鍵 (-34) - 濁音/半濁音の促音
+    combo_GATTU {
+        timeout-ms = <50>;
+        key-positions = <34 2>; // 2: W
+        layers = <NIC NICL>;
+        bindings = <&macro_GATTU>;
+    };
+    combo_DATTU {
+        timeout-ms = <50>;
+        key-positions = <34 3>; // 3: E
+        layers = <NIC NICL>;
+        bindings = <&macro_DATTU>;
+    };
+    combo_GOTTU {
+        timeout-ms = <50>;
+        key-positions = <34 4>; // 4: R
+        layers = <NIC NICL>;
+        bindings = <&macro_GOTTU>;
+    };
+    combo_ZATTU {
+        timeout-ms = <50>;
+        key-positions = <34 5>; // 5: T
+        layers = <NIC NICL>;
+        bindings = <&macro_ZATTU>;
+    };
+    combo_JITTU {
+        timeout-ms = <50>;
+        key-positions = <34 14>; // 14: S
+        layers = <NIC NICL>;
+        bindings = <&macro_JITTU>;
+    };
+    combo_DETTU {
+        timeout-ms = <50>;
+        key-positions = <34 15>; // 15: D
+        layers = <NIC NICL>;
+        bindings = <&macro_DETTU>;
+    };
+    combo_GETTU {
+        timeout-ms = <50>;
+        key-positions = <34 16>; // 16: F
+        layers = <NIC NICL>;
+        bindings = <&macro_GETTU>;
+    };
+    combo_ZETTU {
+        timeout-ms = <50>;
+        key-positions = <34 17>; // 17: G
+        layers = <NIC NICL>;
+        bindings = <&macro_ZETTU>;
+    };
+    combo_BITTU {
+        timeout-ms = <50>;
+        key-positions = <34 26>; // 26: X
+        layers = <NIC NICL>;
+        bindings = <&macro_BITTU>;
+    };
+    combo_ZUTTU {
+        timeout-ms = <50>;
+        key-positions = <34 27>; // 27: C
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUTTU>;
+    };
+    combo_BUTTU {
+        timeout-ms = <50>;
+        key-positions = <34 28>; // 28: V
+        layers = <NIC NICL>;
+        bindings = <&macro_BUTTU>;
+    };
+    combo_BETTU {
+        timeout-ms = <50>;
+        key-positions = <34 29>; // 29: B
+        layers = <NIC NICL>;
+        bindings = <&macro_BETTU>;
+    };
+    combo_WATTU {
+        timeout-ms = <50>;
+        key-positions = <34 33>; // 33: .
+        layers = <NIC NICL>;
+        bindings = <&macro_WATTU>;
+    };
+
+    // Q (1) と同時打鍵 (-1) - 清音の促音、その他
+    combo_ETTU {
+        timeout-ms = <50>;
+        key-positions = <1 2>; // 2: W
+        layers = <NIC NICL>;
+        bindings = <&macro_ETTU>;
+    };
+    combo_RATTU {
+        timeout-ms = <50>;
+        key-positions = <1 5>; // 5: T
+        layers = <NIC NICL>;
+        bindings = <&macro_RATTU>;
+    };
+    combo_CHITTU {
+        timeout-ms = <50>;
+        key-positions = <1 7>; // 7: T
+        layers = <NIC NICL>;
+        bindings = <&macro_CHITTU>;
+    };
+    combo_KUTTU {
+        timeout-ms = <50>;
+        key-positions = <1 8>; // 8: U
+        layers = <NIC NICL>;
+        bindings = <&macro_KUTTU>;
+    };
+    combo_TSUTTU {
+        timeout-ms = <50>;
+        key-positions = <1 9>; // 9: I
+        layers = <NIC NICL>;
+        bindings = <&macro_TSUTTU>;
+    };
+    combo_PITTU {
+        timeout-ms = <50>;
+        key-positions = <1 10>; // 10: P
+        layers = <NIC NICL>;
+        bindings = <&macro_PITTU>;
+    };
+    combo_HATTU {
+        timeout-ms = <50>;
+        key-positions = <1 18>; // 18: H
+        layers = <NIC NICL>;
+        bindings = <&macro_HATTU>;
+    };
+    combo_TOTTU {
+        timeout-ms = <50>;
+        key-positions = <1 19>; // 19: J
+        layers = <NIC NICL>;
+        bindings = <&macro_TOTTU>;
+    };
+    combo_KITTTU {
+        timeout-ms = <50>;
+        key-positions = <1 20>; // 20: K
+        layers = <NIC NICL>;
+        bindings = <&macro_KITTTU>;
+    };
+    combo_ITTU {
+        timeout-ms = <50>;
+        key-positions = <1 21>; // 21: L
+        layers = <NIC NICL>;
+        bindings = <&macro_ITTU>;
+    };
+    combo_YOTTU {
+        timeout-ms = <50>;
+        key-positions = <1 22>; // 22: ;
+        layers = <NIC NICL>;
+        bindings = <&macro_YOTTU>;
+    };
+    combo_METTU {
+        timeout-ms = <50>;
+        key-positions = <1 30>; // 30: N
+        layers = <NIC NICL>;
+        bindings = <&macro_METTU>;
+    };
+    combo_SOTTU {
+        timeout-ms = <50>;
+        key-positions = <1 31>; // 31: M
+        layers = <NIC NICL>;
+        bindings = <&macro_SOTTU>;
+    };
+    combo_NETTU {
+        timeout-ms = <50>;
+        key-positions = <1 32>; // 32: ,
+        layers = <NIC NICL>;
+        bindings = <&macro_NETTU>;
+    };
+    combo_HOTTU {
+        timeout-ms = <50>;
+        key-positions = <1 33>; // 33: .
+        layers = <NIC NICL>;
+        bindings = <&macro_HOTTU>;
+    };
+
+    // Z (25) と同時打鍵 (-25) - 濁音/半濁音の促音、その他
+    combo_YOTTU2 {
+        timeout-ms = <50>;
+        key-positions = <25 5>; // 5: T
+        layers = <NIC NICL>;
+        bindings = <&macro_YOTTU2>;
+    };
+    combo_JITTU2 {
+        timeout-ms = <50>;
+        key-positions = <25 7>; // 7: T
+        layers = <NIC NICL>;
+        bindings = <&macro_JITTU2>;
+    };
+    combo_GUTTU {
+        timeout-ms = <50>;
+        key-positions = <25 8>; // 8: U
+        layers = <NIC NICL>;
+        bindings = <&macro_GUTTU>;
+    };
+    combo_ZUTTU2 {
+        timeout-ms = <50>;
+        key-positions = <25 9>; // 9: I
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUTTU2>;
+    };
+    combo_BATTU {
+        timeout-ms = <50>;
+        key-positions = <25 18>; // 18: H
+        layers = <NIC NICL>;
+        bindings = <&macro_BATTU>;
+    };
+    combo_DOTTU {
+        timeout-ms = <50>;
+        key-positions = <25 19>; // 19: J
+        layers = <NIC NICL>;
+        bindings = <&macro_DOTTU>;
+    };
+    combo_GITTU {
+        timeout-ms = <50>;
+        key-positions = <25 20>; // 20: K
+        layers = <NIC NICL>;
+        bindings = <&macro_GITTU>;
+    };
+    combo_POTTU {
+        timeout-ms = <50>;
+        key-positions = <25 21>; // 21: L
+        layers = <NIC NICL>;
+        bindings = <&macro_POTTU>;
+    };
+    combo_YOTTU3 {
+        timeout-ms = <50>;
+        key-positions = <25 22>; // 22: ;
+        layers = <NIC NICL>;
+        bindings = <&macro_YOTTU3>;
+    };
+    combo_NUTTU {
+        timeout-ms = <50>;
+        key-positions = <25 30>; // 30: N
+        layers = <NIC NICL>;
+        bindings = <&macro_NUTTU>;
+    };
+    combo_ZOTTTU {
+        timeout-ms = <50>;
+        key-positions = <25 31>; // 31: M
+        layers = <NIC NICL>;
+        bindings = <&macro_ZOTTTU>;
+    };
+    combo_MUTTU {
+        timeout-ms = <50>;
+        key-positions = <25 32>; // 32: ,
+        layers = <NIC NICL>;
+        bindings = <&macro_MUTTU>;
+    };
+    combo_BOTTU {
+        timeout-ms = <50>;
+        key-positions = <25 33>; // 33: .
+        layers = <NIC NICL>;
+        bindings = <&macro_BOTTU>;
+    };
+
+    // T (7) と同時打鍵 (-7) - 促音「ぱっ」のみ
+    combo_PATTU {
+        timeout-ms = <50>;
+        key-positions = <7 6>; // 6: Y
+        layers = <NIC NICL>;
+        bindings = <&macro_PATTU>;
+    };
     };
 
     // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
@@ -2647,6 +2986,345 @@
         label = "macro_BUO";
         #binding-cells = <0>;
         bindings = <&kp B>, <&kp U>, <&kp O>;
+    };
+	// ; (22) と同時打鍵 (-22) - 清音の促音
+    macro_KATTU: macro_KATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_KATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp A>;
+    };
+    macro_TATTU: macro_TATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp A>;
+    };
+    macro_KOTTU: macro_KOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_KOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp O>;
+    };
+    macro_SATTU: macro_SATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_SATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp A>;
+    };
+    macro_UTTU: macro_UTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_UTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp U>;
+    };
+    macro_SITTU: macro_SITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_SITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp I>;
+    };
+    macro_TETTU: macro_TETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp E>;
+    };
+    macro_KETTU: macro_KETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_KETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp E>;
+    };
+    macro_SETTU: macro_SETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_SETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp E>;
+    };
+    macro_HITTU: macro_HITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_HITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp I>;
+    };
+    macro_SUTTU: macro_SUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_SUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp U>;
+    };
+    macro_FUTTU: macro_FUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_FUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp F>, <&kp U>;
+    };
+    macro_HETTU: macro_HETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_HETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp E>;
+    };
+
+    // / (34) と同時打鍵 (-34) - 濁音/半濁音の促音
+    macro_GATTU: macro_GATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp A>;
+    };
+    macro_DATTU: macro_DATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_DATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp D>, <&kp A>;
+    };
+    macro_GOTTU: macro_GOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp O>;
+    };
+    macro_ZATTU: macro_ZATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp A>;
+    };
+    macro_JITTU: macro_JITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_JITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp J>, <&kp I>;
+    };
+    macro_DETTU: macro_DETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_DETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp D>, <&kp E>;
+    };
+    macro_GETTU: macro_GETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp E>;
+    };
+    macro_ZETTU: macro_ZETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp E>;
+    };
+    macro_BITTU: macro_BITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp I>;
+    };
+    macro_ZUTTU: macro_ZUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp U>;
+    };
+    macro_BUTTU: macro_BUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp U>;
+    };
+    macro_BETTU: macro_BETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp E>;
+    };
+    macro_WATTU: macro_WATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_WATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp W>, <&kp A>;
+    };
+
+    // Q (1) と同時打鍵 (-1) - 清音の促音、その他
+    macro_ETTU: macro_ETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp E>;
+    };
+    macro_RATTU: macro_RATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_RATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp R>, <&kp A>;
+    };
+    macro_CHITTU: macro_CHITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_CHITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp I>;
+    };
+    macro_KUTTU: macro_KUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_KUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp U>;
+    };
+    macro_TSUTTU: macro_TSUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TSUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp U>;
+    };
+    macro_PITTU: macro_PITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_PITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp P>, <&kp I>;
+    };
+    macro_HATTU: macro_HATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_HATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp A>;
+    };
+    macro_TOTTU: macro_TOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp O>;
+    };
+    macro_KITTTU: macro_KITTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_KITTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp I>;
+    };
+    macro_ITTU: macro_ITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp I>;
+    };
+    macro_YOTTU: macro_YOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_YOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Y>, <&kp O>;
+    };
+    macro_METTU: macro_METTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_METTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp M>, <&kp E>;
+    };
+    macro_SOTTU: macro_SOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_SOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp O>;
+    };
+    macro_NETTU: macro_NETTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_NETTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp N>, <&kp E>;
+    };
+    macro_HOTTU: macro_HOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_HOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp O>;
+    };
+
+    // Z (25) と同時打鍵 (-25) - 濁音/半濁音の促音、その他
+    macro_YOTTU2: macro_YOTTU2{
+        compatible = "zmk,behavior-macro";
+        label = "macro_YOTTU2";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Y>, <&kp O>;
+    };
+    macro_JITTU2: macro_JITTU2{
+        compatible = "zmk,behavior-macro";
+        label = "macro_JITTU2";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp J>, <&kp I>;
+    };
+    macro_GUTTU: macro_GUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp U>;
+    };
+    macro_ZUTTU2: macro_ZUTTU2{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZUTTU2";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp U>;
+    };
+    macro_BATTU: macro_BATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp A>;
+    };
+    macro_DOTTU: macro_DOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_DOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp D>, <&kp O>;
+    };
+    macro_GITTU: macro_GITTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GITTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp I>;
+    };
+    macro_POTTU: macro_POTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_POTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp P>, <&kp O>;
+    };
+    macro_YOTTU3: macro_YOTTU3{
+        compatible = "zmk,behavior-macro";
+        label = "macro_YOTTU3";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Y>, <&kp O>;
+    };
+    macro_NUTTU: macro_NUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_NUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp N>, <&kp U>;
+    };
+    macro_ZOTTTU: macro_ZOTTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZOTTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp O>;
+    };
+    macro_MUTTU: macro_MUTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_MUTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp M>, <&kp U>;
+    };
+    macro_BOTTU: macro_BOTTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BOTTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp O>;
+    };
+
+    // T (7) と同時打鍵 (-7) - 促音「ぱっ」のみ
+    macro_PATTU: macro_PATTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_PATTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp U>, <&kp P>, <&kp A>;
     };
 
 	qmt: qwerty_mt {
