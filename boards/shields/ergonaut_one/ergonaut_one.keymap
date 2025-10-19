@@ -777,13 +777,13 @@
     // H (18) と同時打鍵 (-18)
     combo_RYA {
         timeout-ms = <50>;
-        key-positions = <18 3>; // 3: E
+        key-positions = <18 2>; // 2: W
         layers = <NIC NICL>;
         bindings = <&macro_RYA>;
     };
     combo_SYA {
         timeout-ms = <50>;
-        key-positions = <18 13>; // 13: A
+        key-positions = <18 14>; // 14: S
         layers = <NIC NICL>;
         bindings = <&macro_SYA>;
     };
