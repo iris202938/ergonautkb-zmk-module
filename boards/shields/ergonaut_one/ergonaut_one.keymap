@@ -821,7 +821,7 @@
     };
     combo_MYA {
         timeout-ms = <50>;
-        key-positions = <5 17>; // 17: G
+        key-positions = <5 18>; // 18: H
         layers = <NIC NICL>;
         bindings = <&macro_MYA>;
     };
