@@ -1006,11 +1006,11 @@
         layers = <NIC NICL>;
         bindings = <&macro_MYU>;
     };
-    combo_DU {
+    combo_DXU {
         timeout-ms = <50>;
         key-positions = <17 19>; // 19: J
         layers = <NIC NICL>;
-        bindings = <&macro_DU>;
+        bindings = <&macro_DXU>;
     };
     combo_GYU {
         timeout-ms = <50>;
@@ -2366,11 +2366,11 @@
         #binding-cells = <0>;
         bindings = <&kp M>, <&kp Y>, <&kp U>;
     };
-    macro_DU: macro_DU{
+    macro_DXU: macro_DXU{
         compatible = "zmk,behavior-macro";
-        label = "macro_DU";
+        label = "macro_DXU";
         #binding-cells = <0>;
-        bindings = <&kp D>, <&kp U>;
+        bindings = <&kp D>, <&kp O>, <&kp U>;
     };
     macro_GYU: macro_GYU{
         compatible = "zmk,behavior-macro";
