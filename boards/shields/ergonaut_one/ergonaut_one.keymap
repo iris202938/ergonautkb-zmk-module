@@ -3244,79 +3244,79 @@
         compatible = "zmk,behavior-macro";
         label = "macro_YOTTU2";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp Y>, <&kp O>;
+        bindings = <&kp Y>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_JITTU2: macro_JITTU2{
         compatible = "zmk,behavior-macro";
         label = "macro_JITTU2";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp J>, <&kp I>;
+        bindings = <&kp D>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_GUTTU: macro_GUTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_GUTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp U>;
+        bindings = <&kp G>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_ZUTTU2: macro_ZUTTU2{
         compatible = "zmk,behavior-macro";
         label = "macro_ZUTTU2";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp U>;
+        bindings = <&kp D>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_BATTU: macro_BATTU{
         compatible = "zmk,behavior-macro";
         label = "macro_BATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp A>;
+        bindings = <&kp B>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_DOTTU: macro_DOTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_DOTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp D>, <&kp O>;
+        bindings = <&kp D>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_GITTU: macro_GITTU{
         compatible = "zmk,behavior-macro";
         label = "macro_GITTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp I>;
+        bindings = <&kp G>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_POTTU: macro_POTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_POTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp P>, <&kp O>;
+        bindings = <&kp P>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_YOTTU3: macro_YOTTU3{
         compatible = "zmk,behavior-macro";
         label = "macro_YOTTU3";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp Y>, <&kp O>;
+        bindings = <&kp Y>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_NUTTU: macro_NUTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_NUTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp N>, <&kp U>;
+        bindings = <&kp N>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_ZOTTTU: macro_ZOTTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_ZOTTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp Z>, <&kp O>;
+        bindings = <&kp Z>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_MUTTU: macro_MUTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_MUTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp M>, <&kp U>;
+        bindings = <&kp M>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_BOTTU: macro_BOTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_BOTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp B>, <&kp O>;
+        bindings = <&kp B>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // T (7) と同時打鍵 (-7) - 促音「ぱっ」のみ
@@ -3324,7 +3324,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_PATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp P>, <&kp A>;
+        bindings = <&kp P>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
 
 	qmt: qwerty_mt {
