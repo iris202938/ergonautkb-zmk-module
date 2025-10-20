@@ -2985,86 +2985,86 @@
         compatible = "zmk,behavior-macro";
         label = "macro_BUO";
         #binding-cells = <0>;
-        bindings = <&kp B>, <&kp U>, <&kp O>;
+        bindings = <&kp B>, <&kp U>, <&kp X>, <&kp O>;
     };
 	// ; (22) と同時打鍵 (-22) - 清音の促音
     macro_KATTU: macro_KATTU{
         compatible = "zmk,behavior-macro";
         label = "macro_KATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp A>;
+        bindings = <&kp K>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_TATTU: macro_TATTU{
         compatible = "zmk,behavior-macro";
         label = "macro_TATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp A>;
+        bindings = <&kp T>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_KOTTU: macro_KOTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_KOTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp O>;
+        bindings = <&kp K>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_SATTU: macro_SATTU{
         compatible = "zmk,behavior-macro";
         label = "macro_SATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp A>;
+        bindings = <&kp S>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_UTTU: macro_UTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_UTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp U>;
+        bindings = <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_SITTU: macro_SITTU{
         compatible = "zmk,behavior-macro";
         label = "macro_SITTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp I>;
+        bindings = <&kp S>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_TETTU: macro_TETTU{
         compatible = "zmk,behavior-macro";
         label = "macro_TETTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp T>, <&kp E>;
+        bindings = <&kp T>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_KETTU: macro_KETTU{
         compatible = "zmk,behavior-macro";
         label = "macro_KETTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp K>, <&kp E>;
+        bindings = <&kp K>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_SETTU: macro_SETTU{
         compatible = "zmk,behavior-macro";
         label = "macro_SETTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp E>;
+        bindings = <&kp S>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_HITTU: macro_HITTU{
         compatible = "zmk,behavior-macro";
         label = "macro_HITTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp I>;
+        bindings = <&kp H>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_SUTTU: macro_SUTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_SUTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp S>, <&kp U>;
+        bindings = <&kp S>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_FUTTU: macro_FUTTU{
         compatible = "zmk,behavior-macro";
         label = "macro_FUTTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp F>, <&kp U>;
+        bindings = <&kp F>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_HETTU: macro_HETTU{
         compatible = "zmk,behavior-macro";
         label = "macro_HETTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp H>, <&kp E>;
+        bindings = <&kp H>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // / (34) と同時打鍵 (-34) - 濁音/半濁音の促音
@@ -3072,7 +3072,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_GATTU";
         #binding-cells = <0>;
-        bindings = <&kp T>, <&kp U>, <&kp G>, <&kp A>;
+        bindings = <&kp G>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_DATTU: macro_DATTU{
         compatible = "zmk,behavior-macro";
