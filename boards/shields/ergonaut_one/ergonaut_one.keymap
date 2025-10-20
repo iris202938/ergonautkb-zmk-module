@@ -2921,7 +2921,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_WO_";
         #binding-cells = <0>;
-        bindings = <&kp W>, <&kp O>;
+        bindings = <&kp U>, <&kp X>, <&kp O>;
     };
     macro_SYO: macro_SYO{
         compatible = "zmk,behavior-macro";
@@ -2939,7 +2939,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_FUO";
         #binding-cells = <0>;
-        bindings = <&kp F>, <&kp U>, <&kp O>;
+        bindings = <&kp F>, <&kp U>, <&kp X>, <&kp O>;
     };
 
     // S (14) と同時打鍵 (-14) - 「お」段 + 「ょ」の音
@@ -2959,7 +2959,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_ZUO";
         #binding-cells = <0>;
-        bindings = <&kp Z>, <&kp U>, <&kp O>;
+        bindings = <&kp D>, <&kp U>, <&kp X>, <&kp O>;
     };
 
     // L (21) と同時打鍵 (-21) - 「お」段 + 「ょ」の音
