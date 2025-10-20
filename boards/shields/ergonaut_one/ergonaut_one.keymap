@@ -940,6 +940,637 @@
         layers = <NIC NICL>;
         bindings = <&macro_PEXTU>;
     };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+// B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
+
+    // B (29) と同時打鍵 (-29) - 濁音/半濁音の「いぃ」
+    combo_NII {
+        timeout-ms = <50>;
+        key-positions = <29 7>; // 7: T (に)
+        layers = <NIC NICL>;
+        bindings = <&macro_NII>;
+    };
+    combo_GUYI {
+        timeout-ms = <50>;
+        key-positions = <29 8>; // 8: U (ぐ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GUYI>;
+    };
+    combo_ZUYI {
+        timeout-ms = <50>;
+        key-positions = <29 9>; // 9: I (づ)
+        layers = <NIC NICL>;
+        bindings = <&macro_ZUYI>;
+    };
+    combo_MII {
+        timeout-ms = <50>;
+        key-positions = <29 17>; // 17: G (み)
+        layers = <NIC NICL>;
+        bindings = <&macro_MII>;
+    };
+    combo_GII {
+        timeout-ms = <50>;
+        key-positions = <29 20>; // 20: K (ぎ)
+        layers = <NIC NICL>;
+        bindings = <&macro_GII>;
+    };
+
+    // \ (35) と同時打鍵 (-35) - 濁音/半濁音の「いぃ」、特殊な「ヴぃ」
+    combo_VII {
+        timeout-ms = <50>;
+        key-positions = <35 13>; // 13: A (ヴ)
+        layers = <NIC NICL>;
+        bindings = <&macro_VII>;
+    };
+    combo_JII {
+        timeout-ms = <50>;
+        key-positions = <35 14>; // 14: S (じ)
+        layers = <NIC NICL>;
+        bindings = <&macro_JII>;
+    };
+    combo_DEI {
+        timeout-ms = <50>;
+        key-positions = <35 15>; // 15: D (で)
+        layers = <NIC NICL>;
+        bindings = <&macro_DEI>;
+    };
+    combo_BII {
+        timeout-ms = <50>;
+        key-positions = <35 26>; // 26: X (び)
+        layers = <NIC NICL>;
+        bindings = <&macro_BII>;
+    };
+    combo_BUYI {
+        timeout-ms = <50>;
+        key-positions = <35 28>; // 28: V (ぶ)
+        layers = <NIC NICL>;
+        bindings = <&macro_BUYI>;
+    };
 
     // F (16) と同時打鍵 (-16) - 「う」段 + 「ゅ」の音、特殊な「ぅ」「くゎ」「とぅ」
     combo_CHU {
@@ -2656,6 +3287,70 @@
         label = "macro_FUYI";
         #binding-cells = <0>;
         bindings = <&kp F>, <&kp U>, <&kp X>, <&kp I>;
+    };
+
+    // B (29) と同時打鍵 (-29)
+    macro_NII: macro_NII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_NII";
+        #binding-cells = <0>;
+        bindings = <&kp N>, <&kp I>, <&kp X>, <&kp I>;
+    };
+    macro_GUYI: macro_GUYI{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GUYI";
+        #binding-cells = <0>;
+        bindings = <&kp G>, <&kp Y>, <&kp I>;
+    };
+    macro_ZUYI: macro_ZUYI{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ZUYI";
+        #binding-cells = <0>;
+        bindings = <&kp D>, <&kp U>, <&kp X>, <&kp I>;
+    };
+    macro_MII: macro_MII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_MII";
+        #binding-cells = <0>;
+        bindings = <&kp M>, <&kp I>, <&kp X>, <&kp I>;
+    };
+    macro_GII: macro_GII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_GII";
+        #binding-cells = <0>;
+        bindings = <&kp G>, <&kp I>, <&kp X>, <&kp I>;
+    };
+
+    // \ (35) と同時打鍵 (-35)
+    macro_VII: macro_VII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_VII";
+        #binding-cells = <0>;
+        bindings = <&kp V>, <&kp I>;
+    };
+    macro_JII: macro_JII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_JII";
+        #binding-cells = <0>;
+        bindings = <&kp J>, <&kp I>, <&kp X>, <&kp I>;
+    };
+    macro_DEI: macro_DEI{
+        compatible = "zmk,behavior-macro";
+        label = "macro_DEI";
+        #binding-cells = <0>;
+        bindings = <&kp D>, <&kp E>, <&kp X>, <&kp I>;
+    };
+    macro_BII: macro_BII{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BII";
+        #binding-cells = <0>;
+        bindings = <&kp B>, <&kp I>, <&kp X>, <&kp I>;
+    };
+    macro_BUYI: macro_BUYI{
+        compatible = "zmk,behavior-macro";
+        label = "macro_BUYI";
+        #binding-cells = <0>;
+        bindings = <&kp B>, <&kp U>, <&kp X>, <&kp I>;
     };
 
     // F (16) と同時打鍵 (-16) - 「う」段 + 「ゅ」の音、特殊な「ぅ」「くゎ」「とぅ」
