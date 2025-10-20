@@ -934,6 +934,12 @@
         layers = <NIC NICL>;
         bindings = <&macro_FUYI>;
     };
+    combo_PEXTU {
+        timeout-ms = <50>;
+        key-positions = <33 32>; // 32: ,
+        layers = <NIC NICL>;
+        bindings = <&macro_PEXTU>;
+    };
 
     // F (16) と同時打鍵 (-16) - 「う」段 + 「ゅ」の音、特殊な「ぅ」「くゎ」「とぅ」
     combo_CHU {
@@ -2606,6 +2612,12 @@
         label = "macro_YAA";
         #binding-cells = <0>;
         bindings = <&kp Y>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_PEXTU: macro_PEXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_PEXTU";
+        #binding-cells = <0>;
+        bindings = <&kp P>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // . (33) と同時打鍵 (-33) - 「い」段 + 「ぃ」の音
