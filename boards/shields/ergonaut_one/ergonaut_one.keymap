@@ -1291,25 +1291,25 @@
 	// ; (22) と同時打鍵 (-22) - 清音の促音
     combo_KATTU {
         timeout-ms = <50>;
-        key-positions = <22 1>; // 1: Q
+        key-positions = <22 2>; // 2: W
         layers = <NIC NICL>;
         bindings = <&macro_KATTU>;
     };
     combo_TATTU {
         timeout-ms = <50>;
-        key-positions = <22 2>; // 2: W
+        key-positions = <22 3>; // 3: E
         layers = <NIC NICL>;
         bindings = <&macro_TATTU>;
     };
     combo_KOTTU {
         timeout-ms = <50>;
-        key-positions = <22 3>; // 3: E
+        key-positions = <22 4>; // 4: R
         layers = <NIC NICL>;
         bindings = <&macro_KOTTU>;
     };
     combo_SATTU {
         timeout-ms = <50>;
-        key-positions = <22 4>; // 4: R
+        key-positions = <22 5>; // 5: T
         layers = <NIC NICL>;
         bindings = <&macro_SATTU>;
     };
@@ -1457,25 +1457,25 @@
     };
     combo_RATTU {
         timeout-ms = <50>;
-        key-positions = <1 5>; // 5: T
+        key-positions = <1 6>; // 6: Y
         layers = <NIC NICL>;
         bindings = <&macro_RATTU>;
     };
     combo_CHITTU {
         timeout-ms = <50>;
-        key-positions = <1 7>; // 7: T
+        key-positions = <1 7>; // 7: U
         layers = <NIC NICL>;
         bindings = <&macro_CHITTU>;
     };
     combo_KUTTU {
         timeout-ms = <50>;
-        key-positions = <1 8>; // 8: U
+        key-positions = <1 8>; // 8: I
         layers = <NIC NICL>;
         bindings = <&macro_KUTTU>;
     };
     combo_TSUTTU {
         timeout-ms = <50>;
-        key-positions = <1 9>; // 9: I
+        key-positions = <1 9>; // 9: O
         layers = <NIC NICL>;
         bindings = <&macro_TSUTTU>;
     };
