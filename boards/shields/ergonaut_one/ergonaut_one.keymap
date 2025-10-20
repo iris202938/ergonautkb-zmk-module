@@ -884,6 +884,18 @@
         layers = <NIC NICL>;
         bindings = <&macro_KII>;
     };
+    combo_ROO {
+        timeout-ms = <50>;
+        key-positions = <27 26>; // 26: X
+        layers = <NIC NICL>;
+        bindings = <&macro_ROO>;
+    };
+    combo_YAA {
+        timeout-ms = <50>;
+        key-positions = <27 28>; // 28: V
+        layers = <NIC NICL>;
+        bindings = <&macro_YAA>;
+    };
 
     // . (33) と同時打鍵 (-33) - 「い」段 + 「ぃ」の音
     combo_RII {
@@ -2582,6 +2594,18 @@
         label = "macro_KII";
         #binding-cells = <0>;
         bindings = <&kp K>, <&kp I>, <&kp X>, <&kp I>;
+    };
+    macro_ROO: macro_ROO{
+        compatible = "zmk,behavior-macro";
+        label = "macro_ROO";
+        #binding-cells = <0>;
+        bindings = <&kp R>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_YAA: macro_YAA{
+        compatible = "zmk,behavior-macro";
+        label = "macro_YAA";
+        #binding-cells = <0>;
+        bindings = <&kp Y>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // . (33) と同時打鍵 (-33) - 「い」段 + 「ぃ」の音
