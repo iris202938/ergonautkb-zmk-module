@@ -3101,7 +3101,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_PIXTU";
         #binding-cells = <0>;
-        bindings = <&kp P>, <&kp I>, <&kp X>, <&kp T> <&kp U>;
+        bindings = <&kp P>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // Q (1) と同時打鍵 (-2) - 「え」段 + 「ぇ」の音
