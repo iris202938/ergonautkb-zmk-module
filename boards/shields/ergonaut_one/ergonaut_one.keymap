@@ -1225,6 +1225,18 @@
         layers = <NIC NICL>;
         bindings = <&macro_FUE>;
     };
+    combo_RUXTU {
+        timeout-ms = <50>;
+        key-positions = <8 9>; // 9: O
+        layers = <NIC NICL>;
+        bindings = <&macro_RUXTU>;
+    };
+    combo_PIXTU {
+        timeout-ms = <50>;
+        key-positions = <8 10>; // 10: P
+        layers = <NIC NICL>;
+        bindings = <&macro_PIXTU>;
+    };
 
     // Q (1) と同時打鍵 (-2) - 「え」段 + 「ぇ」の音
     combo_NIE {
@@ -1283,6 +1295,12 @@
         layers = <NIC NICL>;
         bindings = <&macro_BUE_>;
     };
+    combo_MAXTU {
+        timeout-ms = <50>;
+        key-positions = <10 9>; // 9: O
+        layers = <NIC NICL>;
+        bindings = <&macro_MAXTU>;
+    };
 
     // D (15) と同時打鍵 (-15) - 「お」段 + 「ょ」の音、特殊な「くぉ」「ぬぉ」
     combo_CHO {
@@ -1326,6 +1344,12 @@
         key-positions = <15 10>; // 10: P
         layers = <NIC NICL>;
         bindings = <&macro_PYO>;
+    };
+    combo_TEXTU {
+        timeout-ms = <50>;
+        key-positions = <15 13>; // 13: A
+        layers = <NIC NICL>;
+        bindings = <&macro_TEXTU>;
     };
 
     // J (19) と同時打鍵 (-19) - 「お」段 + 「ょ」の音、特殊な「うぉ」「しょ」「ひょ」「ふぉ」
@@ -1379,6 +1403,18 @@
         layers = <NIC NICL>;
         bindings = <&macro_ZUO>;
     };
+    combo_AXTU {
+        timeout-ms = <50>;
+        key-positions = <14 13>; // 13: A
+        layers = <NIC NICL>;
+        bindings = <&macro_AXTU>;
+    };
+    combo_NAXTU {
+        timeout-ms = <50>;
+        key-positions = <14 15>; // 15: D
+        layers = <NIC NICL>;
+        bindings = <&macro_NAXTU>;
+    };
 
     // L (21) と同時打鍵 (-21) - 「お」段 + 「ょ」の音
     combo_VO {
@@ -1405,6 +1441,19 @@
         layers = <NIC NICL>;
         bindings = <&macro_BUO>;
     };
+    combo_NOXTU {
+        timeout-ms = <50>;
+        key-positions = <21 20>; // 20: K
+        layers = <NIC NICL>;
+        bindings = <&macro_NOXTU>;
+    };
+    combo_POXTU {
+        timeout-ms = <50>;
+        key-positions = <21 22>; // 22: ;
+        layers = <NIC NICL>;
+        bindings = <&macro_POXTU>;
+    };
+
 	// ; (22) と同時打鍵 (-22) - 清音の促音
     combo_KATTU {
         timeout-ms = <50>;
@@ -3042,6 +3091,18 @@
         #binding-cells = <0>;
         bindings = <&kp F>, <&kp U>, <&kp X>, <&kp E>;
     };
+    macro_RUXTU: macro_RUXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_RUXTU";
+        #binding-cells = <0>;
+        bindings = <&kp R>, <&kp U>, <&kp X>, <&kp T> <&kp U>;
+    };
+    macro_PIXTU: macro_PIXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_PIXTU";
+        #binding-cells = <0>;
+        bindings = <&kp P>, <&kp I>, <&kp X>, <&kp T> <&kp U>;
+    };
 
     // Q (1) と同時打鍵 (-2) - 「え」段 + 「ぇ」の音
     macro_NIE: macro_NIE{
@@ -3100,6 +3161,12 @@
         #binding-cells = <0>;
         bindings = <&kp B>, <&kp U>, <&kp X>, <&kp E>;
     };
+    macro_MAXTU: macro_MAXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_MAXTU";
+        #binding-cells = <0>;
+        bindings = <&kp M>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
+    };
 
     // D (15) と同時打鍵 (-15) - 「お」段 + 「ょ」の音、特殊な「くぉ」「ぬぉ」
     macro_CHO: macro_CHO{
@@ -3143,6 +3210,12 @@
         label = "macro_PYO";
         #binding-cells = <0>;
         bindings = <&kp P>, <&kp Y>, <&kp O>;
+    };
+    macro_TEXTU: macro_TEXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TEXTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // J (19) と同時打鍵 (-19) - 「お」段 + 「ょ」の音、特殊な「うぉ」「しょ」「ひょ」「ふぉ」
@@ -3196,6 +3269,18 @@
         #binding-cells = <0>;
         bindings = <&kp D>, <&kp U>, <&kp X>, <&kp O>;
     };
+    macro_AXTU: macro_AXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_AXTU";
+        #binding-cells = <0>;
+        bindings = <&kp A>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_NAXTU: macro_NAXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_NAXTU";
+        #binding-cells = <0>;
+        bindings = <&kp N>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
+    };
 
     // L (21) と同時打鍵 (-21) - 「お」段 + 「ょ」の音
     macro_VO: macro_VO{
@@ -3222,6 +3307,19 @@
         #binding-cells = <0>;
         bindings = <&kp B>, <&kp U>, <&kp X>, <&kp O>;
     };
+    macro_NOXTU: macro_NOXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_NOXTU";
+        #binding-cells = <0>;
+        bindings = <&kp N>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_POXTU: macro_POXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_POXTU";
+        #binding-cells = <0>;
+        bindings = <&kp P>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
+    };
+
 	// ; (22) と同時打鍵 (-22) - 清音の促音
     macro_KATTU: macro_KATTU{
         compatible = "zmk,behavior-macro";
