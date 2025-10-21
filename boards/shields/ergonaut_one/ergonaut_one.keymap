@@ -1036,6 +1036,12 @@
         layers = <NIC NICL>;
         bindings = <&macro_KYU>;
     };
+    combo_MOXTU {
+        timeout-ms = <50>;
+        key-positions = <16 17>; // 17: G
+        layers = <NIC NICL>;
+        bindings = <&macro_MOXTU>;
+    };
 
     // M (31) と同時打鍵 (-31) - 「う」段 + 「ゅ」の音
     combo_RYU {
@@ -1067,6 +1073,12 @@
         key-positions = <31 28>; // 28: C
         layers = <NIC NICL>;
         bindings = <&macro_FUYU>;
+    };
+    combo_PUXTU {
+        timeout-ms = <50>;
+        key-positions = <31 30>; // 30: N
+        layers = <NIC NICL>;
+        bindings = <&macro_PUXTU>;
     };
 
     // G (17) と同時打鍵 (-17) - 「う」段 + 「ゅ」の音、特殊な「ぐゎ」「どぅ」
@@ -2817,6 +2829,12 @@
         #binding-cells = <0>;
         bindings = <&kp K>, <&kp Y>, <&kp U>;
     };
+    macro_MOXTU: macro_MOXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_MOXTU";
+        #binding-cells = <0>;
+        bindings = <&kp M>, <&kp O>, <&kp X>, <&kp T>, <&kp U>;
+    };
 
     // M (31) と同時打鍵 (-31) - 「う」段 + 「ゅ」の音
     macro_RYU: macro_RYU{
@@ -2848,6 +2866,12 @@
         label = "macro_FUYU";
         #binding-cells = <0>;
         bindings = <&kp F>, <&kp Y>, <&kp U>;
+    };
+    macro_PUXTU: macro_PUXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_PUXTU";
+        #binding-cells = <0>;
+        bindings = <&kp P>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // G (17) と同時打鍵 (-17) - 「う」段 + 「ゅ」の音、特殊な「ぐゎ」「どぅ」
