@@ -3095,7 +3095,7 @@
         compatible = "zmk,behavior-macro";
         label = "macro_RUXTU";
         #binding-cells = <0>;
-        bindings = <&kp R>, <&kp U>, <&kp X>, <&kp T> <&kp U>;
+        bindings = <&kp R>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
     };
     macro_PIXTU: macro_PIXTU{
         compatible = "zmk,behavior-macro";
