@@ -1096,7 +1096,7 @@
     };
     combo_MYU {
         timeout-ms = <50>;
-        key-positions = <17 17>; // 17: G
+        key-positions = <17 18>; // 18: H
         layers = <NIC NICL>;
         bindings = <&macro_MYU>;
     };
@@ -1138,6 +1138,12 @@
         layers = <NIC NICL>;
         bindings = <&macro_BUYU>;
     };
+    combo_YUXTU {
+        timeout-ms = <50>;
+        key-positions = <32 31>; // 31: M
+        layers = <NIC NICL>;
+        bindings = <&macro_YUXTU>;
+    };
 
     // E (3) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
     combo_CHE {
@@ -1169,6 +1175,23 @@
         key-positions = <3 21>; // 21: L
         layers = <NIC NICL>;
         bindings = <&macro_IE>;
+    };
+    combo_RIXTU {
+        timeout-ms = <50>;
+        key-positions = <3 2>; // 2: W
+        layers = <NIC NICL>;
+        bindings = <&macro_RIXTU>;
+    };
+    combo_REXTU {
+        timeout-ms = <50>;
+        key-positions = <3 4>; // 4: R
+        layers = <NIC NICL>;
+        bindings = <&macro_REXTU>;
+    };combo_TAXTU {
+        timeout-ms = <50>;
+        key-positions = <3 13>; // 13: A
+        layers = <NIC NICL>;
+        bindings = <&macro_TAXTU>;
     };
 
     // I (8) と同時打鍵 (-8) - 「え」段 + 「ぇ」の音
@@ -2931,6 +2954,12 @@
         #binding-cells = <0>;
         bindings = <&kp B>, <&kp U>, <&kp X>, <&kp Y>, <&kp U>;
     };
+    macro_YUXTU: macro_YUXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_YUXTU";
+        #binding-cells = <0>;
+        bindings = <&kp Y>, <&kp U>, <&kp X>, <&kp T>, <&kp U>;
+    };
 
     // E (3) と同時打鍵 (-3) - 「え」段 + 「ぇ」の音
     macro_CHE: macro_CHE{
@@ -2962,6 +2991,24 @@
         label = "macro_IE";
         #binding-cells = <0>;
         bindings = <&kp I>, <&kp E>;
+    };
+    macro_RIXTU: macro_RIXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_RIXTU";
+        #binding-cells = <0>;
+        bindings = <&kp R>, <&kp I>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_REXTU: macro_REXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_REXTU";
+        #binding-cells = <0>;
+        bindings = <&kp R>, <&kp E>, <&kp X>, <&kp T>, <&kp U>;
+    };
+    macro_TAXTU: macro_TAXTU{
+        compatible = "zmk,behavior-macro";
+        label = "macro_TAXTU";
+        #binding-cells = <0>;
+        bindings = <&kp T>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
 
     // I (8) と同時打鍵 (-8) - 「え」段 + 「ぇ」の音
