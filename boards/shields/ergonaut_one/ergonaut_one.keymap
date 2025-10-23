@@ -3936,18 +3936,18 @@
         //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
         // };
 
-		// lt_rsew_enter_custom: lt_rsew_enter_custom {
-        //     compatible = "zmk,behavior-layer-tap"; // Layer-Tap ビヘイビアを指定
-        //     #binding-cells = <0>; // 引数なし
+		lt_rsew_enter_custom: lt_rsew_enter_custom {
+            compatible = "zmk,behavior-layer-tap"; // Layer-Tap ビヘイビアを指定
+            #binding-cells = <0>; // 引数なし
 
-        //     // 調整したい tapping-term-ms をミリ秒で設定
-        //     // 例: デフォルトの 200ms から 250ms に延長し、誤認識を防ぐ
-        //     tapping-term-ms = <250>; 
+            // 調整したい tapping-term-ms をミリ秒で設定
+            // 例: デフォルトの 200ms から 250ms に延長し、誤認識を防ぐ
+            tapping-term-ms = <250>; 
 
-        //     // タップ時: ENTER (通常のキー送信)
-        //     // ホールド時: RSEWレイヤーへの移動
-        //     bindings = <&kp ENTER>, <&mo RSEW>; 
-        // };
+            // タップ時: ENTER (通常のキー送信)
+            // ホールド時: RSEWレイヤーへの移動
+            bindings = <&kp ENTER>, <&mo RSEW>; 
+        };
 
         bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
             compatible = "zmk,behavior-macro";
@@ -4061,7 +4061,7 @@
                 &mt LSHFT TAB     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         	&kp U            &kp I         	&kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         	&kp J            &kp K         	&kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LGUI          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         	&kp M            &kp COMMA     	&kp DOT   &kp FSLH   &kp RALT
-                                                    &td_lt_num_i5 &kp SPACE         &mo LWRW      &lt RSEW ENTER	&kp INT4         &td_lt_movw_i2
+                                                    &td_lt_num_i5 &kp SPACE         &mo LWRW      &lt_rsew_enter_custom	&kp INT4         &td_lt_movw_i2
             >;
         };        
         lower_layer {
