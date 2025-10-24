@@ -153,10 +153,17 @@
 		bindings = <&to LIN>;
 	};
 
+    combo_MB2 {
+		timeout-ms = <80>;
+		key-positions = <23 35>;
+		layers = <LWR LWRW>;
+		bindings = <&mkp MB2>;
+	};
+
 	combo_MB3 {
 		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <MOV MOVW>;
+		layers = <LWR LWRW>;
 		bindings = <&mkp MB3>;
 	};
 	
