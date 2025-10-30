@@ -377,6 +377,16 @@
 			, <&macro_release &kp LALT>
 			;
     };
+	ctrl_d_g: ctrl_d_g { // グループ化解除
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>
+			, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp G>
+			;
+    };
 
 	zip_keybind_keys_directionL: zip_keybind_keys_directionL {
 			compatible = "zmk,input-processor-keybind";
@@ -493,8 +503,8 @@
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
 		track_remainders;
-			bindings = <&kp Q>     // 右：水平垂直補助線入力
-					 , <&ctrl_d_l> // 左：並行補助線入力
+			bindings = <&kp G>     // 右：図形グループ化
+					 , <&ctrl_d_g> // 左：図形グループ化解除
 	                 , <&kp W>     // 上：図形情報表示
 					 , <&ctrl_d_d> // 下：補助線削除
 					 ;
