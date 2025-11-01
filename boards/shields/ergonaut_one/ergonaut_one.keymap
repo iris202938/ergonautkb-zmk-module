@@ -3997,18 +3997,18 @@
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
         };
-		// td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでLANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&lt MOV LANG1>, <&to MOV>;
-        // };
-		// td_lt_num_l2: tap_dance_layer_tap_num_l2 {  // タップでLANG2、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&lt NUM LANG2>, <&to NUM>;
-        // };
+		td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでmacro_LANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt MOV macro_LANG1>, <&to MOV>;
+        };
+		td_lt_num_l2: tap_dance_layer_tap_num_l2 {  // タップでmacro_LANG2、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt NUM macro_LANG2>, <&to NUM>;
+        };
 		td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -4032,7 +4032,7 @@
                 &mt LSHFT TAB     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U				&kp I         &kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J				&kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M				&kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
-                                                    &lt NUM LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV LANG1
+                                                    &td_lt_num_l2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&td_lt_mov_l1
             >;
         };
         nicola_layer {
