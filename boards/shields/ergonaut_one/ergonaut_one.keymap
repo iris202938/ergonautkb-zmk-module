@@ -4001,13 +4001,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt MOV macro_LANG1>, <&to MOV>;
+            bindings = <&lt MOV &macro_LANG1>, <&to MOV>;
         };
 		td_lt_num_l2: tap_dance_layer_tap_num_l2 {  // タップでmacro_LANG2、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt NUM macro_LANG2>, <&to NUM>;
+            bindings = <&lt NUM &macro_LANG2>, <&to NUM>;
         };
 		td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
             compatible = "zmk,behavior-tap-dance";
