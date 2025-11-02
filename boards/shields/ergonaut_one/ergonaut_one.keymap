@@ -25,7 +25,7 @@
 
 &mt {
     flavor = "hold-preferred";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <140>;
     quick-tap-ms = <0>;
 };
 
@@ -49,7 +49,7 @@
     //          36 37 38	39 40 41 
 
 	combo_ESCL {
-		timeout-ms = <60>;
+		timeout-ms = <80>;
 		key-positions = <0 12>;
 		layers = <QWE NIC LIN NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
