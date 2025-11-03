@@ -3997,6 +3997,23 @@
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
         };
+
+        // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
+        // ホールド動作とタップ動作の両方をキーマップから受け取る汎用的なカスタムビヘイビア
+        macro_lt: macro_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MACRO_LT";
+            #binding-cells = <2>; // 2つのパラメータ (&mo の layer, macro_node)
+            flavor = "tap-preferred"; // タップ優先
+            tapping-term-ms = <200>;
+            
+            // bindings には、キーマップから渡される2つのアクションをプレースホルダーとして定義します。
+            // 最初のセルがホールドアクション、2番目のセルがタップアクションとして機能します。
+            // ZMKのカスタムホールド・タップでは、`#binding-cells = <2>;` を設定することで、
+            // キーマップ側で渡された最初のバインディングがホールド、2番目がタップとして内部で処理されます。
+            // 以下の例のように、bindingsに &mo や &macro_LANG1 を直接書く必要はありません。
+        };
+        
 		// td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでmacro_LANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
         //     compatible = "zmk,behavior-tap-dance";
         //     #binding-cells = <0>;
@@ -4032,7 +4049,7 @@
                 &mt LSHFT TAB     &kp Q   &kp W     &kp E         &kp R             &kp T         &kp Y         &kp U				&kp I         &kp O     &kp P      &mt RSHFT MINUS
                 &mt LCTRL TAB     &kp A   &kp S     &kp D         &kp F             &kp G         &kp H         &kp J				&kp K         &kp L     &kp SEMI   &mt RCTRL SQT
                 &kp LALT          &kp Z   &kp X     &kp C         &kp V             &kp B         &kp N         &kp M				&kp COMMA     &kp DOT   &kp FSLH   &kp RGUI
-                                                    &lt NUM LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&lt MOV LANG1
+                     &macro_lt &mo NUM &macro_LANG2 &mt LSHIFT SPACE  &mo LWR       &lt RSE ENTER &mt RSHIFT SPACE	&macro_lt &mo MOV &macro_LANG1
             >;
         };
         nicola_layer {
