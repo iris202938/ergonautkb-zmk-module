@@ -711,12 +711,12 @@
 		l_mouse_speed_half {
 			layers = <LWRW>; // レイヤー6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 50 100>; // 速度を50/100に設定 (乗数50, 除数100)
+							 , <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
 		};
 		l_mouse_speed_ipad {
 			layers = <LWR>; // レイヤー5がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 60 100>; // 速度を60/100に設定 (乗数60, 除数100)
+							 , <&zip_xy_scaler 40 100>; // 速度を40/100に設定 (乗数40, 除数100)
 		};
 		l_mouse_speed_win {
 			layers = <WIN>; // レイヤー4がアクティブな場合
