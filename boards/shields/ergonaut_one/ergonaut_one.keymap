@@ -52,26 +52,32 @@
         timeout-ms = <300>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_on>;
-        layers = <QWE>; // デフォルトレイヤーが0の前提
+        layers = <QWE LIN>; // デフォルトレイヤーが0の前提
     };
     combo_ng_off {
         timeout-ms = <300>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_off>;
-        layers = <QWE 1>; // デフォルトレイヤーが0、薙刀式レイヤーが1の前提
+        layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
+    };
+    combo_ng_offl {
+        timeout-ms = <300>;
+        key-positions = <16 17>; // F, Gのキー位置に書き換えてください
+        bindings = <&ng_offl>;
+        layers = <NGN LIN>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
     };
 
 	combo_ESCL {
 		timeout-ms = <80>;
 		key-positions = <0 12>;
-		layers = <QWE NIC LIN NICL WIN MOVW NUM>;
+		layers = <QWE NGN NIC LIN NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
 	};
 
 	combo_ESCR {
 		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <QWE NIC LIN NICL WIN MOVW NUM>;
+		layers = <QWE NGN NIC LIN NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
 	};
 
@@ -92,7 +98,7 @@
 	combo_TSHIFTN {
 		timeout-ms = <80>;
 		key-positions = <36 41>;
-		layers = <NIC NICL>;
+		layers = <NGN NIC NICL>;
 		bindings = <&qm RSHIFT>;
 	};
 
@@ -4028,6 +4034,13 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to QWE>
+                ;
+        };
+        ng_offl: ng_offl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to LIN>
                 ;
         };
 
