@@ -19,18 +19,19 @@
 #define NGN 1
 #define NIC 2
 #define LIN 3
-#define NICL 4
-#define WIN 5
-#define LWR 6
-#define LWRW 7
-#define RSE 8
-#define RSEW 9
-#define ADJ 10
-#define ADJW 11
-#define MOV 12
-#define MOVW 13
-#define NUM 14
-#define BLE 15
+#define NGNL 4
+#define NICL 5
+#define WIN 6
+#define LWR 7
+#define LWRW 8
+#define RSE 9
+#define RSEW 10
+#define ADJ 11
+#define ADJW 12
+#define MOV 13
+#define MOVW 14
+#define NUM 15
+#define BLE 16
 
 &adc {
 	status = "okay";

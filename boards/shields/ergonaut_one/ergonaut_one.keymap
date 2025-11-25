@@ -11,18 +11,19 @@
 #define NGN 1
 #define NIC 2
 #define LIN 3
-#define NICL 4
-#define WIN 5
-#define LWR 6
-#define LWRW 7
-#define RSE 8
-#define RSEW 9
-#define ADJ 10
-#define ADJW 11
-#define MOV 12
-#define MOVW 13
-#define NUM 14
-#define BLE 15
+#define NGNL 4
+#define NICL 5
+#define WIN 6
+#define LWR 7
+#define LWRW 8
+#define RSE 9
+#define RSEW 10
+#define ADJ 11
+#define ADJW 12
+#define MOV 13
+#define MOVW 14
+#define NUM 15
+#define BLE 16
 
 &mt {
     flavor = "hold-preferred";
@@ -52,7 +53,7 @@
         timeout-ms = <300>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_on>;
-        layers = <QWE LIN>; // デフォルトレイヤーが0の前提
+        layers = <QWE>; // デフォルトレイヤーが0の前提
     };
     combo_ng_off {
         timeout-ms = <300>;
@@ -60,11 +61,17 @@
         bindings = <&ng_off>;
         layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
     };
+    combo_ng_onl {
+        timeout-ms = <300>;
+        key-positions = <18 19>; // H, Jのキー位置に書き換えてください
+        bindings = <&ng_onl>;
+        layers = <LIN>; // デフォルトレイヤーがLINの前提
+    };
     combo_ng_offl {
         timeout-ms = <300>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_offl>;
-        layers = <NGN LIN>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
+        layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
     };
 
 	combo_ESCL {
@@ -4036,6 +4043,13 @@
                 = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to QWE>
                 ;
         };
+        ng_onl: ng_onl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to NGNL>
+                ;
+        };
         ng_offl: ng_offl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -4130,6 +4144,16 @@
                 &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		    &kp H         	&kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
                 &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B		    &kp N         	&kp M           &kp COMMA		&kp DOT         &kp FSLH        &kp RALT
                                                                 &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &lt MOVW LANG1
+            >;
+        };
+        naginatal_layer {
+            display-name = "NGNL";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
+                &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
+                &qm LGUI        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RALT
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng ENTER	    &trans
             >;
         };
 		nicolaL_layer {
