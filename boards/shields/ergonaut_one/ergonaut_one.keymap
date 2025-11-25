@@ -77,14 +77,14 @@
 	combo_ESCL {
 		timeout-ms = <80>;
 		key-positions = <0 12>;
-		layers = <QWE NGN NIC LIN NICL WIN MOVW NUM>;
+		layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
 	};
 
 	combo_ESCR {
 		timeout-ms = <80>;
 		key-positions = <11 23>;
-		layers = <QWE NGN NIC LIN NICL WIN MOVW NUM>;
+		layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
 		bindings = <&kp ESC>;
 	};
 
@@ -105,7 +105,7 @@
 	combo_TSHIFTN {
 		timeout-ms = <80>;
 		key-positions = <36 41>;
-		layers = <NGN NIC NICL>;
+		layers = <NGN NIC NGNL NICL>;
 		bindings = <&qm RSHIFT>;
 	};
 
@@ -154,7 +154,7 @@
 	combo_INT5_G { // ECADの端点再設定(AHK)
 		timeout-ms = <80>;
 		key-positions = <23 35>;
-		layers = <NICL WIN>;
+		layers = <NGNL NICL WIN>;
 		bindings = <&int5_g>;
 	};
 
