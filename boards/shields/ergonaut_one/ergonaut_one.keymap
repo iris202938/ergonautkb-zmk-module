@@ -4,24 +4,25 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
-
+#include <behaviors/naginata.dtsi>
 #include <dt-bindings/zmk/pointing.h>
 
 #define QWE 0
-#define NIC 1
-#define LIN 2
-#define NICL 3
-#define WIN 4
-#define LWR 5
-#define LWRW 6
-#define RSE 7
-#define RSEW 8
-#define ADJ 9
-#define ADJW 10
-#define MOV 11
-#define MOVW 12
-#define NUM 13
-#define BLE 14
+#define NGN 1
+#define NIC 2
+#define LIN 3
+#define NICL 4
+#define WIN 5
+#define LWR 6
+#define LWRW 7
+#define RSE 8
+#define RSEW 9
+#define ADJ 10
+#define ADJW 11
+#define MOV 12
+#define MOVW 13
+#define NUM 14
+#define BLE 15
 
 &mt {
     flavor = "hold-preferred";
@@ -47,6 +48,18 @@
     // 12 13 14 15 16 17	18 19 20 21 22 23
     // 24 25 26 27 28 29	30 31 32 33 34 35
     //          36 37 38	39 40 41 
+    combo_ng_on {
+        timeout-ms = <300>;
+        key-positions = <18 19>; // H, Jのキー位置に書き換えてください
+        bindings = <&ng_on>;
+        layers = <QWE>; // デフォルトレイヤーが0の前提
+    };
+    combo_ng_off {
+        timeout-ms = <300>;
+        key-positions = <16 17>; // F, Gのキー位置に書き換えてください
+        bindings = <&ng_off>;
+        layers = <QWE 1>; // デフォルトレイヤーが0、薙刀式レイヤーが1の前提
+    };
 
 	combo_ESCL {
 		timeout-ms = <80>;
@@ -4003,6 +4016,20 @@
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
         };
+        ng_on: ng_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to NGN>
+                ;
+        };
+        ng_off: ng_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to QWE>
+                ;
+        };
 
         // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
         // ホールド動作とタップ動作の両方をキーマップから受け取る汎用的なカスタムビヘイビア
@@ -4060,6 +4087,16 @@
                 &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			&kp K           &kp L           &kp SEMI        &mt RCTRL SQT
                 &kp LALT        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &kp FSLH        &kp RGUI
                                                                 &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt MOV LANG1
+            >;
+        };
+        naginata_layer {
+            display-name = "NGN";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
+                &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
+                &qm LALT        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RGUI
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng ENTER	    &trans
             >;
         };
         nicola_layer {

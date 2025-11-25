@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/Reinmuth66/
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: eswai # ここを追加
+      url-base: https://github.com/eswai
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,6 +21,9 @@ manifest:
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    - name: zmk-naginata # ここを追加
+      remote: eswai
       revision: main
   self:
     path: config
