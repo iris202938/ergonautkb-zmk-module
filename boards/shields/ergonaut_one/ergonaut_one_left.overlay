@@ -731,6 +731,11 @@
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
 		};
+		l_mouse_speed_ngnl {
+			layers = <NGNL>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+		};
 		l_mouse_speed_lin {
 			layers = <LIN>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
@@ -738,6 +743,11 @@
 		};
 		l_mouse_speed_full_nic {
 			layers = <NIC>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+		};
+		l_mouse_speed_full_ngn {
+			layers = <NGN>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
 		};
@@ -846,6 +856,12 @@
 							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
+		r_ngnl {
+			layers = <NGNL>; // レイヤー4がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 16 100> // スケーリング（16/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
 		r_lin {
 			layers = <LIN>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
@@ -854,6 +870,12 @@
 		};
 		r_nic {
 			layers = <NIC>; // レイヤー2がアクティブな場合
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
+							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+		};
+		r_ngn {
+			layers = <NGN>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							, <&zip_xy_scaler 8 100> // スケーリング（8/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
