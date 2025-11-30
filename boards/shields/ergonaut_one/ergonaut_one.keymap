@@ -4123,7 +4123,7 @@
                 &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
                 &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
                 &qm LALT        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RGUI
-                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng ENTER	    &trans
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	    &trans
             >;
         };
         nicola_layer {
@@ -4153,7 +4153,7 @@
                 &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
                 &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
                 &qm LGUI        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RALT
-                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng ENTER	    &trans
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	    &trans
             >;
         };
 		nicolaL_layer {
