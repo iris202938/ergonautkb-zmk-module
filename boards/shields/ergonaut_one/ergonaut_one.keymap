@@ -4110,7 +4110,7 @@
             display-name = "QWER";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &mt LSHFT TAB   &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &kp P           &mt RSHFT MINUS
+                &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &kp P           &mt RSHFT MINUS
                 &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			&kp K           &kp L           &kp SEMI        &mt RCTRL SQT
                 &kp LALT        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &kp FSLH        &kp RGUI
                                                                 &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt MOV LANG1
@@ -4120,7 +4120,7 @@
             display-name = "NGN";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
+                &qmt LSHFT LS(TAB) &ng Q        &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
                 &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
                 &qm LALT        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RGUI
                                                                 &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	    &trans
@@ -4130,7 +4130,7 @@
             display-name = "NIC";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &qmt LSHFT TAB	&macro_JPPERIOD &macro_KA	    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
+                &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
                 &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
                 &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
                                                                 &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
@@ -4140,7 +4140,7 @@
             display-name = "LIN";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &mt LSHFT TAB   &kp Q           &kp W           &kp E           &kp R           &kp T		    &kp Y         	&kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
+                &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T		    &kp Y         	&kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
                 &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		    &kp H         	&kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
                 &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B		    &kp N         	&kp M           &kp COMMA		&kp DOT         &kp FSLH        &kp RALT
                                                                 &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &lt MOVW LANG1
@@ -4150,7 +4150,7 @@
             display-name = "NGNL";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &qmt LSHFT TAB  &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
+                &qmt LSHFT LS(TAB) &ng Q        &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
                 &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
                 &qm LGUI        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RALT
                                                                 &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	    &trans
@@ -4160,7 +4160,7 @@
             display-name = "NICL";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &qmt LSHFT TAB	&macro_JPPERIOD &macro_KA	    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
+                &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
                 &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
                 &qm LGUI		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
                                                                 &mo NUM         &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
@@ -4170,7 +4170,7 @@
             display-name = "WIN";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &mt LSHFT TAB   &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &mt RSHFT MINUS
+                &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &mt RSHFT MINUS
                 &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt RCTRL SQT
                 &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp RALT
                                                                 &lt NUM INT5    &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
