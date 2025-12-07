@@ -192,6 +192,67 @@
 		layers = <LWR LWRW>;
 		bindings = <&mkp MB3>;
 	};
+
+    tab_1 {
+        bindings = <&tab_1>;
+        key-positions = <12 31>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+        };
+    tab_2 {
+        bindings = <&tab_2>;
+        key-positions = <12 32>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_3 {
+        bindings = <&tab_3>;
+        key-positions = <12 33>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_4 {
+        bindings = <&tab_4>;
+        key-positions = <12 19>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_5 {
+        bindings = <&tab_5>;
+        key-positions = <12 20>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_6 {
+        bindings = <&tab_6>;
+        key-positions = <12 21>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_7 {
+        bindings = <&tab_7>;
+        key-positions = <12 7>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_8 {
+        bindings = <&tab_8>;
+        key-positions = <12 8>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_9 {
+        bindings = <&tab_9>;
+        key-positions = <12 9>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
+    tab_0 {
+        bindings = <&tab_0>;
+        key-positions = <12 10>;
+        layers = <QWE LIN>;
+        timeout-ms = <80>;
+    };
 	
 	// combo_WIN_S_L {
 	// 	timeout-ms = <80>;
@@ -4028,6 +4089,122 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
+        };
+
+        tab_1: tab_1 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                ;
+        };
+        tab_2: tab_2 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_3: tab_3 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_4: tab_4 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_5: tab_5 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_6: tab_6 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_7: tab_7 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_8: tab_8 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_9: tab_9 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
+        };
+        tab_0: tab_0 { // TAB*回数
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp TAB>
+                ;
         };
         ng_on: ng_on {
             compatible = "zmk,behavior-macro";
