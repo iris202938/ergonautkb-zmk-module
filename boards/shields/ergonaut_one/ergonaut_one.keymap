@@ -50,25 +50,25 @@
     // 24 25 26 27 28 29	30 31 32 33 34 35
     //          36 37 38	39 40 41 
     combo_ng_on {
-        timeout-ms = <300>;
+        timeout-ms = <200>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_on>;
         layers = <QWE>; // デフォルトレイヤーが0の前提
     };
     combo_ng_off {
-        timeout-ms = <300>;
+        timeout-ms = <200>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_off>;
         layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
     };
     combo_ng_onl {
-        timeout-ms = <300>;
+        timeout-ms = <200>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_onl>;
         layers = <LIN>; // デフォルトレイヤーがLINの前提
     };
     combo_ng_offl {
-        timeout-ms = <300>;
+        timeout-ms = <200>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_offl>;
         layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
