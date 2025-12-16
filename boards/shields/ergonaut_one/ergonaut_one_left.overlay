@@ -767,7 +767,7 @@
 		};
 		l_mouse_speed_full {
 			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+			input-processors = <&zip_p_accel>, <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
 							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
 		};
 	};
