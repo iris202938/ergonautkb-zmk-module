@@ -29,8 +29,7 @@ manifest:
       remote: eswai
       revision: main
     - name: zmk-pointing-acceleration
-      # remote: oleksandrmaslov
-      remote: badhi
+      remote: oleksandrmaslov
       revision: main
   self:
     path: config
