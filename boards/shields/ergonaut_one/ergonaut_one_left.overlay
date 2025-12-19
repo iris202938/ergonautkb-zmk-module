@@ -78,6 +78,17 @@
 		};
 	};
 
+	// ZMK Pointing Acceleration の設定
+	&pointer_accel {
+		input-type = <INPUT_EV_REL>;
+		track-remainders;
+		min-factor = <100>;                 // (7)
+		max-factor = <10000>;               // (8)
+		speed-threshold = <1500>;           // (9)
+		speed-max = <1600>;                 // (10)
+		acceleration-exponent = <2>;        // (11)
+	};
+	
 	file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
 		wait-ms = <40>;
