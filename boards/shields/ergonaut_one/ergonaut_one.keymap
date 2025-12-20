@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/naginata.dtsi>
 #include <dt-bindings/zmk/pointing.h>
-#include <behaviors/input_gestures_accel.dtsi>
+// #include <behaviors/input_gestures_accel.dtsi>
 
 #define QWE 0
 #define NGN 1
