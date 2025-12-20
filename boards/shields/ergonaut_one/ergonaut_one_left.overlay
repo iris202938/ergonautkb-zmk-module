@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <behaviors/naginata.dtsi>
 #include <dt-bindings/zmk/pointing.h> // pointing.h はマウス機能に必要です
-#include <behaviors/input_gestures_accel.dtsi>
+// #include <behaviors/input_gestures_accel.dtsi>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600   // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
@@ -49,6 +49,7 @@
 	// 	x-curve = <10 100>, <50 200>, <100 300>;
 	// 	y-curve = <10 100>, <50 200>, <100 300>;
 	// };
+
 	// 左のジョイスティック（マウスカーソル移動用）
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
