@@ -39,16 +39,16 @@
 };
 
 / {
-	// 加速用プロセッサの定義 (参照記事の肝となる部分)
-	// 傾きが小さいときはゆっくり、大きいときは速くキー入力を発生させるための計算用
-	zip_p_accel: zip_p_accel {
-		compatible = "zmk,input-processor-pointing-accel";
-		#input-processor-cells = <0>;
-		// x/y-curve: [入力値, 出力倍率] のペア
-		// 100% 倒したときに最大の tick 速度が出るように調整
-		x-curve = <10 100>, <50 200>, <100 300>;
-		y-curve = <10 100>, <50 200>, <100 300>;
-	};
+	// // 加速用プロセッサの定義 (参照記事の肝となる部分)
+	// // 傾きが小さいときはゆっくり、大きいときは速くキー入力を発生させるための計算用
+	// zip_p_accel: zip_p_accel {
+	// 	compatible = "zmk,input-processor-pointing-accel";
+	// 	#input-processor-cells = <0>;
+	// 	// x/y-curve: [入力値, 出力倍率] のペア
+	// 	// 100% 倒したときに最大の tick 速度が出るように調整
+	// 	x-curve = <10 100>, <50 200>, <100 300>;
+	// 	y-curve = <10 100>, <50 200>, <100 300>;
+	// };
 	// 左のジョイスティック（マウスカーソル移動用）
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
