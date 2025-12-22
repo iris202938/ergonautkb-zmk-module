@@ -154,7 +154,9 @@
 			, <&macro_wait_time 40>
 			, <&macro_release &kp INT5>
 			;
-    };	
+    };
+
+	// ここから下はECAD用マクロ定義
 	ctrl_a_j: ctrl_a_j { // 図面管理情報
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -390,6 +392,19 @@
 			, <&macro_tap &kp R>
 			;
     };
+	ctrl_a_g: ctrl_a_g { //  図形グループ化解除
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings
+		= <&macro_press &kp LCTRL>
+		, <&macro_tap &kp A>
+		, <&macro_release &kp LCTRL>
+		, <&macro_tap &kp G>
+		, <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
+		;
+    };
+	// ECAD用マクロ定義ここまで
+
 	alt_home: alt_home { // 移動左90度回転[AHK]
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -406,17 +421,6 @@
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp END>
 			, <&macro_release &kp LALT>
-			;
-    };
-	ctrl_a_g: ctrl_a_g { //  図形グループ化解除
-		compatible = "zmk,behavior-macro";
-		#binding-cells = <0>;
-		bindings
-			= <&macro_press &kp LCTRL>
-			, <&macro_tap &kp A>
-			, <&macro_release &kp LCTRL>
-			, <&macro_tap &kp G>
-			, <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
 			;
     };
 
