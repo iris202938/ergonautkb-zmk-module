@@ -1170,7 +1170,7 @@
 		track_remainders;
 			bindings = <&ctrl_a_w>     // 右：渡りページ編集
 	                 , <&kp R>         // 左：リファレンス編集
-					 , <&ctrl_a_n>     // 上：自動線番
+					 , <&ctrl_a_n>     // 上：自動線番範囲選択
 					 , <&ctrl_alt_s>   // 下：シンボル一覧[AHK]
 					 ;
 			tick = <150>;
