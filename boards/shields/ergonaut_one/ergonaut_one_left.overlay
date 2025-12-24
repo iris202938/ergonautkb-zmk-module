@@ -1037,6 +1037,20 @@
 
 	// ECAD用マクロ定義ここまで
 
+	ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			// , <&macro_wait_time 40>
+			, <&macro_press &kp LALT>
+			, <&macro_tap &kp S>
+			, <&macro_release &kp LALT>
+			// , <&macro_wait_time 40>
+			, <&macro_release &kp LCTRL>
+			// , <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
+			;
+	};	
 	alt_home: alt_home { // 移動左90度回転[AHK]
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
