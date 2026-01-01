@@ -19,6 +19,6 @@ manifest:
       revision: V3.0
     - name: zmk-input-processor-keybind
       remote: zettaface
-      revision: V3.0
+      revision: V3.0 
   self:
     path: config
