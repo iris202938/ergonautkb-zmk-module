@@ -3,8 +3,8 @@ id: ergonaut_one
 name: Ergonaut One
 type: shield
 url: https://github.com/Reinmuth66/ergonautkb-zmk-module
-# requires: [seeeduino_xiao_ble]
-requires: [seeed_xiao_ble/nrf52840] # ステップ1で指定した名前と完全に一致させる
+requires: [seeeduino_xiao_ble]
+# requires: [seeed_xiao_ble/nrf52840] # ステップ1で指定した名前と完全に一致させる
 features:
   - keys
 siblings:
