@@ -13,12 +13,12 @@ manifest:
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: Reinmuth66
-      revision: main
+      revision: V3.0
     - name: zmk-analog-input-driver
       remote: Reinmuth66
-      revision: main
+      revision: V3.0
     - name: zmk-input-processor-keybind
       remote: zettaface
-      revision: main
+      revision: V3.0
   self:
     path: config
