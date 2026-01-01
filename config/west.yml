@@ -2,23 +2,23 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: Reinmuth66
-      url-base: https://github.com/Reinmuth66/
-    - name: zettaface
-      url-base: https://github.com/zettaface
+    # - name: Reinmuth66
+    #   url-base: https://github.com/Reinmuth66/
+    # - name: zettaface
+    #   url-base: https://github.com/zettaface
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-rgbled-widget
-      remote: Reinmuth66
-      revision: main
-    - name: zmk-analog-input-driver
-      remote: Reinmuth66
-      revision: main
-    - name: zmk-input-processor-keybind
-      remote: zettaface
-      revision: main 
+    # - name: zmk-rgbled-widget
+    #   remote: Reinmuth66
+    #   revision: main
+    # - name: zmk-analog-input-driver
+    #   remote: Reinmuth66
+    #   revision: main
+    # - name: zmk-input-processor-keybind
+    #   remote: zettaface
+    #   revision: main 
   self:
     path: config
