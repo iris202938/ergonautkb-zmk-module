@@ -4069,10 +4069,22 @@
             bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
         };
 
+        bt2_l2: bt2_l2 { // Bluetoothプロファイル2を選択し、レイヤー2を有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
+        };
+
         bt2_l4: bt2_l4 { // Bluetoothプロファイル2を選択し、レイヤー4を有効化
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
+        };
+
+        bt3_l2: bt3_l2 { // Bluetoothプロファイル3を選択し、レイヤー2を有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
         };
 
         bt3_l4: bt3_l4 { // Bluetoothプロファイル3を選択し、レイヤー4を有効化
@@ -4097,6 +4109,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to QWE &out OUT_USB &to LIN>;
+        };
+
+        usb_l4: usb_l4 { // USB接続を選択し、レイヤー4を有効化
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to QWE &out OUT_USB &to WIN>;
         };
 
         tab_1: tab_1 { // TAB*回数
@@ -4417,7 +4435,7 @@
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
                 &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
                 &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-                &kp LGUI        &bt0_l0         &bt1_l2         &bt2_l4         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
+                &kp LGUI        &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                                 &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to WIN
             >;
         };
