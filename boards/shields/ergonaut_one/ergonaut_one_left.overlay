@@ -1092,10 +1092,10 @@
 			#input-processor-cells = <0>;
 		track_remainders;
 			bindings = <&kp RIGHT>
-					  ,<&kp LEFT>
-					  ,<&kp UP>
-					  ,<&kp DOWN>
-					  ;
+					 , <&kp LEFT>
+					 , <&kp UP>
+					 , <&kp DOWN>
+					 ;
 			tick = <100>; // ティック間隔
 			wait-ms = <5>; // 待機時間
 			tap-ms = <10>; // タップ時間
