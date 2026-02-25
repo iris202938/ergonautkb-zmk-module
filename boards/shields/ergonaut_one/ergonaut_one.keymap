@@ -159,17 +159,11 @@
 		bindings = <&int5_g>;
 	};
 
-    exl_fill: excel_fill_menu {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <30>;
-        tap-ms = <30>;
+    combo_exl_fill { // Excelのフィルター
+		timeout-ms = <80>;
         key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
 		layers = <WIN>;
-        bindings
-            = <&macro_tap &kp LALT>
-            , <&macro_tap &kp E &kp I &kp S>;
-        // ここで止まるので、設定を確認して手動でEnter
+        bindings = <&exl_fill>;
     };
 
 	// combo_RDEL {
@@ -3982,6 +3976,17 @@
 			, <&macro_release &kp INT5>
 			;
     };	
+
+    exl_fill: excel_fill_menu { // Excelのフィルター
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <30>;
+        tap-ms = <30>;
+        bindings
+            = <&macro_tap &kp LALT>
+            , <&macro_tap &kp E &kp I &kp S>;
+        // ここで止まるので、設定を確認して手動でEnter
+    };
 
 	alt_int4: alt_int4 { // Alt+変換 選択位置移動(複写)(AHK)
 		compatible = "zmk,behavior-macro";
