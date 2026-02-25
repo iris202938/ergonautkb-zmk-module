@@ -164,7 +164,7 @@
         #binding-cells = <0>;
         wait-ms = <30>;
         tap-ms = <30>;
-        key-positions = <3 8 14>;
+        key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
 		layers = <WIN>;
         bindings
             = <&macro_tap &kp LALT>
