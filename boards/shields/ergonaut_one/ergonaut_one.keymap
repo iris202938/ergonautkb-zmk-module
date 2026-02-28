@@ -3867,11 +3867,11 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LALT &kp RIGHT>
-			, <&macro_release &kp LALT &kp RIGHT>
-			// = <&macro_press &kp LALT>
-			// , <&macro_tap &kp RIGHT>
-			// , <&macro_release &kp LALT>
+			// = <&macro_press &kp LALT &kp RIGHT>
+			// , <&macro_release &kp LALT &kp RIGHT>
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp RIGHT>
+			, <&macro_release &kp LALT>
 			;
     };
 
@@ -3881,11 +3881,11 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LALT &kp LEFT>
-			, <&macro_release &kp LALT &kp LEFT>
-			// = <&macro_press &kp LALT>
-			// , <&macro_tap &kp LEFT>
-			// , <&macro_release &kp LALT>
+			// = <&macro_press &kp LALT &kp LEFT>
+			// , <&macro_release &kp LALT &kp LEFT>
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp LEFT>
+			, <&macro_release &kp LALT>
 			;
     };
 
@@ -3895,11 +3895,11 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LALT &kp  UP>
-			, <&macro_release &kp LALT &kp UP>
-			// = <&macro_press &kp LALT>
-			// , <&macro_tap &kp UP>
-			// , <&macro_release &kp LALT>
+			// = <&macro_press &kp LALT &kp  UP>
+			// , <&macro_release &kp LALT &kp UP>
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp UP>
+			, <&macro_release &kp LALT>
 			;
     };
 
@@ -3909,11 +3909,11 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			= <&macro_press &kp LALT &kp DOWN>
-			, <&macro_release &kp LALT &kp DOWN>
-			// = <&macro_press &kp LALT>
-			// , <&macro_tap &kp DOWN>
-			// , <&macro_release &kp LALT>
+			// = <&macro_press &kp LALT &kp DOWN>
+			// , <&macro_release &kp LALT &kp DOWN>
+			= <&macro_press &kp LALT>
+			, <&macro_tap &kp DOWN>
+			, <&macro_release &kp LALT>
 			;
     };
 
