@@ -4281,22 +4281,22 @@
 
         // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
         // ホールド動作とタップ動作の両方をキーマップから受け取る汎用的なカスタムビヘイビア
-        macro_lt: macro_layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MACRO_LT";
-            #binding-cells = <2>; // 2つのパラメータ (&mo の layer, macro_node)
-            flavor = "tap-preferred"; // タップ優先
-            tapping-term-ms = <200>;
+        // macro_lt: macro_layer_tap {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "MACRO_LT";
+        //     #binding-cells = <2>; // 2つのパラメータ (&mo の layer, macro_node)
+        //     flavor = "tap-preferred"; // タップ優先
+        //     tapping-term-ms = <200>;
             // 🚨 修正点: bindingsプロパティを追加
             // ZMKの標準的なホールド・タップの要件を満たすため、ダミーとして &none を定義します。
             // 実際のアクションはキーマップ側で渡されます。
-            bindings = <&none &none>;
+            // bindings = <&none &none>;
             // bindings には、キーマップから渡される2つのアクションをプレースホルダーとして定義します。
             // 最初のセルがホールドアクション、2番目のセルがタップアクションとして機能します。
             // ZMKのカスタムホールド・タップでは、`#binding-cells = <2>;` を設定することで、
             // キーマップ側で渡された最初のバインディングがホールド、2番目がタップとして内部で処理されます。
             // 以下の例のように、bindingsに &mo や &macro_LANG1 を直接書く必要はありません。
-        };
+        // };
         
 		// td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでmacro_LANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
         //     compatible = "zmk,behavior-tap-dance";
