@@ -23,7 +23,7 @@
 			io-channels = <&adc 0>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1842>;
 			mv-min-max = <2571>;
-			mv-deadzone = <100>;
+			mv-deadzone = <90>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			#invert;
@@ -35,7 +35,7 @@
 			io-channels = <&adc 1>; // <--- see ain-map.png for nRF52840
 			mv-mid = <1681>;
 			mv-min-max = <2062>;
-			mv-deadzone = <100>;
+			mv-deadzone = <90>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			invert;
