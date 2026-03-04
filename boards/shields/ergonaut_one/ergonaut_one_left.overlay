@@ -1509,7 +1509,7 @@
 		r_scroll_w {
 			layers = <LWRW>; // レイヤー8がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 20 100> // スケーリング（20/100）
+							, <&zip_xy_scaler 18 100> // スケーリング（18/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_scroll {
@@ -1558,7 +1558,7 @@
 		r_ngn {
 			layers = <NGN>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 6 100> // スケーリング（6/100）
+							, <&zip_xy_scaler 5 100> // スケーリング（5/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
 		r_default {
