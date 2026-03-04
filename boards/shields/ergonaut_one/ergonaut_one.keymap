@@ -4278,6 +4278,17 @@
                 = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to LIN>
                 ;
         };
+        // ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
+        m_hi_con: m_hi_con {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <30>;
+            wait-ms = <30>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LALT>
+                , <&macro_tap &kp PRINTSCREEN>
+                , <&macro_release &kp LSHFT &kp LALT>;
+        };
 
         // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
         // ホールド動作とタップ動作の両方をキーマップから受け取る汎用的なカスタムビヘイビア
@@ -4491,7 +4502,7 @@
             display-name = "BLE";
             bindings = <
             // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-                &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &bt BT_DISC 4   &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
+                &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &m_hi_con       &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
                 &kp LC(LG(H))   &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))   &trans          &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))   &kp LC(LG(W))
                 &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l2    	    &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
                                                                 &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
