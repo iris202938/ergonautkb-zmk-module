@@ -4254,28 +4254,28 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to NGN>
+                = <&macro_tap &kp LANG1 &kp INT4 &to NGN>
                 ;
         };
         ng_off: ng_off {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to QWE>
+                = <&macro_tap &kp LANG2 &kp INT5 &to QWE>
                 ;
         };
         ng_onl: ng_onl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LANGUAGE_1 &kp INTERNATIONAL_4 &to NGNL>
+                = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
                 ;
         };
         ng_offl: ng_offl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp LANGUAGE_2 &kp INTERNATIONAL_5 &to LIN>
+                = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
                 ;
         };
         // ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
@@ -4286,7 +4286,7 @@
             wait-ms = <30>;
             bindings
                 = <&macro_press &kp LSHFT &kp LALT>
-                , <&macro_tap &kp PRINTSCREEN>
+                , <&macro_tap &kp PSCRN>
                 , <&macro_release &kp LSHFT &kp LALT>;
         };
 
