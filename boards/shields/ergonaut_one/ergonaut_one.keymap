@@ -166,6 +166,13 @@
         bindings = <&exl_fill>;
     };
 
+    combo_m_xl_rename { // Excelのシート名変更マクロ
+		timeout-ms = <80>;
+        key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
+		layers = <RSEW>;
+        bindings = <&m_xl_rename>;
+    };
+
 	// combo_RDEL {
 	// 	timeout-ms = <80>;
 	// 	key-positions = <23 35>;
@@ -4288,6 +4295,18 @@
                 = <&macro_press &kp LSHFT &kp LALT>
                 , <&macro_tap &kp PSCRN>
                 , <&macro_release &kp LSHFT &kp LALT>;
+        };
+        // Excel: シート名変更マクロ
+        m_xl_rename: m_xl_rename {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <30>;
+            wait-ms = <30>;
+            bindings
+                = <&macro_tap &kp LALT>      // リボンをアクティブ化
+                , <&macro_tap &kp H>         // ホームタブ
+                , <&macro_tap &kp O>         // 書式(Format)
+                , <&macro_tap &kp R>;        // シート名の変更(Rename)
         };
 
         // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
