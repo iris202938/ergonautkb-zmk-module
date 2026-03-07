@@ -159,7 +159,7 @@
 		bindings = <&int5_g>;
 	};
 
-    combo_exl_fill { // Excelのフィルター
+    combo_exl_fill { // Excelのオートフィル
 		timeout-ms = <80>;
         key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
 		layers = <RSEW>;
