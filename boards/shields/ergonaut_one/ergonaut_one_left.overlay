@@ -1078,7 +1078,7 @@
 					  ;
 			tick = <50>; // ティック間隔
 			wait-ms = <0>; // 待機時間
-			tap-ms = <40>; // タップ時間
+			tap-ms = <50>; // タップ時間
 	};
 	zip_keybind_keys_file: zip_keybind_keys_file {
 			compatible = "zmk,input-processor-keybind";
