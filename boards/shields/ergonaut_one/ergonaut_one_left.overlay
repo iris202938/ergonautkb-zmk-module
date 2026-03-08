@@ -1097,16 +1097,16 @@
 	zip_keybind_keys_ecad_rsew: zip_keybind_keys_ecad_rsew {
 			compatible = "zmk,input-processor-keybind";
 			#input-processor-cells = <0>;
-		track_remainders;
+		// track_remainders;
 			bindings = <&kp C>  // 右：複写
 	                 , <&kp D>  // 左：削除
 					 , <&kp A>  // 上：領域移動
 	                 , <&kp Z>  // 下：属性変更
 					 ;
-			tick = <150>;
-			wait-ms = <100>;
-			tap-ms = <50>;
-			mode = <1>;
+			tick = <120>; 		// 入力が継続している際、次のキー入力を発生させるまでの周期（間隔）
+			wait-ms = <0>; 	// 入力を検知してから、実際に最初のキー（tap-msの開始）を押し下げるまでの遅延時間
+			tap-ms = <40>; 		// キーを「押し下げている（Down）」状態の時間
+			mode = <1>; 		// 通常、このモード指定は「蓄積された移動量（remainder）を考慮するかどうか」などの挙動を制御
     };
 	zip_keybind_keys_ecad_ladjw: zip_keybind_keys_ecad_ladjw {
 			compatible = "zmk,input-processor-keybind";
