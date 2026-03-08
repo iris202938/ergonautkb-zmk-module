@@ -74,221 +74,163 @@
         bindings = <&ng_offl>;
         layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
     };
-
-	combo_ESCL {
-		timeout-ms = <80>;
-		key-positions = <0 12>;
-		layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
-		bindings = <&kp ESC>;
-	};
-
-	combo_ESCR {
-		timeout-ms = <80>;
-		key-positions = <11 23>;
-		layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
-		bindings = <&kp ESC>;
-	};
-
-	// combo_PSHIFT {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <24 35>;
-	// 	layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-	// 	bindings = <&kp LSHIFT>;
-	// };
-
-	combo_TSHIFT {
-		timeout-ms = <80>;
-		key-positions = <36 41>;
-		layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-		bindings = <&kp RSHIFT>;
-	};
-
-	combo_TSHIFTN {
-		timeout-ms = <80>;
-		key-positions = <36 41>;
-		layers = <NGN NIC NGNL NICL>;
-		bindings = <&qm RSHIFT>;
-	};
-
-	combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
-		timeout-ms = <80>;
-		key-positions = <31 32>;
-		layers = <RSEW>;
-		bindings = <&alt_int4>; //変換
-	};
-
-	combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
-		timeout-ms = <80>;
-		key-positions = <32 33>;
-		layers = <RSEW>;
-		bindings = <&alt_int5>; //無変換
-	};
-
-	combo_e_key { // ECADの文字修正
-		timeout-ms = <80>;
-		key-positions = <30 31>;
-		layers = <RSEW>;
-		bindings = <&kp E>;
-	};
-
-	combo_t_key { // ECADの文字
-		timeout-ms = <80>;
-		key-positions = <33 34>;
-		layers = <RSEW>;
-		bindings = <&kp T>;
-	};
-	
-	// combo_PLSHIFT {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <12 24>;
-	// 	layers = <QWE LIN RSE RSEW>;
-	// 	bindings = <&kp LSHIFT>;
-	// };
-
-	// combo_PRSHIFT {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <23 35>;
-	// 	layers = <QWE LIN RSE RSEW>;
-	// 	bindings = <&kp RSHIFT>;
-	// };
-
-	combo_INT5_G { // ECADの端点再設定(AHK)
-		timeout-ms = <80>;
-		key-positions = <23 35>;
-		layers = <NGNL NICL WIN>;
-		bindings = <&int5_g>;
-	};
-
+    combo_ESCL {
+      timeout-ms = <80>;
+      key-positions = <0 12>;
+      layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+      bindings = <&kp ESC>;
+    };
+    combo_ESCR {
+      timeout-ms = <80>;
+      key-positions = <11 23>;
+      layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+      bindings = <&kp ESC>;
+    };
+    combo_TSHIFT {
+      timeout-ms = <80>;
+      key-positions = <36 41>;
+      layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+      bindings = <&kp RSHIFT>;
+    };
+    combo_TSHIFTN {
+      timeout-ms = <80>;
+      key-positions = <36 41>;
+      layers = <NGN NIC NGNL NICL>;
+      bindings = <&qm RSHIFT>;
+    };
+    combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+      timeout-ms = <80>;
+      key-positions = <31 32>;
+      layers = <RSEW>;
+      bindings = <&alt_int4>; //変換
+    };
+    combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
+      timeout-ms = <80>;
+      key-positions = <32 33>;
+      layers = <RSEW>;
+      bindings = <&alt_int5>; //無変換
+    };
+    combo_e_key { // ECADの文字修正
+      timeout-ms = <80>;
+      key-positions = <30 31>;
+      layers = <RSEW>;
+      bindings = <&kp E>;
+    };
+    combo_t_key { // ECADの文字
+      timeout-ms = <80>;
+      key-positions = <33 34>;
+      layers = <RSEW>;
+      bindings = <&kp T>;
+    };
+    combo_INT5_G { // ECADの端点再設定(AHK)
+      timeout-ms = <80>;
+      key-positions = <23 35>;
+      layers = <NGNL NICL WIN>;
+      bindings = <&int5_g>;
+    };
     combo_exl_fill { // Excelのオートフィル
-		timeout-ms = <80>;
-        key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
-		layers = <RSEW>;
-        bindings = <&exl_fill>;
+      timeout-ms = <80>;
+      key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
+      layers = <RSEW>;
+      bindings = <&exl_fill>;
     };
-
     combo_m_xl_rename { // Excelのシート名変更マクロ
-		timeout-ms = <80>;
-        key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
-		layers = <RSEW>;
-        bindings = <&m_xl_rename>;
+      timeout-ms = <80>;
+      key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
+      layers = <RSEW>;
+      bindings = <&m_xl_rename>;
     };
-
-	// combo_RDEL {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <23 35>;
-	// 	layers = <MOV MOVW>;
-	// 	bindings = <&kp D>;
-	// };
-
-	combo_CAPSWORD {
-		timeout-ms = <80>;
-		key-positions = <24 35>;
-		layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-		bindings = <&caps_word>;
-	};
-
-	combo_to_LIN {
-		timeout-ms = <80>;
-		key-positions = <36 41>;
-		layers = <ADJ ADJW>;
-		bindings = <&to LIN>;
-	};
-
+    combo_CAPSWORD {
+      timeout-ms = <80>;
+      key-positions = <24 35>;
+      layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+      bindings = <&caps_word>;
+    };
+    combo_to_LIN {
+      timeout-ms = <80>;
+      key-positions = <36 41>;
+      layers = <ADJ ADJW>;
+      bindings = <&to LIN>;
+    };
     combo_MB1 {
-		timeout-ms = <60>;
-		key-positions = <31 32>;
-		layers = <LWR LWRW>;
-		bindings = <&mkp MB1>;
-	};
-
+      timeout-ms = <60>;
+      key-positions = <31 32>;
+      layers = <LWR LWRW>;
+      bindings = <&mkp MB1>;
+    };
     combo_MB2 {
-		timeout-ms = <60>;
-		key-positions = <32 33>;
-		layers = <LWR LWRW>;
-		bindings = <&mkp MB2>;
-	};
-
-	combo_MB3 {
-		timeout-ms = <60>;
-		key-positions = <31 33>;
-		layers = <LWR LWRW>;
-		bindings = <&mkp MB3>;
-	};
+      timeout-ms = <60>;
+      key-positions = <32 33>;
+      layers = <LWR LWRW>;
+      bindings = <&mkp MB2>;
+    };
+    combo_MB3 {
+      timeout-ms = <60>;
+      key-positions = <31 33>;
+      layers = <LWR LWRW>;
+      bindings = <&mkp MB3>;
+    };
 
     tab_1 {
-        bindings = <&tab_1>;
-        key-positions = <12 31>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
-        };
+      bindings = <&tab_1>;
+      key-positions = <12 31>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
+      };
     tab_2 {
-        bindings = <&tab_2>;
-        key-positions = <12 32>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_2>;
+      key-positions = <12 32>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_3 {
-        bindings = <&tab_3>;
-        key-positions = <12 33>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_3>;
+      key-positions = <12 33>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_4 {
-        bindings = <&tab_4>;
-        key-positions = <12 19>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_4>;
+      key-positions = <12 19>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_5 {
-        bindings = <&tab_5>;
-        key-positions = <12 20>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_5>;
+      key-positions = <12 20>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_6 {
-        bindings = <&tab_6>;
-        key-positions = <12 21>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_6>;
+      key-positions = <12 21>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_7 {
-        bindings = <&tab_7>;
-        key-positions = <12 7>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_7>;
+      key-positions = <12 7>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_8 {
-        bindings = <&tab_8>;
-        key-positions = <12 8>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_8>;
+      key-positions = <12 8>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_9 {
-        bindings = <&tab_9>;
-        key-positions = <12 9>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_9>;
+      key-positions = <12 9>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
     tab_0 {
-        bindings = <&tab_0>;
-        key-positions = <12 10>;
-        layers = <QWE LIN NUM>;
-        timeout-ms = <80>;
+      bindings = <&tab_0>;
+      key-positions = <12 10>;
+      layers = <QWE LIN NUM>;
+      timeout-ms = <80>;
     };
-	
-	// combo_WIN_S_L {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <13 14>;
-	// 	layers = <LWRW>;
-	// 	bindings = <&kp LG(LS(LEFT))>;
-	// };
-
-	// combo_WIN_S_R {
-	// 	timeout-ms = <80>;
-	// 	key-positions = <15 16>;
-	// 	layers = <LWRW>;
-	// 	bindings = <&kp LG(LS(RIGHT))>;
-	// };
 
 	combo_JPQMARKL {
 		timeout-ms = <50>;
@@ -3776,38 +3718,38 @@
         bindings = <&kp P>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
 
-	qmt: qwerty_mt {
-		compatible = "zmk,behavior-macro-two-param";
-		wait-ms = <0>;
-		tap-ms = <0>;
-		#binding-cells = <2>;
-		bindings
-			= <&macro_press &mo WIN>
-			, <&macro_param_1to1>
-			, <&macro_param_2to2>
-			, <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-			, <&macro_pause_for_release>
-			, <&macro_param_1to1>
-			, <&macro_param_2to2>
-			, <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-			, <&macro_release &mo WIN>
-			;
+    qmt: qwerty_mt {
+      compatible = "zmk,behavior-macro-two-param";
+      wait-ms = <0>;
+      tap-ms = <0>;
+      #binding-cells = <2>;
+      bindings
+        = <&macro_press &mo WIN>
+        , <&macro_param_1to1>
+        , <&macro_param_2to2>
+        , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+        , <&macro_pause_for_release>
+        , <&macro_param_1to1>
+        , <&macro_param_2to2>
+        , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+        , <&macro_release &mo WIN>
+        ;
         };
         
-	qm: qwerty_m {
-		compatible = "zmk,behavior-macro-one-param";
-		wait-ms = <0>;
-		tap-ms = <0>;
-		#binding-cells = <1>;
-		bindings
-			= <&macro_press &mo WIN>
-			, <&macro_param_1to1>
-			, <&macro_press &kp MACRO_PLACEHOLDER>
-			, <&macro_pause_for_release>
-			, <&macro_param_1to1>
-			, <&macro_release &kp MACRO_PLACEHOLDER>
-			, <&macro_release &mo WIN>
-			;
+    qm: qwerty_m {
+      compatible = "zmk,behavior-macro-one-param";
+      wait-ms = <0>;
+      tap-ms = <0>;
+      #binding-cells = <1>;
+      bindings
+        = <&macro_press &mo WIN>
+        , <&macro_param_1to1>
+        , <&macro_press &kp MACRO_PLACEHOLDER>
+        , <&macro_pause_for_release>
+        , <&macro_param_1to1>
+        , <&macro_release &kp MACRO_PLACEHOLDER>
+        , <&macro_release &mo WIN>
+  			;
         };
 
 	file_f: file_f { // ファイルの切り替え正
@@ -3816,8 +3758,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LCTRL &kp F6> // マクロキー押下時にLCTRLとF6を同時に押す
-			// , <&macro_release &kp LCTRL &kp F6> // マクロキー解放時にLCTRLとF6を同時に離す
 			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F6>
 			, <&macro_release &kp LCTRL>
@@ -3830,8 +3770,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp LCTRL &kp F6> // マクロキー押下時にLSHFTとLCTRLとF6を同時に押す
-			// , <&macro_release &kp LSHFT &kp LCTRL &kp F6> // マクロキー解放時にLSHFTとLCTRLとF6を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F6>
@@ -3846,8 +3784,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp F5> // マクロキー押下時にLSHFTとF5を同時に押す
-			// , <&macro_release &kp LSHFT &kp F5> // マクロキー解放時にLSHFTとF5を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F5>
 			, <&macro_release &kp LSHFT>
@@ -3860,8 +3796,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp F6> // マクロキー押下時にLSHFTとF6を同時に押す
-			// , <&macro_release &kp LSHFT &kp F6> // マクロキー解放時にLSHFTとF6を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F6>
 			, <&macro_release &kp LSHFT>
@@ -3874,8 +3808,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LALT &kp RIGHT>
-			// , <&macro_release &kp LALT &kp RIGHT>
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp RIGHT>
 			, <&macro_release &kp LALT>
@@ -3888,8 +3820,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LALT &kp LEFT>
-			// , <&macro_release &kp LALT &kp LEFT>
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp LEFT>
 			, <&macro_release &kp LALT>
@@ -3902,8 +3832,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LALT &kp  UP>
-			// , <&macro_release &kp LALT &kp UP>
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp UP>
 			, <&macro_release &kp LALT>
@@ -3916,8 +3844,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LALT &kp DOWN>
-			// , <&macro_release &kp LALT &kp DOWN>
 			= <&macro_press &kp LALT>
 			, <&macro_tap &kp DOWN>
 			, <&macro_release &kp LALT>
@@ -3953,19 +3879,16 @@
 	// 	#binding-cells = <0>;
 	// 	bindings = <&to QWE>, <&kp LANG2>;
 	// };
-
 	to_WIN_i5: to_WIN_INT5{
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings = <&to WIN>, <&kp INT5>;
 	};
-
 	to_MOVW_i5: to_MOVW_INT5{
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
 		bindings = <&to MOVW>, <&kp INT5>;
 	};
-
 	to_NUM_i5: to_NUM_INT5{
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -3982,19 +3905,17 @@
 			, <&macro_wait_time 40>
 			, <&macro_release &kp INT5>
 			;
-    };	
-
-    exl_fill: excel_fill_menu { // Excelのフィルター
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <30>;
-        tap-ms = <30>;
-        bindings
-            = <&macro_tap &kp LALT>
-            , <&macro_tap &kp E &kp I &kp S>;
-        // ここで止まるので、設定を確認して手動でEnter
-    };
-
+  };	
+  exl_fill: excel_fill_menu { // Excelのフィルター
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <30>;
+    bindings
+      = <&macro_tap &kp LALT>
+      , <&macro_tap &kp E &kp I &kp S>;
+      // ここで止まるので、設定を確認して手動でEnter
+  };
 	alt_int4: alt_int4 { // Alt+変換 選択位置移動(複写)(AHK)
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -4003,7 +3924,7 @@
 			, <&macro_tap     &kp INT4>
 			, <&macro_release &kp RALT>
 			;
-    };	
+  };	
 
 	alt_int5: alt_int5 { // Alt+無変換 選択位置移動(移動)(AHK)
 		compatible = "zmk,behavior-macro";
@@ -4013,345 +3934,257 @@
 			, <&macro_tap     &kp INT5>
 			, <&macro_release &kp RALT>
 			;
-    };	
+  };	
 
-	// m_alt_tab: m_alt_tab {
-	// 	label = "ALT_TAB_HOLD";
-	// 	compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     bindings
-    //         = <&macro_press &kp LALT>
-    //         , <&macro_tap &kp TAB>
-    //         , <&macro_wait_time 1000>
-    //         , <&macro_release &kp LALT>
-    //         ;
-	// };
+  conditional_layers {
+    compatible = "zmk,conditional-layers";
 
-	// m_alt_s_tab: m_alt_s_tab {
-    //     label = "ALT_SHFT_TAB_HOLD";
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     bindings
-    //         = <&macro_press &kp LALT>
-    //         , <&macro_press &kp LSHFT>
-    //         , <&macro_tap &kp TAB>
-    //         , <&macro_wait_time 50>
-    //         , <&macro_release &kp LSHFT>
-    //         , <&macro_wait_time 1000>
-    //         , <&macro_release &kp LALT>
-    //         ;
-    // };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri-layer {
-            if-layers = <LWR RSE>;
-            then-layer = <ADJ>;
-        };
-		tri-layerw {
-            if-layers = <LWRW RSEW>;
-            then-layer = <ADJW>;
-        };
-    }; // conditional_layers の閉じ括弧の後にセミコロンが必要
+    tri-layer {
+        if-layers = <LWR RSE>;
+        then-layer = <ADJ>;
+    };
+    tri-layerw {
+        if-layers = <LWRW RSEW>;
+        then-layer = <ADJW>;
+    };
+  }; // conditional_layers の閉じ括弧の後にセミコロンが必要
 	
 	behaviors {
-		// gresc: grave_escape {
-        //     compatible = "zmk,behavior-mod-morph";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp ESC>, <&kp GRAVE>;
-        //     mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
-        // };
+      bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
+      };
+      bt1_l2: bt1_l2 { // Bluetoothプロファイル1を選択し、レイヤー2を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 1 &to LIN>;
+      };
+      bt1_l4: bt1_l4 { // Bluetoothプロファイル1を選択し、レイヤー4を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
+      };
+      bt2_l2: bt2_l2 { // Bluetoothプロファイル2を選択し、レイヤー2を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
+      };
+      bt2_l4: bt2_l4 { // Bluetoothプロファイル2を選択し、レイヤー4を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
+      };
+      bt3_l2: bt3_l2 { // Bluetoothプロファイル3を選択し、レイヤー2を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
+      };
+      bt3_l4: bt3_l4 { // Bluetoothプロファイル3を選択し、レイヤー4を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
+      };
+      bt4_l2: bt4_l2 { // Bluetoothプロファイル4を選択し、レイヤー2を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
+      };
+      bt4_l3: bt4_l3 { // Bluetoothプロファイル4を選択し、レイヤー3を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
+      };
+      usb_l2: usb_l2 { // USB接続を選択し、レイヤー2を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &out OUT_USB &to LIN>;
+      };
+      usb_l4: usb_l4 { // USB接続を選択し、レイヤー4を有効化
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings = <&to QWE &out OUT_USB &to WIN>;
+      };
 
-		// lt_rsew_enter_custom: lt_rsew_enter_custom {
-        //     compatible = "zmk,behavior-layer-tap"; // Layer-Tap ビヘイビアを指定
-        //     #binding-cells = <0>; // 引数なし
+      tab_1: tab_1 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              ;
+      };
+      tab_2: tab_2 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_3: tab_3 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_4: tab_4 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_5: tab_5 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_6: tab_6 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_7: tab_7 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_8: tab_8 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_9: tab_9 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      tab_0: tab_0 { // TAB*回数
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              , <&macro_tap &kp TAB>
+              ;
+      };
+      ng_on: ng_on {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp LANG1 &kp INT4 &to NGN>
+              ;
+      };
+      ng_off: ng_off {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp LANG2 &kp INT5 &to QWE>
+              ;
+      };
+      ng_onl: ng_onl {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
+              ;
+      };
+      ng_offl: ng_offl {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          bindings
+              = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
+              ;
+      };
+      // ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
+      m_hi_con: m_hi_con {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          tap-ms = <30>;
+          wait-ms = <30>;
+          bindings
+              = <&macro_press &kp LSHFT &kp LALT>
+              , <&macro_tap &kp PSCRN>
+              , <&macro_release &kp LSHFT &kp LALT>;
+      };
+      // Excel: シート名変更マクロ
+      m_xl_rename: m_xl_rename {
+          compatible = "zmk,behavior-macro";
+          #binding-cells = <0>;
+          tap-ms = <30>;
+          wait-ms = <30>;
+          bindings
+              = <&macro_tap &kp LALT>      // リボンをアクティブ化
+              , <&macro_tap &kp H>         // ホームタブ
+              , <&macro_tap &kp O>         // 書式(Format)
+              , <&macro_tap &kp R>;        // シート名の変更(Rename)
+      };
 
-        //     // 調整したい tapping-term-ms をミリ秒で設定
-        //     // 例: デフォルトの 200ms から 250ms に延長し、誤認識を防ぐ
-        //     tapping-term-ms = <250>; 
-
-        //     // タップ時: ENTER (通常のキー送信)
-        //     // ホールド時: RSEWレイヤーへの移動
-        //     bindings = <&kp ENTER>, <&mo RSEW>; 
-        // };
-
-        bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
-        };
-
-        bt1_l2: bt1_l2 { // Bluetoothプロファイル1を選択し、レイヤー2を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 1 &to LIN>;
-        };
-
-        bt1_l4: bt1_l4 { // Bluetoothプロファイル1を選択し、レイヤー4を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
-        };
-
-        bt2_l2: bt2_l2 { // Bluetoothプロファイル2を選択し、レイヤー2を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
-        };
-
-        bt2_l4: bt2_l4 { // Bluetoothプロファイル2を選択し、レイヤー4を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
-        };
-
-        bt3_l2: bt3_l2 { // Bluetoothプロファイル3を選択し、レイヤー2を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
-        };
-
-        bt3_l4: bt3_l4 { // Bluetoothプロファイル3を選択し、レイヤー4を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
-        };
-
-        bt4_l2: bt4_l2 { // Bluetoothプロファイル4を選択し、レイヤー2を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
-        };
-
-        bt4_l3: bt4_l3 { // Bluetoothプロファイル4を選択し、レイヤー3を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
-        };
-
-        usb_l2: usb_l2 { // USB接続を選択し、レイヤー2を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &out OUT_USB &to LIN>;
-        };
-
-        usb_l4: usb_l4 { // USB接続を選択し、レイヤー4を有効化
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to QWE &out OUT_USB &to WIN>;
-        };
-
-        tab_1: tab_1 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                ;
-        };
-        tab_2: tab_2 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_3: tab_3 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_4: tab_4 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_5: tab_5 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_6: tab_6 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_7: tab_7 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_8: tab_8 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_9: tab_9 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        tab_0: tab_0 { // TAB*回数
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                , <&macro_tap &kp TAB>
-                ;
-        };
-        ng_on: ng_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG1 &kp INT4 &to NGN>
-                ;
-        };
-        ng_off: ng_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG2 &kp INT5 &to QWE>
-                ;
-        };
-        ng_onl: ng_onl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG1 &kp INT4 &to NGNL>
-                ;
-        };
-        ng_offl: ng_offl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LANG2 &kp INT5 &to LIN>
-                ;
-        };
-        // ハイコントラスト切り替え (Win: Shift + Alt + PrintScreen)
-        m_hi_con: m_hi_con {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <30>;
-            wait-ms = <30>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LALT>
-                , <&macro_tap &kp PSCRN>
-                , <&macro_release &kp LSHFT &kp LALT>;
-        };
-        // Excel: シート名変更マクロ
-        m_xl_rename: m_xl_rename {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <30>;
-            wait-ms = <30>;
-            bindings
-                = <&macro_tap &kp LALT>      // リボンをアクティブ化
-                , <&macro_tap &kp H>         // ホームタブ
-                , <&macro_tap &kp O>         // 書式(Format)
-                , <&macro_tap &kp R>;        // シート名の変更(Rename)
-        };
-
-        // ホールド: レイヤーモーメンタリ有効化 (&mo)、タップ: マクロ実行 (macro_node)
-        // ホールド動作とタップ動作の両方をキーマップから受け取る汎用的なカスタムビヘイビア
-        // macro_lt: macro_layer_tap {
-        //     compatible = "zmk,behavior-hold-tap";
-        //     label = "MACRO_LT";
-        //     #binding-cells = <2>; // 2つのパラメータ (&mo の layer, macro_node)
-        //     flavor = "tap-preferred"; // タップ優先
-        //     tapping-term-ms = <200>;
-            // 🚨 修正点: bindingsプロパティを追加
-            // ZMKの標準的なホールド・タップの要件を満たすため、ダミーとして &none を定義します。
-            // 実際のアクションはキーマップ側で渡されます。
-            // bindings = <&none &none>;
-            // bindings には、キーマップから渡される2つのアクションをプレースホルダーとして定義します。
-            // 最初のセルがホールドアクション、2番目のセルがタップアクションとして機能します。
-            // ZMKのカスタムホールド・タップでは、`#binding-cells = <2>;` を設定することで、
-            // キーマップ側で渡された最初のバインディングがホールド、2番目がタップとして内部で処理されます。
-            // 以下の例のように、bindingsに &mo や &macro_LANG1 を直接書く必要はありません。
-        // };
-        
-		// td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでmacro_LANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&lt MOV &macro_LANG1>, <&to MOV>;
-        // };
-		// td_lt_num_l2: tap_dance_layer_tap_num_l2 {  // タップでmacro_LANG2、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
-        //     compatible = "zmk,behavior-tap-dance";
-        //     #binding-cells = <0>;
-        //     tapping-term-ms = <200>;
-        //     bindings = <&lt NUM &macro_LANG2>, <&to NUM>;
-        // };
-		td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt MOVW INT2>, <&to_MOVW_i5>;
-        };
-		td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップでINT5、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&lt NUM INT5>, <&to_NUM_i5>;
-        };
+      td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
+          compatible = "zmk,behavior-tap-dance";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&lt MOVW INT2>, <&to_MOVW_i5>;
+      };
+      td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップでINT5、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
+          compatible = "zmk,behavior-tap-dance";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&lt NUM INT5>, <&to_NUM_i5>;
+      };
     };
 
     keymap {
