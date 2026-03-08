@@ -39,17 +39,6 @@
 };
 
 / {
-	// // 加速用プロセッサの定義 (参照記事の肝となる部分)
-	// // 傾きが小さいときはゆっくり、大きいときは速くキー入力を発生させるための計算用
-	// zip_p_accel: zip_p_accel {
-	// 	compatible = "zmk,input-processor-pointing-accel";
-	// 	#input-processor-cells = <0>;
-	// 	// x/y-curve: [入力値, 出力倍率] のペア
-	// 	// 100% 倒したときに最大の tick 速度が出るように調整
-	// 	x-curve = <10 100>, <50 200>, <100 300>;
-	// 	y-curve = <10 100>, <50 200>, <100 300>;
-	// };
-
 	// 左のジョイスティック（マウスカーソル移動用）
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
@@ -78,17 +67,6 @@
 			#report-on-change-only;
 		};
 	};
-
-	// // ZMK Pointing Acceleration の設定
-	// &pointer_accel {
-	// 	input-type = <INPUT_EV_REL>;
-	// 	track-remainders;
-	// 	min-factor = <100>;                 // (7)
-	// 	max-factor = <10000>;               // (8)
-	// 	speed-threshold = <1500>;           // (9)
-	// 	speed-max = <1600>;                 // (10)
-	// 	acceleration-exponent = <2>;        // (11)
-	// };
 	
 	file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
@@ -96,8 +74,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LCTRL &kp F6> // マクロキー押下時にLCTRLとF6を同時に押す
-			// , <&macro_release &kp LCTRL &kp F6> // マクロキー解放時にLCTRLとF6を同時に離す
 			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F6>
 			, <&macro_release &kp LCTRL>
@@ -109,8 +85,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp LCTRL &kp F6> // マクロキー押下時にLSHFTとLCTRLとF6を同時に押す
-			// , <&macro_release &kp LSHFT &kp LCTRL &kp F6> // マクロキー解放時にLSHFTとLCTRLとF6を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F6>
@@ -124,8 +98,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp F5> // マクロキー押下時にLSHFTとF5を同時に押す
-			// , <&macro_release &kp LSHFT &kp F5> // マクロキー解放時にLSHFTとF5を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F5>
 			, <&macro_release &kp LSHFT>
@@ -137,8 +109,6 @@
 		tap-ms = <40>;
 		#binding-cells = <0>;
 		bindings
-			// = <&macro_press &kp LSHFT &kp F6> // マクロキー押下時にLSHFTとF6を同時に押す
-			// , <&macro_release &kp LSHFT &kp F6> // マクロキー解放時にLSHFTとF6を同時に離す
 			= <&macro_press &kp LSHFT>
 			, <&macro_tap &kp F6>
 			, <&macro_release &kp LSHFT>
@@ -1083,9 +1053,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
 	};
 	zip_keybind_keys_directionM: zip_keybind_keys_directionM {
 			compatible = "zmk,input-processor-keybind";
@@ -1126,9 +1093,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_ecad_rsew: zip_keybind_keys_ecad_rsew {
 			compatible = "zmk,input-processor-keybind";
@@ -1143,9 +1107,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_ecad_ladjw: zip_keybind_keys_ecad_ladjw {
 			compatible = "zmk,input-processor-keybind";
@@ -1160,9 +1121,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_ecad_radjw: zip_keybind_keys_ecad_radjw {
 			compatible = "zmk,input-processor-keybind";
@@ -1177,9 +1135,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_ecad_rmovw: zip_keybind_keys_ecad_rmovw {
 			compatible = "zmk,input-processor-keybind";
@@ -1194,9 +1149,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_ecad_rble: zip_keybind_keys_ecad_rble {
 			compatible = "zmk,input-processor-keybind";
@@ -1211,9 +1163,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_browser: zip_keybind_keys_browser {
 			compatible = "zmk,input-processor-keybind";
@@ -1228,9 +1177,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_browser_i: zip_keybind_keys_browser_i {
 			compatible = "zmk,input-processor-keybind";
@@ -1245,9 +1191,6 @@
 			wait-ms = <100>;
 			tap-ms = <50>;
 			mode = <1>;
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
     };
 	zip_keybind_keys_media: zip_keybind_keys_media {
 			compatible = "zmk,input-processor-keybind";
