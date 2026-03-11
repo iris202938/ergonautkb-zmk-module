@@ -50,199 +50,223 @@ combos {
     // 12 13 14 15 16 17	18 19 20 21 22 23
     // 24 25 26 27 28 29	30 31 32 33 34 35
     //          36 37 38	39 40 41 
-  combo_ng_on {
-      timeout-ms = <200>;
-      key-positions = <18 19>; // H, Jのキー位置に書き換えてください
-      bindings = <&ng_on>;
-      layers = <QWE>; // デフォルトレイヤーが0の前提
-  };
-  combo_ng_off {
-      timeout-ms = <200>;
-      key-positions = <16 17>; // F, Gのキー位置に書き換えてください
-      bindings = <&ng_off>;
-      layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
-  };
-  combo_ng_onl {
-      timeout-ms = <200>;
-      key-positions = <18 19>; // H, Jのキー位置に書き換えてください
-      bindings = <&ng_onl>;
-      layers = <LIN>; // デフォルトレイヤーがLINの前提
-  };
-  combo_ng_offl {
-      timeout-ms = <200>;
-      key-positions = <16 17>; // F, Gのキー位置に書き換えてください
-      bindings = <&ng_offl>;
-      layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
-  };
-  combo_ESCL {
-    timeout-ms = <80>;
-    key-positions = <0 12>;
-    layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
-    bindings = <&kp ESC>;
-  };
-  combo_ESCR {
-    timeout-ms = <80>;
-    key-positions = <11 23>;
-    layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
-    bindings = <&kp ESC>;
-  };
-  combo_TSHIFT {
-    timeout-ms = <80>;
-    key-positions = <36 41>;
-    layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-    bindings = <&kp RSHIFT>;
-  };
-  combo_TSHIFTN {
-    timeout-ms = <80>;
-    key-positions = <36 41>;
-    layers = <NGN NIC NGNL NICL>;
-    bindings = <&qm RSHIFT>;
-  };
-  wind_l {
-        bindings = <&win_left>;
-        key-positions = <11 12>;
-        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-        timeout-ms = <80>;
+    combo_ng_on {
+        timeout-ms = <200>;
+        key-positions = <18 19>; // H, Jのキー位置に書き換えてください
+        bindings = <&ng_on>;
+        layers = <QWE>; // デフォルトレイヤーが0の前提
     };
-    wind_r {
-        bindings = <&win_right>;
-        key-positions = <12 13>;
-        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-        timeout-ms = <80>;
+    combo_ng_off {
+        timeout-ms = <200>;
+        key-positions = <16 17>; // F, Gのキー位置に書き換えてください
+        bindings = <&ng_off>;
+        layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
     };
-  combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
-    timeout-ms = <80>;
-    key-positions = <31 32>;
-    layers = <RSEW>;
-    bindings = <&alt_int4>; //変換
-  };
-  combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
-    timeout-ms = <80>;
-    key-positions = <32 33>;
-    layers = <RSEW>;
-    bindings = <&alt_int5>; //無変換
-  };
-  combo_e_key { // ECADの文字修正
-    timeout-ms = <80>;
-    key-positions = <30 31>;
-    layers = <RSEW>;
-    bindings = <&kp E>;
-  };
-  combo_t_key { // ECADの文字
-    timeout-ms = <80>;
-    key-positions = <33 34>;
-    layers = <RSEW>;
-    bindings = <&kp T>;
-  };
-  combo_INT5_G { // ECADの端点再設定(AHK)
-    timeout-ms = <80>;
-    key-positions = <23 35>;
-    layers = <NGNL NICL WIN>;
-    bindings = <&int5_g>;
-  };
-  combo_exl_fill { // Excelのオートフィル
-    timeout-ms = <80>;
-    key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
-    layers = <RSEW>;
-    bindings = <&exl_fill>;
-  };
-  combo_m_xl_rename { // Excelのシート名変更マクロ
-    timeout-ms = <80>;
-    key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
-    layers = <RSEW>;
-    bindings = <&m_xl_rename>;
-  };
-  combo_CAPSWORD {
-    timeout-ms = <80>;
-    key-positions = <24 35>;
-    layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-    bindings = <&caps_word>;
-  };
-  combo_to_LIN {
-    timeout-ms = <80>;
-    key-positions = <36 41>;
-    layers = <ADJ ADJW>;
-    bindings = <&to LIN>;
-  };
-  combo_MB1 {
-    timeout-ms = <60>;
-    key-positions = <31 32>;
-    layers = <LWR LWRW>;
-    bindings = <&mkp MB1>;
-  };
-  combo_MB2 {
-    timeout-ms = <60>;
-    key-positions = <32 33>;
-    layers = <LWR LWRW>;
-    bindings = <&mkp MB2>;
-  };
-  combo_MB3 {
-    timeout-ms = <60>;
-    key-positions = <31 33>;
-    layers = <LWR LWRW>;
-    bindings = <&mkp MB3>;
-  };
+    combo_ng_onl {
+        timeout-ms = <200>;
+        key-positions = <18 19>; // H, Jのキー位置に書き換えてください
+        bindings = <&ng_onl>;
+        layers = <LIN>; // デフォルトレイヤーがLINの前提
+    };
+    combo_ng_offl {
+        timeout-ms = <200>;
+        key-positions = <16 17>; // F, Gのキー位置に書き換えてください
+        bindings = <&ng_offl>;
+        layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
+    };
+    combo_ESCL {
+        timeout-ms = <80>;
+        key-positions = <0 12>;
+        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        bindings = <&kp ESC>;
+    };
+    combo_ESCR {
+        timeout-ms = <80>;
+        key-positions = <11 23>;
+        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        bindings = <&kp ESC>;
+    };
+    combo_LGUI {
+        timeout-ms = <80>;
+        key-positions = <12 24>;
+        layers = <LIN NGNL NICL WIN LWRW RSEW ADJW MOVW NUM>;
+        bindings = <&kp LGUI>;
+    };
+    combo_RALT {
+        timeout-ms = <80>;
+        key-positions = <11 23>;
+        layers = <LIN NGNL NICL WIN LWRW RSEW ADJW MOVW NUM>;
+        bindings = <&kp RALT>;
+    };
+    combo_RGUI {
+        timeout-ms = <80>;
+        key-positions = <23 35>;
+        layers = <QWE NGN NIC LWR RSE ADJ MOV>;
+        bindings = <&kp RGUI>;
+    };
+    combo_LALT {
+        timeout-ms = <80>;
+        key-positions = <12 24>;
+        layers = <QWE NGN NIC LWR RSE ADJ MOV>;
+        bindings = <&kp LALT>;
+    };
+    combo_TSHIFT {
+        timeout-ms = <80>;
+        key-positions = <36 41>;
+        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+        bindings = <&kp RSHIFT>;
+    };
+    combo_TSHIFTN {
+        timeout-ms = <80>;
+        key-positions = <36 41>;
+        layers = <NGN NIC NGNL NICL>;
+        bindings = <&qm RSHIFT>;
+    };
+    // wind_l {
+    //     bindings = <&win_left>;
+    //     key-positions = <11 12>;
+    //     layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+    //     timeout-ms = <80>;
+    // };
+    // wind_r {
+    //     bindings = <&win_right>;
+    //     key-positions = <12 13>;
+    //     layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+    //     timeout-ms = <80>;
+    // };
+    combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+        timeout-ms = <80>;
+        key-positions = <31 32>;
+        layers = <RSEW>;
+        bindings = <&alt_int4>; //変換
+    };
+    combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
+        timeout-ms = <80>;
+        key-positions = <32 33>;
+        layers = <RSEW>;
+        bindings = <&alt_int5>; //無変換
+    };
+    combo_e_key { // ECADの文字修正
+        timeout-ms = <80>;
+        key-positions = <30 31>;
+        layers = <RSEW>;
+        bindings = <&kp E>;
+    };
+    combo_t_key { // ECADの文字
+        timeout-ms = <80>;
+        key-positions = <33 34>;
+        layers = <RSEW>;
+        bindings = <&kp T>;
+    };
+    combo_INT5_G { // ECADの端点再設定(AHK)
+        timeout-ms = <80>;
+        key-positions = <35 39>;
+        layers = <NGNL NICL WIN>;
+        bindings = <&int5_g>;
+    };
+    combo_exl_fill { // Excelのオートフィル
+        timeout-ms = <80>;
+        key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
+        layers = <RSEW>;
+        bindings = <&exl_fill>;
+    };
+    combo_m_xl_rename { // Excelのシート名変更マクロ
+        timeout-ms = <80>;
+        key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
+        layers = <RSEW>;
+        bindings = <&m_xl_rename>;
+    };
+    combo_CAPSWORD {
+        timeout-ms = <80>;
+        key-positions = <24 35>;
+        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+        bindings = <&caps_word>;
+    };
+    combo_to_LIN {
+        timeout-ms = <80>;
+        key-positions = <36 41>;
+        layers = <ADJ ADJW>;
+        bindings = <&to LIN>;
+    };
+    combo_MB1 {
+        timeout-ms = <60>;
+        key-positions = <31 32>;
+        layers = <LWR LWRW>;
+        bindings = <&mkp MB1>;
+    };
+    combo_MB2 {
+        timeout-ms = <60>;
+        key-positions = <32 33>;
+        layers = <LWR LWRW>;
+        bindings = <&mkp MB2>;
+    };
+    combo_MB3 {
+        timeout-ms = <60>;
+        key-positions = <31 33>;
+        layers = <LWR LWRW>;
+        bindings = <&mkp MB3>;
+    };
 
-  tab_1 {
-    bindings = <&tab_1>;
-    key-positions = <12 31>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
+    tab_1 {
+        bindings = <&tab_1>;
+        key-positions = <12 31>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
     };
-  tab_2 {
-    bindings = <&tab_2>;
-    key-positions = <12 32>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_3 {
-    bindings = <&tab_3>;
-    key-positions = <12 33>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_4 {
-    bindings = <&tab_4>;
-    key-positions = <12 19>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_5 {
-    bindings = <&tab_5>;
-    key-positions = <12 20>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_6 {
-    bindings = <&tab_6>;
-    key-positions = <12 21>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_7 {
-    bindings = <&tab_7>;
-    key-positions = <12 7>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_8 {
-    bindings = <&tab_8>;
-    key-positions = <12 8>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_9 {
-    bindings = <&tab_9>;
-    key-positions = <12 9>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
-  tab_0 {
-    bindings = <&tab_0>;
-    key-positions = <12 10>;
-    layers = <QWE LIN NUM>;
-    timeout-ms = <80>;
-  };
+    tab_2 {
+        bindings = <&tab_2>;
+        key-positions = <12 32>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_3 {
+        bindings = <&tab_3>;
+        key-positions = <12 33>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_4 {
+        bindings = <&tab_4>;
+        key-positions = <12 19>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_5 {
+        bindings = <&tab_5>;
+        key-positions = <12 20>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_6 {
+        bindings = <&tab_6>;
+        key-positions = <12 21>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_7 {
+        bindings = <&tab_7>;
+        key-positions = <12 7>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_8 {
+        bindings = <&tab_8>;
+        key-positions = <12 8>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_9 {
+        bindings = <&tab_9>;
+        key-positions = <12 9>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
+    tab_0 {
+        bindings = <&tab_0>;
+        key-positions = <12 10>;
+        layers = <QWE LIN NUM>;
+        timeout-ms = <80>;
+    };
 
 	combo_JPQMARKL {
 		timeout-ms = <50>;
@@ -3909,32 +3933,32 @@ combos {
             , <&macro_release &kp INT5>
             ;
     };
-    win_right: win_right { // デスクトップ移動進む
-        compatible = "zmk,behavior-macro";
-        wait-ms = <40>;
-        tap-ms = <40>;
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LGUI>
-            , <&macro_press &kp LCTRL>
-            , <&macro_tap &kp RIGHT>
-            , <&macro_release &kp LCTRL>
-            , <&macro_release &kp LGUI>
-            ;
-    };
-    win_left: win_left { // デスクトップ移動戻る
-        compatible = "zmk,behavior-macro";
-        wait-ms = <40>;
-        tap-ms = <40>;
-        #binding-cells = <0>;
-        bindings
-            = <&macro_press &kp LGUI>
-            , <&macro_press &kp LCTRL>
-            , <&macro_tap &kp LEFT>
-            , <&macro_release &kp LCTRL>
-            , <&macro_release &kp LGUI>
-            ;
-    };
+    // win_right: win_right { // デスクトップ移動進む
+    //     compatible = "zmk,behavior-macro";
+    //     wait-ms = <40>;
+    //     tap-ms = <40>;
+    //     #binding-cells = <0>;
+    //     bindings
+    //         = <&macro_press &kp LGUI>
+    //         , <&macro_press &kp LCTRL>
+    //         , <&macro_tap &kp RIGHT>
+    //         , <&macro_release &kp LCTRL>
+    //         , <&macro_release &kp LGUI>
+    //         ;
+    // };
+    // win_left: win_left { // デスクトップ移動戻る
+    //     compatible = "zmk,behavior-macro";
+    //     wait-ms = <40>;
+    //     tap-ms = <40>;
+    //     #binding-cells = <0>;
+    //     bindings
+    //         = <&macro_press &kp LGUI>
+    //         , <&macro_press &kp LCTRL>
+    //         , <&macro_tap &kp LEFT>
+    //         , <&macro_release &kp LCTRL>
+    //         , <&macro_release &kp LGUI>
+    //         ;
+    // };
     exl_fill: excel_fill_menu { // Excelのフィルター
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -4215,178 +4239,178 @@ combos {
     };
 };
 
-  keymap {
-      compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-    default_layer {
-      display-name = "QWER";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &kp LALT        &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			  &kp I           &kp O           &kp P           &kp RGUI
-          &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			  &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
-          &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			  &kp COMMA       &kp DOT         &kp FSLH        &mt RSHFT MINUS
-                                                          &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt MOV LANG1
-      >;
+        default_layer {
+            display-name = "QWER";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &kp LALT        &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			  &kp I           &kp O           &kp P           &kp RGUI
+                &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			  &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
+                &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			  &kp COMMA       &kp DOT         &kp FSLH        &mt RSHFT MINUS
+                                                                &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE &lt MOV LANG1
+            >;
+        };
+        naginata_layer {
+            display-name = "NGN";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qm LALT        &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qm RGUI
+                &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
+                &qmt LSHFT LS(TAB) &ng Z        &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qmt RSHFT MINUS
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	      &trans
+            >;
+        };
+        nicola_layer {
+            display-name = "NIC";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qm LALT       &macro_JPPERIOD  &macro_KA       &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qm RGUI
+                &qmt LCTRL TAB &macro_U         &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
+                &qmt LSHFT LS(TAB) &macro_JPTEN &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qmt RSHFT MINUS
+                                                                &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
+            >;
+        };
+        linux_layer {
+            display-name = "LIN";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &kp LGUI        &kp Q           &kp W           &kp E           &kp R           &kp T		      &kp Y           &kp U           &kp I           &kp O           &kp P           &kp RALT
+                &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		      &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
+                &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B		      &kp N           &kp M           &kp COMMA		  &kp DOT         &kp FSLH        &mt RSHFT MINUS
+                                                                &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	  &lt RSEW ENTER  &mt RSHFT SPACE &lt MOVW LANG1
+            >;
+        };
+        naginatal_layer {
+            display-name = "NGNL";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qm LGUI        &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qm RALT
+                &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
+                &qmt LSHFT LS(TAB) &ng Z        &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qmt RSHFT MINUS
+                                                                &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	      &trans
+            >;
+        };
+        nicolaL_layer {
+            display-name = "NICL";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &qm LGUI        &macro_JPPERIOD &macro_KA       &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qm RALT
+                &qmt LCTRL TAB  &macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
+                &qmt LSHFT LS(TAB) &macro_JPTEN &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qmt RSHFT MINUS
+                                                                &mo NUM         &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
+            >;
+        };
+        windows_layer {
+            display-name = "WIN";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &kp LGUI        &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LALT
+                &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
+                &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt RSHFT MINUS
+                                                                &lt NUM INT5    &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp INT4        &td_lt_movw_i2
+            >;
+        };        
+        lower_layer {
+            display-name = "LWR";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &trans
+                &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LC(C)
+                &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2        &mkp MB2        &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(V)       &kp LC(X)           
+                                                                &kp LSHFT       &macro_LANG2    &trans          &trans          &kp LS(LC(V))   &kp RSHFT
+            >;
+        };
+        lowerw_layer {
+            display-name = "LWRW";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &trans
+                &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
+                &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2 	    &mkp MB2        &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &kp LG(X)
+                                                                &kp LSHFT       &macro_INT5L	&trans          &trans          &kp LS(LC(V))   &kp RSHFT
+            >;
+        };
+        raise_layer {
+            display-name = "RSE";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &trans		    &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &trans
+                &mt LCTRL GRAVE &macro_JPN1	    &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
+                &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &kp LG(V)       &kp LG(X)
+                                                                &kp LSHFT       &kp SPACE       &trans          &trans          &macro_LANG1    &kp RSHFT
+            >;
+        };
+        raisew_layer {
+            display-name = "RSEW";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &trans	        &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	  &kp F8          &kp F9          &kp F10         &trans
+                &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	  &kp N8          &kp N9          &kp N0          &kp LC(C)
+                &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	  &kp LBKT        &kp RBKT        &kp LC(V)       &kp LC(X)
+                                                                &kp LSHFT       &kp SPACE       &trans          &trans          &macro_INT4L	  &kp RSHFT
+            >;
+        };
+        adjust_layer {
+            display-name = "ADJ";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &kp LALT        &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &trans
+                &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    	  &kp RCTRL
+                &trans          &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT))  &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &mt RSHFT INS
+                                                                &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
+            >;
+        };
+        adjustw_layer {
+            display-name = "ADJW";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &kp LGUI        &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &trans
+                &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
+                &trans          &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &mt RSHFT INS
+                                                                &to QWE         &grave_uc       &trans         &trans           &tilde_uc	      &to WIN
+            >;
+        };
+        move_layer {
+            display-name = "MOV";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &mt LALT SPACE  &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP       &trans
+                &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &mt RCTRL MB2
+                &kp LG(BSPC)    &kp W           &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)     &mt RSHFT ESC
+                                                                &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &trans
+            >;
+        };
+        movew_layer {
+            display-name = "MOVW";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &mt LGUI SPACE  &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	  &trans
+                &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	  &mt RCTRL MB2
+                &kp LG(BSPC)    &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)	  &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	  &mt RSHFT ESC
+                                                                &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to_WIN_i5
+            >;
+        };
+        numpad_layer {
+            display-name = "NUM";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &mt LGUI N0     &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &trans
+                &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
+                &trans          &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &kp KP_NLCK
+                                                                &trans          &pr_pg		    &nx_pg       	&kp KP_ENTER    &kp UNDER       &kp SPACE
+            >;
+        };
+        bluetooth_layer {
+            display-name = "BLE";
+            bindings = <
+            // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+                &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &m_hi_con       &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
+                &kp LC(LG(H))   &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))   &trans          &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))   &kp LC(LG(W))
+                &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l2    	  &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
+                                                                &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
+            >;
+        };
     };
-    naginata_layer {
-      display-name = "NGN";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &qm LALT        &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qm RGUI
-          &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
-          &qmt LSHFT LS(TAB) &ng Z        &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qmt RSHFT MINUS
-                                                          &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	      &trans
-      >;
-    };
-    nicola_layer {
-      display-name = "NIC";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &qm LALT       &macro_JPPERIOD  &macro_KA       &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qm RGUI
-          &qmt LCTRL TAB &macro_U         &macro_SI	      &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
-          &qmt LSHFT LS(TAB) &macro_JPTEN &macro_HI	      &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qmt RSHFT MINUS
-                                                          &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
-      >;
-    };
-    linux_layer {
-      display-name = "LIN";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &kp LGUI        &kp Q           &kp W           &kp E           &kp R           &kp T		      &kp Y           &kp U           &kp I           &kp O           &kp P           &kp RALT
-          &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		      &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
-          &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B		      &kp N           &kp M           &kp COMMA		  &kp DOT         &kp FSLH        &mt RSHFT MINUS
-                                                          &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	  &lt RSEW ENTER  &mt RSHFT SPACE &lt MOVW LANG1
-      >;
-    };
-    naginatal_layer {
-      display-name = "NGNL";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &qm LGUI        &ng Q           &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qm RALT
-          &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
-          &qmt LSHFT LS(TAB) &ng Z        &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qmt RSHFT MINUS
-                                                          &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	      &trans
-      >;
-    };
-    nicolaL_layer {
-      display-name = "NICL";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &qm LGUI        &macro_JPPERIOD &macro_KA       &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qm RALT
-          &qmt LCTRL TAB  &macro_U        &macro_SI	      &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
-          &qmt LSHFT LS(TAB) &macro_JPTEN &macro_HI	      &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qmt RSHFT MINUS
-                                                          &mo NUM         &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
-      >;
-    };
-    windows_layer {
-      display-name = "WIN";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &kp LGUI        &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &kp LALT
-          &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
-          &mt LSHFT LS(TAB) &kp Z         &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &mt RSHFT MINUS
-                                                          &lt NUM INT5    &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp INT4        &td_lt_movw_i2
-      >;
-    };        
-    lower_layer {
-      display-name = "LWR";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &trans
-          &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LC(C)
-          &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2        &mkp MB2        &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(V)       &kp LC(X)           
-                                                          &kp LSHFT       &macro_LANG2    &trans          &trans          &kp LS(LC(V))   &kp RSHFT
-      >;
-    };
-    lowerw_layer {
-      display-name = "LWRW";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &trans
-          &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	  &mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-          &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2 	      &mkp MB2        &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &kp LG(X)
-                                                          &kp LSHFT       &macro_INT5L	  &trans          &trans          &kp LS(LC(V))   &kp RSHFT
-      >;
-    };
-    raise_layer {
-      display-name = "RSE";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &trans		  &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &trans
-          &mt LCTRL GRAVE &macro_JPN1	  &macro_JPN2	  &macro_JPN3     &macro_JPN4     &macro_JPN5	  &macro_JPN6     &macro_JPN7     &macro_JPN8	  &macro_JPN9     &macro_JPN0	  &kp LG(C)
-          &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &kp LG(V)       &kp LG(X)
-                                                          &kp LSHFT       &kp SPACE       &trans          &trans          &macro_LANG1    &kp RSHFT
-      >;
-    };
-    raisew_layer {
-      display-name = "RSEW";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &trans	      &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	  &kp F8          &kp F9          &kp F10         &trans
-          &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	  &kp N8          &kp N9          &kp N0          &kp LC(C)
-          &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	  &kp LBKT        &kp RBKT        &kp LC(V)       &kp LC(X)
-                                                          &kp LSHFT       &kp SPACE       &trans          &trans          &macro_INT4L	  &kp RSHFT
-      >;
-    };
-    adjust_layer {
-      display-name = "ADJ";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &kp LALT        &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &trans
-          &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    	  &kp RCTRL
-          &trans          &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT))   &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &mt RSHFT INS
-                                                          &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
-      >;
-    };
-    adjustw_layer {
-      display-name = "ADJW";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &kp LGUI        &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &trans
-          &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-          &trans          &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &mt RSHFT INS
-                                                          &to QWE         &grave_uc       &trans         &trans           &tilde_uc	      &to WIN
-      >;
-    };
-    move_layer {
-      display-name = "MOV";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &mt LALT SPACE  &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP       &trans
-          &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &mt RCTRL MB2
-          &kp LG(BSPC)    &kp W           &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)     &mt RSHFT ESC
-                                                          &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &trans
-      >;
-    };
-    movew_layer {
-      display-name = "MOVW";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &mt LGUI SPACE  &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	  &trans
-          &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	  &mt RCTRL MB2
-          &kp LG(BSPC)    &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)     &kp LC(Z)       &kp LC(PG_UP)	  &kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	  &mt RSHFT ESC
-                                                          &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to_WIN_i5
-      >;
-    };
-    numpad_layer {
-      display-name = "NUM";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &mt LGUI N0     &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &trans
-          &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
-          &trans          &alt_left	      &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &kp KP_NLCK
-                                                          &trans          &pr_pg		  &nx_pg       	  &kp KP_ENTER    &kp UNDER       &kp SPACE
-      >;
-    };
-    bluetooth_layer {
-      display-name = "BLE";
-      bindings = <
-      // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-          &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &m_hi_con       &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
-          &kp LC(LG(H))   &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))   &trans          &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))   &kp LC(LG(W))
-          &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l2    	  &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
-                                                          &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
-      >;
-    };
-  };
 };
