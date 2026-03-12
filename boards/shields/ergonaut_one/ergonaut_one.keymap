@@ -1851,7 +1851,7 @@ combos {
         layers = <NIC NICL>;
         bindings = <&macro_PATTU>;
     };
-    };
+};
 
     // ***** ここからが重要: 余分な "/ {" を削除し、既存のルートノード内で定義を続ける *****
     macro_LANG1: macro_LANG1 {
@@ -3925,6 +3925,16 @@ combos {
         , <&macro_tap     &kp INT5>
         , <&macro_release &kp RALT>
         ;
+    };
+    // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
+    tap_to_lang1: tap_to_lang1 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>;
+        tap-ms = <0>;
+        bindings
+            = <&to 0>          // 0: 移動先のレイヤー番号
+            , <&kp LANG1>;     // LANG1キーを送信
     };	
 
     conditional_layers {
@@ -3940,7 +3950,15 @@ combos {
         };
     }; // conditional_layers の閉じ括弧の後にセミコロンが必要
 	
-	behaviors {
+behaviors {
+    // ホールドでMO、タップでマクロを実行する設定
+    hm_mo_to: hm_mo_to {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&tap_to_lang1>;
+    };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -4208,7 +4226,7 @@ combos {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
-                                                            &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
+                                                            &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &hm_mo_to 13 0
             >;
         };
         linux_layer {
