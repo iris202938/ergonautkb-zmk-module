@@ -3960,7 +3960,7 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 13>, <&t_t_lang1>;
+        bindings = <&mo 13 &t_t_lang1>;
     };
     // LANG2用のHold-Tap: ホールドでLayer 15, タップでマクロ(t_t_lang2)
     ht_lang2: ht_lang2 {
@@ -3968,7 +3968,7 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 15>, <&t_t_lang2>;
+        bindings = <&mo 15 &t_t_lang2>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
