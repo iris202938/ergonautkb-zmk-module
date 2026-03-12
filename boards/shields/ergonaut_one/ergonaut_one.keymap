@@ -3927,15 +3927,18 @@ combos {
         ;
     };
     // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
-    tap_to_lang1: tap_to_lang1 {
+    // LANG1用のマクロ（既出）
+    t_t_lang1: t_t_lang1 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <0>;
-        bindings
-            = <&to 0>          // 0: 移動先のレイヤー番号
-            , <&kp LANG1>;     // LANG1キーを送信
-    };	
+        bindings = <&to 2>, <&kp LANG1>; // レイヤー2（NIC）に戻る
+    };
+    // LANG2用のマクロ（追加）
+    t_t_lang2: t_t_lang2 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to 0>, <&kp LANG2>; // レイヤー0（QWE）に戻る
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -3952,12 +3955,12 @@ combos {
 	
 behaviors {
     // ホールドでMO、タップでマクロを実行する設定
-    hm_mo_to: hm_mo_to {
+    mo_to: mo_to { // レイヤー0（QWE）に戻る
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&tap_to_lang1>;
+        bindings = <&mo>, <&macro_tap>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
@@ -4206,7 +4209,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			&kp K           &kp L           &kp SEMI        &mt RCTRL SQT
             &kp LALT        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &kp FSLH        &kp RGUI
-                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt MOV LANG1
+                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&mo_macro 13 t_t_lang1
             >;
         };
         naginata_layer {
@@ -4226,7 +4229,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
-                                                            &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &hm_mo_to 13 0
+                                                    &mo_macro 15 t_t_lang2  &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
             >;
         };
         linux_layer {
