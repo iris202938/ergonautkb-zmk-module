@@ -6,10 +6,15 @@ manifest:
       url-base: https://github.com/Reinmuth66/
     - name: zettaface
       url-base: https://github.com/zettaface
+    - name: eswai # ここを追加
+      url-base: https://github.com/eswai
+    # - name: oleksandrmaslov
+    #   url-base: https://github.com/oleksandrmaslov
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
+      revision: v0.3
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: Reinmuth66
@@ -20,5 +25,11 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
+    - name: zmk-naginata # ここを追加
+      remote: eswai
+      revision: main
+    # - name: zmk-pointing-acceleration
+    #   remote: oleksandrmaslov
+    #   revision: main
   self:
     path: config
