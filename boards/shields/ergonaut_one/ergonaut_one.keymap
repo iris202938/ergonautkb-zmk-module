@@ -3928,24 +3928,24 @@ combos {
     };
     // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
     // LANG1用のマクロ
-    t_t_lang1: t_t_lang1 {
+    t_lang1: t_lang1 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to 2 &kp LANG1>; // レイヤー2（NIC）に戻る
     };
     // LANG2用のマクロ
-    t_t_lang2: t_t_lang2 {
+    t_lang2: t_lang2 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to 0 &kp LANG2>; // レイヤー0（QWE）に戻る
     };
-    t_t_lang1L: t_t_lang1L {
+    t_lang1L: t_lang1L {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to 5 &kp LANG1>; // レイヤー5（NICL）に戻る
     };
     // LANG2用のマクロ
-    t_t_lang2L: t_t_lang2L {
+    t_lang2L: t_lang2L {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to 3 &kp LANG2>; // レイヤー3（LIN）に戻る
@@ -3971,7 +3971,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_t_lang1>;
+        bindings = <&mo>, <&t_lang1>;
     };
     // LANG2用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_t_lang2)
     ht_lang2: ht_lang2 {
@@ -3979,7 +3979,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_t_lang2>;
+        bindings = <&mo>, <&t_lang2>;
     };
     // LANG1用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_t_lang1L)
     ht_lang1L: ht_lang1L {
@@ -3987,7 +3987,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_t_lang1L>;
+        bindings = <&mo>, <&t_lang1L>;
     };
     // LANG2用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_t_lang2L)
     ht_lang2L: ht_lang2L {
@@ -3995,7 +3995,7 @@ behaviors {
         #binding-cells = <2>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_t_lang2L>;
+        bindings = <&mo>, <&t_lang2L>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
