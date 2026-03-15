@@ -3931,13 +3931,13 @@ combos {
     t_t_lang1: t_t_lang1 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&to 2>, <&kp LANG1>; // レイヤー2（NIC）に戻る
+        bindings = <&to 2 &kp LANG1>; // レイヤー2（NIC）に戻る
     };
     // LANG2用のマクロ
     t_t_lang2: t_t_lang2 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&to 0>, <&kp LANG2>; // レイヤー0（QWE）に戻る
+        bindings = <&to 0 &kp LANG2>; // レイヤー0（QWE）に戻る
     };
 
     conditional_layers {
@@ -3960,7 +3960,7 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 13>, <&t_t_lang1>;
+        bindings = <&mo 13 &t_t_lang1>;
     };
     // LANG2用のHold-Tap: ホールドでLayer 15, タップでマクロ(t_t_lang2)
     ht_lang2: ht_lang2 {
@@ -3968,7 +3968,7 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 15>, <&t_t_lang2>;
+        bindings = <&mo 15 &t_t_lang2>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
