@@ -3933,7 +3933,6 @@ combos {
         #binding-cells = <0>;
         bindings = <&to 2 &kp LANG1>; // レイヤー2（NIC）に戻る
     };
-    // LANG2用のマクロ
     t_lang2: t_lang2 {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -3944,11 +3943,20 @@ combos {
         #binding-cells = <0>;
         bindings = <&to 5 &kp LANG1>; // レイヤー5（NICL）に戻る
     };
-    // LANG2用のマクロ
     t_lang2L: t_lang2L {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to 3 &kp LANG2>; // レイヤー3（LIN）に戻る
+    };
+    t_int4: t_int4 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to 5 &kp INT4>; // レイヤー5（NICL）に戻る
+    };
+    t_int5: t_int5 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to 3 &kp INT5>; // レイヤー3（LIN）に戻る
     };
 
     conditional_layers {
@@ -3996,6 +4004,22 @@ behaviors {
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
         bindings = <&mo>, <&t_lang2L>;
+    };
+    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int4)
+    ht_it4: ht_it4 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_int4>;
+    };
+    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int5)
+    ht_it5: ht_it5 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_int5>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
@@ -4274,7 +4298,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T		    &kp Y         	&kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		    &kp H         	&kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B		    &kp N         	&kp M           &kp COMMA		&kp DOT         &kp FSLH        &kp RALT
-                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &ht_lg1L 14 0
+                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &ht_it4 14 0
             >;
         };
         naginatal_layer {
@@ -4294,7 +4318,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LGUI		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
-                                                            &ht_lg2L 15 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
+                                                            &ht_it5 15 0    &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
             >;
         };
         windows_layer {
