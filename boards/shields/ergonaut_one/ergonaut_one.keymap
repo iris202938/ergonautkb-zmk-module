@@ -3954,21 +3954,6 @@ combos {
     }; // conditional_layers の閉じ括弧の後にセミコロンが必要
 	
 behaviors {
-    // ホールドでMO、タップでマクロを実行する設定
-    ht_lang1: ht_lang1 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&tap_to_lang1>;
-    };
-    ht_lang2: ht_lang2 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&tap_to_lang2>;
-    };
     // LANG1用のHold-Tap: ホールドでLayer 13, タップでマクロ(t_t_lang1)
     ht_lang1: ht_lang1 {
         compatible = "zmk,behavior-hold-tap";
