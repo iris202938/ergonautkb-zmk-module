@@ -3939,24 +3939,6 @@ combos {
         #binding-cells = <0>;
         bindings = <&to 0>, <&kp LANG2>; // レイヤー0（QWE）に戻る
     };
-    // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
-    tap_to_lang1: tap_to_lang1 {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings
-            = <&to 2>          // 2: 移動先のレイヤー番号
-            , <&kp LANG1>;     // LANG1キーを送信
-    };tap_to_lang2: tap_to_lang2 {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings
-            = <&to 0>          // 0: 移動先のレイヤー番号
-            , <&kp LANG2>;     // LANG2キーを送信
-    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
