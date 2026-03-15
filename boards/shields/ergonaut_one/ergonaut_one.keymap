@@ -3960,7 +3960,8 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 13 &t_t_lang1>;
+        bindings = <&mo>, <&t_t_lang1>;
+        // bindings = <&mo 13 &t_t_lang1>;
     };
     // LANG2用のHold-Tap: ホールドでLayer 15, タップでマクロ(t_t_lang2)
     ht_lang2: ht_lang2 {
@@ -3968,7 +3969,8 @@ behaviors {
         #binding-cells = <0>;
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo 15 &t_t_lang2>;
+        bindings = <&mo>, <&t_t_lang2>;
+        // bindings = <&mo 15 &t_t_lang2>;
     };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
@@ -4217,7 +4219,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			&kp K           &kp L           &kp SEMI        &mt RCTRL SQT
             &kp LALT        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &kp FSLH        &kp RGUI
-                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&ht_lang1
+                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&ht_lang1 13
             >;
         };
         naginata_layer {
@@ -4237,7 +4239,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
-                                                            &ht_lang2       &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
+                                                            &ht_lang2 15    &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
             >;
         };
         linux_layer {
