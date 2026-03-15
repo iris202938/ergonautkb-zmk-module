@@ -97,7 +97,12 @@ combos {
         layers = <NGN NIC NGNL NICL>;
         bindings = <&qm RSHIFT>;
     };
-    
+    combo_CAPSWORD {
+        timeout-ms = <80>;
+        key-positions = <24 35>;
+        layers = <QWE LIN>;
+        bindings = <&caps_word>;
+    };    
     combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
         timeout-ms = <80>;
         key-positions = <31 32>;
@@ -140,12 +145,7 @@ combos {
         layers = <RSEW>;
         bindings = <&m_xl_rename>;
     };
-    combo_CAPSWORD {
-        timeout-ms = <80>;
-        key-positions = <24 35>;
-        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
-        bindings = <&caps_word>;
-    };
+
     combo_to_LIN {
         timeout-ms = <80>;
         key-positions = <36 41>;
