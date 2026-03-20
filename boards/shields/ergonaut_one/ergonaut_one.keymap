@@ -3926,37 +3926,33 @@ combos {
         , <&macro_release &kp RALT>
         ;
     };
-    // // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
-    // // LANG1用のマクロ
-    // t_t_lang1: t_t_lang1 {
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     bindings = <&to 2>, <&kp LANG1>; // レイヤー2（NIC）に戻る
-    // };
-    // // LANG2用のマクロ
-    // t_t_lang2: t_t_lang2 {
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     bindings = <&to 0>, <&kp LANG2>; // レイヤー0（QWE）に戻る
-    // };
-    // // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
-    // tap_to_lang1: tap_to_lang1 {
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     wait-ms = <0>;
-    //     tap-ms = <0>;
-    //     bindings
-    //         = <&to 2>          // 2: 移動先のレイヤー番号
-    //         , <&kp LANG1>;     // LANG1キーを送信
-    // };tap_to_lang2: tap_to_lang2 {
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     wait-ms = <0>;
-    //     tap-ms = <0>;
-    //     bindings
-    //         = <&to 0>          // 0: 移動先のレイヤー番号
-    //         , <&kp LANG2>;     // LANG2キーを送信
-    // };
+    // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
+    // LANG1用のマクロ
+    t_lang1: t_lang1 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to NIC &kp LANG1>; // レイヤー2（NIC）に戻る
+    };
+    t_lang2: t_lang2 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &kp LANG2>; // レイヤー0（QWE）に戻る
+    };
+    t_int4: t_int4 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to NICL &kp INT4>; // レイヤー5（NICL）に戻る
+    };
+    t_int5: t_int5 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>; // 全体の基本遅延
+        tap-ms = <10>;
+        bindings 
+            = <&to LIN>
+            , <&macro_wait_time 30> // ここで30ミリ秒待機
+            , <&kp  INT5>; // レイヤー3（LIN）に戻る
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -3972,46 +3968,57 @@ combos {
     }; // conditional_layers の閉じ括弧の後にセミコロンが必要
 	
 behaviors {
-    // // ホールドでMO、タップでマクロを実行する設定
-    // hm_mo_to1: hm_mo_to1 {
-    //     compatible = "zmk,behavior-hold-tap";
-    //     #binding-cells = <2>;
-    //     flavor = "hold-preferred";
-    //     tapping-term-ms = <200>;
-    //     bindings = <&mo>, <&tap_to_lang1>;
-    // };
-    // hm_mo_to2: hm_mo_to2 {
-    //     compatible = "zmk,behavior-hold-tap";
-    //     #binding-cells = <2>;
-    //     flavor = "hold-preferred";
-    //     tapping-term-ms = <200>;
-    //     bindings = <&mo>, <&tap_to_lang2>;
-    // };
-    // // LANG1用のHold-Tap: ホールドでLayer 13, タップでマクロ(t_t_lang1)
-    // ht_lang1: ht_lang1 {
-    //     compatible = "zmk,behavior-hold-tap";
-    //     #binding-cells = <0>;
-    //     flavor = "hold-preferred";
-    //     tapping-term-ms = <200>;
-    //     bindings = <&mo 13 &t_t_lang1>;
-    // };
-    // // LANG2用のHold-Tap: ホールドでLayer 15, タップでマクロ(t_t_lang2)
-    // ht_lang2: ht_lang2 {
-    //     compatible = "zmk,behavior-hold-tap";
-    //     #binding-cells = <0>;
-    //     flavor = "hold-preferred";
-    //     tapping-term-ms = <200>;
-    //     bindings = <&mo 15 &t_t_lang2>;
-    // };
+    // LANG1用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang1)
+    ht_lg1: ht_lg1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_lang1>;
+    };
+    // LANG2用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang2)
+    ht_lg2: ht_lg2 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_lang2>;
+    };
+    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int4)
+    ht_it4: ht_it4 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_int4>;
+    };
+    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int5)
+    ht_it5: ht_it5 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&t_int5>;
+    };
     bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
     };
+    bt0_l2: bt0_l2 { // Bluetoothプロファイル0を選択し、レイヤー2を有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 0 &to NIC>;
+    };
     bt1_l2: bt1_l2 { // Bluetoothプロファイル1を選択し、レイヤー2を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&to QWE &bt BT_SEL 1 &to LIN>;
+        bindings = <&to QWE &bt BT_SEL 1 &to NIC>;
+    };
+    bt1_l5: bt1_l5 { // Bluetoothプロファイル1を選択し、レイヤー5を有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 1 &to NICL>;
     };
     bt1_l4: bt1_l4 { // Bluetoothプロファイル1を選択し、レイヤー4を有効化
         compatible = "zmk,behavior-macro";
@@ -4028,6 +4035,11 @@ behaviors {
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
     };
+    bt2_l5: bt2_l5 { // Bluetoothプロファイル2を選択し、レイヤー5を有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 2 &to NICL>;
+    };
     bt3_l2: bt3_l2 { // Bluetoothプロファイル3を選択し、レイヤー2を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -4038,12 +4050,22 @@ behaviors {
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
     };
+    bt3_l5: bt3_l5 { // Bluetoothプロファイル3を選択し、レイヤー5を有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 3 &to NICL>;
+    };
     bt4_l2: bt4_l2 { // Bluetoothプロファイル4を選択し、レイヤー2を有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 4 &to NIC>;
+    };
+    bt4_l3: bt4_l3 { // Bluetoothプロファイル4を選択し、レイヤー3を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
     };
-    bt4_l3: bt4_l3 { // Bluetoothプロファイル4を選択し、レイヤー3を有効化
+    bt4_l5: bt4_l5 { // Bluetoothプロファイル4を選択し、レイヤー5を有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
@@ -4250,7 +4272,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J			&kp K           &kp L           &kp SEMI        &mt RCTRL SQT
             &kp LALT        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &kp FSLH        &kp RGUI
-                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt MOV LANG1
+                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&ht_lg1 MOV 0
             >;
         };
         naginata_layer {
@@ -4270,7 +4292,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
-                                                            &trans          &trans          &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
+                                                            &ht_lg2 NUM 0   &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
             >;
         };
         linux_layer {
@@ -4280,7 +4302,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T		    &kp Y         	&kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		    &kp H         	&kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B		    &kp N         	&kp M           &kp COMMA		&kp DOT         &kp FSLH        &kp RALT
-                                                            &lt NUM LANG2   &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &lt MOVW LANG1
+                                                            &lt NUM INT5    &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &ht_it4 MOVW 0
             >;
         };
         naginatal_layer {
@@ -4300,7 +4322,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LGUI		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
-                                                            &mo NUM         &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &mo MOVW
+                                                            &ht_it5 NUM 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &lt MOVW INT4
             >;
         };
         windows_layer {
@@ -4359,7 +4381,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
-            &kp LALT        &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
+            &kp LALT        &bt0_l2         &bt1_l5         &bt2_l5         &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
                                                             &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
             >;
         };
@@ -4369,7 +4391,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-            &kp LGUI        &bt0_l0         &bt1_l2         &bt2_l2         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
+            &kp LGUI        &bt0_l2         &bt1_l5         &bt2_l5         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to WIN
             >;
         };
@@ -4409,7 +4431,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &m_hi_con       &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
             &kp LC(LG(H))   &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))   &trans          &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))   &kp LC(LG(W))
-            &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l2    	    &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
+            &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l5    	    &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
                                                             &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
             >;
         };
