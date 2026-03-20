@@ -4000,82 +4000,82 @@ behaviors {
         tapping-term-ms = <200>;
         bindings = <&mo>, <&t_int5>;
     };
-    bt0_l0: bt0_l0 { // Bluetoothプロファイル0を選択し、レイヤー0を有効化
+    bt0_lQWE: bt0_lQWE { // Bluetoothプロファイル0を選択し、レイヤーQWEを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 0 &to QWE>;
     };
-    bt0_l2: bt0_l2 { // Bluetoothプロファイル0を選択し、レイヤー2を有効化
+    bt0_lNIC: bt0_lNIC { // Bluetoothプロファイル0を選択し、レイヤーNICを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 0 &to NIC>;
     };
-    bt1_l2: bt1_l2 { // Bluetoothプロファイル1を選択し、レイヤー2を有効化
+    bt1_lNIC: bt1_lNIC { // Bluetoothプロファイル1を選択し、レイヤーNICを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 1 &to NIC>;
     };
-    bt1_l5: bt1_l5 { // Bluetoothプロファイル1を選択し、レイヤー5を有効化
+    bt1_lNICL: bt1_lNICL { // Bluetoothプロファイル1を選択し、レイヤーNICLを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 1 &to NICL>;
     };
-    bt1_l4: bt1_l4 { // Bluetoothプロファイル1を選択し、レイヤー4を有効化
+    bt1_lWIN: bt1_lWIN { // Bluetoothプロファイル1を選択し、レイヤーWINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 1 &to WIN>;
     };
-    bt2_l2: bt2_l2 { // Bluetoothプロファイル2を選択し、レイヤー2を有効化
+    bt2_lLIN: bt2_lLIN { // Bluetoothプロファイル2を選択し、レイヤーLINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 2 &to LIN>;
     };
-    bt2_l4: bt2_l4 { // Bluetoothプロファイル2を選択し、レイヤー4を有効化
+    bt2_lWIN: bt2_lWIN { // Bluetoothプロファイル2を選択し、レイヤーWINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 2 &to WIN>;
     };
-    bt2_l5: bt2_l5 { // Bluetoothプロファイル2を選択し、レイヤー5を有効化
+    bt2_lNICL: bt2_lNICL { // Bluetoothプロファイル2を選択し、レイヤーNICLを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 2 &to NICL>;
     };
-    bt3_l2: bt3_l2 { // Bluetoothプロファイル3を選択し、レイヤー2を有効化
+    bt3_lLIN: bt3_lLIN { // Bluetoothプロファイル3を選択し、レイヤーLINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
     };
-    bt3_l4: bt3_l4 { // Bluetoothプロファイル3を選択し、レイヤー4を有効化
+    bt3_lWIN: bt3_lWIN { // Bluetoothプロファイル3を選択し、レイヤーWINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 3 &to WIN>;
     };
-    bt3_l5: bt3_l5 { // Bluetoothプロファイル3を選択し、レイヤー5を有効化
+    bt3_lNICL: bt3_lNICL { // Bluetoothプロファイル3を選択し、レイヤーNICLを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 3 &to NICL>;
     };
-    bt4_l2: bt4_l2 { // Bluetoothプロファイル4を選択し、レイヤー2を有効化
+    bt4_lNIC: bt4_lNIC { // Bluetoothプロファイル4を選択し、レイヤーNICを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 4 &to NIC>;
     };
-    bt4_l3: bt4_l3 { // Bluetoothプロファイル4を選択し、レイヤー3を有効化
+    bt4_lLIN: bt4_lLIN { // Bluetoothプロファイル4を選択し、レイヤーLINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 4 &to LIN>;
     };
-    bt4_l5: bt4_l5 { // Bluetoothプロファイル4を選択し、レイヤー5を有効化
+    bt4_lNICL: bt4_lNICL { // Bluetoothプロファイル4を選択し、レイヤーNICLを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 4 &to NICL>;
     };
-    usb_l2: usb_l2 { // USB接続を選択し、レイヤー2を有効化
+    usb_lLIN: usb_lLIN { // USB接続を選択し、レイヤーLINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &out OUT_USB &to LIN>;
     };
-    usb_l4: usb_l4 { // USB接続を選択し、レイヤー4を有効化
+    usb_lWIN: usb_lWIN { // USB接続を選択し、レイヤーWINを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &out OUT_USB &to WIN>;
@@ -4380,8 +4380,8 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
-            &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
-            &kp LALT        &bt0_l2         &bt1_l5         &bt2_l5         &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
+            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lWIN       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
+            &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
                                                             &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
             >;
         };
@@ -4390,8 +4390,8 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
-            &mt LCTRL LANG5 &out OUT_BLE    &usb_l2         &bt3_l4         &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-            &kp LGUI        &bt0_l2         &bt1_l5         &bt2_l5         &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
+            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lWIN       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
+            &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to WIN
             >;
         };
@@ -4431,7 +4431,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &soft_off       &bt BT_DISC 0   &bt BT_DISC 1   &bt BT_DISC 2   &bt BT_DISC 3   &bt BT_CLR_ALL  &bt BT_CLR_ALL  &m_hi_con       &bt BT_DISC 5   &bt BT_DISC 6   &bt BT_DISC 7   &soft_off
             &kp LC(LG(H))   &kp LC(LG(T))   &kp LC(LG(C))   &kp LC(LG(P))   &kp LC(LG(G))   &trans          &trans          &kp LC(LG(E))   &kp LC(LG(A))   &kp LC(LG(L))   &kp LC(LG(X))   &kp LC(LG(W))
-            &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_l5    	    &bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
+            &sys_reset      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bootloader     &bootloader     &bt4_lLIN    	&bt BT_SEL 5    &bt BT_SEL 6    &bt BT_SEL 7    &sys_reset
                                                             &trans          &kp LS(LG(F23)) &bt BT_CLR      &bt BT_CLR      &kp LA(LG(G))   &trans
             >;
         };
