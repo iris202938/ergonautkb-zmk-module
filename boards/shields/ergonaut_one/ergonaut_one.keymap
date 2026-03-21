@@ -4596,6 +4596,86 @@ combos {
 			, <&macro_tap &kp Z>
 			;
 	};
+    
+    // Ctrl+Alt+J: 1G
+    ctrl_alt_j: ctrl_alt_j {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp J>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    // Ctrl+Alt+K: 1/4G
+    ctrl_alt_k: ctrl_alt_k {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp K>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    // Ctrl+Alt+L: 0.5mm
+    ctrl_alt_l: ctrl_alt_l {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp L>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    // Ctrl+Alt+;: 0.25mm
+    ctrl_alt_semi: ctrl_alt_semi {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp SEMICOLON>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+
+    ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LALT>
+            , <&macro_release &kp LCTRL>
+            // , <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
+            ;
+    };	
+    alt_home: alt_home { // 移動左90度回転[AHK]
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp HOME>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    alt_end: alt_end { // 移動右90度回転[AHK]
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp END>
+            , <&macro_release &kp LALT>
+            ;
+    };
 
 	// ECAD用マクロ定義ここまで
 
