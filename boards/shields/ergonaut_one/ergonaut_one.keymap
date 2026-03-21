@@ -4882,6 +4882,21 @@ combos {
             , <&macro_wait_time 30> // ここで30ミリ秒待機
             , <&kp  INT5>; // レイヤー3（LIN）に戻る
     };
+    tW_int4: tW_int4 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to WIN &kp INT4>; // レイヤー5（NICL）に戻る
+    };
+    tC_int5: tC_int5 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>; // 全体の基本遅延
+        tap-ms = <10>;
+        bindings 
+            = <&to CAD>
+            , <&macro_wait_time 30> // ここで30ミリ秒待機
+            , <&kp  INT5>; // レイヤー3（LIN）に戻る
+    };
     bt0_lQWE: bt0_lQWE { // Bluetoothプロファイル0を選択し、レイヤーQWEを有効化
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -5214,6 +5229,22 @@ behaviors {
         flavor = "hold-preferred";
         tapping-term-ms = <200>;
         bindings = <&mo>, <&t_int5>;
+    };
+    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(tW_int4)
+    htW_it4: htW_it4 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&tW_int4>;
+    };
+    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(tC_int5)
+    htC_it5: htC_it5 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&mo>, <&tC_int5>;
     };
 
     // --- Tap Dance A ---
@@ -5570,7 +5601,7 @@ behaviors {
             &mt LSHFT LS(TAB) &td_Q         &td_W           &td_E           &td_R           &td_T           &td_Y           &td_U           &td_I           &td_O           &td_P           &mt RSHFT MINUS
             &mt LCTRL TAB   &td_A           &td_S           &td_D           &td_F           &td_G           &td_H           &td_J           &td_K           &td_L           &td_SEMI        &mt RCTRL SQT
             &kp LGUI        &td_Z           &td_X           &td_C           &td_V           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH       &kp LALT
-                                                            &td_lt_num_i5   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&mt RCTRL TAB   &ht_it4 MOVW 0
+                                                            &td_lt_num_i5   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&mt RCTRL TAB   &htW_it4 MOVW 0
             >;
         };        
         windows_layer {
@@ -5580,7 +5611,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
-                                                            &ht_it5 NUM 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
+                                                            &htC_it5 NUM 0  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
             >;
         };        
         lower_layer {
@@ -5630,7 +5661,7 @@ behaviors {
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
             &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
-                                                            &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
+                                                            &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to CAD
             >;
         };
         adjustw_layer {
