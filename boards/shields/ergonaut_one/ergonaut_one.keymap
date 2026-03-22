@@ -104,6 +104,24 @@ combos {
         layers = <QWE LIN>;
         bindings = <&caps_word>;
     };
+    cmd_x {
+        bindings = <&cmd_x>;
+        key-positions = <9 10>;
+        layers = <RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_c {
+        bindings = <&cmd_c>;
+        key-positions = <21 22>;
+        layers = <RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_v {
+        bindings = <&cmd_v>;
+        key-positions = <31 32>;
+        layers = <RSE>;
+        timeout-ms = <80>;
+    };
     ctrl_x {
         bindings = <&ctrl_x>;
         key-positions = <9 10>;
@@ -122,28 +140,28 @@ combos {
         layers = <RSEW>;
         timeout-ms = <80>;
     };
-    // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
-    //     timeout-ms = <80>;
-    //     key-positions = <31 32>;
-    //     layers = <RSEW>;
-    //     bindings = <&alt_int4>; //変換
-    // };
+    combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+        timeout-ms = <80>;
+        key-positions = <31 32>;
+        layers = <CAD>;
+        bindings = <&alt_int4>; //変換
+    };
     combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
         timeout-ms = <80>;
         key-positions = <32 33>;
-        layers = <RSEW>;
+        layers = <CAD>;
         bindings = <&alt_int5>; //無変換
     };
     combo_e_key { // ECADの文字修正
         timeout-ms = <80>;
         key-positions = <30 31>;
-        layers = <RSEW>;
+        layers = <CAD>;
         bindings = <&kp E>;
     };
     combo_t_key { // ECADの文字
         timeout-ms = <80>;
         key-positions = <33 34>;
-        layers = <RSEW>;
+        layers = <CAD>;
         bindings = <&kp T>;
     };
     combo_INT5_G { // ECADの端点再設定(AHK)
@@ -4788,13 +4806,31 @@ combos {
             , <&macro_release &kp LALT>
             ;
     };
-    ctrl_x: ctrl_x { // 切り取り
+    cmd_x: cmd_x { // 切り取り
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
-            = <&macro_press &kp LCTRL>
+            = <&macro_press &kp LGUI>
             , <&macro_tap &kp X>
-            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    cmd_c: cmd_c { // コピー
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp C>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    cmd_v: cmd_v { // 貼り付け
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp V>
+            , <&macro_release &kp LGUI>
             ;
     };
     ctrl_c: ctrl_c { // コピー
