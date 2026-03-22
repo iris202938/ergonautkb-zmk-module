@@ -77,19 +77,19 @@ combos {
     combo_ESCL {
         timeout-ms = <80>;
         key-positions = <0 12>;
-        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_ESCR {
         timeout-ms = <80>;
         key-positions = <11 23>;
-        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_TSHIFT {
         timeout-ms = <80>;
         key-positions = <36 41>;
-        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+        layers = <QWE LIN CAD WIN LWR LWRW RSE RSEW>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
@@ -101,7 +101,7 @@ combos {
     combo_CAPSWORD {
         timeout-ms = <80>;
         key-positions = <24 35>;
-        layers = <QWE LIN>;
+        layers = <QWE LIN CAD>;
         bindings = <&caps_word>;
     };
     cmd_x {
@@ -192,80 +192,80 @@ combos {
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB1>;
     };
     combo_MB2 {
         timeout-ms = <60>;
         key-positions = <32 33>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB2>;
     };
     combo_MB3 {
         timeout-ms = <60>;
         key-positions = <31 33>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB3>;
     };
 
     tab_1 {
         bindings = <&tab_1>;
         key-positions = <12 31>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_2 {
         bindings = <&tab_2>;
         key-positions = <12 32>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_3 {
         bindings = <&tab_3>;
         key-positions = <12 33>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_4 {
         bindings = <&tab_4>;
         key-positions = <12 19>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_5 {
         bindings = <&tab_5>;
         key-positions = <12 20>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_6 {
         bindings = <&tab_6>;
         key-positions = <12 21>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_7 {
         bindings = <&tab_7>;
         key-positions = <12 7>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_8 {
         bindings = <&tab_8>;
         key-positions = <12 8>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_9 {
         bindings = <&tab_9>;
         key-positions = <12 9>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_0 {
         bindings = <&tab_0>;
         key-positions = <12 10>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
 
