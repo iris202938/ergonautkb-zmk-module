@@ -103,13 +103,31 @@ combos {
         key-positions = <24 35>;
         layers = <QWE LIN>;
         bindings = <&caps_word>;
-    };    
-    combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+    };
+    ctrl_x {
+        bindings = <&ctrl_x>;
+        key-positions = <9 10>;
+        layers = <RSEW>;
         timeout-ms = <80>;
+    };
+    ctrl_c {
+        bindings = <&ctrl_c>;
+        key-positions = <21 22>;
+        layers = <RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_v {
+        bindings = <&ctrl_v>;
         key-positions = <31 32>;
         layers = <RSEW>;
-        bindings = <&alt_int4>; //変換
+        timeout-ms = <80>;
     };
+    // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+    //     timeout-ms = <80>;
+    //     key-positions = <31 32>;
+    //     layers = <RSEW>;
+    //     bindings = <&alt_int4>; //変換
+    // };
     combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
         timeout-ms = <80>;
         key-positions = <32 33>;
@@ -131,7 +149,7 @@ combos {
     combo_INT5_G { // ECADの端点再設定(AHK)
         timeout-ms = <80>;
         key-positions = <23 35>;
-        layers = <NGNL NICL WIN>;
+        layers = <NGNL NICL WIN CAD>;
         bindings = <&int5_g>;
     };
     combo_exl_fill { // Excelのオートフィル
@@ -4768,6 +4786,33 @@ combos {
             = <&macro_press &kp LALT>
             , <&macro_tap &kp DOWN>
             , <&macro_release &kp LALT>
+            ;
+    };
+    ctrl_x: ctrl_x { // 切り取り
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp X>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    ctrl_c: ctrl_c { // コピー
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp C>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    ctrl_v: ctrl_v { // 貼り付け
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp V>
+            , <&macro_release &kp LCTRL>
             ;
     };
 
