@@ -4833,6 +4833,15 @@ combos {
             , <&macro_release &kp LGUI>
             ;
     };
+    ctrl_x: ctrl_x { // 切り取り
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp X>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
     ctrl_c: ctrl_c { // コピー
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
