@@ -1282,7 +1282,7 @@
 		};
 		l_layer15 {
 			layers = <MOVW>; // レイヤー15がアクティブな場合
-			input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用: ECAD用設定アサイン
+			input-processors = <&zip_keybind_keys_browser>; // zip_keybind_keys_browser を使用 (ECAD用)
 			process-next; // 他のプロセッサも処理を継続
 		};
 		l_layer15-prevent {
