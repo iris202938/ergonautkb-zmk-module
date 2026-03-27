@@ -10,18 +10,21 @@ manifest:
       url-base: https://github.com/zettaface
     - name: eswai
       url-base: https://github.com/eswai
+    - name: iris202938
+      url-base: https://github.com/iris202938
 
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3  # 重複を削除し、一方に固定
+      revision: v0.3
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3-branch
+    # --- 2. 参照先を自分のリポジトリに変更 ---
     - name: zmk-analog-input-driver
-      remote: badjeff
-      revision: main
+      remote: iris202938         # badjeff から your-id に変更
+      revision: dev_auto-calibration
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main

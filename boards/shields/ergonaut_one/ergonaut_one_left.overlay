@@ -50,10 +50,9 @@
 
 		y-ch {
 			io-channels = <&adc 0>;
-			/* mv-mid = <1842>;  <-- 固定値をコメントアウトまたは削除 */
-			/* mv-min-max = <2571>; <-- オートの場合、これも自動計算される設計です */
-			
-			mv-deadzone = <90>; // 電圧降下を見越して少し広め（90 -> 120）に設定
+			mv-mid = <0>; // ★0にすることでオートキャリブレーションが発動
+			mv-min-max = <2571>;
+			mv-deadzone = <90>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			#invert;
@@ -63,9 +62,9 @@
 		};
 		x-ch {
 			io-channels = <&adc 1>;
-			/* mv-mid = <1681>;  <-- 固定値を削除 */
-			
-			mv-deadzone = <90>; // 同様に少し広めに
+			mv-mid = <0>; // ★0にすることでオートキャリブレーションが発動
+			mv-min-max = <2062>;
+			mv-deadzone = <90>;
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
 			invert;
