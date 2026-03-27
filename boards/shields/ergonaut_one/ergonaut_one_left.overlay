@@ -44,27 +44,33 @@
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
+		
+		/* 追記：起動時のサンプリング回数を指定することでオートキャリブレーションを促す */
+		sampling-count = <10>; 
+
 		y-ch {
-			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
-			mv-mid = <1555>; // Y軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <2615>; // Y軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // Y軸のデッドゾーン（感度を調整）
-			scale-multiplier = <1>; // スケーリングの乗数
-			scale-divisor = <50>; // スケーリングの除数
-			#invert; // Y軸の入力を反転
-			evt-type = <INPUT_EV_REL>; // 相対イベントタイプ
-			input-code = <INPUT_REL_Y>; // Y軸の動きをマウスのY軸（垂直）にマッピング
-		};
-		x-ch {
-			io-channels = <&adc 1>; // X軸がADCチャンネル1に接続
-			mv-mid = <1576>; // X軸のニュートラル（中央）でのミリボルト値
-			mv-min-max = <2460>; // X軸の最小/最大ミリボルト範囲
-			mv-deadzone = <88>; // X軸のデッドゾーン
+			io-channels = <&adc 0>;
+			/* mv-mid = <1842>;  <-- 固定値をコメントアウトまたは削除 */
+			/* mv-min-max = <2571>; <-- オートの場合、これも自動計算される設計です */
+			
+			mv-deadzone = <90>; // 電圧降下を見越して少し広め（90 -> 120）に設定
 			scale-multiplier = <1>;
 			scale-divisor = <50>;
-			invert; // X軸の入力を反転
+			#invert;
 			evt-type = <INPUT_EV_REL>;
-			input-code = <INPUT_REL_X>; // X軸の動きをマウスのX軸（水平）にマッピング
+			input-code = <INPUT_REL_X>;
+			#report-on-change-only;
+		};
+		x-ch {
+			io-channels = <&adc 1>;
+			/* mv-mid = <1681>;  <-- 固定値を削除 */
+			
+			mv-deadzone = <90>; // 同様に少し広めに
+			scale-multiplier = <1>;
+			scale-divisor = <50>;
+			invert;
+			evt-type = <INPUT_EV_REL>;
+			input-code = <INPUT_REL_Y>;
 			#report-on-change-only;
 		};
 	};
