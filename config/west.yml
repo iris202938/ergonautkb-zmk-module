@@ -2,34 +2,32 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: Reinmuth66
-      url-base: https://github.com/Reinmuth66/
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: badjeff
+      url-base: https://github.com/badjeff
     - name: zettaface
       url-base: https://github.com/zettaface
-    - name: eswai # ここを追加
+    - name: eswai
       url-base: https://github.com/eswai
-    # - name: oleksandrmaslov
-    #   url-base: https://github.com/oleksandrmaslov
+
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
-      revision: v0.3
+      revision: v0.3  # 重複を削除し、一方に固定
       import: app/west.yml
     - name: zmk-rgbled-widget
-      remote: Reinmuth66
-      revision: main
+      remote: caksoylar
+      revision: v0.3-branch
     - name: zmk-analog-input-driver
-      remote: Reinmuth66
+      remote: badjeff
       revision: main
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
-    - name: zmk-naginata # ここを追加
+    - name: zmk-naginata
       remote: eswai
       revision: main
-    # - name: zmk-pointing-acceleration
-    #   remote: oleksandrmaslov
-    #   revision: main
+
   self:
     path: config
