@@ -46,7 +46,7 @@
 		sampling-hz = <100>;
 		
 		/* 追記：起動時のサンプリング回数を指定することでオートキャリブレーションを促す */
-		sampling-count = <10>; 
+		// sampling-count = <10>; 
 
 		y-ch {
 			io-channels = <&adc 0>;
