@@ -18,7 +18,7 @@ manifest:
       import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3-branch
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
