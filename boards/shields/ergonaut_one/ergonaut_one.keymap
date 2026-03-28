@@ -207,6 +207,12 @@ combos {
         layers = <CAD LWR LWRW>;
         bindings = <&mkp MB3>;
     };
+    combo_E {
+        timeout-ms = <60>;
+        key-positions = <30 31>;
+        layers = <CAD RSEW>;
+        bindings = <&kp E>;
+    };
 
     tab_1 {
         bindings = <&tab_1>;
