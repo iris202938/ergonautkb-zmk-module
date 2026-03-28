@@ -5665,7 +5665,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qm LCTRL TAB   &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
-                                                            &ht_it5 NUM 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &lt MOVW INT4
+                                                            &ht_it5 NUM 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &lt MOVW INT4 
             >;
         };
         ecad_layer {
