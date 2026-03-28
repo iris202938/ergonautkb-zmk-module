@@ -152,12 +152,12 @@ combos {
     //     layers = <CAD>;
     //     bindings = <&alt_int5>; //無変換
     // };
-    // combo_e_key { // ECADの文字修正
-    //     timeout-ms = <80>;
-    //     key-positions = <30 31>;
-    //     layers = <CAD>;
-    //     bindings = <&kp E>;
-    // };
+    combo_e_key { // ECADの文字修正
+        timeout-ms = <80>;
+        key-positions = <30 31>;
+        layers = <CAD>;
+        bindings = <&kp E>;
+    };
     // combo_t_key { // ECADの文字
     //     timeout-ms = <80>;
     //     key-positions = <33 34>;
@@ -206,12 +206,6 @@ combos {
         key-positions = <31 33>;
         layers = <CAD LWR LWRW>;
         bindings = <&mkp MB3>;
-    };
-    combo_E {
-        timeout-ms = <60>;
-        key-positions = <30 31>;
-        layers = <CAD RSEW>;
-        bindings = <&kp E>;
     };
 
     tab_1 {
