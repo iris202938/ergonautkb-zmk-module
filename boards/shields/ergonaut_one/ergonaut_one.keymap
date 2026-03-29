@@ -5286,18 +5286,18 @@ combos {
             ;
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
 
-        tri-layer {
-            if-layers = <LWR RSE>;
-            then-layer = <ADJ>;
-        };
-        tri-layerw {
-            if-layers = <LWRW RSEW>;
-            then-layer = <ADJW>;
-        };
-    }; // conditional_layers の閉じ括弧の後にセミコロンが必要
+    //     tri-layer {
+    //         if-layers = <LWR RSE>;
+    //         then-layer = <ADJ>;
+    //     };
+    //     tri-layerw {
+    //         if-layers = <LWRW RSEW>;
+    //         then-layer = <ADJW>;
+    //     };
+    // }; // conditional_layers の閉じ括弧の後にセミコロンが必要
 	
 behaviors {
     // LANG1用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang1)
