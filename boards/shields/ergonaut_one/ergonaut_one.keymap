@@ -51,25 +51,25 @@ combos {
     // 24 25 26 27 28 29	30 31 32 33 34 35
     //          36 37 38	39 40 41 
     combo_ng_on {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_on>;
         layers = <QWE>; // デフォルトレイヤーが0の前提
     };
     combo_ng_off {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_off>;
         layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
     };
     combo_ng_onl {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_onl>;
         layers = <LIN>; // デフォルトレイヤーがLINの前提
     };
     combo_ng_offl {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_offl>;
         layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
@@ -164,12 +164,12 @@ combos {
     //     layers = <CAD>;
     //     bindings = <&alt_int5>; //無変換
     // };
-    combo_e_key { // ECADの文字修正
-        timeout-ms = <80>;
-        key-positions = <30 31>;
-        layers = <CAD>;
-        bindings = <&kp E>;
-    };
+    // combo_e_key { // ECADの文字修正
+    //     timeout-ms = <80>;
+    //     key-positions = <30 31>;
+    //     layers = <CAD>;
+    //     bindings = <&kp E>;
+    // };
     // combo_t_key { // ECADの文字
     //     timeout-ms = <80>;
     //     key-positions = <33 34>;
@@ -196,7 +196,7 @@ combos {
     };
 
     combo_to_LIN {
-        timeout-ms = <80>;
+        timeout-ms = <70>;
         key-positions = <36 41>;
         layers = <ADJ ADJW>;
         bindings = <&to LIN>;
