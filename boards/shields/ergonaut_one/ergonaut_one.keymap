@@ -5606,13 +5606,13 @@ behaviors {
     td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <160>;
         bindings = <&lt MOVW INT2>, <&to_MOVW_i5>;
     };
     td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップでINT5、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <160>;
         bindings = <&lt NUM INT5>, <&to_NUM_i5>;
     };
 };
