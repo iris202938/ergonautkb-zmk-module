@@ -1469,7 +1469,7 @@
 		};
 		r_layer7 {
 			layers = <WIN>; // レイヤー7がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
 			process-next;
 		};
 		r_layer7-prevent {
@@ -1478,9 +1478,12 @@
 		};
 		r_cad {
 			layers = <CAD>; // レイヤー6がアクティブな場合
-			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 24 100> // スケーリング（24/100）
-							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
+		r_cad-prevent {
+			layers = <CAD>; // レイヤー6がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_nicl {
 			layers = <NICL>; // レイヤー5がアクティブな場合
