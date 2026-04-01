@@ -4694,7 +4694,6 @@ combos {
             , <&macro_release &kp LALT>
             ;
     };
-
     ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -4728,6 +4727,17 @@ combos {
 
 	// ECAD用マクロ定義ここまで
 
+    win_shift_s: win_shift_s { // スクリーンショット
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LGUI>
+            , <&macro_release &kp LSHFT>
+            ;
+        };	
     file_f: file_f { // ファイルの切り替え正
         compatible = "zmk,behavior-macro";
         wait-ms = <40>;
@@ -5716,7 +5726,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
             &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&kp LG(LS(S))   &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
+            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
                                                             &kp LSHFT       &kp LCTRL	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
