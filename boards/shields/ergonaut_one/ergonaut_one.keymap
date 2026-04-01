@@ -5622,7 +5622,7 @@ behaviors {
     td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップで無変換、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持、無変換
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <155>;
+        tapping-term-ms = <150>;
         bindings = <&lt NUM INT5>, <&to_NUM_i5>;
     };
 };
