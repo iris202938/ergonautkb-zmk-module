@@ -13,17 +13,18 @@
 #define LIN 3
 #define NGNL 4
 #define NICL 5
-#define WIN 6
-#define LWR 7
-#define LWRW 8
-#define RSE 9
-#define RSEW 10
-#define ADJ 11
-#define ADJW 12
-#define MOV 13
-#define MOVW 14
-#define NUM 15
-#define BLE 16
+#define CAD 6
+#define WIN 7
+#define LWR 8
+#define LWRW 9
+#define RSE 10
+#define RSEW 11
+#define ADJ 12
+#define ADJW 13
+#define MOV 14
+#define MOVW 15
+#define NUM 16
+#define BLE 17
 
 &mt {
     flavor = "hold-preferred";
@@ -50,87 +51,135 @@ combos {
     // 24 25 26 27 28 29	30 31 32 33 34 35
     //          36 37 38	39 40 41 
     combo_ng_on {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_on>;
         layers = <QWE>; // デフォルトレイヤーが0の前提
     };
     combo_ng_off {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_off>;
         layers = <QWE NGN>; // デフォルトレイヤーがQWE、薙刀式レイヤーが1の前提
     };
     combo_ng_onl {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <18 19>; // H, Jのキー位置に書き換えてください
         bindings = <&ng_onl>;
         layers = <LIN>; // デフォルトレイヤーがLINの前提
     };
     combo_ng_offl {
-        timeout-ms = <200>;
+        timeout-ms = <80>;
         key-positions = <16 17>; // F, Gのキー位置に書き換えてください
         bindings = <&ng_offl>;
         layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
+        };
+    combo_ADJ {
+        timeout-ms = <70>;
+        key-positions = <38 39>;
+        layers = <QWE NGN NIC>;
+        bindings = <&mo ADJ>;
+    };
+    combo_ADJW {
+        timeout-ms = <70>;
+        key-positions = <38 39>;
+        layers = <CAD WIN NGNL NICL>;
+        bindings = <&mo ADJW>;
     };
     combo_ESCL {
         timeout-ms = <80>;
         key-positions = <0 12>;
-        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_ESCR {
         timeout-ms = <80>;
         key-positions = <11 23>;
-        layers = <QWE NGN NIC LIN NGNL NICL WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_TSHIFT {
-        timeout-ms = <80>;
+        timeout-ms = <70>;
         key-positions = <36 41>;
         layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
-        timeout-ms = <80>;
+        timeout-ms = <70>;
         key-positions = <36 41>;
-        layers = <NGN NIC NGNL NICL>;
+        layers = <CAD NGN NIC NGNL NICL>;
         bindings = <&qm RSHIFT>;
     };
     combo_CAPSWORD {
         timeout-ms = <80>;
         key-positions = <24 35>;
-        layers = <QWE LIN>;
+        layers = <QWE LIN CAD>;
         bindings = <&caps_word>;
-    };    
-    combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+    };
+    cmd_x {
+        bindings = <&cmd_x>;
+        key-positions = <9 10>;
+        layers = <RSE>;
         timeout-ms = <80>;
+    };
+    cmd_c {
+        bindings = <&cmd_c>;
+        key-positions = <21 22>;
+        layers = <RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_v {
+        bindings = <&cmd_v>;
+        key-positions = <31 32>;
+        layers = <RSE>;
+        timeout-ms = <80>;
+    };
+    ctrl_x {
+        bindings = <&ctrl_x>;
+        key-positions = <9 10>;
+        layers = <RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_c {
+        bindings = <&ctrl_c>;
+        key-positions = <21 22>;
+        layers = <RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_v {
+        bindings = <&ctrl_v>;
         key-positions = <31 32>;
         layers = <RSEW>;
-        bindings = <&alt_int4>; //変換
-    };
-    combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
         timeout-ms = <80>;
-        key-positions = <32 33>;
-        layers = <RSEW>;
-        bindings = <&alt_int5>; //無変換
     };
-    combo_e_key { // ECADの文字修正
-        timeout-ms = <80>;
-        key-positions = <30 31>;
-        layers = <RSEW>;
-        bindings = <&kp E>;
-    };
-    combo_t_key { // ECADの文字
-        timeout-ms = <80>;
-        key-positions = <33 34>;
-        layers = <RSEW>;
-        bindings = <&kp T>;
-    };
+    // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
+    //     timeout-ms = <80>;
+    //     key-positions = <31 32>;
+    //     layers = <CAD>;
+    //     bindings = <&alt_int4>; //変換
+    // };
+    // combo_ALT_INT5 { // ECADの選択位置移動(移動)(AHK)
+    //     timeout-ms = <80>;
+    //     key-positions = <32 33>;
+    //     layers = <CAD>;
+    //     bindings = <&alt_int5>; //無変換
+    // };
+    // combo_e_key { // ECADの文字修正
+    //     timeout-ms = <80>;
+    //     key-positions = <30 31>;
+    //     layers = <CAD>;
+    //     bindings = <&kp E>;
+    // };
+    // combo_t_key { // ECADの文字
+    //     timeout-ms = <80>;
+    //     key-positions = <33 34>;
+    //     layers = <CAD>;
+    //     bindings = <&kp T>;
+    // };
     combo_INT5_G { // ECADの端点再設定(AHK)
         timeout-ms = <80>;
         key-positions = <23 35>;
-        layers = <NGNL NICL WIN>;
+        layers = <NGNL NICL WIN CAD>;
         bindings = <&int5_g>;
     };
     combo_exl_fill { // Excelのオートフィル
@@ -147,7 +196,7 @@ combos {
     };
 
     combo_to_LIN {
-        timeout-ms = <80>;
+        timeout-ms = <70>;
         key-positions = <36 41>;
         layers = <ADJ ADJW>;
         bindings = <&to LIN>;
@@ -155,80 +204,80 @@ combos {
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB1>;
     };
     combo_MB2 {
         timeout-ms = <60>;
         key-positions = <32 33>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB2>;
     };
     combo_MB3 {
         timeout-ms = <60>;
         key-positions = <31 33>;
-        layers = <LWR LWRW>;
+        layers = <CAD LWR LWRW>;
         bindings = <&mkp MB3>;
     };
 
     tab_1 {
         bindings = <&tab_1>;
         key-positions = <12 31>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_2 {
         bindings = <&tab_2>;
         key-positions = <12 32>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_3 {
         bindings = <&tab_3>;
         key-positions = <12 33>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_4 {
         bindings = <&tab_4>;
         key-positions = <12 19>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_5 {
         bindings = <&tab_5>;
         key-positions = <12 20>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_6 {
         bindings = <&tab_6>;
         key-positions = <12 21>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_7 {
         bindings = <&tab_7>;
         key-positions = <12 7>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_8 {
         bindings = <&tab_8>;
         key-positions = <12 8>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_9 {
         bindings = <&tab_9>;
         key-positions = <12 9>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
     tab_0 {
         bindings = <&tab_0>;
         key-positions = <12 10>;
-        layers = <QWE LIN NUM>;
+        layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
 
@@ -3718,39 +3767,977 @@ combos {
         bindings = <&kp P>, <&kp A>, <&kp X>, <&kp T>, <&kp U>;
     };
 
-    qmt: qwerty_mt {
-        compatible = "zmk,behavior-macro-two-param";
-        wait-ms = <0>;
-        tap-ms = <0>;
-        #binding-cells = <2>;
+	// ここから下はECAD用マクロ定義
+        // =========================================================================
+        // --- 2. Ctrl + A (<Key1> + Ctrl + A) ---
+        // =========================================================================
+        
+	// Ctrl + A, A: 回転
+	ctrl_a_a: ctrl_a_a {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp A>
+			;
+	};
+
+	// Ctrl + A, B: 長方形(サイズ)
+	ctrl_a_b: ctrl_a_b {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp B>
+			;
+	};
+
+	// Ctrl + A, C: コピー
+	ctrl_a_c: ctrl_a_c {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp C>
+			;
+	};
+
+	// Ctrl + A, D: 補助線削除
+	ctrl_a_d: ctrl_a_d {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp D>
+			;
+	};
+
+	// Ctrl + A, E: 文字種別変更
+	ctrl_a_e: ctrl_a_e {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp E>
+			;
+	};
+
+	// Ctrl + A, F: 多相結線
+	ctrl_a_f: ctrl_a_f {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp F>
+			;
+	};
+
+	// Ctrl + A, G: 図形グループ化解除
+	ctrl_a_g: ctrl_a_g {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp G>
+			;
+	};
+
+	// Ctrl + A, H: 文字列置換
+	ctrl_a_h: ctrl_a_h {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp H>
+			;
+	};
+
+	// Ctrl + A, I: 連続寸法線
+	ctrl_a_i: ctrl_a_i {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp I>
+			;
+	};
+
+	// Ctrl + A, J: 図面管理情報
+	ctrl_a_j: ctrl_a_j {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp J>
+			;
+	};
+
+	// Ctrl + A, K: コメント
+	ctrl_a_k: ctrl_a_k {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp K>
+			;
+	};
+
+	// Ctrl + A, L: 直線(中心線)
+	ctrl_a_l: ctrl_a_l {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp L>
+			;
+	};
+
+	// Ctrl + A, M: 上下中央間隔揃え
+	ctrl_a_m: ctrl_a_m {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp M>
+			;
+	};
+
+	// Ctrl + A, N: 自動線番範囲選択
+	ctrl_a_n: ctrl_a_n {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			, <&macro_wait_time 80>
+			, <&macro_tap &kp TAB>
+			, <&macro_wait_time 50>
+			, <&macro_tap &kp TAB>
+			, <&macro_wait_time 50>
+			, <&macro_tap &kp TAB>
+			;
+	};
+
+	// Ctrl + A, O: 図形要素分解
+	ctrl_a_o: ctrl_a_o {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp O>
+			;
+	};
+
+	// Ctrl + A, P: ページ編集
+	ctrl_a_p: ctrl_a_p {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp P>
+			;
+	};
+
+	// Ctrl + A, Q: 円(中心)
+	ctrl_a_q: ctrl_a_q {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Q>
+			;
+	};
+
+	// Ctrl + A, R: Ｒ枠変更
+	ctrl_a_r: ctrl_a_r {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp R>
+			;
+	};
+
+	// Ctrl + A, S: シンボル置換
+	ctrl_a_s: ctrl_a_s {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp S>
+			;
+	};
+
+	// Ctrl + A, T: 文章
+	ctrl_a_t: ctrl_a_t {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp T>
+			;
+	};
+
+	// Ctrl + A, U: 連続寸法線削除
+	ctrl_a_u: ctrl_a_u {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp U>
+			;
+	};
+
+	// Ctrl + A, V: 貼り付け
+	ctrl_a_v: ctrl_a_v {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp V>
+			;
+	};
+
+	// Ctrl + A, W: 渡りページ編集
+	ctrl_a_w: ctrl_a_w {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp W>
+			;
+	};
+
+	// Ctrl + A, X: 範囲切断
+	ctrl_a_x: ctrl_a_x {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp X>
+			;
+	};
+
+	// Ctrl + A, Y: シンボルレイヤ変更
+	ctrl_a_y: ctrl_a_y {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Y>
+			;
+	};
+
+	// Ctrl + A, Z: フォーマット情報
+	ctrl_a_z: ctrl_a_z {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp A>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Z>
+			;
+	};
+
+
+	// =========================================================================
+	// --- 3. Ctrl + D (<Key1> + Ctrl + D) ---
+	// =========================================================================
+
+	// Ctrl + D, A: 拡大・縮小
+	ctrl_d_a: ctrl_d_a {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp A>
+			;
+	};
+
+	// Ctrl + D, B: 面取り
+	ctrl_d_b: ctrl_d_b {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp B>
+			;
+	};
+
+	// Ctrl + D, C: 円弧(中心)
+	ctrl_d_c: ctrl_d_c {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp C>
+			;
+	};
+
+	// Ctrl + D, D: 補助線全削除
+	ctrl_d_d: ctrl_d_d {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp D>
+			;
+	};
+
+	// Ctrl + D, E: 文章修正
+	ctrl_d_e: ctrl_d_e {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp E>
+			;
+	};
+
+	// Ctrl + D, F: ツイスト線
+	ctrl_d_f: ctrl_d_f {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp F>
+			;
+	};
+
+	// Ctrl + D, G: 図形配列
+	ctrl_d_g: ctrl_d_g {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp G>
+			;
+	};
+
+	// Ctrl + D, H: 文字列検索
+	ctrl_d_h: ctrl_d_h {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp H>
+			;
+	};
+
+	// Ctrl + D, I: 寸法線グループ化解除
+	ctrl_d_i: ctrl_d_i {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp I>
+			;
+	};
+
+	// Ctrl + D, J: ページ管理情報
+	ctrl_d_j: ctrl_d_j {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp J>
+			;
+	};
+
+	// Ctrl + D, K: 目次作成
+	ctrl_d_k: ctrl_d_k {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp K>
+			;
+	};
+
+	// Ctrl + D, L: 平行補助線入力
+	ctrl_d_l: ctrl_d_l {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp L>
+			;
+	};
+
+	// Ctrl + D, M: 左右中央間隔揃え
+	ctrl_d_m: ctrl_d_m {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp M>
+			;
+	};
+
+	// Ctrl + D, N: 三相線番
+	ctrl_d_n: ctrl_d_n {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			;
+	};
+
+	// Ctrl + D, O: 図形要素分割
+	ctrl_d_o: ctrl_d_o {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp O>
+			;
+	};
+
+	// Ctrl + D, P: 印刷情報
+	ctrl_d_p: ctrl_d_p {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp P>
+			;
+	};
+
+	// Ctrl + D, Q: 雲形
+	ctrl_d_q: ctrl_d_q {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Q>
+			;
+	};
+
+	// Ctrl + D, R: 接続点
+	ctrl_d_r: ctrl_d_r {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp R>
+			;
+	};
+
+	// Ctrl + D, S: DXF/DWGファイル入力
+	ctrl_d_s: ctrl_d_s {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp S>
+			;
+	};
+
+	// Ctrl + D, T: 製品情報
+	ctrl_d_t: ctrl_d_t {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp T>
+			;
+	};
+
+	// Ctrl + D, U: 寸法線グループ化
+	ctrl_d_u: ctrl_d_u {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp U>
+			;
+	};
+
+	// Ctrl + D, V: 盤枠線(矩形)
+	ctrl_d_v: ctrl_d_v {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp V>
+			;
+	};
+
+	// Ctrl + D, W: 一時補助線全削除
+	ctrl_d_w: ctrl_d_w {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp W>
+			;
+	};
+
+	// Ctrl + D, X: 長円
+	ctrl_d_x: ctrl_d_x {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp X>
+			;
+	};
+
+	// Ctrl + D, Y: 引出寸法線
+	ctrl_d_y: ctrl_d_y {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Y>
+			;
+	};
+
+	// Ctrl + D, Z: 図面種別情報
+	ctrl_d_z: ctrl_d_z {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp D>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Z>
+			;
+	};
+
+
+	// =========================================================================
+	// --- 4. Ctrl + F (<Key1> + Ctrl + F) ---
+	// =========================================================================
+	
+	// Ctrl + F, A: 未設定
+	ctrl_f_a: ctrl_f_a {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp A>
+			;
+	};
+
+	// Ctrl + F, B: 正方形(一辺)
+	ctrl_f_b: ctrl_f_b {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp B>
+			;
+	};
+
+	// Ctrl + F, C: 銘板表編集
+	ctrl_f_c: ctrl_f_c {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp C>
+			;
+	};
+
+	// Ctrl + F, D: 銘板表
+	ctrl_f_d: ctrl_f_d {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp D>
+			;
+	};
+
+	// Ctrl + F, E: 閉じる
+	ctrl_f_e: ctrl_f_e {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp E>
+			;
+	};
+
+	// Ctrl + F, F: 未設定
+	ctrl_f_f: ctrl_f_f {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp F>
+			;
+	};
+
+	// Ctrl + F, G: 部品表編集
+	ctrl_f_g: ctrl_f_g {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp G>
+			;
+	};
+
+	// Ctrl + F, H: 集計表
+	ctrl_f_h: ctrl_f_h {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp H>
+			;
+	};
+
+	// Ctrl + F, I: 上揃え
+	ctrl_f_i: ctrl_f_i {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp I>
+			;
+	};
+
+	// Ctrl + F, J: 左揃え
+	ctrl_f_j: ctrl_f_j {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp J>
+			;
+	};
+
+	// Ctrl + F, K: 下揃え
+	ctrl_f_k: ctrl_f_k {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp K>
+			;
+	};
+
+	// Ctrl + F, L: 右揃え
+	ctrl_f_l: ctrl_f_l {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp L>
+			;
+	};
+
+	// Ctrl + F, M: 従属文字位置変更
+	ctrl_f_m: ctrl_f_m {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp M>
+			;
+	};
+
+	// Ctrl + F, N: 未設定
+	ctrl_f_n: ctrl_f_n {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp N>
+			;
+	};
+
+	// Ctrl + F, O: 上下中央揃え
+	ctrl_f_o: ctrl_f_o {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp O>
+			;
+	};
+
+	// Ctrl + F, P: 印刷
+	ctrl_f_p: ctrl_f_p {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp P>
+			;
+	};
+
+	// Ctrl + F, Q: 未設定
+	ctrl_f_q: ctrl_f_q {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Q>
+			;
+	};
+
+	// Ctrl + F, R: 未設定
+	ctrl_f_r: ctrl_f_r {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp R>
+			;
+	};
+
+	// Ctrl + F, S: 上書き保存
+	ctrl_f_s: ctrl_f_s {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp S>
+			;
+	};
+
+	// Ctrl + F, T: 未設定
+	ctrl_f_t: ctrl_f_t {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp T>
+			;
+	};
+
+	// Ctrl + F, U: 左右中央揃え
+	ctrl_f_u: ctrl_f_u {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp U>
+			;
+	};
+
+	// Ctrl + F, V: 盤枠製品番号
+	ctrl_f_v: ctrl_f_v {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp V>
+			;
+	};
+
+	// Ctrl + F, W: 未設定
+	ctrl_f_w: ctrl_f_w {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp W>
+			;
+	};
+
+	// Ctrl + F, X: 未設定
+	ctrl_f_x: ctrl_f_x {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp X>
+			;
+	};
+
+	// Ctrl + F, Y: 未設定
+	ctrl_f_y: ctrl_f_y {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Y>
+			;
+	};
+
+	// Ctrl + F, Z: 未設定
+	ctrl_f_z: ctrl_f_z {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings
+			= <&macro_press &kp LCTRL>
+			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
+			, <&macro_tap &kp Z>
+			;
+	};
+
+    // Ctrl+Alt+J: 1G
+    ctrl_alt_j: ctrl_alt_j {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
         bindings
-            = <&macro_press &mo WIN>
-            , <&macro_param_1to1>
-            , <&macro_param_2to2>
-            , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-            , <&macro_pause_for_release>
-            , <&macro_param_1to1>
-            , <&macro_param_2to2>
-            , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-            , <&macro_release &mo WIN>
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp J>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
             ;
-    };        
-    qm: qwerty_m {
-        compatible = "zmk,behavior-macro-one-param";
-        wait-ms = <0>;
-        tap-ms = <0>;
-        #binding-cells = <1>;
+    };
+    // Ctrl+Alt+K: 1/4G
+    ctrl_alt_k: ctrl_alt_k {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
         bindings
-            = <&macro_press &mo WIN>
-            , <&macro_param_1to1>
-            , <&macro_press &kp MACRO_PLACEHOLDER>
-            , <&macro_pause_for_release>
-            , <&macro_param_1to1>
-            , <&macro_release &kp MACRO_PLACEHOLDER>
-            , <&macro_release &mo WIN>
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp K>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    // Ctrl+Alt+L: 0.5mm
+    ctrl_alt_l: ctrl_alt_l {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp L>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    // Ctrl+Alt+;: 0.25mm
+    ctrl_alt_semi: ctrl_alt_semi {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp SEMICOLON>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    ctrl_alt_s: ctrl_alt_s { // シンボル一覧(AHK)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_press &kp LALT>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LALT>
+            , <&macro_release &kp LCTRL>
+            // , <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
+            ;
+    };	
+    alt_home: alt_home { // 移動左90度回転[AHK]
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp HOME>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    alt_end: alt_end { // 移動右90度回転[AHK]
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp END>
+            , <&macro_release &kp LALT>
             ;
     };
 
+	// ECAD用マクロ定義ここまで
+
+    win_shift_s: win_shift_s { // スクリーンショット
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LGUI>
+            , <&macro_release &kp LSHFT>
+            ;
+        };	
     file_f: file_f { // ファイルの切り替え正
         compatible = "zmk,behavior-macro";
         wait-ms = <40>;
@@ -3839,6 +4826,60 @@ combos {
             = <&macro_press &kp LALT>
             , <&macro_tap &kp DOWN>
             , <&macro_release &kp LALT>
+            ;
+    };
+    cmd_x: cmd_x { // 切り取り
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp X>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    cmd_c: cmd_c { // コピー
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp C>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    cmd_v: cmd_v { // 貼り付け
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp V>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    ctrl_x: ctrl_x { // 切り取り
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp X>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    ctrl_c: ctrl_c { // コピー
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp C>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    ctrl_v: ctrl_v { // 貼り付け
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LCTRL>
+            , <&macro_tap &kp V>
+            , <&macro_release &kp LCTRL>
             ;
     };
 
@@ -3953,52 +4994,20 @@ combos {
             , <&macro_wait_time 30> // ここで30ミリ秒待機
             , <&kp  INT5>; // レイヤー3（LIN）に戻る
     };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri-layer {
-            if-layers = <LWR RSE>;
-            then-layer = <ADJ>;
-        };
-        tri-layerw {
-            if-layers = <LWRW RSEW>;
-            then-layer = <ADJW>;
-        };
-    }; // conditional_layers の閉じ括弧の後にセミコロンが必要
-	
-behaviors {
-    // LANG1用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang1)
-    ht_lg1: ht_lg1 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_lang1>;
+    tW_int4: tW_int4 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to WIN &kp INT4>; // レイヤー5（NICL）に戻る
     };
-    // LANG2用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang2)
-    ht_lg2: ht_lg2 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_lang2>;
-    };
-    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int4)
-    ht_it4: ht_it4 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_int4>;
-    };
-    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int5)
-    ht_it5: ht_it5 {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&mo>, <&t_int5>;
+    tC_int5: tC_int5 {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <10>; // 全体の基本遅延
+        tap-ms = <10>;
+        bindings 
+            = <&to CAD>
+            , <&macro_wait_time 30> // ここで30ミリ秒待機
+            , <&kp  INT5>; // レイヤー3（LIN）に戻る
     };
     bt0_lQWE: bt0_lQWE { // Bluetoothプロファイル0を選択し、レイヤーQWEを有効化
         compatible = "zmk,behavior-macro";
@@ -4044,6 +5053,11 @@ behaviors {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&to QWE &bt BT_SEL 3 &to LIN>;
+    };
+    bt3_lCAD: bt3_lCAD { // Bluetoothプロファイル3を選択し、レイヤーCADを有効化
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&to QWE &bt BT_SEL 3 &to CAD>;
     };
     bt3_lWIN: bt3_lWIN { // Bluetoothプロファイル3を選択し、レイヤーWINを有効化
         compatible = "zmk,behavior-macro";
@@ -4196,6 +5210,7 @@ behaviors {
             , <&macro_tap &kp TAB>
             ;
     };
+
     ng_on: ng_on {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -4248,16 +5263,366 @@ behaviors {
             , <&macro_tap &kp R>;        // シート名の変更(Rename)
     };
 
-    td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでINT2、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持
+    qmt: qwerty_mt {
+        compatible = "zmk,behavior-macro-two-param";
+        wait-ms = <0>;
+        tap-ms = <0>;
+        #binding-cells = <2>;
+        bindings
+            = <&macro_press &mo WIN>
+            , <&macro_param_1to1>
+            , <&macro_param_2to2>
+            , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+            , <&macro_pause_for_release>
+            , <&macro_param_1to1>
+            , <&macro_param_2to2>
+            , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+            , <&macro_release &mo WIN>
+            ;
+    };        
+        qm: qwerty_m {
+        compatible = "zmk,behavior-macro-one-param";
+        wait-ms = <0>;
+        tap-ms = <0>;
+        #binding-cells = <1>;
+        bindings
+            = <&macro_press &mo WIN>
+            , <&macro_param_1to1>
+            , <&macro_press &kp MACRO_PLACEHOLDER>
+            , <&macro_pause_for_release>
+            , <&macro_param_1to1>
+            , <&macro_release &kp MACRO_PLACEHOLDER>
+            , <&macro_release &mo WIN>
+            ;
+    };
+
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
+
+    //     tri-layer {
+    //         if-layers = <LWR RSE>;
+    //         then-layer = <ADJ>;
+    //     };
+    //     tri-layerw {
+    //         if-layers = <LWRW RSEW>;
+    //         then-layer = <ADJW>;
+    //     };
+    // }; // conditional_layers の閉じ括弧の後にセミコロンが必要
+	
+behaviors {
+    // LANG1用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang1)
+    ht_lg1: ht_lg1 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&t_lang1>;
+    };
+    // LANG2用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_lang2)
+    ht_lg2: ht_lg2 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&t_lang2>;
+    };
+    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int4)
+    ht_it4: ht_it4 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&t_int4>;
+    };
+    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(t_int5)
+    ht_it5: ht_it5 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&t_int5>;
+    };
+    // INT4用のHold-Tap: ホールドで指定Layer, タップでマクロ(tW_int4)
+    htW_it4: htW_it4 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&tW_int4>;
+    };
+    // INT5用のHold-Tap: ホールドで指定Layer, タップでマクロ(tC_int5)
+    htC_it5: htC_it5 {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&mo>, <&tC_int5>;
+    };
+
+    // A-Z共通のHold-Tap定義
+    all_ht: all_hold_tap {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <180>; // タップダンスのタイムアウトと同じに設定
+        quick-tap-ms = <0>;
+        bindings = <&kp>, <&kp>;
+    };
+
+    // --- Tap Dance A ---
+    td_A: tap_dance_A {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht A A>, <&ctrl_a_a>, <&ctrl_d_a>, <&ctrl_f_a>;
+    };
+
+    // --- Tap Dance B ---
+    td_B: tap_dance_B {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht B B>, <&ctrl_a_b>, <&ctrl_d_b>, <&ctrl_f_b>;
+    };
+
+    // --- Tap Dance C ---
+    td_C: tap_dance_C {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht C C>, <&ctrl_a_c>, <&ctrl_d_c>, <&ctrl_f_c>;
+    };
+
+    // --- Tap Dance D ---
+    td_D: tap_dance_D {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht D D>, <&ctrl_a_d>, <&ctrl_d_d>, <&ctrl_f_d>;
+    };
+
+    // --- Tap Dance E ---
+    td_E: tap_dance_E {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht E E>, <&ctrl_a_e>, <&ctrl_d_e>, <&ctrl_f_e>;
+    };
+
+    // --- Tap Dance F ---
+    td_F: tap_dance_F {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht F F>, <&ctrl_a_f>, <&ctrl_d_f>, <&ctrl_f_f>;
+    };
+
+    // --- Tap Dance G ---
+    td_G: tap_dance_G {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht G G>, <&ctrl_a_g>, <&ctrl_d_g>, <&ctrl_f_g>;
+    };
+
+    // --- Tap Dance H ---
+    td_H: tap_dance_H {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht H H>, <&ctrl_a_h>, <&ctrl_d_h>, <&ctrl_f_h>;
+    };
+
+    // --- Tap Dance I ---
+    td_I: tap_dance_I {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht I I>, <&ctrl_a_i>, <&ctrl_d_i>, <&ctrl_f_i>;
+    };
+
+    // --- Tap Dance J ---
+    td_J: tap_dance_J {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht J J>, <&ctrl_a_j>, <&ctrl_d_j>, <&ctrl_f_j>;
+    };
+
+    // --- Tap Dance K ---
+    td_K: tap_dance_K {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht K K>, <&ctrl_a_k>, <&ctrl_d_k>, <&ctrl_f_k>;
+    };
+
+    // --- Tap Dance L ---
+    td_L: tap_dance_L {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht L L>, <&ctrl_a_l>, <&ctrl_d_l>, <&ctrl_f_l>;
+    };
+
+    // --- Tap Dance M ---
+    td_M: tap_dance_M {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht M M>, <&ctrl_a_m>, <&ctrl_d_m>, <&ctrl_f_m>;
+    };
+
+    // --- Tap Dance N ---
+    td_N: tap_dance_N {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht N N>, <&ctrl_a_n>, <&ctrl_d_n>, <&ctrl_f_n>;
+    };
+
+    // --- Tap Dance O ---
+    td_O: tap_dance_O {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht O O>, <&ctrl_a_o>, <&ctrl_d_o>, <&ctrl_f_o>;
+    };
+
+    // --- Tap Dance P ---
+    td_P: tap_dance_P {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht P P>, <&ctrl_a_p>, <&ctrl_d_p>, <&ctrl_f_p>;
+    };
+
+    // --- Tap Dance Q ---
+    td_Q: tap_dance_Q {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht Q Q>, <&ctrl_a_q>, <&ctrl_d_q>, <&ctrl_f_q>;
+    };
+
+    // --- Tap Dance R ---
+    td_R: tap_dance_R {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht R R>, <&ctrl_a_r>, <&ctrl_d_r>, <&ctrl_f_r>;
+    };
+
+    // --- Tap Dance S ---
+    td_S: tap_dance_S {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht S S>, <&ctrl_a_s>, <&ctrl_d_s>, <&ctrl_f_s>;
+    };
+
+    // --- Tap Dance T ---
+    td_T: tap_dance_T {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht T T>, <&ctrl_a_t>, <&ctrl_d_t>, <&ctrl_f_t>;
+    };
+
+    // --- Tap Dance U ---
+    td_U: tap_dance_U {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht U U>, <&ctrl_a_u>, <&ctrl_d_u>, <&ctrl_f_u>;
+    };
+
+    // --- Tap Dance V ---
+    td_V: tap_dance_V {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht V V>, <&ctrl_a_v>, <&ctrl_d_v>, <&ctrl_f_v>;
+    };
+
+    // --- Tap Dance W ---
+    td_W: tap_dance_W {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht W W>, <&ctrl_a_w>, <&ctrl_d_w>, <&ctrl_f_w>;
+    };
+
+    // --- Tap Dance X ---
+    td_X: tap_dance_X {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht X X>, <&ctrl_a_x>, <&ctrl_d_x>, <&ctrl_f_x>;
+    };
+
+    // --- Tap Dance Y ---
+    td_Y: tap_dance_Y {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht Y Y>, <&ctrl_a_y>, <&ctrl_d_y>, <&ctrl_f_y>;
+    };
+
+    // --- Tap Dance Z ---
+    td_Z: tap_dance_Z {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        bindings = <&all_ht Z Z>, <&ctrl_a_z>, <&ctrl_d_z>, <&ctrl_f_z>;
+    };
+
+    // --- Tap Dance SEMICOLON ---
+    td_SEMI: tap_dance_SEMI {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        // 1-Tap: 通常キー, 2-Taps: 0.5mm , 3-Taps: 0.25mm
+        bindings = <&all_ht SEMICOLON SEMICOLON>, <&ctrl_alt_l>, <&ctrl_alt_semi>; 
+    };
+
+    // --- Tap Dance COMMA ---
+    td_COMMA: tap_dance_COMMA {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        // 1-Tap: 通常キー, 2-Taps: 銘板表編集 (Ctrl+F+c), 3-Taps:  銘板表 (Ctrl+F+d)
+        bindings = <&all_ht COMMA COMMA>, <&ctrl_f_c>, <&ctrl_f_d>;
+    };
+
+    // --- Tap Dance DOT ---
+    td_DOT: tap_dance_DOT {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        // 1-Tap: 通常キー, 2-Taps: 部品表編集 (Ctrl+F+g), 3-Taps:  集計表 (Ctrl+F+h)
+        bindings = <&all_ht DOT DOT>, <&ctrl_f_g>, <&ctrl_f_h>;
+    };
+
+    // --- Tap Dance SLASH ---
+    td_SLASH: tap_dance_SLASH {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <180>;
+        // 1-Tap: 通常キー, 2-Taps: 1G , 3-Taps: 1/4G
+        bindings = <&all_ht SLASH SLASH>, <&ctrl_alt_j>, <&ctrl_alt_k>;
+    };
+
+    td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでかな、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持、無変換
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <170>;
         bindings = <&lt MOVW INT2>, <&to_MOVW_i5>;
     };
-    td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップでINT5、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
+    td_lt_num_i5: tap_dance_layer_tap_num_i5 {  // タップで無変換、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持、無変換
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <200>;
+        tapping-term-ms = <150>;
         bindings = <&lt NUM INT5>, <&to_NUM_i5>;
     };
 };
@@ -4290,7 +5655,7 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
-            &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
+            &qmt LCTRL TAB  &macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
                                                             &ht_lg2 NUM 0   &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
             >;
@@ -4299,9 +5664,9 @@ behaviors {
             display-name = "LIN";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T		    &kp Y         	&kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
-            &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G		    &kp H         	&kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
-            &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B		    &kp N         	&kp M           &kp COMMA		&kp DOT         &kp FSLH        &kp RALT
+            &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P           &mt RSHFT MINUS
+            &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt RCTRL SQT
+            &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RALT
                                                             &lt NUM INT5    &mt LSHFT SPACE &lt LWRW TAB	&lt RSEW ENTER	&mt RSHFT SPACE &ht_it4 MOVW 0
             >;
         };
@@ -4320,11 +5685,21 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
-            &qmt LCTRL TAB	&macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
-            &qm LGUI		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
+            &qmt LCTRL TAB  &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
+            &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
                                                             &ht_it5 NUM 0   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER  &kp LS(SPACE)   &lt MOVW INT4
             >;
         };
+        ecad_layer {
+            display-name = "CAD";
+            bindings = <
+        // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+            &qmt LSHFT LS(TAB) &td_Q        &td_W           &td_E           &td_R           &td_T           &td_Y           &td_U           &td_I           &td_O           &td_P           &qmt RSHFT MINUS
+            &qmt LCTRL TAB  &td_A           &td_S           &td_D           &td_F           &td_G           &td_H           &td_J           &td_K           &td_L           &td_SEMI        &qmt RCTRL SQT
+            &qm LGUI        &td_Z           &td_X           &td_C           &td_V           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH       &qm LALT
+                                                            &td_lt_num_i5   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&qmt RCTRL TAB  &htW_it4 MOVW 0
+            >;
+        };        
         windows_layer {
             display-name = "WIN";
             bindings = <
@@ -4332,7 +5707,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &mt RSHFT MINUS
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
-                                                            &lt NUM INT5    &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
+                                                            &htC_it5 NUM 0  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
             >;
         };        
         lower_layer {
@@ -4340,9 +5715,9 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(X)           
-            &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LC(C)
-            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2        &mkp MB2        &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(V)       &trans
-                                                            &kp LSHFT       &kp LCTRL       &trans          &trans          &kp LS(LC(V))   &kp RSHFT
+            &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LC(C)
+            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(V)       &trans
+                                                            &kp LSHFT       &kp LCTRL       &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
             >;
         };
         lowerw_layer {
@@ -4350,9 +5725,9 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
-            &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&mkp MB1        &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&mkp MB2        &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
-                                                            &kp LSHFT       &kp LCTRL	    &trans          &trans          &kp LS(LC(V))   &kp RSHFT
+            &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
+            &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
+                                                            &kp LSHFT       &kp LCTRL	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
         raise_layer {
@@ -4362,7 +5737,7 @@ behaviors {
             &trans		    &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
             &mt LCTRL GRAVE &macro_JPN1	    &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &kp LG(V)       &trans
-                                                            &kp LSHFT       &kp SPACE       &trans          &trans          &kp RCTRL       &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &kp RCTRL       &kp RSHFT
             >;
         };
         raisew_layer {
@@ -4372,7 +5747,7 @@ behaviors {
             &trans			&kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &kp LC(V)       &trans
-                                                            &kp LSHFT       &kp SPACE       &trans          &trans          &kp RCTRL       &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &kp RCTRL       &kp RSHFT
             >;
         };
         adjust_layer {
@@ -4380,9 +5755,9 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
-            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lWIN       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
+            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
             &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
-                                                            &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to WIN
+                                                            &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to CAD
             >;
         };
         adjustw_layer {
@@ -4390,9 +5765,9 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
-            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lWIN       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
+            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
-                                                            &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to WIN
+                                                            &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
             >;
         };
         move_layer {
