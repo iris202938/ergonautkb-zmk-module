@@ -1322,7 +1322,7 @@
 		};
 		l_layer15 {
 			layers = <ADJL>; // レイヤー15がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_ladjw>; // zip_keybind_keys_ladjw を使用
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
 		};
 		l_layer15-prevent {
@@ -1449,7 +1449,7 @@
 		};
 		r_layer18 {
 			layers = <MOVL>; // レイヤー18がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_rmovw>; // zip_keybind_keys_ecad_rmovw を使用
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer18-prevent {
@@ -1474,14 +1474,10 @@
 			layers = <ADJW>; // レイヤー16がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_layer15_l {
+		r_mouse_speed_full_l {
 			layers = <ADJL>; // レイヤー15がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_radjw>; // zip_keybind_keys_ecad_radjw を使用
-			process-next; // 他のプロセッサも処理を継続
-		};
-		r_layer15_l-prevent {
-			layers = <ADJL>; // レイヤー15がアクティブな場合
-			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							, <&zip_xy_scaler 80 100>; // 速度を80/100に設定 (乗数80, 除数100)
 		};
 		r_mouse_speed_full {
 			layers = <ADJ>; // レイヤー14がアクティブな場合
@@ -1499,7 +1495,7 @@
 		};
 		r_layer12_l {
 			layers = <RSEL>; // レイヤー12がアクティブな場合
-			input-processors = <&zip_keybind_keys_ecad_rsew>; // zip_keybind_keys_ecad_rsew を使用
+			input-processors = <&zip_keybind_keys_directionM>; // zip_keybind_keys_directionM を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
 		r_layer12_l-prevent {
