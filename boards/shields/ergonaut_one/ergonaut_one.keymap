@@ -291,61 +291,61 @@ combos {
         timeout-ms = <80>;
     };
     k_tab_1 { // ECADカウントアップ数
-        bindings = <&K_tab_1>;
+        bindings = <&k_tab_1>;
         key-positions = <40 31>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_2 { // ECADカウントアップ数2
-        bindings = <&K_tab_2>;
+        bindings = <&k_tab_2>;
         key-positions = <40 32>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_3 { // ECADカウントアップ数3
-        bindings = <&K_tab_3>;
+        bindings = <&k_tab_3>;
         key-positions = <40 33>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_4 { // ECADカウントアップ数4
-        bindings = <&K_tab_4>;
+        bindings = <&k_tab_4>;
         key-positions = <40 19>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_5 { // ECADカウントアップ数5
-        bindings = <&K_tab_5>;
+        bindings = <&k_tab_5>;
         key-positions = <40 20>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_6 { // ECADカウントアップ数6
-        bindings = <&K_tab_6>;
+        bindings = <&k_tab_6>;
         key-positions = <40 21>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_7 { // ECADカウントアップ数7
-        bindings = <&K_tab_7>;
+        bindings = <&k_tab_7>;
         key-positions = <40 7>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_8 { // ECADカウントアップ数8
-        bindings = <&K_tab_8>;
+        bindings = <&k_tab_8>;
         key-positions = <40 8>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_9 { // ECADカウントアップ数9
-        bindings = <&K_tab_9>;
+        bindings = <&k_tab_9>;
         key-positions = <40 9>;
         layers = <CAD>;
         timeout-ms = <80>;
     };
     k_tab_10 { // ECADカウントアップ数10
-        bindings = <&K_tab_10>;
+        bindings = <&k_tab_10>;
         key-positions = <40 30>;
         layers = <CAD>;
         timeout-ms = <80>;
