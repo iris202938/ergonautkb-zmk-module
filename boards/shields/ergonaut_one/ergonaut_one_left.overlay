@@ -1465,21 +1465,21 @@
 			layers = <MOV>; // レイヤー17がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_layer16 {
+		r_layer16_w {
 			layers = <ADJW>; // レイヤー16がアクティブな場合
 			input-processors = <&zip_keybind_keys_ecad_radjw>; // zip_keybind_keys_ecad_radjw を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		r_layer15-prevent {
-			layers = <ADJW>; // レイヤー15がアクティブな場合
+		r_layer16_w-prevent {
+			layers = <ADJW>; // レイヤー16がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_layer15 {
+		r_layer15_l {
 			layers = <ADJL>; // レイヤー15がアクティブな場合
 			input-processors = <&zip_keybind_keys_ecad_radjw>; // zip_keybind_keys_ecad_radjw を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		r_layer15-prevent {
+		r_layer15_l-prevent {
 			layers = <ADJL>; // レイヤー15がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
