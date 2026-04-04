@@ -84,28 +84,34 @@ combos {
         layers = <QWE NGN NIC>;
         bindings = <&mo ADJ>;
     };
+    combo_ADJL {
+        timeout-ms = <70>;
+        key-positions = <38 39>;
+        layers = <LIN NGNL NICL>;
+        bindings = <&mo ADJL>;
+    };
     combo_ADJW {
         timeout-ms = <70>;
         key-positions = <38 39>;
-        layers = <CAD WIN NGNL NICL>;
+        layers = <CAD WIN>;
         bindings = <&mo ADJW>;
     };
     combo_ESCL {
         timeout-ms = <80>;
         key-positions = <0 12>;
-        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVL MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_ESCR {
         timeout-ms = <80>;
         key-positions = <11 23>;
-        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVW NUM>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVL MOVW NUM>;
         bindings = <&kp ESC>;
     };
     combo_TSHIFT {
         timeout-ms = <70>;
         key-positions = <36 41>;
-        layers = <QWE LIN WIN LWR LWRW RSE RSEW>;
+        layers = <QWE LIN WIN LWR LWRL LWRW RSE RSEL RSEW>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
@@ -141,19 +147,19 @@ combos {
     ctrl_x {
         bindings = <&ctrl_x>;
         key-positions = <9 10>;
-        layers = <RSEW>;
+        layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
     ctrl_c {
         bindings = <&ctrl_c>;
         key-positions = <21 22>;
-        layers = <RSEW>;
+        layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
     ctrl_v {
         bindings = <&ctrl_v>;
         key-positions = <31 32>;
-        layers = <RSEW>;
+        layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
     // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
@@ -189,38 +195,38 @@ combos {
     combo_exl_fill { // Excelのオートフィル
         timeout-ms = <80>;
         key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
-        layers = <RSEW>;
+        layers = <RSEL RSEW>;
         bindings = <&exl_fill>;
     };
     combo_m_xl_rename { // Excelのシート名変更マクロ
         timeout-ms = <80>;
         key-positions = <18 9 4>; // H,O,Rのキー位置に書き換えてください
-        layers = <RSEW>;
+        layers = <RSEL RSEW>;
         bindings = <&m_xl_rename>;
     };
 
     combo_to_LIN {
         timeout-ms = <70>;
         key-positions = <36 41>;
-        layers = <ADJ ADJW>;
+        layers = <ADJ ADJL ADJW>;
         bindings = <&to LIN>;
     };
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
-        layers = <CAD LWR LWRW>;
+        layers = <CAD LWR LWRL LWRW>;
         bindings = <&mkp MB1>;
     };
     combo_MB2 {
         timeout-ms = <60>;
         key-positions = <32 33>;
-        layers = <CAD LWR LWRW>;
+        layers = <CAD LWR LWRL LWRW>;
         bindings = <&mkp MB2>;
     };
     combo_MB3 {
         timeout-ms = <60>;
         key-positions = <31 33>;
-        layers = <CAD LWR LWRW>;
+        layers = <CAD LWR LWRL LWRW>;
         bindings = <&mkp MB3>;
     };
 
