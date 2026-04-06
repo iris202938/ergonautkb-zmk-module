@@ -5348,6 +5348,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5361,6 +5362,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5375,6 +5377,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5389,6 +5392,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5403,6 +5407,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5417,6 +5422,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5431,6 +5437,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5445,6 +5452,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5459,6 +5467,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5473,6 +5482,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5488,6 +5498,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5503,6 +5514,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5518,6 +5530,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5533,6 +5546,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5548,6 +5562,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5563,6 +5578,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5578,6 +5594,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5593,6 +5610,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5608,6 +5626,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5623,6 +5642,7 @@ combos {
         wait-ms = <30>;
         bindings
             = <&macro_tap &kp K> // ECADカウントアップ
+            , <&macro_tap &mkp MB1>
             , <&macro_tap &kp ENTER>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5632,6 +5652,7 @@ combos {
             , <&macro_tap &kp N0>
             ;
     };
+
 
 
     ng_on: ng_on {
