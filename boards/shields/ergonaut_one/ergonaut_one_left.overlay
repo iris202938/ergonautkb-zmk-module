@@ -1531,7 +1531,7 @@
 		};
 		r_layer7 {
 			layers = <WIN>; // レイヤー7がアクティブな場合
-			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
 		};
 		r_layer7-prevent {
