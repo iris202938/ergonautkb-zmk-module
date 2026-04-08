@@ -5097,6 +5097,8 @@ combos {
 
     tab_1: tab_1 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5104,6 +5106,8 @@ combos {
     };
     tab_2: tab_2 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5112,6 +5116,8 @@ combos {
     };
     tab_3: tab_3 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5121,7 +5127,9 @@ combos {
     };
     tab_4: tab_4 { // TAB*回数
         compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
+		wait-ms = <30>;
+        tap-ms = <30>;
+		#binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
@@ -5131,6 +5139,8 @@ combos {
     };
     tab_5: tab_5 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5142,6 +5152,8 @@ combos {
     };
     tab_6: tab_6 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5154,6 +5166,8 @@ combos {
     };
     tab_7: tab_7 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5167,6 +5181,8 @@ combos {
     };
     tab_8: tab_8 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5181,6 +5197,8 @@ combos {
     };
     tab_9: tab_9 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
@@ -5196,6 +5214,8 @@ combos {
     };
     tab_0: tab_0 { // TAB*回数
         compatible = "zmk,behavior-macro";
+		wait-ms = <30>;
+        tap-ms = <30>;
         #binding-cells = <0>;
         bindings
             = <&macro_tap &kp TAB>
