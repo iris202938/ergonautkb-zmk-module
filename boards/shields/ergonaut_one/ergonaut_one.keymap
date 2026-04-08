@@ -6054,7 +6054,7 @@ behaviors {
     td_COMMA: tap_dance_COMMA {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <180>;
+        tapping-term-ms = <215>;
         // 1-Tap: 通常キー, 2-Taps: 銘板表編集 (Ctrl+F+c), 3-Taps:  銘板表 (Ctrl+F+d)
         bindings = <&all_ht COMMA COMMA>, <&ctrl_f_c>, <&ctrl_f_d>;
     };
@@ -6063,7 +6063,7 @@ behaviors {
     td_DOT: tap_dance_DOT {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <180>;
+        tapping-term-ms = <215>;
         // 1-Tap: 通常キー, 2-Taps: 部品表編集 (Ctrl+F+g), 3-Taps:  集計表 (Ctrl+F+h)
         bindings = <&all_ht DOT DOT>, <&ctrl_f_g>, <&ctrl_f_h>;
     };
