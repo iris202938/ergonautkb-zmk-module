@@ -5539,7 +5539,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N2>
             ;
     };
@@ -5555,7 +5555,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N3>
             ;
     };
@@ -5571,7 +5571,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N4>
             ;
     };
@@ -5587,7 +5587,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N5>
             ;
     };
@@ -5603,7 +5603,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N6>
             ;
     };
@@ -5619,7 +5619,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N7>
             ;
     };
@@ -5635,7 +5635,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N8>
             ;
     };
@@ -5651,7 +5651,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N9>
             ;
     };
@@ -5667,7 +5667,7 @@ combos {
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
             , <&macro_tap &kp TAB>
-	    , <&macro_tap &kp KP_MINUS>
+            , <&macro_tap &kp KP_MINUS>
             , <&macro_tap &kp N1>
             , <&macro_tap &kp N0>
             ;
