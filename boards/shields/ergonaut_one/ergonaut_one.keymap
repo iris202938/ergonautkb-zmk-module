@@ -518,7 +518,7 @@ combos {
 	};
 
 	combo_RE {
-		timeout-ms = <50>;
+		timeout-ms = <53>;
 		key-positions = <5 37>;
 		layers = <NIC NICL>;
 		bindings = <&macro_RE>;
@@ -805,7 +805,7 @@ combos {
 	};
 
 	combo_YO {
-		timeout-ms = <50>;
+		timeout-ms = <53>;
 		key-positions = <6 40>;
 		layers = <NIC NICL>;
 		bindings = <&macro_YO>;
