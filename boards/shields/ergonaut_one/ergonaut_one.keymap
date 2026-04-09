@@ -111,7 +111,7 @@ combos {
     combo_TSHIFT {
         timeout-ms = <70>;
         key-positions = <36 41>;
-        layers = <QWE LIN WIN LWR LWRL LWRW RSE RSEL RSEW>;
+        layers = <QWE LIN WIN>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
@@ -5838,7 +5838,7 @@ behaviors {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <180>;
-        bindings = <&all_ht A A>, <&ctrl_a_a>, <&ctrl_d_a>, <&ctrl_f_a>;
+        bindings = <&all_ht LCTRL A>, <&ctrl_a_a>, <&ctrl_d_a>, <&ctrl_f_a>;
     };
 
     // --- Tap Dance B ---
