@@ -5838,7 +5838,7 @@ behaviors {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <180>;
-        bindings = <&all_ht A A>, <&ctrl_a_a>, <&ctrl_d_a>, <&ctrl_f_a>;
+        bindings = <&all_ht LCTRL A>, <&ctrl_a_a>, <&ctrl_d_a>, <&ctrl_f_a>;
     };
 
     // --- Tap Dance B ---
@@ -5862,7 +5862,7 @@ behaviors {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <180>;
-        bindings = <&all_ht D D>, <&ctrl_a_d>, <&ctrl_d_d>, <&ctrl_f_d>;
+        bindings = <&all_ht LSHFT D>, <&ctrl_a_d>, <&ctrl_d_d>, <&ctrl_f_d>;
     };
 
     // --- Tap Dance E ---
@@ -5918,7 +5918,7 @@ behaviors {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <180>;
-        bindings = <&all_ht K K>, <&ctrl_a_k>, <&ctrl_d_k>, <&ctrl_f_k>;
+        bindings = <&all_ht RSHFT K>, <&ctrl_a_k>, <&ctrl_d_k>, <&ctrl_f_k>;
     };
 
     // --- Tap Dance L ---
@@ -6047,7 +6047,7 @@ behaviors {
         #binding-cells = <0>;
         tapping-term-ms = <180>;
         // 1-Tap: 通常キー, 2-Taps: 0.5mm , 3-Taps: 0.25mm
-        bindings = <&all_ht SEMICOLON SEMICOLON>, <&ctrl_alt_l>, <&ctrl_alt_semi>; 
+        bindings = <&all_ht RCTRL SEMICOLON>, <&ctrl_alt_l>, <&ctrl_alt_semi>; 
     };
 
     // --- Tap Dance COMMA ---
