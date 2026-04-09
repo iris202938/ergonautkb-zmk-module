@@ -286,7 +286,7 @@ combos {
     };
     tab_0 {
         bindings = <&tab_0>;
-        key-positions = <12 10>;
+        key-positions = <12 30>;
         layers = <QWE LIN CAD NUM>;
         timeout-ms = <80>;
     };
