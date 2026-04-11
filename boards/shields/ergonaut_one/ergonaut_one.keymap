@@ -109,15 +109,15 @@ combos {
         bindings = <&kp ESC>;
     };
     combo_TSHIFT {
-        timeout-ms = <70>;
+        timeout-ms = <55>;
         key-positions = <36 41>;
-        layers = <QWE LIN WIN>;
+        layers = <QWE LIN CAD>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
-        timeout-ms = <70>;
+        timeout-ms = <55>;
         key-positions = <36 41>;
-        layers = <CAD NGN NIC NGNL NICL>;
+        layers = <WIN NGN NIC NGNL NICL>;
         bindings = <&qm RSHIFT>;
     };
     combo_CAPSWORD {
