@@ -4837,7 +4837,7 @@ combos {
             // , <&to WIN> // ADJWのベースレイヤー（例としてWINレイヤー）に戻る※rsewレイヤロック強制解除用
             ;
     };	
-    alt_home: alt_home { // 移動左90度回転[AHK]
+    alt_home: alt_home { // 複写左90度回転[AHK]
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
@@ -4846,7 +4846,7 @@ combos {
             , <&macro_release &kp LALT>
             ;
     };
-    alt_end: alt_end { // 移動右90度回転[AHK]
+    alt_end: alt_end { // 複写右90度回転[AHK]
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
@@ -5080,7 +5080,7 @@ combos {
             , <&macro_tap &kp E &kp I &kp S>;
             // ここで止まるので、設定を確認して手動でEnter
     };
-    alt_int4: alt_int4 { // Alt+変換 選択位置移動(複写)(AHK)
+    alt_int4: alt_int4 { // Alt+変換 選択位置移動(移動)(AHK)
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
@@ -5089,7 +5089,7 @@ combos {
             , <&macro_release &kp RALT>
             ;
     };	
-    alt_int5: alt_int5 { // Alt+無変換 選択位置移動(移動)(AHK)
+    alt_int5: alt_int5 { // Alt+無変換 選択位置移動(複写)(AHK)
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
