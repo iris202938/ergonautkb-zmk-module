@@ -5759,6 +5759,24 @@ combos {
             , <&macro_release &mo WIN>
             ;
     };
+    sk_ctrl: sk_ctrl {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings
+            = <&macro_tap &sk LCTRL &sl CAD>
+            ;
+    };
+    sk_gui: sk_gui {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings
+            = <&macro_tap &sk LGUI &sl CAD>
+            ;
+    };
 
     // conditional_layers {
     //     compatible = "zmk,conditional-layers";
@@ -6181,7 +6199,7 @@ behaviors {
             &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(X)           
             &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LC(C)
             &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(V)       &trans
-                                                            &kp LSHFT       &kp LCTRL       &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
+                                                            &kp LSHFT       &sk_ctrl        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
             >;
         };
         lowerl_layer {
@@ -6191,7 +6209,7 @@ behaviors {
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
             &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
             &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
-                                                            &kp LSHFT       &kp LCTRL	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
+                                                            &kp LSHFT       &sk_ctrl	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
             >;
         };
         lowerw_layer {
@@ -6201,7 +6219,7 @@ behaviors {
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&mkp MB3        &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
             &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
             &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
-                                                            &kp LSHFT       &kp LCTRL	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
+                                                            &kp LSHFT       &sk_ctrl	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
         raise_layer {
@@ -6211,7 +6229,7 @@ behaviors {
             &trans		    &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
             &mt LCTRL GRAVE &macro_JPN1	    &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &kp LG(V)       &trans
-                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &kp RCTRL       &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_gui         &kp RSHFT
             >;
         };
         raisel_layer {
@@ -6221,7 +6239,7 @@ behaviors {
             &trans			&kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &kp LC(V)       &trans
-                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &kp RCTRL       &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_gui         &kp RSHFT
             >;
         };
         raisew_layer {
@@ -6231,7 +6249,7 @@ behaviors {
             &trans			&kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &kp LC(V)       &trans
-                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &kp RCTRL       &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_gui         &kp RSHFT
             >;
         };
         adjust_layer {
