@@ -109,13 +109,13 @@ combos {
         bindings = <&kp ESC>;
     };
     combo_TSHIFT {
-        timeout-ms = <60>;
+        timeout-ms = <65>;
         key-positions = <36 41>;
         layers = <QWE LIN CAD>;
         bindings = <&kp RSHIFT>;
     };
     combo_TSHIFTN {
-        timeout-ms = <60>;
+        timeout-ms = <65>;
         key-positions = <36 41>;
         layers = <WIN NGN NIC NGNL NICL>;
         bindings = <&qm RSHIFT>;
