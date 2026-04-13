@@ -115,24 +115,30 @@ combos {
         layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVL MOVW NUM>;
         bindings = <&kp ESC>;
     };
+    // combo_TSHIFT {
+    //     timeout-ms = <65>;
+    //     key-positions = <36 41>;
+    //     layers = <QWE LIN CAD>;
+    //     bindings = <&kp RSHIFT>;
+    // };
+    combo_caps_word {
+            bindings = <&combo_ht_caps_word RSHIFT 0>;
+            key-positions = <30 35>;
+            layers = <QWE LIN CAD>;
+            timeout-ms = <65>;
+        };
     combo_TSHIFT {
-        timeout-ms = <65>;
-        key-positions = <36 41>;
-        layers = <QWE LIN CAD>;
-        bindings = <&kp RSHIFT>;
-    };
-    combo_TSHIFTN {
         timeout-ms = <65>;
         key-positions = <36 41>;
         layers = <WIN NGN NIC NGNL NICL>;
         bindings = <&qm RSHIFT>;
     };
-    combo_CAPSWORD {
-        timeout-ms = <80>;
-        key-positions = <24 35>;
-        layers = <QWE LIN CAD>;
-        bindings = <&caps_word>;
-    };
+    // combo_CAPSWORD {
+    //     timeout-ms = <80>;
+    //     key-positions = <24 35>;
+    //     layers = <QWE LIN CAD>;
+    //     bindings = <&caps_word>;
+    // };
     cmd_x {
         bindings = <&cmd_x>;
         key-positions = <9 10>;
@@ -6102,6 +6108,14 @@ behaviors {
         bindings = <&all_ht SLASH SLASH>, <&ctrl_alt_j>, <&ctrl_alt_k>;
     };
 
+    // Hold-Tap: ホールドで&qm RSHIFT, タップで&caps_word
+    combo_ht_caps_word: combo_ht_caps_word {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <150>;
+        bindings = <&qm>, <&caps_word>;
+    };
     td_lt_movw_i2: tap_dance_layer_tap_movw_i2 {  // タップでかな、ホールドでMOVWレイヤ、ダブルタップでMOVWレイヤ保持、無変換
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
