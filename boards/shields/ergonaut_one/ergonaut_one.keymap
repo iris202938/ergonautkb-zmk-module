@@ -39,6 +39,13 @@
 &lt {
     flavor = "hold-preferred";
 };
+&sk {
+    release-after-ms = <2000>; // 2秒間入力を待つ
+    quick-release;
+};
+&sl {
+    release-after-ms = <2000>; // 2秒間入力を待つ
+};
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS SPACE CARET PERIOD COMMA ENTER TAB BACKSPACE SLASH KP_N0 KP_N1 KP_N2 KP_N3 KP_N4 KP_N5 KP_N6 KP_N7 KP_N8 KP_N9 KP_MINUS KP_DOT KP_ENTER KP_SLASH KP_ASTERISK KP_PLUS KP_EQUAL>; 
