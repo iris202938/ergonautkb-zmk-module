@@ -6193,6 +6193,12 @@ behaviors {
         tapping-term-ms = <170>;
         bindings = <&lt NUM INT5>, <&to_NUM_i5>;
     };
+    td_lt_num_esc: tap_dance_layer_tap_num_esc {  // タップでesc、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持、無変換
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <170>;
+        bindings = <&lt NUM ESC>, <&to_NUM_i5>;
+    };
 };
 
     keymap {
@@ -6275,7 +6281,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &kp RSHFT
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
-                                                            &htC_it5 NUM 0  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
+                                                            &td_lt_num_esc  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
             >;
         };        
         lower_layer {
