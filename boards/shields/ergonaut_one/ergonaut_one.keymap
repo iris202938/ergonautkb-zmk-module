@@ -5050,26 +5050,61 @@ combos {
             ;
     };
 
-    // to_QWE_l2: to_QWE_LANG2{
-    // 	compatible = "zmk,behavior-macro";
-    // 	#binding-cells = <0>;
-    // 	bindings = <&to QWE>, <&kp LANG2>;
-    // };
-    to_WIN_i5: to_WIN_INT5{
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&to WIN>, <&kp INT5>;
-    };
-    to_MOVW_i5: to_MOVW_INT5{
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&to MOVW>, <&kp INT5>;
-    };
-    to_NUM_i5: to_NUM_INT5{
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&to NUM>, <&kp INT5>;
-    };
+    to_QWE_i5: to_QWE_INT5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to QWE>, <&kp INT5>;
+	};
+	to_WIN_i2: to_WIN_INT2 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to WIN>, <&kp INT2>;
+	};
+	to_WIN_i4: to_WIN_INT4 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to WIN>, <&kp INT4>;
+	};
+	to_WIN_i5: to_WIN_i5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to WIN>, <&kp INT5>;
+	};
+	to_WIN_l1: to_WIN_l1 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to WIN>, <&kp LANG1>;
+	};
+	to_MOV_i2: to_MOV_INT2 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to MOV>, <&kp INT2>;
+	};
+	to_MOVW_i5: to_MOVW_INT5{
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to MOVW>, <&kp INT5>;
+	};
+	to_CAD_i2: to_CAD_INT2 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to CAD>, <&kp INT2>;
+	};
+	to_CAD_i5: to_CAD_i5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to CAD>, <&kp INT5>;
+	};
+	to_CAD_l2: to_CAD_l2 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to CAD>, <&kp LANG2>;
+	};
+	to_NUM_i5: to_NUM_i5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to NUM>, <&kp INT5>;
+	};
 
     int5_g: int5_g { // 端点再設定(AHK)
         compatible = "zmk,behavior-macro";
