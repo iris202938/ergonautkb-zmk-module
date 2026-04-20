@@ -6298,7 +6298,7 @@ behaviors {
             display-name = "LWRL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
+            &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)
             &trans          &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
             &trans          &kp LC(V)       &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &kp LG(V)       &trans
                                                             &kp LSHFT       &trans   	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
@@ -6329,7 +6329,7 @@ behaviors {
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans			&kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
-            &mt LCTRL GRAVE &kp N1         &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
+            &mt LCTRL GRAVE &kp N1          &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &trans          &kp INT1        &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &kp LC(V)       &trans
                                                             &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &trans          &kp RSHFT
             >;
