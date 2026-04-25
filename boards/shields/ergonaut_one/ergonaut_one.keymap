@@ -180,25 +180,25 @@ combos {
     };
     combo_RGUI {
         bindings = <&kp RGUI>;
-        key-positions = <34 35>;
+        key-positions = <33 34>;
         layers = <QWE LWR RSE ADJ MOV>;
         timeout-ms = <80>;
     };
     combo_LGUI {
         bindings = <&kp LGUI>;
-        key-positions = <24 25>;
+        key-positions = <25 26>;
         layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
         timeout-ms = <80>;
     };
     combo_LALT {
         bindings = <&kp LALT>;
-        key-positions = <24 25>;
+        key-positions = <25 26>;
         layers = <QWE LWR RSE ADJ>;
         timeout-ms = <80>;
     };
     combo_RALT {
         bindings = <&kp RALT>;
-        key-positions = <34 35>;
+        key-positions = <33 34>;
         layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
         timeout-ms = <80>;
     };
@@ -285,61 +285,61 @@ combos {
     tab_1 {
         bindings = <&tab_1>;
         key-positions = <12 31>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_2 {
         bindings = <&tab_2>;
         key-positions = <12 32>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_3 {
         bindings = <&tab_3>;
         key-positions = <12 33>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_4 {
         bindings = <&tab_4>;
         key-positions = <12 19>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_5 {
         bindings = <&tab_5>;
         key-positions = <12 20>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_6 {
         bindings = <&tab_6>;
         key-positions = <12 21>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_7 {
         bindings = <&tab_7>;
         key-positions = <12 7>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_8 {
         bindings = <&tab_8>;
         key-positions = <12 8>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_9 {
         bindings = <&tab_9>;
         key-positions = <12 9>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     tab_0 {
         bindings = <&tab_0>;
         key-positions = <12 30>;
-        layers = <QWE LIN CAD NUM>;
+        layers = <QWE LIN CAD NUM NUML NUMW>;
         timeout-ms = <80>;
     };
     k_tab_1 { // ECADカウントアップ数
