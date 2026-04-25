@@ -5861,6 +5861,15 @@ combos {
             = <&macro_tap &sk LGUI &sl CAD>
             ;
     };
+    sk_alt: sk_alt {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings
+            = <&macro_tap &sk LALT &sl CAD>
+            ;
+    };
 
     // conditional_layers {
     //     compatible = "zmk,conditional-layers";
