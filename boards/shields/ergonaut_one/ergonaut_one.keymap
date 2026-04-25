@@ -28,8 +28,10 @@
 #define MOVL 18
 #define MOVW 19
 #define NUM 20
-#define WINS 21
-#define BLE 22
+#define NUML 21
+#define NUMW 22
+#define WINS 23
+#define BLE 24
 
 &mt {
     flavor = "hold-preferred";
@@ -5142,6 +5144,16 @@ combos {
 		#binding-cells = <0>;
 		bindings = <&to NUM>, <&kp INT5>;
 	};
+    to_NUML_i5: to_NUML_i5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to NUML>, <&kp INT5>;
+	};
+    to_NUMW_i5: to_NUMW_i5 {
+		compatible = "zmk,behavior-macro";
+		#binding-cells = <0>;
+		bindings = <&to NUMW>, <&kp INT5>;
+	};
 
     int5_g: int5_g { // 端点再設定(AHK)
         compatible = "zmk,behavior-macro";
@@ -6255,11 +6267,29 @@ behaviors {
         tapping-term-ms = <170>;
         bindings = <&lt NUM INT5>, <&to_NUM_i5>;
     };
+    td_lt_numw_i5: tap_dance_layer_tap_numw_i5 {  // タップで無変換、ホールドでNUMWレイヤ、ダブルタップでNUMWレイヤ保持、無変換
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <170>;
+        bindings = <&lt NUMW INT5>, <&to_NUMW_i5>;
+    };
     td_lt_num_esc: tap_dance_layer_tap_num_esc {  // タップでesc、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持、無変換
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <170>;
         bindings = <&lt NUM ESC>, <&to_NUM_i5>;
+    };
+    td_lt_numl_esc: tap_dance_layer_tap_numl_esc {  // タップでesc、ホールドでNUMLレイヤ、ダブルタップでNUMLレイヤ保持、無変換
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <170>;
+        bindings = <&lt NUML ESC>, <&to_NUML_i5>;
+    };
+    td_lt_numw_esc: tap_dance_layer_tap_numw_esc {  // タップでesc、ホールドでNUMWレイヤ、ダブルタップでNUMWレイヤ保持、無変換
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <170>;
+        bindings = <&lt NUMW ESC>, <&to_NUMW_i5>;
     };
 };
 
@@ -6303,7 +6333,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt LSHFT Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt RSHFT P     &mt RSHFT MINUS
             &mt LCTRL TAB   &mt LCTRL A     &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt RCTRL SEMI  &mt RCTRL SQT
             &kp LGUI        &mt LALT Z      &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt RGUI SLASH  &kp RALT
-                                                            &lt NUM INT5    &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &ht_it4 MOVL 0
+                                                            &lt NUML INT5   &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &ht_it4 MOVL 0
             >;
         };
         naginatal_layer {
@@ -6323,7 +6353,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB  &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
-                                                            &ht_it5 NUM 0   &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt MOVL INT4
+                                                            &ht_it5 NUML 0  &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt MOVL INT4
             >;
         };
         ecad_layer {
@@ -6333,7 +6363,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &td_Q        &td_W           &td_E           &td_R           &td_T           &td_Y           &td_U           &td_I           &td_O           &td_P           &qm RSHFT
             &qmt LCTRL TAB  &td_A           &td_S           &td_D           &td_F           &td_G           &td_H           &td_J           &td_K           &td_L           &td_SEMI        &qmt RCTRL SQT
             &qm LGUI        &td_Z           &td_X           &td_C           &td_V           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH       &qm LALT
-                                                            &td_lt_num_i5   &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&qmt RCTRL TAB  &htW_it4 MOVW 0
+                                                            &td_lt_numw_i5  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&qmt RCTRL TAB  &htW_it4 MOVW 0
             >;
         };        
         windows_layer {
@@ -6343,7 +6373,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &kp RSHFT
             &mt LCTRL TAB   &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
-                                                            &td_lt_num_esc  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
+                                                            &td_lt_numw_esc &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
             >;
         };        
         lower_layer {
@@ -6468,6 +6498,26 @@ behaviors {
         };
         numpad_layer {
             display-name = "NUM";
+            bindings = <
+        // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+            &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK
+            &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
+            &mt LGUI N0     &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &trans
+                                                            &trans          &pr_pg		    &nx_pg        	&kp KP_ENTER    &kp UNDER       &kp SPACE
+            >;
+        };
+        numpad_l_layer {
+            display-name = "NUML";
+            bindings = <
+        // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+            &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK
+            &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
+            &mt LGUI N0     &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &trans
+                                                            &trans          &pr_pg		    &nx_pg        	&kp KP_ENTER    &kp UNDER       &kp SPACE
+            >;
+        };
+        numpad_w_layer {
+            display-name = "NUMW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK

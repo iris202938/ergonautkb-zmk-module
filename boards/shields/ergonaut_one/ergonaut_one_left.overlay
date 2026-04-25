@@ -37,8 +37,10 @@
 #define MOVL 18
 #define MOVW 19
 #define NUM 20
-#define WINS 21
-#define BLE 22
+#define NUML 21
+#define NUMW 22
+#define WINS 23
+#define BLE 24
 
 &adc {
 	status = "okay";
@@ -1267,19 +1269,37 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-		l_layer22 {
-			layers = <BLE>; // レイヤー22がアクティブな場合
+		l_layer24 {
+			layers = <BLE>; // レイヤー24がアクティブな場合
 			input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
+		l_layer24-prevent {
+			layers = <BLE>; // レイヤー24がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		l_layer23 {
+			layers = <WINS>; // レイヤー23がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 90 100>; // 速度を90/100に設定 (乗数90, 除数100)
+		};
+		l_layer22 {
+			layers = <NUMW>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_keybind_keys_file>; // zip_keybind_keys_file を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
 		l_layer22-prevent {
-			layers = <BLE>; // レイヤー22がアクティブな場合
+			layers = <NUMW>; // レイヤー22がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		l_layer21 {
-			layers = <WINS>; // レイヤー21がアクティブな場合
-			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 90 100>; // 速度を90/100に設定 (乗数90, 除数100)
+			layers = <NUML>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_keybind_keys_file>; // zip_keybind_keys_file を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		l_layer21-prevent {
+			layers = <NUML>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		l_layer20 {
 			layers = <NUM>; // レイヤー20がアクティブな場合
@@ -1426,22 +1446,40 @@
 
 &joystick_listener {
 		status = "okay";
-		r_layer22 {
-			layers = <BLE>; // レイヤー22がアクティブな場合
+		r_layer24 {
+			layers = <BLE>; // レイヤー24がアクティブな場合
 			input-processors = <&zip_keybind_keys_ecad_rble>; // zip_keybind_keys_ecad_rble を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		r_layer22-prevent {
-			layers = <BLE>; // レイヤー22がアクティブな場合
+		r_layer24-prevent {
+			layers = <BLE>; // レイヤー24がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
-		r_layer21 {
-			layers = <WINS>; // レイヤー21がアクティブな場合
+		r_layer23 {
+			layers = <WINS>; // レイヤー23がアクティブな場合
 			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
 			process-next;
 		};
+		r_layer23-prevent {
+			layers = <WINS>; // レイヤー23がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer22 {
+			layers = <NUMW>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
+		r_layer22-prevent {
+			layers = <NUMW>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer21 {
+			layers = <NUML>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionL>; // zip_keybind_keys_directionL を使用
+			process-next; // 他のプロセッサも処理を継続
+		};
 		r_layer21-prevent {
-			layers = <WINS>; // レイヤー21がアクティブな場合
+			layers = <NUML>; // レイヤー21がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_layer20 {
