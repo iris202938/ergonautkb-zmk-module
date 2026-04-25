@@ -37,7 +37,8 @@
 #define MOVL 18
 #define MOVW 19
 #define NUM 20
-#define BLE 21
+#define WINS 21
+#define BLE 22
 
 &adc {
 	status = "okay";
@@ -1266,14 +1267,19 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-		l_layer21 {
-			layers = <BLE>; // レイヤー21がアクティブな場合
+		l_layer22 {
+			layers = <BLE>; // レイヤー22がアクティブな場合
 			input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		l_layer21-prevent {
-			layers = <BLE>; // レイヤー21がアクティブな場合
+		l_layer22-prevent {
+			layers = <BLE>; // レイヤー22がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		l_layer21 {
+			layers = <WINS>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
+							 , <&zip_xy_scaler 90 100>; // 速度を90/100に設定 (乗数90, 除数100)
 		};
 		l_layer20 {
 			layers = <NUM>; // レイヤー20がアクティブな場合
@@ -1420,13 +1426,22 @@
 
 &joystick_listener {
 		status = "okay";
-		r_layer21 {
-			layers = <BLE>; // レイヤー21がアクティブな場合
+		r_layer22 {
+			layers = <BLE>; // レイヤー22がアクティブな場合
 			input-processors = <&zip_keybind_keys_ecad_rble>; // zip_keybind_keys_ecad_rble を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
+		r_layer22-prevent {
+			layers = <BLE>; // レイヤー22がアクティブな場合
+			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
+		};
+		r_layer21 {
+			layers = <WINS>; // レイヤー21がアクティブな場合
+			input-processors = <&zip_keybind_keys_directionH>; // zip_keybind_keys_directionH を使用
+			process-next;
+		};
 		r_layer21-prevent {
-			layers = <BLE>; // レイヤー21がアクティブな場合
+			layers = <WINS>; // レイヤー21がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_layer20 {
