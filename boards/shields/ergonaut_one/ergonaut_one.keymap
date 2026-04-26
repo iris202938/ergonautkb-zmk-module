@@ -6300,9 +6300,9 @@ behaviors {
             display-name = "QWER";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &mt LSHFT LS(TAB) &mt LSHFT Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
-            &mt LCTRL TAB   &mt LCTRL A     &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LALT        &mt LGUI Z      &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s RALT SLASH &kp RGUI
+            &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
+            &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
+            &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s RALT SLASH &kp RGUI
                                                             &lt NUM LANG2   &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&ht_lg1 MOV 0
             >;
         };
@@ -6330,9 +6330,9 @@ behaviors {
             display-name = "LIN";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &mt LSHFT LS(TAB) &mt LSHFT Q   &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
-            &mt LCTRL TAB   &mt LCTRL A     &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LGUI        &mt LALT Z      &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH &kp RALT
+            &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
+            &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
+            &kp LGUI        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH &kp RALT
                                                             &lt NUML INT5   &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &ht_it4 MOVL 0
             >;
         };
@@ -6380,9 +6380,9 @@ behaviors {
             display-name = "LWR";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &mt LSHFT PG_UP &kp LC(A)       &kp UP          &kp LC(E)       &kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
-            &trans          &mt LCTRL PG_DN &kp LEFT        &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-            &trans          &mt LGUI LC(V)  &mkp MB1        &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &mt_s RALT LG(V) &trans
+            &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp LC(A)   &kp UP          &kp LC(E)       &kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
+            &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
+            &kp LALT        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp ENTER       &kp LA(LEFT)    &kp LA(RIGHT)   &mt_s RALT LG(V) &kp RGUI       
                                                             &kp LSHFT       &sk_ctrl        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6390,9 +6390,9 @@ behaviors {
             display-name = "LWRL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &mt LSHFT PG_UP &kp HOME        &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)
-            &trans          &mt LCTRL PG_DN &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-            &trans          &mt LALT LC(V)  &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &trans
+            &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)
+            &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
+            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &kp RALT       
                                                             &kp LSHFT       &sk_ctrl   	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6400,9 +6400,9 @@ behaviors {
             display-name = "LWRW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &mt LSHFT PG_UP &kp HOME        &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
-            &trans          &mt LCTRL PG_DN &kp LEFT        &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
-            &trans          &mt LALT LC(V)  &mkp MB1        &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &trans
+            &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LG(X)           
+            &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT   	&kp LG(S)       &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &kp LG(C)
+            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2		&win_shift_s    &mkp MB1        &kp ENTER       &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &kp RALT
                                                             &kp LSHFT       &sk_ctrl   	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6410,9 +6410,9 @@ behaviors {
             display-name = "RSE";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans		    &mt LSHFT F1    &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
-            &mt LCTRL GRAVE &macro_JPN1	    &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
-            &trans          &mt LGUI INT1   &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_s RALT LG(V) &trans
+            &mt LSHFT LS(TAB) &mt LSHFT F1  &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
+            &mt_s LCTRL GRAVE &macro_JPN1   &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
+            &kp LALT        &mt LGUI INT1   &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_s RALT LG(V) &kp RGUI
                                                             &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_gui         &kp RSHFT
             >;
         };
@@ -6420,9 +6420,9 @@ behaviors {
             display-name = "RSEL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans			&mt LSHFT F1    &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
-            &mt LCTRL GRAVE &mt LCTRL N1    &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &trans          &mt LALT INT1   &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s RGUI LC(V) &trans
+            &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
+            &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
+            &kp LGUI        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s RGUI LC(V) &kp RALT
                                                             &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_gui         &kp RSHFT
             >;
         };
@@ -6430,9 +6430,9 @@ behaviors {
             display-name = "RSEW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans			&mt LSHFT F1    &kp F2          &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
-            &mt LCTRL GRAVE &mt LCTRL N1    &kp N2          &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &trans          &mt LALT INT1   &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s GUI LC(V) &trans
+            &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
+            &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
+            &kp LGUI          &mt_s LALT INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s GUI LC(V) &kp RALT
                                                             &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_gui         &kp RSHFT
             >;
         };
@@ -6440,7 +6440,7 @@ behaviors {
             display-name = "ADJ";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
+            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
             &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
                                                             &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to CAD
@@ -6450,7 +6450,7 @@ behaviors {
             display-name = "ADJL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
+            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
@@ -6460,8 +6460,8 @@ behaviors {
             display-name = "ADJW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt RSHFT INS
-            &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
+            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
+            &mt_s LCTRL LANG5 &out OUT_BLE  &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
             >;
@@ -6470,9 +6470,9 @@ behaviors {
             display-name = "MOV";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP       &mt RSHFT ESC
-            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &mt RCTRL MB2
-            &mt LALT SPACE  &kp W           &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)     &trans
+            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp LC(A)       &kp UP          &kp LC(E)       &kp PG_UP       &mt_s RSHFT ESC
+            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &mt_s RCTRL MB2
+            &mt_s LALT SPACE &kp W          &kp LG(LBKT)    &mkp MB3        &kp LG(RBKT)    &kp LC(TAB)     &kp LC(Z)       &kp LS(LC(TAB)) &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(TAB)     &trans
                                                             &kp LG(C)       &kp LG(V)       &mkp MB2        &kp ENTER       &mkp MB1        &trans
             >;
         };
@@ -6480,8 +6480,8 @@ behaviors {
             display-name = "MOVL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt RSHFT ESC
-            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt RCTRL MB2
+            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt_s RSHFT ESC
+            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt_s RCTRL MB2
             &mt LGUI SPACE  &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)    	&kp LC(Z)       &kp LC(PG_UP)	&kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	&trans
                                                             &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &trans
             >;
@@ -6490,8 +6490,8 @@ behaviors {
             display-name = "MOVW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt RSHFT ESC
-            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt RCTRL MB2
+            &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt_s RSHFT ESC
+            &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt_s RCTRL MB2
             &mt LGUI SPACE  &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)    	&kp LC(Z)       &kp LC(PG_UP)	&kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	&trans
                                                             &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &trans
             >;
