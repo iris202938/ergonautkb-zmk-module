@@ -6212,20 +6212,20 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&qm>, <&caps_word>;
     };
-    // 通常の判定時間（例: 200ms）
+    // 通常の判定時間（例: 240ms）
     mt_s: mod_tap_slow {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <200>;
+        tapping-term-ms = <240>;
         bindings = <&kp>, <&kp>;
     };
-    // 特定のキー用の短い判定時間（例: 150ms）
+    // 特定のキー用の短い判定時間（例: 200ms）
     mt_f: mod_tap_fast {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <150>; // ここを個別に設定
+        tapping-term-ms = <200>; // ここを個別に設定
         bindings = <&kp>, <&kp>;
     };
     td_lt_mov_l1: tap_dance_layer_tap_mov_l1 {  // タップでLANG1、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
