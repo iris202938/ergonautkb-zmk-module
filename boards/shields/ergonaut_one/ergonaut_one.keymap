@@ -4617,6 +4617,7 @@ combos {
 			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp G>
+            , <&macro_wait_time 40>
             , <&macro_tap &kp LALT>
             , <&macro_tap &kp M>
 			;
