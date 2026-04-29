@@ -4609,7 +4609,7 @@ combos {
 			;
 	};
 
-	// Ctrl + F, G: 部品表編集
+	// Ctrl + F, G: 部品表編集+再作成
 	ctrl_f_g: ctrl_f_g {
 		compatible = "zmk,behavior-macro";
 		#binding-cells = <0>;
@@ -4617,6 +4617,8 @@ combos {
 			= <&macro_press &kp LCTRL>
 			, <&macro_tap &kp F>, <&macro_release &kp LCTRL>
 			, <&macro_tap &kp G>
+            , <&macro_tap &kp LALT>
+            , <&macro_tap &kp M>
 			;
 	};
 
