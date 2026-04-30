@@ -6443,7 +6443,7 @@ behaviors {
             display-name = "ADJ";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
+            &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
             &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
                                                             &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to CAD
@@ -6453,7 +6453,7 @@ behaviors {
             display-name = "ADJL";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
+            &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
@@ -6463,7 +6463,7 @@ behaviors {
             display-name = "ADJW";
             bindings = <
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
-            &trans          &kp F11         &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
+            &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP   &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt_s LCTRL LANG5 &out OUT_BLE  &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
                                                             &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
