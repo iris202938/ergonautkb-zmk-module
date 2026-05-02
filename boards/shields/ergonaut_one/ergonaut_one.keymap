@@ -6245,8 +6245,7 @@ behaviors {
     td_lt_num_lbkt: tap_dance_layer_tap_num_lbkt {  // タップで[、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        flavor = "balanced";  /* 他のキーが押されたら即座にホールド(NUMレイヤー)を確定 */
-        tapping-term-ms = <210>;
+        tapping-term-ms = <150>;
         bindings = <&lt_num_balanced NUM LBKT>, <&to NUM>;
     };
     td_lt_mov_rbkt: tap_dance_layer_tap_mov_rbkt {  // タップで]、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
