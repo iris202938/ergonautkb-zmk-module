@@ -5955,6 +5955,14 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&tC_int5>;
     };
+    lt_num_balanced: lt_num_balanced {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LT_NUM_BALANCED";
+        #binding-cells = <2>;
+        tapping-term-ms = <210>;
+        flavor = "balanced";  /* 他のキーが押されたら即座にホールド(NUMレイヤー)を確定 */
+        bindings = <&mo>, <&kp>;
+    };
 
     // A-Z共通のHold-Tap定義
     all_ht: all_hold_tap {
@@ -6237,8 +6245,8 @@ behaviors {
     td_lt_num_lbkt: tap_dance_layer_tap_num_lbkt {  // タップで[、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <190>;
-        bindings = <&lt NUM LBKT>, <&to NUM>;
+        tapping-term-ms = <210>;
+        bindings = <&lt_num_balanced NUM LBKT>, <&to NUM>;
     };
     td_lt_mov_rbkt: tap_dance_layer_tap_mov_rbkt {  // タップで]、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
         compatible = "zmk,behavior-tap-dance";
