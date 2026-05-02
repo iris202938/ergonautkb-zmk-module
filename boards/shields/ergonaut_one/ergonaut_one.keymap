@@ -5955,12 +5955,13 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&mo>, <&tC_int5>;
     };
-    lt_num_balanced: lt_num_balanced {
+
+    lt_bl: lt_balanced {
         compatible = "zmk,behavior-hold-tap";
-        label = "LT_NUM_BALANCED";
+        label = "LT_BALANCED";
         #binding-cells = <2>;
-        tapping-term-ms = <210>;
-        flavor = "balanced";  /* 他のキーが押されたら即座にホールド(NUMレイヤー)を確定 */
+        tapping-term-ms = <200>;
+        flavor = "balanced";  // 他のキーがタップされたら即座にNUMレイヤーを確定
         bindings = <&mo>, <&kp>;
     };
 
@@ -6245,8 +6246,8 @@ behaviors {
     td_lt_num_lbkt: tap_dance_layer_tap_num_lbkt {  // タップで[、ホールドでNUMレイヤ、ダブルタップでNUMレイヤ保持
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
-        tapping-term-ms = <150>;
-        bindings = <&lt_num_balanced NUM LBKT>, <&to NUM>;
+        tapping-term-ms = <190>;
+        bindings = <&lt NUM LBKT>, <&to NUM>;
     };
     td_lt_mov_rbkt: tap_dance_layer_tap_mov_rbkt {  // タップで]、ホールドでMOVレイヤ、ダブルタップでMOVレイヤ保持
         compatible = "zmk,behavior-tap-dance";
@@ -6338,7 +6339,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
             &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s RALT SLASH &kp RGUI
-                                                            &td_lt_num_lbkt &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&td_lt_mov_rbkt
+                                                            &lt_bl NUM lbkt &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&td_lt_mov_rbkt
             >;
         };
         naginata_layer {
