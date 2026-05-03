@@ -299,6 +299,24 @@ combos {
         layers = <ADJ ADJL ADJW>;
         bindings = <&to LIN>;
     };
+    combo_to_NUM {
+        timeout-ms = <70>;
+        key-positions = <36 38>;
+        layers = <QWE NIC NGN>;
+        bindings = <&to NUM>;
+    };
+    combo_to_NUML {
+        timeout-ms = <70>;
+        key-positions = <36 38>;
+        layers = <LIN NICL NGNL>;
+        bindings = <&to NUML>;
+    };
+    combo_to_NUMW {
+        timeout-ms = <70>;
+        key-positions = <36 38>;
+        layers = <CAD WIN>;
+        bindings = <&to NUMW>;
+    };
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
@@ -5992,6 +6010,15 @@ behaviors {
         bindings = <&mo>, <&tC_int5>;
     };
 
+    lt_bl: lt_balanced {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LT_BALANCED";
+        #binding-cells = <2>;
+        tapping-term-ms = <190>;
+        flavor = "balanced";  // 他のキーがタップされたら即座にNUMレイヤーを確定
+        bindings = <&mo>, <&kp>;
+    };
+
     // A-Z共通のHold-Tap定義
     all_ht: all_hold_tap {
         compatible = "zmk,behavior-hold-tap";
@@ -6366,7 +6393,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
             &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s RALT SLASH &kp RGUI
-                                                            &td_lt_num_lbkt &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&td_lt_mov_rbkt
+                                                            &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&td_lt_mov_rbkt
             >;
         };
         naginata_layer {
@@ -6386,7 +6413,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB  &macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
-                                                            &ht_lg2 NUM 0   &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
+                                                            &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &trans
             >;
         };
         linux_layer {
@@ -6396,7 +6423,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
             &kp LGUI        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH &kp RALT
-                                                            &td_lt_numl_esc &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &td_lt_movl_esc
+                                                            &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &td_lt_movl_esc
             >;
         };
         naginatal_layer {
@@ -6416,7 +6443,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB  &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
             &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
-                                                            &td_lt_numl_esc &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &td_lt_movl_esc
+                                                            &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &td_lt_movl_esc
             >;
         };
         ecad_layer {
@@ -6426,7 +6453,7 @@ behaviors {
             &qmt LSHFT LS(TAB) &td_Q        &td_W           &td_E           &td_R           &td_T           &td_Y           &td_U           &td_I           &td_O           &td_P           &qm RSHFT
             &qmt LCTRL TAB  &td_A           &td_S           &td_D           &td_F           &td_G           &td_H           &td_J           &td_K           &td_L           &td_SEMI        &qmt RCTRL SQT
             &qm LGUI        &td_Z           &td_X           &td_C           &td_V           &td_B           &td_N           &td_M           &td_COMMA       &td_DOT         &td_SLASH       &qm LALT
-                                                            &td_lt_numw_i5  &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &htW_it4 MOVW 0
+                                                            &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&mt RSHFT ESC   &htW_it4 MOVW 0
             >;
         };        
         windows_layer {
@@ -6436,7 +6463,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp Q         &kp W           &kp E           &kp R           &kp T           &kp Y         	&kp U           &kp I         	&kp O           &kp P           &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &kp A           &kp S           &kp D           &kp F           &kp G           &kp H         	&kp J           &kp K         	&kp L           &kp SEMI        &mt_s RCTRL SQT
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
-                                                            &td_lt_numw_esc &kp SPACE       &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
+                                                            &lt_bl NUMW INT5 &kp SPACE      &lt LWRW TAB    &lt RSEW ENTER	&kp INT4        &td_lt_movw_i2
             >;
         };        
         lower_layer {
