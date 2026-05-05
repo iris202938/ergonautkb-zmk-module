@@ -2,6 +2,9 @@ include:
   - board: seeeduino_xiao_ble
     shield: ergonaut_one_left rgbled_adapter
   - board: seeeduino_xiao_ble
+    snippet: zmk-usb-logging
     shield: ergonaut_one_right rgbled_adapter
   - board: seeeduino_xiao_ble
+    snippet: zmk-usb-logging
     shield: settings_reset
+  
