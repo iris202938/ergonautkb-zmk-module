@@ -244,6 +244,14 @@ combos {
         layers = <NGNL NICL WIN CAD>;
         bindings = <&int5_g>;
     };
+
+    combo_file_f { // ファイル切替
+        bindings = <&file_f>;
+        key-positions = <37 38>;
+        layers = <NUM NUML NUMW>;
+        timeout-ms = <80>;
+    };
+
     combo_exl_fill { // Excelのオートフィル
         timeout-ms = <80>;
         key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
