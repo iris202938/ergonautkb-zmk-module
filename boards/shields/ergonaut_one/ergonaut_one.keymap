@@ -88,24 +88,24 @@ combos {
         bindings = <&ng_offl>;
         layers = <LIN NGNL>; // デフォルトレイヤーがLIN、薙刀式レイヤーが1の前提
         };
-    combo_ADJ {
-        timeout-ms = <70>;
-        key-positions = <38 39>;
-        layers = <QWE NGN NIC>;
-        bindings = <&mo ADJ>;
-    };
-    combo_ADJL {
-        timeout-ms = <70>;
-        key-positions = <38 39>;
-        layers = <LIN NGNL NICL>;
-        bindings = <&mo ADJL>;
-    };
-    combo_ADJW {
-        timeout-ms = <70>;
-        key-positions = <38 39>;
-        layers = <CAD WIN>;
-        bindings = <&mo ADJW>;
-    };
+    // combo_ADJ {
+    //     timeout-ms = <70>;
+    //     key-positions = <38 39>;
+    //     layers = <QWE NGN NIC>;
+    //     bindings = <&mo ADJ>;
+    // };
+    // combo_ADJL {
+    //     timeout-ms = <70>;
+    //     key-positions = <38 39>;
+    //     layers = <LIN NGNL NICL>;
+    //     bindings = <&mo ADJL>;
+    // };
+    // combo_ADJW {
+    //     timeout-ms = <70>;
+    //     key-positions = <38 39>;
+    //     layers = <CAD WIN>;
+    //     bindings = <&mo ADJW>;
+    // };
     combo_ESCL {
         timeout-ms = <80>;
         key-positions = <0 12>;
