@@ -5266,6 +5266,30 @@ combos {
             , <&macro_tap &kp E &kp I &kp S>;
             // ここで止まるので、設定を確認して手動でEnter
     };
+    // 1. セル内文字列をコピーしてEnter
+    cp_enter: cp_enter {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <30>;
+        tap-ms = <30>;
+        bindings = 
+            <&kp F2>,               // 編集モードに入る
+            <&kp LC(A)>,            // 全選択 (Ctrl + A)
+            <&kp LC(C)>,            // コピー (Ctrl + C)
+            <&kp ENTER>;            // 確定＆下のセルへ移動
+    };
+    // 2. セル内文字列をコピーしてTAB
+    cp_tab: cp_tab {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <30>;
+        tap-ms = <30>;
+        bindings = 
+            <&kp F2>,               // 編集モードに入る
+            <&kp LC(A)>,            // 全選択 (Ctrl + A)
+            <&kp LC(C)>,            // コピー (Ctrl + C)
+            <&kp TAB>;              // 確定＆右のセルへ移動
+    };
     alt_int4: alt_int4 { // Alt+変換 選択位置移動(移動)(AHK)
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -6601,7 +6625,7 @@ behaviors {
             &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt_s RSHFT ESC
             &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt_s RCTRL MB2
             &mt LGUI SPACE  &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)    	&kp LC(Z)       &kp LC(PG_UP)	&kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	&trans
-                                                            &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
+                                                            &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to LIN
             >;
         };
         movew_layer {
@@ -6611,7 +6635,7 @@ behaviors {
             &kp LG(BSPC)    &kp LS(LC(TAB)) &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &kp LC(Y)       &kp HOME        &kp UP          &kp END         &kp PG_UP    	&mt_s RSHFT ESC
             &trans          &mkp MB1        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &lt BLE BSPC    &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN    	&mt_s RCTRL MB2
             &mt LGUI SPACE  &kp LA(LS(MINUS)) &kp LA(LEFT)  &mkp MB3        &kp LA(RIGHT)   &kp LC(TAB)    	&kp LC(Z)       &kp LC(PG_UP)	&kp LG(LBKT)    &kp LG(RBKT)    &kp LC(PG_DN)	&trans
-                                                            &kp LC(C)       &kp LC(V)       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
+                                                            &cp_tab         &cp_enter       &mkp MB2        &kp ENTER       &mkp MB1        &to CAD
             >;
         };
         numpad_layer {
@@ -6621,7 +6645,7 @@ behaviors {
             &trans          &kp PG_UP       &kp LC(A)       &kp UP          &kp LC(E)       &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK
             &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
             &mt LGUI N0     &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &trans
-                                                            &t_lang2        &pr_pg		    &nx_pg        	&kp KP_ENTER    &kp UNDER       &kp SPACE
+                                                            &t_lang2        &cp_tab		    &kp TAB        	&kp KP_ENTER    &kp UNDER       &kp SPACE
             >;
         };
         numpad_l_layer {
@@ -6631,7 +6655,7 @@ behaviors {
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK
             &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
             &mt LGUI N0     &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &trans
-                                                            &t_int5         &pr_pg		    &nx_pg        	&kp KP_ENTER    &kp UNDER       &kp SPACE
+                                                            &t_int5         &cp_tab		    &kp TAB       	&kp KP_ENTER    &kp UNDER       &kp SPACE
             >;
         };
         numpad_w_layer {
@@ -6641,7 +6665,7 @@ behaviors {
             &trans          &kp PG_UP       &kp HOME        &kp UP          &kp END         &kp CARET       &kp KP_SLASH    &kp KP_N7       &kp KP_N8       &kp KP_N9       &kp KP_MULTIPLY &kp KP_NLCK
             &mt LCTRL TAB   &kp PG_DN       &kp LEFT        &kp DOWN        &kp RIGHT       &lt BLE DEL     &kp BSPC        &kp KP_N4       &kp KP_N5       &kp KP_N6       &kp KP_MINUS    &kp KP_DOT
             &mt LGUI N0     &alt_left	    &alt_down       &alt_up         &alt_right      &kp EQUAL       &kp KP_N0       &kp KP_N1       &kp KP_N2       &kp KP_N3       &kp KP_PLUS     &trans
-                                                            &tC_int5        &pr_pg		    &nx_pg        	&kp KP_ENTER    &kp UNDER       &kp SPACE
+                                                            &tC_int5        &cp_tab		    &kp TAB       	&kp KP_ENTER    &kp UNDER       &kp SPACE
             >;
         };
         windows_s_layer {
