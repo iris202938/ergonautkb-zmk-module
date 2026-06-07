@@ -156,7 +156,7 @@ combos {
     };
     cmd_v {
         bindings = <&cmd_v>;
-        key-positions = <31 32>;
+        key-positions = <33 34>;
         layers = <RSE>;
         timeout-ms = <80>;
     };
@@ -174,7 +174,7 @@ combos {
     };
     ctrl_v {
         bindings = <&ctrl_v>;
-        key-positions = <31 32>;
+        key-positions = <33 34>;
         layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
@@ -212,6 +212,42 @@ combos {
         bindings = <&sk_alt>;
         key-positions = <40 41>;
         layers = <RSE RSEL RSEW>;
+        timeout-ms = <80>;
+    };
+    cmd_x {
+        bindings = <&cmd_x>;
+        key-positions = <8 9>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_c {
+        bindings = <&cmd_c>;
+        key-positions = <17 18>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_v {
+        bindings = <&cmd_v>;
+        key-positions = <26 27>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    ctrl_x {
+        bindings = <&ctrl_x>;
+        key-positions = <8 9>;
+        layers = <RSEL RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_c {
+        bindings = <&ctrl_c>;
+        key-positions = <17 18>;
+        layers = <RSEL RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_v {
+        bindings = <&ctrl_v>;
+        key-positions = <26 27>;
+        layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
     // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
@@ -6011,6 +6047,15 @@ combos {
             , <&macro_release &mo WINS>
             ;
     };
+    sk_shft: sk_shft {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings
+            = <&macro_tap &sk LSHFT &sl WINS>
+            ;
+    };
     sk_ctrl: sk_ctrl {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -6595,7 +6640,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
             &mt_s LCTRL GRAVE &macro_JPN1   &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
             &kp LALT        &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_s RALT LG(V) &kp RGUI
-                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_gui         &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_shft        &kp RSHFT
             >;
         };
         raisel_layer {
@@ -6605,7 +6650,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &kp LGUI        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s RGUI LC(V) &kp RALT
-                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_gui         &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_shft        &kp RSHFT
             >;
         };
         raisew_layer {
@@ -6615,7 +6660,7 @@ behaviors {
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
             &kp LGUI          &mt_s LALT INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s GUI LC(V) &kp RALT
-                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_gui         &kp RSHFT
+                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_shft        &kp RSHFT
             >;
         };
         adjust_layer {
@@ -6625,7 +6670,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
             &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
-                                                            &to QWE         &kp LS(LEFT)    &trans          &trans          &kp LS(RIGHT)  	&to CAD
+                                                            &to QWE         &sk_alt         &trans          &trans          &sk_gui	        &to CAD
             >;
         };
         adjustl_layer {
@@ -6635,7 +6680,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &ecl_transfer  &ecl_transfer_t &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
-                                                            &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
+                                                            &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
             >;
         };
         adjustw_layer {
@@ -6645,7 +6690,7 @@ behaviors {
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &ecl_transfer  &ecl_transfer_t &kp CAPS         &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt_s LCTRL LANG5 &out OUT_BLE  &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G          &kp INT5         &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
             &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)   &kp LS(DOWN)     &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
-                                                            &to QWE         &grave_uc       &trans         &trans           &tilde_uc	    &to CAD
+                                                            &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
             >;
         };
         move_layer {
