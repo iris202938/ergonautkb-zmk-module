@@ -156,7 +156,7 @@ combos {
     };
     cmd_v {
         bindings = <&cmd_v>;
-        key-positions = <33 34>;
+        key-positions = <31 32>;
         layers = <RSE>;
         timeout-ms = <80>;
     };
@@ -174,7 +174,7 @@ combos {
     };
     ctrl_v {
         bindings = <&ctrl_v>;
-        key-positions = <33 34>;
+        key-positions = <31 32>;
         layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
@@ -212,42 +212,6 @@ combos {
         bindings = <&sk_alt>;
         key-positions = <40 41>;
         layers = <RSE RSEL RSEW>;
-        timeout-ms = <80>;
-    };
-    cmd_x {
-        bindings = <&cmd_x>;
-        key-positions = <8 9>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    cmd_c {
-        bindings = <&cmd_c>;
-        key-positions = <17 18>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    cmd_v {
-        bindings = <&cmd_v>;
-        key-positions = <26 27>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    ctrl_x {
-        bindings = <&ctrl_x>;
-        key-positions = <8 9>;
-        layers = <RSEL RSEW>;
-        timeout-ms = <80>;
-    };
-    ctrl_c {
-        bindings = <&ctrl_c>;
-        key-positions = <17 18>;
-        layers = <RSEL RSEW>;
-        timeout-ms = <80>;
-    };
-    ctrl_v {
-        bindings = <&ctrl_v>;
-        key-positions = <26 27>;
-        layers = <RSEL RSEW>;
         timeout-ms = <80>;
     };
     // combo_ALT_INT4 { // ECADの選択位置移動(複写)(AHK)
