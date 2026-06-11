@@ -2527,6 +2527,12 @@ combos {
       #binding-cells = <0>;
       bindings = <&kp LS(N0)>;
     };
+    macro_EXCLA: macro_EXCLA{
+        compatible = "zmk,behavior-macro";
+        label = "macro_EXCLA";
+        #binding-cells = <0>;
+        bindings = <&kp LS(N1)>;
+    };
     macro_JPLDKAGIL: macro_JPLDKAGIL{
       compatible = "zmk,behavior-macro";
       label = "macro_JPLDKAGIL";
@@ -2743,48 +2749,42 @@ combos {
       #binding-cells = <0>;
       bindings = <&kp RBKT>;
     };
-    macro_JPLKADOR: macro_JPLKADOR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPLKADOR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LA(LBKT)>;
-    };
-    macro_JPRKADOR: macro_JPRKADOR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPRKADOR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LA(RBKT)>;
-    };
-    macro_JPLMARUR: macro_JPLMARUR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPLMARUR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LS(N9)>;
-    };
-    macro_JPRMARUR: macro_JPRMARUR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPRMARUR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LS(N0)>;
-    };
-    macro_EXCLA: macro_EXCLA{
-        compatible = "zmk,behavior-macro";
-        label = "macro_EXCLA";
-        #binding-cells = <0>;
-        bindings = <&kp LS(N1)>;
-    };
-    macro_JPLDKAGIR: macro_JPLDKAGIR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPLDKAGIR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LS(LBKT)>;
-    };
-    macro_JPRDKAGIR: macro_JPRDKAGIR{
-    	compatible = "zmk,behavior-macro";
-    	label = "macro_JPRDKAGIR";
-    	#binding-cells = <0>;
-    	bindings = <&kp LS(RBKT)>;
-    };
+    // macro_JPLKADOR: macro_JPLKADOR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPLKADOR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LA(LBKT)>;
+    // };
+    // macro_JPRKADOR: macro_JPRKADOR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPRKADOR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LA(RBKT)>;
+    // };
+    // macro_JPLMARUR: macro_JPLMARUR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPLMARUR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LS(N9)>;
+    // };
+    // macro_JPRMARUR: macro_JPRMARUR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPRMARUR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LS(N0)>;
+    // };
+    // macro_JPLDKAGIR: macro_JPLDKAGIR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPLDKAGIR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LS(LBKT)>;
+    // };
+    // macro_JPRDKAGIR: macro_JPRDKAGIR{
+    // 	compatible = "zmk,behavior-macro";
+    // 	label = "macro_JPRDKAGIR";
+    // 	#binding-cells = <0>;
+    // 	bindings = <&kp LS(RBKT)>;
+    // };
     macro_JPLKADOR: macro_JPLKADOR{
       compatible = "zmk,behavior-macro";
       label = "macro_JPLKADOR";
