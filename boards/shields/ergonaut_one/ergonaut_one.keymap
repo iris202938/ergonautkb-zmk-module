@@ -268,6 +268,18 @@ combos {
         layers = <QWE LIN CAD>;
         timeout-ms = <80>;
     };
+    wind_l {
+            bindings = <&win_left>;
+            key-positions = <14 15>;
+            layers = <LWR LWRL LWRW>;
+            timeout-ms = <80>;
+    };
+    wind_r {
+        bindings = <&win_right>;
+        key-positions = <15 16>;
+        layers = <LWR LWRL LWRW>;
+        timeout-ms = <80>;
+    };
 
     combo_file_f { // ファイル切替
         bindings = <&file_f>;
@@ -5415,6 +5427,32 @@ combos {
         , <&macro_tap     &kp INT5>
         , <&macro_release &kp RALT>
         ;
+    };
+    win_right: win_right { // デスクトップ移動進む
+        compatible = "zmk,behavior-macro";
+        wait-ms = <40>;
+        tap-ms = <40>;
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_press &kp LCTRL>
+            , <&macro_tap &kp RIGHT>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LGUI>
+            ;
+    };
+    win_left: win_left { // デスクトップ移動戻る
+        compatible = "zmk,behavior-macro";
+        wait-ms = <40>;
+        tap-ms = <40>;
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_press &kp LCTRL>
+            , <&macro_tap &kp LEFT>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LGUI>
+            ;
     };
     // タップ時の動作: 指定レイヤーへ移動し、LANG1を送信
     // LANG1用のマクロ
