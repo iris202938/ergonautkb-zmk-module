@@ -244,6 +244,30 @@ combos {
         layers = <NGNL NICL WIN CAD>;
         bindings = <&int5_g>;
     };
+    file_f {
+        bindings = <&file_f>;
+        key-positions = <2 3>;
+        layers = <CAD>;
+        timeout-ms = <80>;
+    };
+    file_r {
+        bindings = <&file_r>;
+        key-positions = <3 4>;
+        layers = <CAD>;
+        timeout-ms = <80>;
+    };
+    pr_pg {
+        bindings = <&pr_pg>;
+        key-positions = <26 27>;
+        layers = <QWE LIN CAD>;
+        timeout-ms = <80>;
+    };
+    nx_pg {
+        bindings = <&nx_pg>;
+        key-positions = <27 28>;
+        layers = <QWE LIN CAD>;
+        timeout-ms = <80>;
+    };
 
     combo_file_f { // ファイル切替
         bindings = <&file_f>;
@@ -251,7 +275,6 @@ combos {
         layers = <NUM NUML NUMW>;
         timeout-ms = <80>;
     };
-
     combo_exl_fill { // Excelのオートフィル
         timeout-ms = <80>;
         key-positions = <3 8 14>; // E,I,Sのキー位置に書き換えてください
