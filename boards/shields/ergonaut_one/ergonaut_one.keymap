@@ -381,19 +381,19 @@ combos {
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
-        layers = <CAD LWR LWRL LWRW>;
+        layers = <LWR LWRL LWRW>;
         bindings = <&mkp MB1>;
     };
     combo_MB2 {
         timeout-ms = <60>;
         key-positions = <32 33>;
-        layers = <CAD LWR LWRL LWRW>;
+        layers = <LWR LWRL LWRW>;
         bindings = <&mkp MB2>;
     };
     combo_MB3 {
         timeout-ms = <60>;
         key-positions = <31 33>;
-        layers = <CAD LWR LWRL LWRW>;
+        layers = <LWR LWRL LWRW>;
         bindings = <&mkp MB3>;
     };
 
