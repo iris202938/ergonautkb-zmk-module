@@ -414,42 +414,6 @@ combos {
         layers = <LWR LWRL LWRW>;
         timeout-ms = <80>;
     };
-    cmd_x {
-        bindings = <&cmd_x>;
-        key-positions = <9 10>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    cmd_c {
-        bindings = <&cmd_c>;
-        key-positions = <21 22>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    cmd_v {
-        bindings = <&cmd_v>;
-        key-positions = <32 33>;
-        layers = <LWRL LWRW RSE>;
-        timeout-ms = <80>;
-    };
-    ctrl_x {
-        bindings = <&ctrl_x>;
-        key-positions = <9 10>;
-        layers = <RSEL RSEW>;
-        timeout-ms = <80>;
-    };
-    ctrl_c {
-        bindings = <&ctrl_c>;
-        key-positions = <21 22>;
-        layers = <RSEL RSEW>;
-        timeout-ms = <80>;
-    };
-    ctrl_v {
-        bindings = <&ctrl_v>;
-        key-positions = <32 33>;
-        layers = <RSEL RSEW>;
-        timeout-ms = <80>;
-    };
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
