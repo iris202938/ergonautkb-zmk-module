@@ -390,6 +390,66 @@ combos {
         layers = <CAD WIN>;
         bindings = <&to MOVW>;
     };
+    gui_left {
+        bindings = <&kp LG(LEFT)>;
+        key-positions = <26 27>;
+        layers = <LWRL LWRW>;
+        timeout-ms = <80>;
+    };
+    gui_right {
+        bindings = <&kp LG(RIGHT)>;
+        key-positions = <27 28>;
+        layers = <LWRL LWRW>;
+        timeout-ms = <80>;
+    };
+    CTRL_PG_UP {
+        bindings = <&kp LC(PG_UP)>;
+        key-positions = <1 2>;
+        layers = <LWR LWRL LWRW>;
+        timeout-ms = <80>;
+    };
+    CTRL_PG_DN {
+        bindings = <&kp LC(PG_DN)>;
+        key-positions = <13 14>;
+        layers = <LWR LWRL LWRW>;
+        timeout-ms = <80>;
+    };
+    cmd_x {
+        bindings = <&cmd_x>;
+        key-positions = <9 10>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_c {
+        bindings = <&cmd_c>;
+        key-positions = <21 22>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    cmd_v {
+        bindings = <&cmd_v>;
+        key-positions = <32 33>;
+        layers = <LWRL LWRW RSE>;
+        timeout-ms = <80>;
+    };
+    ctrl_x {
+        bindings = <&ctrl_x>;
+        key-positions = <9 10>;
+        layers = <RSEL RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_c {
+        bindings = <&ctrl_c>;
+        key-positions = <21 22>;
+        layers = <RSEL RSEW>;
+        timeout-ms = <80>;
+    };
+    ctrl_v {
+        bindings = <&ctrl_v>;
+        key-positions = <32 33>;
+        layers = <RSEL RSEW>;
+        timeout-ms = <80>;
+    };
     combo_MB1 {
         timeout-ms = <60>;
         key-positions = <31 32>;
@@ -398,7 +458,7 @@ combos {
     };
     combo_MB2 {
         timeout-ms = <60>;
-        key-positions = <32 33>;
+        key-positions = <32 33 34>;
         layers = <LWR LWRL LWRW>;
         bindings = <&mkp MB2>;
     };
