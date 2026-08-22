@@ -202,7 +202,7 @@ combos {
         layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
         timeout-ms = <80>;
     };
-    combo_sl_LALT {
+    combo_sl_RALT {
         bindings = <&sk_alt>;
         key-positions = <36 37>;
         layers = <LWR LWRL LWRW>;
