@@ -197,18 +197,18 @@ combos {
         timeout-ms = <80>;
     };
     combo_RALT {
-        bindings = <&kp RALT>;
+        bindings = <&kp LALT>;
         key-positions = <33 34>;
         layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
         timeout-ms = <80>;
     };
-    combo_sl_LALT {
+    combo_sl_RALT {
         bindings = <&sk_alt>;
         key-positions = <36 37>;
         layers = <LWR LWRL LWRW>;
         timeout-ms = <80>;
     };
-    combo_sl_RALT {
+    combo_sl_LALT {
         bindings = <&sk_alt>;
         key-positions = <40 41>;
         layers = <RSE RSEL RSEW>;
@@ -310,6 +310,91 @@ combos {
         key-positions = <12 19>; // A,Jのキー位置に書き換えてください
         layers = <ADJL ADJW>;
         bindings = <&exl_group_open>;
+    };
+    combo_excel_move_row_cut { // Excelの行選択切取り
+        timeout-ms = <80>;
+        key-positions = <9 10>;
+        layers = <MOVL MOVW>;
+        bindings = <&excel_move_row_cut>;
+    };
+    combo_excel_move_row_copy { // Excelの行選択コピー
+        timeout-ms = <80>;
+        key-positions = <21 22>;
+        layers = <MOVL MOVW>;
+        bindings = <&excel_move_row_copy>;
+    };
+    combo_excel_move_row_paste { // Excelの行選択貼付
+        timeout-ms = <80>;
+        key-positions = <32 33>;
+        layers = <MOVL MOVW>;
+        bindings = <&excel_move_row_paste>;
+    };
+    combo_excel_line_erase { // Excelの罫線消去
+        timeout-ms = <80>;
+        key-positions = <25 26 27>; // Z,X,Cのキー位置に書き換えてください
+        layers = <MOVL>;
+        bindings = <&excel_line_erase>;
+    };
+    combo_excel_line_erase_p { // Excelの罫線消去(Pause Break)
+        timeout-ms = <80>;
+        key-positions = <25 26 27>; // Z,X,Cのキー位置に書き換えてください
+        layers = <MOVW>;
+        bindings = <&excel_line_erase_p>;
+    };
+    combo_excel_ruled_line_free_write { // Excelの罫線ペン
+        timeout-ms = <80>;
+        key-positions = <18 29 2>; // H,B,Wのキー位置に書き換えてください
+        layers = <MOVL MOVW>;
+        bindings = <&excel_ruled_line_free_write>;
+    };
+    combo_excel_ruled_line_free_erase { // Excelの罫線消しゴム
+        timeout-ms = <80>;
+        key-positions = <18 29 3>; // H,B,Eのキー位置に書き換えてください
+        layers = <MOVL MOVW>;
+        bindings = <&excel_ruled_line_free_erase>;
+    };
+    combo_excel_ruled_line_all_drawing { // Excelの罫線格子状
+        timeout-ms = <80>;
+        key-positions = <18 29 13>; // H,B,Aのキー位置に書き換えてください
+        layers = <MOVL MOVW>;
+        bindings = <&excel_ruled_line_all_drawing>;
+    };
+    combo_excel_ruled_line_fat_drawing { // Excelの罫線太い外枠
+        timeout-ms = <80>;
+        key-positions = <18 29 5>; // H,B,Tのキー位置に書き換えてください
+        layers = <MOVL MOVW>;
+        bindings = <&excel_ruled_line_fat_drawing>;
+    };
+    combo_excel_clear_cf { // Excelの条件付き書式のクリア(選択範囲)
+        timeout-ms = <80>;
+        key-positions = <18 21 27>; // H,L,Cのキー位置に書き換えてください
+        layers = <MOVL MOVW>;
+        bindings = <&excel_clear_cf>;
+    };
+
+    combo_lefthand_enter { // 左手のみでEnterを押す
+        timeout-ms = <80>;
+        key-positions = <26 27 28>;
+        layers = <LWR LWRW LWRL NUM NUMW NUML>;
+        bindings = <&kp ENTER>;
+    };
+    combo_RSE_t_lang2 { // RSEレイヤーでのIME OFF
+        timeout-ms = <70>;
+        key-positions = <14 15 16>;
+        layers = <LWR>;
+        bindings = <&t_lang2>;
+    };
+    combo_RSEL_t_int5 { // RSELレイヤーでのIME OFF
+        timeout-ms = <70>;
+        key-positions = <14 15 16>;
+        layers = <LWRL>;
+        bindings = <&t_int5>;
+    };
+    combo_RSEW_tC_int5 { // RSEWレイヤーでのIME OFF
+        timeout-ms = <70>;
+        key-positions = <14 15 16>;
+        layers = <LWRW>;
+        bindings = <&tC_int5>;
     };
     combo_ADJ_ss1 { // ADJレイヤーでのスクリーンショット1
         timeout-ms = <80>;
@@ -5393,6 +5478,160 @@ combos {
             <&kp LC(C)>,            // コピー (Ctrl + C)
             <&kp TAB>;              // 確定＆右のセルへ移動
     };
+    excel_move_row_cut: excel_move_row_cut { // Excelの行選択切取り
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_press   &kp LSFT>
+            , <&macro_tap     &kp SPACE>
+            , <&macro_release &kp LSFT>
+            , <&macro_wait_time 100> // ここで100ミリ秒待機
+            , <&macro_press   &kp LCTRL>
+            , <&macro_tap     &kp X>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    excel_move_row_copy: excel_move_row_copy { // Excelの行選択コピー
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_press   &kp LSFT>
+            , <&macro_tap     &kp SPACE>
+            , <&macro_release &kp LSFT>
+            , <&macro_wait_time 100> // ここで100ミリ秒待機
+            , <&macro_press   &kp LCTRL>
+            , <&macro_tap     &kp C>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    excel_move_row_paste: excel_move_row_paste { // Excelの行移動(下に挿入)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_press   &kp LSFT>
+            , <&macro_tap     &kp SPACE>
+            , <&macro_release &kp LSFT>
+            , <&macro_wait_time 100> // ここで100ミリ秒待機
+            , <&macro_press   &kp LCTRL>
+            // , <&macro_press   &kp LSFT>
+            , <&macro_tap     &kp KP_PLUS>
+            // , <&macro_release &kp LSFT>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    excel_line_erase: excel_line_erase { // Excelの罫線消去
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_press   &kp LSFT>
+            , <&macro_press   &kp LCTRL>
+            , <&macro_wait_time 80> // ここで80ミリ秒待機
+            , <&macro_tap     &kp INT1>
+            , <&macro_wait_time 80> // ここで80ミリ秒待機
+            , <&macro_release &kp LSFT>
+            , <&macro_release &kp LCTRL>
+            ;
+    };
+    excel_line_erase_p: excel_line_erase_p { // Excelの罫線消去(Pause Break)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap     &kp PAUSE_BREAK>
+            , <&macro_wait_time 100> // ここで100ミリ秒待機
+            , <&macro_press   &kp LSFT>
+            , <&macro_press   &kp LCTRL>
+            , <&macro_wait_time 80> // ここで80ミリ秒待機
+            , <&macro_tap     &kp INT1>
+            , <&macro_wait_time 80> // ここで80ミリ秒待機
+            , <&macro_release &kp LSFT>
+            , <&macro_release &kp LCTRL>
+            , <&macro_wait_time 100> // ここで100ミリ秒待機
+            , <&macro_tap     &kp PAUSE_BREAK>
+            ;
+    };
+    excel_ruled_line_free_write: excel_ruled_line_free_write { // Excelの罫線ペン
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap   &kp LALT>
+            , <&macro_tap   &kp H>
+            , <&macro_tap   &kp B>
+            , <&macro_tap   &kp W>
+            ;
+    };
+    excel_ruled_line_free_erase: excel_ruled_line_free_erase { // Excelの罫線消しゴム
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap   &kp LALT>
+            , <&macro_tap   &kp H>
+            , <&macro_tap   &kp B>
+            , <&macro_tap   &kp E>
+            ;
+    };
+    excel_ruled_line_all_drawing: excel_ruled_line_all_drawing { // Excelの罫線格子状
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap   &kp LALT>
+            , <&macro_tap   &kp H>
+            , <&macro_tap   &kp B>
+            , <&macro_tap   &kp A>
+            ;
+    };
+    excel_ruled_line_fat_drawing: excel_ruled_line_fat_drawing { // Excelの罫線太い外枠
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap   &kp LALT>
+            , <&macro_tap   &kp H>
+            , <&macro_tap   &kp B>
+            , <&macro_tap   &kp T>
+            ;
+    };
+    excel_clear_cf: excel_clear_cf { // Excelの条件付き書式のクリア(選択範囲)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <40>;
+        tap-ms = <40>;
+        bindings
+            = <&macro_tap     &kp LALT>
+            , <&macro_tap     &kp H>
+            , <&macro_tap     &kp L>
+            , <&macro_tap     &kp C>
+            , <&macro_tap     &kp S>
+            ;
+    };
+    
+    mb3_mb1: mb3_mb1 { //FreeCADのマウスボタン3+1 (トグル動作例)
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &mkp MB3>
+            , <&macro_press &mkp MB1>
+            , <&macro_pause_for_release>
+            , <&macro_release &mkp MB3>
+            , <&macro_release &mkp MB1>;
+    };
+
     // // HiMacroから変換：コピー ➔ 画面切り替え ➔ 貼り付け ➔ 元の画面に戻る
     // ecl_transfer: ecl_transfer {
     //     compatible = "zmk,behavior-macro";
@@ -5437,18 +5676,18 @@ combos {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
-            = <&macro_press   &kp RALT>
+            = <&macro_press   &kp LALT>
             , <&macro_tap     &kp INT4>
-            , <&macro_release &kp RALT>
+            , <&macro_release &kp LALT>
             ;
     };	
     alt_int5: alt_int5 { // Alt+無変換 選択位置移動(複写)(AHK)
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings
-        = <&macro_press   &kp RALT>
+        = <&macro_press   &kp LALT>
         , <&macro_tap     &kp INT5>
-        , <&macro_release &kp RALT>
+        , <&macro_release &kp LALT>
         ;
     };
     win_right: win_right { // デスクトップ移動進む
@@ -6511,6 +6750,20 @@ behaviors {
         tapping-term-ms = <150>;
         bindings = <&qm>, <&caps_word>;
     };
+    mt_cmd_v: mt_cmd_v {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&kp>, <&cmd_v>;
+    };
+    mt_ctrl_v: mt_ctrl_v {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&kp>, <&ctrl_v>;
+    };
     // 通常の判定時間（例: 240ms）
     mt_s: mod_tap_slow {
         compatible = "zmk,behavior-hold-tap";
@@ -6622,7 +6875,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s RALT SLASH &kp RGUI
+            &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s LALT SLASH &kp LGUI
                                                             &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt_bl MOV RBKT
             >;
         };
@@ -6632,7 +6885,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &ng Q        &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
             &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
-            &qm LALT        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RGUI
+            &qm LALT        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm LGUI
                                                             &trans          &ng SPACE       &lt LWR TAB     &lt RSE ENTER   &ng SPACE	    &trans
             >;
         };
@@ -6642,7 +6895,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB  &macro_U        &macro_SI	    &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
-            &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RGUI
+            &qm LALT		&macro_JPTEN    &macro_HI	    &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm LGUI
                                                             &lt_bl NUM LBKT &kp SPACE       &lt LWR TAB     &lt RSE ENTER   &kp LS(SPACE)   &lt_bl MOV RBKT
             >;
         };
@@ -6652,7 +6905,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LGUI        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s RGUI SLASH &kp RALT
+            &kp LGUI        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LGUI SLASH &kp LALT
                                                             &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
         };
@@ -6662,7 +6915,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &ng Q        &ng W           &ng E           &ng R           &ng T           &ng Y           &ng U           &ng I           &ng O           &ng P           &qmt RSHFT MINUS
             &qmt LCTRL TAB  &ng A           &ng S           &ng D           &ng F           &ng G           &ng H           &ng J           &ng K           &ng L           &ng SEMI        &qmt RCTRL SQT
-            &qm LGUI        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm RALT
+            &qm LGUI        &ng Z           &ng X           &ng C           &ng V           &ng B           &ng N           &ng M           &ng COMMA       &ng DOT         &ng SLASH       &qm LALT
                                                             &trans          &ng SPACE       &lt LWRL TAB    &lt RSEL ENTER  &ng SPACE	    &trans
             >;
         };
@@ -6672,7 +6925,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &qmt LSHFT LS(TAB) &macro_JPPERIOD &macro_KA    &macro_TA       &macro_KO       &macro_SA       &macro_RA       &macro_TI       &macro_KU       &macro_TU       &macro_JPCOMMA1 &qmt RSHFT MINUS
             &qmt LCTRL TAB  &macro_U        &macro_SI       &macro_TE       &macro_KE       &macro_SE       &macro_HA       &macro_TO       &macro_KI       &macro_I        &macro_NN       &qmt RCTRL SQT
-            &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm RALT
+            &qm LGUI        &macro_JPTEN    &macro_HI       &macro_SU       &macro_HU       &macro_HE       &macro_ME       &macro_SO       &macro_NE       &macro_HO       &macro_JPNAKATEN &qm LALT
                                                             &lt_bl NUML ESC &kp SPACE       &lt LWRL TAB    &lt RSEL ENTER  &kp LS(SPACE)   &lt_bl MOVL ESC
             >;
         };
@@ -6702,8 +6955,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp LC(A)   &kp UP          &kp LC(E)       &kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LALT        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_s RALT LG(V) &kp RGUI       
-                                                            &kp LSHFT       &sk_ctrl        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
+            &kp LALT        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LALT 0 &kp LGUI       
+                                                            &kp LSHFT       &sk_shft        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
             >;
         };
         lowerl_layer {
@@ -6712,8 +6965,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT     &kp LS(LA(RIGHT)) &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &kp RALT       
-                                                            &kp LSHFT       &sk_ctrl   	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
+            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0 &kp LALT       
+                                                            &kp LSHFT       &sk_shft   	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
             >;
         };
         lowerw_layer {
@@ -6722,8 +6975,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)           
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT     &kp LS(LA(RIGHT)) &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_s RGUI LG(V) &kp RALT
-                                                            &kp LSHFT       &sk_ctrl   	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
+            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0 &kp LALT
+                                                            &kp LSHFT       &sk_shft   	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
         raise_layer {
@@ -6732,8 +6985,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
             &mt_s LCTRL GRAVE &macro_JPN1   &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
-            &kp LALT        &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_s RALT LG(V) &kp RGUI
-                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_shft        &kp RSHFT
+            &kp LALT        &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_cmd_v LALT 0 &kp LGUI
+                                                            &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_ctrl        &kp RSHFT
             >;
         };
         raisel_layer {
@@ -6742,8 +6995,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &kp LGUI        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s RGUI LC(V) &kp RALT
-                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_shft        &kp RSHFT
+            &kp LGUI        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0 &kp LALT
+                                                            &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_ctrl        &kp RSHFT
             >;
         };
         raisew_layer {
@@ -6752,8 +7005,8 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &kp LGUI          &mt_s LALT INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_s RGUI LC(V) &kp RALT
-                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_shft        &kp RSHFT
+            &kp LGUI          &mt_s LALT INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0 &kp LALT
+                                                            &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_ctrl        &kp RSHFT
             >;
         };
         adjust_layer {
