@@ -178,26 +178,26 @@ combos {
     //     layers = <RSEL RSEW>;
     //     timeout-ms = <80>;
     // };
-    combo_RGUI {
-        bindings = <&kp RGUI>;
+    combo_RALT {
+        bindings = <&kp LALT>;
         key-positions = <33 34>;
         layers = <QWE LWR RSE ADJ MOV>;
-        timeout-ms = <80>;
-    };
-    combo_LGUI {
-        bindings = <&kp LGUI>;
-        key-positions = <25 26>;
-        layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
         timeout-ms = <80>;
     };
     combo_LALT {
         bindings = <&kp LALT>;
         key-positions = <25 26>;
+        layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
+        timeout-ms = <80>;
+    };
+    combo_LGUI {
+        bindings = <&kp LGUI>;
+        key-positions = <25 26>;
         layers = <QWE LWR RSE ADJ>;
         timeout-ms = <80>;
     };
-    combo_RALT {
-        bindings = <&kp LALT>;
+    combo_RGUI {
+        bindings = <&kp LGUI>;
         key-positions = <33 34>;
         layers = <LIN CAD LWRL LWRW RSEL RSEW ADJL ADJW MOVL MOVW>;
         timeout-ms = <80>;
@@ -6703,7 +6703,7 @@ behaviors {
         compatible = "zmk,behavior-tap-dance";
         #binding-cells = <0>;
         tapping-term-ms = <180>;
-        bindings = <&all_ht LALT Z>, <&ctrl_a_z>, <&ctrl_d_z>, <&ctrl_f_z>;
+        bindings = <&all_ht LGUI Z>, <&ctrl_a_z>, <&ctrl_d_z>, <&ctrl_f_z>;
     };
 
     // --- Tap Dance SEMICOLON ---
@@ -6739,7 +6739,7 @@ behaviors {
         #binding-cells = <0>;
         tapping-term-ms = <180>;
         // 1-Tap: 通常キー, 2-Taps: 1G , 3-Taps: 1/4G
-        bindings = <&all_ht RGUI SLASH>, <&ctrl_alt_j>, <&ctrl_alt_k>;
+        bindings = <&all_ht LALT SLASH>, <&ctrl_alt_j>, <&ctrl_alt_k>;
     };
 
     // Hold-Tap: ホールドで&qm RSHIFT, タップで&caps_word
@@ -6875,7 +6875,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U			&kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LALT        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s LALT SLASH &kp LGUI
+            &kp LALT        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M			&kp COMMA       &kp DOT         &mt_s LGUI SLASH &kp LGUI
                                                             &lt_bl NUM LBKT &mt LSHFT SPACE &lt LWR TAB     &lt RSE ENTER   &mt RSHFT SPACE	&lt_bl MOV RBKT
             >;
         };
@@ -6905,7 +6905,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT Q &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &mt_s RSHFT P   &mt_s RSHFT MINUS
             &mt_s LCTRL TAB &mt_s LCTRL A   &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &mt_s RCTRL SEMI &mt_s RCTRL SQT
-            &kp LGUI        &mt_s LALT Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LGUI SLASH &kp LALT
+            &kp LGUI        &mt_s LGUI Z    &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &mt_s LALT SLASH &kp LALT
                                                             &lt_bl NUML ESC &mt LSHFT SPACE &lt LWRL TAB	&lt RSEL ENTER	&mt RSHFT SPACE &lt_bl MOVL ESC
             >;
         };
@@ -6955,7 +6955,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp LC(A)   &kp UP          &kp LC(E)       &kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT       &kp LS(LG(N3))  &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LALT        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LALT 0 &kp LGUI       
+            &kp LALT        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2        &kp LS(LG(N4))  &mkp MB1        &kp LS(ENTER)   &kp LA(LEFT)    &kp LA(RIGHT)   &mt_cmd_v LGUI 0 &kp LGUI       
                                                             &kp LSHFT       &sk_shft        &trans          &ht_lg1 ADJ 0   &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6965,7 +6965,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT     &kp LS(LA(RIGHT)) &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0 &kp LALT       
+            &kp LGUI        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0 &kp LALT       
                                                             &kp LSHFT       &sk_shft   	    &trans          &ht_it4 ADJL 0  &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6975,7 +6975,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT PG_UP &kp HOME    &kp UP          &kp END     	&kp LS(TAB)     &kp DEL         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT &msc SCRL_UP    &mt_s RSHFT LG(X)           
             &mt_s LCTRL TAB &mt_s LCTRL PG_DN &kp LEFT      &kp DOWN        &kp RIGHT     &kp LS(LA(RIGHT)) &kp BSPC        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN  &mt_s RCTRL LG(C)
-            &kp LGUI        &mt_s LALT LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LGUI 0 &kp LALT
+            &kp LGUI        &mt_s LGUI LC(V) &mkp MB1       &mkp MB3        &mkp MB2	  &kp LS(LA(LEFT))  &mkp MB1        &kp LS(ENTER)   &kp LC(LEFT)    &kp LC(RIGHT)   &mt_cmd_v LALT 0 &kp LALT
                                                             &kp LSHFT       &sk_shft   	    &trans          &htW_it4 ADJW 0 &kp LS(LC(V))   &kp RSHFT
             >;
         };
@@ -6985,7 +6985,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10         &kp LG(X)
             &mt_s LCTRL GRAVE &macro_JPN1   &macro_JPN2	    &macro_JPN3     &macro_JPN4     &macro_JPN5	    &macro_JPN6     &macro_JPN7     &macro_JPN8	    &macro_JPN9     &macro_JPN0	    &kp LG(C)
-            &kp LALT        &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_cmd_v LALT 0 &kp LGUI
+            &kp LALT        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS        &kp LBKT        &kp RBKT        &mt_cmd_v LGUI 0 &kp LGUI
                                                             &kp LSHFT       &kp SPACE       &ht_lg2 ADJ 0   &trans          &sk_ctrl        &kp RSHFT
             >;
         };
@@ -6995,7 +6995,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &kp LGUI        &mt_s LALT INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0 &kp LALT
+            &kp LGUI        &mt_s LGUI INT1 &kp BSLH        &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0 &kp LALT
                                                             &kp LSHFT       &kp SPACE       &ht_it5 ADJL 0  &trans          &sk_ctrl        &kp RSHFT
             >;
         };
@@ -7005,7 +7005,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &mt_s LSHFT F1 &kp F2         &kp F3          &kp F4          &kp F5          &kp F6          &kp F7    	    &kp F8          &kp F9          &kp F10         &kp LC(X)
             &mt_s LCTRL GRAVE &mt_s LCTRL N1 &kp N2         &kp N3          &kp N4          &kp N5          &kp N6          &kp N7    	    &kp N8          &kp N9          &kp N0          &kp LC(C)
-            &kp LGUI          &mt_s LALT INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LGUI 0 &kp LALT
+            &kp LGUI          &mt_s LGUI INT1 &kp BSLH      &kp INT3        &kp SLASH       &kp ASTRK       &kp MINUS       &kp PLUS  	    &kp LBKT        &kp RBKT        &mt_ctrl_v LALT 0 &kp LALT
                                                             &kp LSHFT       &kp SPACE       &htC_it5 ADJW 0 &trans          &sk_ctrl        &kp RSHFT
             >;
         };
