@@ -77,19 +77,6 @@
 		};
 	};
 	
-	&zip_temp_layer {
-		excluded-positions = <
-			22 // RCTRL
-			30 // MB1
-			32 // MB2
-			33 // MB3
-			34 // &mt_s LALT SLASH
-			37 // LCTRL SPACE
-			40 // RSHFT
-		>;
-	};
-
-	
 	file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
 		wait-ms = <40>;
@@ -1661,6 +1648,18 @@
 							, <&zip_xy_scaler 4 100> // スケーリング（4/100）
 							, <&zip_xy_to_scroll_mapper>; // スクロールイベントにマッピング
 		};
+};
+
+&zip_temp_layer {
+	excluded-positions = <
+		22 // RCTRL
+		30 // MB1
+		32 // MB2
+		33 // MB3
+		34 // &mt_s LALT SLASH
+		37 // LCTRL SPACE
+		40 // RSHFT
+	>;
 };
 
 &kscan0 {
