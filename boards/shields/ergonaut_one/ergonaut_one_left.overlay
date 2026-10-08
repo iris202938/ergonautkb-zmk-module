@@ -52,7 +52,6 @@
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
-		automouse-layer = <AML>; /* 自動マウスレイヤーをAMLに設定 */
 		y-ch {
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
 			mv-mid = <1555>; // Y軸のニュートラル（中央）でのミリボルト値 mv-mid = <1555>
