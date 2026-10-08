@@ -40,7 +40,8 @@
 #define NUML 21
 #define NUMW 22
 #define WINS 23
-#define BLE 24
+#define AML 24
+#define BLE 25
 
 &adc {
 	status = "okay";
@@ -51,6 +52,7 @@
 	anin0: analog_input_0 {
 		compatible = "zmk,analog-input";
 		sampling-hz = <100>;
+		automouse-layer = <AML>; /* 自動マウスレイヤーをAMLに設定 */
 		y-ch {
 			io-channels = <&adc 0>; // Y軸がADCチャンネル0に接続
 			mv-mid = <1555>; // Y軸のニュートラル（中央）でのミリボルト値 mv-mid = <1555>
@@ -75,6 +77,19 @@
 			#report-on-change-only;
 		};
 	};
+	
+	&zip_temp_layer {
+		excluded-positions = <
+			22 // RCTRL
+			30 // MB1
+			32 // MB2
+			33 // MB3
+			34 // &mt_s LALT SLASH
+			37 // LCTRL SPACE
+			40 // RSHFT
+		>;
+	};
+
 	
 	file_f: file_f { // ファイルの切り替え正
 		compatible = "zmk,behavior-macro";
@@ -1400,27 +1415,32 @@
 		l_mouse_speed_win {
 			layers = <WIN>; // レイヤー7がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 90 100>; // 速度を90/100に設定 (乗数90, 除数100)
+							 , <&zip_xy_scaler 90 100> // 速度を90/100に設定 (乗数90, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		l_mouse_speed_cad {
 			layers = <CAD>; // レイヤー6がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 95 100>; // 速度を95/100に設定 (乗数95, 除数100)
+							 , <&zip_xy_scaler 95 100> // 速度を95/100に設定 (乗数95, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		l_mouse_speed_nicl {
 			layers = <NICL>; // レイヤー5がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_xy_scaler 100 100> // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		l_mouse_speed_ngnl {
 			layers = <NGNL>; // レイヤー4がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_xy_scaler 100 100> // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		l_mouse_speed_lin {
 			layers = <LIN>; // レイヤー3がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_xy_scaler 100 100> // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		// l_mouse_speed_full_nic {
 		// 	layers = <NIC>; // レイヤー2がアクティブな場合
@@ -1434,12 +1454,14 @@
 		l_mouse_speed_full_ngn {
 			layers = <NGN>; // レイヤー1がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_xy_scaler 100 100> // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 		l_mouse_speed_full {
 			layers = <QWE>; // レイヤー0（デフォルト）がアクティブな場合
 			input-processors = <&zip_xy_transform (0)> // 変換なし (Y軸反転を無効化)
-							 , <&zip_xy_scaler 100 100>; // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_xy_scaler 100 100> // 速度を100/100に設定 (乗数100, 除数100)
+							 , <&zip_temp_layer AML 100000>;
 		};
 	};
 };

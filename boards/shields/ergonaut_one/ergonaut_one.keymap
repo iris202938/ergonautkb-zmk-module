@@ -31,7 +31,8 @@
 #define NUML 21
 #define NUMW 22
 #define WINS 23
-#define BLE 24
+#define AML 24
+#define BLE 25
 
 &mt {
     flavor = "hold-preferred";
@@ -7108,7 +7109,17 @@ behaviors {
             &kp LGUI        &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N         	&kp M           &kp COMMA     	&kp DOT         &kp FSLH        &kp LALT
                                                             &kp LSHFT       &kp SPACE       &kp TAB         &kp ENTER	    &kp INT4        &kp RCTRL
             >;
-        };        
+        };
+        auto_mouse_layer {
+            display-name = "AML";
+            bindings = <
+        // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
+            &trans          &trans          &trans          &trans          &trans          &trans          &trans         	&trans          &trans         	&trans          &trans          &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &trans         	&trans          &trans         	&trans          &kp RCTRL       &trans
+            &trans          &trans          &trans          &trans          &trans          &trans          &mkp MB1        &trans          &mkp MB3        &mkp MB2        &mt_s LALT SLASH &trans
+                                                            &trans          &mt LCTRL SPACE &trans          &trans	        &kp RSHFT       &trans
+            >;
+        };                
         bluetooth_layer {
             display-name = "BLE";
             bindings = <
