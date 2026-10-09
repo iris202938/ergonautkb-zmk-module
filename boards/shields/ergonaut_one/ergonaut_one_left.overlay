@@ -1270,13 +1270,13 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
 		device = <&anin0>; // 左のアナログ入力デバイス (anin0) を監視
-		l_layer24 {
-			layers = <BLE>; // レイヤー24がアクティブな場合
+		l_layer25 {
+			layers = <BLE>; // レイヤー25がアクティブな場合
 			input-processors = <&zip_keybind_keys_media>; // zip_keybind_keys_media を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		l_layer24-prevent {
-			layers = <BLE>; // レイヤー24がアクティブな場合
+		l_layer25-prevent {
+			layers = <BLE>; // レイヤー25がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		l_layer23 {
@@ -1454,13 +1454,13 @@
 
 &joystick_listener {
 		status = "okay";
-		r_layer24 {
-			layers = <BLE>; // レイヤー24がアクティブな場合
+		r_layer25 {
+			layers = <BLE>; // レイヤー25がアクティブな場合
 			input-processors = <&zip_keybind_keys_ecad_rble>; // zip_keybind_keys_ecad_rble を使用
 			process-next; // 他のプロセッサも処理を継続
 		};
-		r_layer24-prevent {
-			layers = <BLE>; // レイヤー24がアクティブな場合
+		r_layer25-prevent {
+			layers = <BLE>; // レイヤー25がアクティブな場合
 			input-processors = <&zip_xy_scaler 0 1>; // ジョイスティックの動きをゼロにスケーリング（無効化）
 		};
 		r_layer23 {

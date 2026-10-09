@@ -110,7 +110,7 @@ combos {
     combo_ESCL {
         timeout-ms = <80>;
         key-positions = <0 12>;
-        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVL MOVW NUM NUML NUMW>;
+        layers = <QWE NGN NIC LIN NGNL NICL CAD WIN MOVL MOVW NUM NUML NUMW AML>;
         bindings = <&kp ESC>;
     };
     combo_ESCR {
@@ -188,7 +188,7 @@ combos {
     combo_LALT {
         bindings = <&kp LALT>;
         key-positions = <25 26>;
-        layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW>;
+        layers = <LIN CAD LWRL LWRW RSEL RSEW MOVL MOVW AML>;
         timeout-ms = <80>;
     };
     combo_LGUI {
