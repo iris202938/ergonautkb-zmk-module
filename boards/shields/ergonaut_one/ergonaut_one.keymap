@@ -185,12 +185,12 @@ combos {
         layers = <LWR LWRL LWRW>;
         timeout-ms = <80>;
     };
-    combo_sl_LALT {
-        bindings = <&sk_alt>;
-        key-positions = <40 41>;
-        layers = <RSE RSEL RSEW>;
-        timeout-ms = <80>;
-    };
+    // combo_sl_LALT {
+    //     bindings = <&sk_alt>;
+    //     key-positions = <40 41>;
+    //     layers = <RSE RSEL RSEW>;
+    //     timeout-ms = <80>;
+    // };
     combo_LGUI_LCTRL {
         bindings = <&LGUI_LCTRL>;
         key-positions = <13 25>;
