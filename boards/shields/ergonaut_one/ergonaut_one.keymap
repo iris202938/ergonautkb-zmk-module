@@ -5795,6 +5795,11 @@ combos {
         , <&macro_release &kp LALT>
         ;
     };
+    LGUI_LCTRL: LGUI_LCTRL {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LGUI>, <&kp LCTRL>;
+    };
     win_right: win_right { // デスクトップ移動進む
         compatible = "zmk,behavior-macro";
         wait-ms = <40>;
