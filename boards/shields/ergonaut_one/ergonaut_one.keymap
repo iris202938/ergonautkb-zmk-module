@@ -344,7 +344,7 @@ combos {
         timeout-ms = <80>;
     };
     
-     {
+    dot_question {
         bindings = <&kp KP_DOT>;
         key-positions = <21 22>;
         layers = <NUM NUML NUMW>;
