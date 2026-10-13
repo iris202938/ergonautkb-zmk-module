@@ -337,6 +337,19 @@ combos {
         layers = <CAD RSEW>;
         bindings = <&kp E>;
     };
+    nlck {
+        bindings = <&kp KP_NLCK>;
+        key-positions = <9 10>;
+        layers = <NUM NUML NUMW>;
+        timeout-ms = <80>;
+    };
+    
+     {
+        bindings = <&kp KP_DOT>;
+        key-positions = <21 22>;
+        layers = <NUM NUML NUMW>;
+        timeout-ms = <80>;
+    };
     // combo_t_key { // ECADの文字
     //     timeout-ms = <80>;
     //     key-positions = <33 34>;
