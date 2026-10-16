@@ -550,6 +550,61 @@ combos {
         layers = <ADJW>;
         bindings = <&win_shift_s>;
     };
+    combo_ADJLW_tss { // ADJL,ADJWレイヤーでのテキストスクリーンショット
+        timeout-ms = <80>;
+        key-positions = <5 6>; // T,Yのキー位置に書き換えてください
+        layers = <ADJL ADJW>;
+        bindings = <&win_shift_t>;
+    };
+
+    mb1_cad {
+        bindings = <&mkp MB1>;
+        key-positions = <31 32>;
+        layers = <LWR LWRL LWRW WINS>;
+        timeout-ms = <60>;
+    };
+    mb2_cad {
+        bindings = <&mkp MB2>;
+        key-positions = <32 33>;
+        layers = <LWR LWRL LWRW WINS>;
+        timeout-ms = <60>;
+    };
+    mb3_cad {
+        bindings = <&mkp MB3>;
+        key-positions = <31 33>;
+        layers = <LWR LWRL LWRW WINS>;
+        timeout-ms = <60>;
+    };
+    mb1_shft_cad_r {
+        bindings = <&shft_mb1>;
+        key-positions = <31 32 33>;
+        layers = <CAD LWRW AML>;
+        timeout-ms = <80>;
+    };
+    mb1_shft_cad_l {
+        bindings = <&shft_mb1>;
+        key-positions = <16 27 38>;
+        layers = <CAD AML>;
+        timeout-ms = <80>;
+    };
+    mb1_l_cad {
+        bindings = <&mkp MB1>;
+        key-positions = <16 27>;
+        layers = <QWE LIN CAD WINS>;
+        timeout-ms = <80>;
+    };
+    mb2_l_cad {
+        bindings = <&mkp MB2>;
+        key-positions = <16 38>;
+        layers = <QWE LIN CAD WINS>;
+        timeout-ms = <80>;
+    };
+    mb3_l_cad {
+        bindings = <&mkp MB3>;
+        key-positions = <27 38>;
+        layers = <QWE LIN CAD WINS>;
+        timeout-ms = <80>;
+    };
 
     combo_to_LIN {
         timeout-ms = <70>;
@@ -5435,6 +5490,70 @@ combos {
             , <&macro_release &kp LCTRL>
             ;
     };
+    S_G_RIGHT: S_G_RIGHT {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LSHFT>
+            , <&macro_press &kp LGUI>
+            , <&macro_tap &kp RIGHT>
+            , <&macro_release &kp LGUI>
+            , <&macro_release &kp LSHFT>
+            ;
+    };
+    S_END: S_END {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LSHFT>
+            , <&macro_tap &kp END>
+            , <&macro_release &kp LSHFT>
+            ;
+    };
+    shft_mb1: shft_mb1 { // Shiftキー+左クリック
+        compatible = "zmk,behavior-macro";
+        wait-ms = <40>;
+        tap-ms = <40>;
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LSHFT>
+            , <&macro_tap &mkp MB1>
+            , <&macro_release &kp LSHFT>
+            ;
+    };
+    alt_enter: alt_enter { // alt+enter
+        compatible = "zmk,behavior-macro";
+        wait-ms = <40>;
+        tap-ms = <40>;
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LALT>
+            , <&macro_tap &kp ENTER>
+            , <&macro_release &kp LALT>
+            ;
+    };
+    gui_enter: gui_enter { // gui+enter
+        compatible = "zmk,behavior-macro";
+        wait-ms = <40>;
+        tap-ms = <40>;
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp RGUI>
+            , <&macro_tap &kp ENTER>
+            , <&macro_release &kp RGUI>
+            ;
+    };
+    ctrl_shift: ctrl_shift { // ctrl+shiftマクロ
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LCTRL &kp LSHFT>; // Ctrl+Shiftを押しっぱなしにするマクロ
+        // bindings
+        //     = <&macro_press &kp LCTRL>
+        //     , <&macro_press &kp LSHFT>
+        //     , <&macro_release &kp LSHFT>
+        //     , <&macro_release &kp LCTRL>
+        //     ;
+    };
 
     grave_uc: grave_uc {
         compatible = "zmk,behavior-macro";
@@ -6896,6 +7015,20 @@ behaviors {
         tapping-term-ms = <200>;
         bindings = <&kp>, <&ctrl_v>;
     };
+    mt_S_G_RIGHT: mt_S_G_RIGHT {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&kp>, <&S_G_RIGHT>;
+    };
+    mt_S_END: mt_S_END {  
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&kp>, <&S_END>;
+    };
     // 通常の判定時間（例: 240ms）
     mt_s: mod_tap_slow {
         compatible = "zmk,behavior-hold-tap";
@@ -7147,7 +7280,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN      	&kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f    		&kp RCTRL
-            &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &kp LS(LG(RIGHT)) &trans
+            &kp LALT        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN) &kp LS(LG(LEFT)) &kp LS(LA(LEFT)) &kp LS(LA(RIGHT)) &mt_S_G_RIGHT LGUI 0 &trans
                                                             &to QWE         &sk_alt         &trans          &trans          &sk_gui	        &to CAD
             >;
         };
@@ -7157,7 +7290,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt LCTRL LANG5 &out OUT_BLE    &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-            &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
+            &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0 &trans
                                                             &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
             >;
         };
@@ -7167,7 +7300,7 @@ behaviors {
         // +---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------
             &mt LSHFT LS(TAB) &kp F11       &kp F12         &kp C_MUTE      &kp C_VOL_DN    &kp C_VOL_UP    &kp CAPS        &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp LS(UP)      &mt_s RSHFT INS
             &mt_s LCTRL LANG5 &out OUT_BLE  &usb_lLIN       &bt3_lCAD       &kp LS(RIGHT)   &kp G           &kp INT5        &file_r         &pr_pg          &nx_pg          &file_f         &kp RCTRL
-            &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &kp LS(END)   &trans
+            &kp LGUI        &bt0_lQWE       &bt1_lNICL      &bt2_lNICL      &kp K_APP       &kp LS(LEFT)    &kp LS(DOWN)    &kp LS(HOME)   &kp LS(LC(LEFT)) &kp LS(LC(RIGHT)) &mt_S_END LALT 0 &trans
                                                             &to QWE         &sk_gui         &trans          &trans          &sk_alt	        &to CAD
             >;
         };
