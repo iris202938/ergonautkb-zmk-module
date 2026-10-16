@@ -5345,7 +5345,18 @@ combos {
             , <&macro_release &kp LGUI>
             , <&macro_release &kp LSHFT>
             ;
-        };	
+    };
+    win_shift_t: win_shift_t { // テキストスクリーンショット
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp T>
+            , <&macro_release &kp LGUI>
+            , <&macro_release &kp LSHFT>
+            ;
+    };		
     file_f: file_f { // ファイルの切り替え正
         compatible = "zmk,behavior-macro";
         wait-ms = <40>;
