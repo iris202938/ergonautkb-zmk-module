@@ -605,6 +605,42 @@ combos {
         layers = <QWE LIN CAD WINS>;
         timeout-ms = <80>;
     };
+    int5_g_c {
+        bindings = <&int5_g>;
+        key-positions = <22 34>;
+        layers = <CAD AML>;
+        timeout-ms = <80>;
+    };
+    combo_symbol_call {  // シンボル一覧(AHK)
+        bindings = <&ctrl_alt_s>;
+        key-positions = <13 14 34>;
+        layers = <CAD>;
+        timeout-ms = <80>;
+    };
+    combo_alt_home {   // 複写左90度回転[AHK]
+        bindings = <&alt_home>;
+        key-positions = <2 38 34>;
+        layers = <CAD>;
+        timeout-ms = <70>;
+    };
+    combo_alt_end {   // 複写右90度回転[AHK]
+        bindings = <&alt_end>;
+        key-positions = <4 38 34>;
+        layers = <CAD>;
+        timeout-ms = <70>;
+    };
+    combo_alt_comma { // 移動左90度回転[AHK]
+        bindings = <&alt_comma>;
+        key-positions = <39 32 34>;
+        layers = <CAD>;
+        timeout-ms = <80>;
+    };
+    combo_alt_dot { // タップで移動右90度回転[AHK]
+        bindings = <&alt_dot>;
+        key-positions = <39 33 34>;
+        layers = <CAD>;
+        timeout-ms = <70>;  
+    };
 
     combo_to_LIN {
         timeout-ms = <70>;
